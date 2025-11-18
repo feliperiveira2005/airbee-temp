@@ -1,0 +1,136 @@
+/* Reset básico */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: #736DA6; color: #fff; }
+html, body, * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+/* Seu arquivo de estilos (style.css, ou dentro de uma tag <style>) */
+
+/* 1. Definir o Bloco Seguro (a área bege) como o contêiner de referência */
+.bloco-seguro {
+  background-color: #F5DEC8;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  position: relative; /* <--- NOVO: ESTE DEVE SER O PAI RELATIVO */
+}
+
+/* 2. Opcional: Remova o position: relative do .conteudo se ele só servia para o coração */
+.conteudo {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  width: 90%;
+  /* position: relative; <--- REMOVA ISSO SE A ÚNICA RAZÃO ERA O CORAÇÃO */
+}
+
+/* 3. O estilo do coração (o seu já estava certo para posicionamento no canto) */
+.coracao-canto {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* Você pode querer adicionar um pequeno ajuste para não encostar na borda */
+  /* margin-left: 20px;
+  margin-bottom: 20px; */
+}
+@media (max-width: 700px) {
+  .coracao-canto {
+    width: 300px;
+  }
+}
+/* SITE ROOT */
+.site-root {
+  background: #000;
+  color: #fff;
+}
+
+/* Sections */
+.section {
+  padding: 0px 0px 0px 0px;
+}
+.section-mobile-only {
+    display: block !important; /* Visível por padrão (mobile) */
+}
+
+.section-desktop-only {
+    display: none !important; /* Escondido por padrão (mobile) */
+}
+
+/* Media Query para telas grandes (Breakpoint XL, geralmente 1280px) */
+@media (min-width: 1080px) { 
+    .section-mobile-only {
+        display: none !important; /* Esconde a seção mobile no desktop */
+    }
+    
+    .section-desktop-only {
+        display: flex !important; /* Mostra a seção desktop no desktop. Usamos 'flex' para respeitar 'display: flex' da section. */
+    }
+}
+.bloco-seguro {
+  background-color: #F5DEC8;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.conteudo {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.lado-esquerdo .foto {
+  width: 600px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.lado-direito h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #736DA6;
+  margin-bottom: 10px;
+}
+
+.lado-direito p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #736DA6;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+
+/* --------------------
+    📱 MOBILE RESPONSIVO
+    -------------------- */
+@media (max-width: 768px) {
+
+    .conteudo {
+        /* Mude de 'column' para 'column-reverse' para inverter a ordem */
+        /* O lado-direito (texto) vai para cima, o lado-esquerdo (imagem) vai para baixo. */
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 25px;
+    }
+
+    .lado-esquerdo .foto {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .lado-direito h2 {
+        font-size: 24px;
+    }
+
+    .lado-direito p {
+        font-size: 16px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
