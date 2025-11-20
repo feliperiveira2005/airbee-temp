@@ -1,5 +1,5 @@
 /* =========================================
-   1. GERAL
+   1. FONTES E RESET GERAL
    ========================================= */
 @font-face { font-family: 'Avenir LT Std'; src: url('./fonts/AvenirLTStd-Book.otf') format('opentype'); font-weight: 400; font-style: normal; }
 @font-face { font-family: 'Avenir LT Std'; src: url('./fonts/AvenirLTStd-Black.otf') format('opentype'); font-weight: 900; font-style: normal; }
@@ -7,176 +7,176 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 100%; height: 100%; overflow-x: hidden; }
-body { font-family: 'Avenir LT Std', sans-serif; background: #000; }
+body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 
 /* =========================================
-   2. CONTAINER E FUNDO
+   2. PRIMEIRA DOBRA (BANNER TOPO)
    ========================================= */
 .banner-container {
     position: relative;
-    width: 100%;      
-    height: 1046px;
-    overflow: hidden;
+    width: 100%; height: 1046px; overflow: hidden;
 }
-
 .banner-container picture, .bg-image {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 0;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
 }
 .bg-image { object-fit: cover; object-position: center; }
 
-/* =========================================
-   3. LOGO (CENTRALIZADA NO TOPO)
-   ========================================= */
 .logo-wrapper {
-    position: absolute;
-    top: 0;
-    left: 20%; /* Move para o meio da tela */
-    transform: translateX(-50%); /* Centraliza exatamente no eixo X */
-    z-index: 10;
+    position: absolute; top: 0; left: 20%; transform: translateX(-50%); z-index: 10;
 }
 .logo { width: 240px; display: block; }
 
-/* =========================================
-   4. CONTEÚDO (TUDO CENTRALIZADO)
-   ========================================= */
 .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    z-index: 2;
-    
-    /* Flexbox para centralizar vertical e horizontalmente */
-    display: flex;
-    flex-direction: column;
-    align-items: center;     /* Centraliza horizontalmente */
-    text-align: center;      /* Centraliza o texto */
-    padding-top: 140px;      /* Espaço para não bater na logo */
+    position: absolute; top: 0; left: 0; width: 40%; height: 100%; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 140px;
 }
-
 .text-block {
-    max-width: 600px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Garante que itens filhos fiquem no centro */
-    position: relative;
+    max-width: 600px; color: white; display: flex; flex-direction: column; align-items: center; position: relative;
 }
-
-/* --- AJUSTE DO TÍTULO PARA RECEBER AS LINHAS --- */
 h1 {
-    font-family: 'Avenir LT Std', sans-serif; 
-    font-weight: 900;
-    font-size: 4rem;
-    line-height: 1.2; 
-    margin-bottom: 20px;
-    
-    /* FUNDAMENTAL PARA O POSICIONAMENTO ABSOLUTO FUNCIONAR */
-    position: relative; 
-    display: inline-block; /* Faz o container do h1 abraçar apenas o texto */
+    font-family: 'Avenir LT Std', sans-serif; font-weight: 900; font-size: 4rem; line-height: 1.2; margin-bottom: 20px; position: relative; display: inline-block;
 }
-
-.title-highlight {
-    font-family: 'Lets Be Glyphs Bouncy', cursive;
-    color: white;
-    font-weight: 700; 
-}
-
-/* --- ESTILO DAS LINHAS (POSICIONAMENTO ABSOLUTO) --- */
-.line-detail {
-    position: absolute;
-    width: 40px; /* Ajuste o tamanho base aqui */
-    height: auto;
-    z-index: 1; /* Fica em cima do texto se sobrepor, use -1 para ficar atrás */
-}
-
-/* Linha 1: Em cima do "V" (Canto superior esquerdo) */
-.line-1 {
-    top: -30px;  /* Sobe a imagem */
-    left: -30px; /* Move para a esquerda do início do texto */
-}
-
-/* Linha 2: Em cima do "?" (Canto superior direito relativo ao bloco) */
-.line-2 {
-    top: 65px;   /* Sobe a imagem */
-    right: -45px; /* Move para a direita do final do texto */
-}
-
-
-p {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    opacity: 0.95;
-    max-width: 90%;
-    margin: 0 auto;
-}
+.title-highlight { font-family: 'Lets Be Glyphs Bouncy', cursive; color: white; font-weight: 700; }
+.line-detail { position: absolute; width: 40px; height: auto; z-index: 1; }
+.line-1 { top: -30px; left: -30px; }
+.line-2 { top: 65px; right: -45px; }
+p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin: 0 auto; }
+.round-image { object-fit: cover; margin-top: 40px; display: block; }
+.only-mobile { display: none; }
+.only-desktop { display: block; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
 /* =========================================
-   5. IMAGEM REDONDA (NO FLUXO)
+   3. SEGUNDA DOBRA (FEATURES)
    ========================================= */
-.round-image {
-    object-fit: cover;
-    margin-top: 40px; /* Espaço entre o texto e a imagem */
-    display: block;
+.features-row {
+    display: flex; width: 100%; margin-top: 35px; gap: 35px;
 }
-
-/* Esconde a imagem mobile por padrão, mostra a desktop */
-.only-mobile {
-    display: none; 
+.feature-box {
+    flex: 1; height: 900px; background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;
 }
-.only-desktop {
-    display: block; /* Garante que a desktop apareça no desktop */
+.left-box { background-image: url('assets/images/d21.png'); }
+.right-box {
+    background-image: url('assets/images/d22.png'); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 15px;
+}
+.feature-text {
+    font-family: 'Avenir LT Std', sans-serif; font-weight: 900; color: #009CDE; text-align: center; font-size: 1.5rem; line-height: 1.3; max-width: 80%;
 }
 
 /* =========================================
-   6. MOBILE
+   4. TERCEIRA DOBRA (MOSAICO)
+   ========================================= */
+.mosaic-container {
+    display: flex; width: 100%; margin-top: 35px; gap: 35px;
+}
+.mosaic-col {
+    flex: 1; display: flex; flex-direction: column; gap: 35px;
+}
+.split-row {
+    display: flex; width: 100%; height: 472px; gap: 35px;
+}
+.mosaic-item {
+    border-radius: 8px; background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;
+}
+.split-row .mosaic-item { flex: 1; height: 100%; }
+.mosaic-col > .mosaic-item { width: 100%; min-height: 472px; }
+
+/* Imagens Mosaico */
+.bg-amarelo { background-image: url('assets/images/d31.png'); }
+.bg-roxo    { background-image: url('assets/images/d32.png'); }
+.bg-azul-1  { background-image: url('assets/images/d33.png'); }
+.bg-azul-2  { background-image: url('assets/images/d34.png'); }
+.bg-circ-1  { background-image: url('assets/images/d35.png'); }
+.bg-circ-2  { background-image: url('assets/images/d36.png'); }
+
+/* Textos Mosaico */
+.mosaic-text {
+    font-family: 'Avenir LT Std', sans-serif; font-size: 1.2rem; line-height: 1.3; position: absolute; padding: 20px; z-index: 10;
+}
+.txt-blue { color: #1E7AD1; }
+.txt-white { color: #FFFFFF; }
+.bottom-text { bottom: 0; left: 0; width: 100%; text-align: center; padding-bottom: 10px; }
+.side-text { top: 45%; right: 20px; width: 30%; transform: translateY(-50%); text-align: left; font-size: 1.5rem; }
+
+/* =========================================
+   5. QUARTA DOBRA (4 COLUNAS)
+   ========================================= */
+.four-cols-container {
+    display: flex; width: 100%; margin-top: 35px; gap: 35px;
+}
+.col-item {
+    flex: 1; height: 472px; position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 8px;
+}
+
+/* Texto Overlay */
+.overlay-text {
+    position: absolute; width: 90%; left: 50%; transform: translateX(-50%); text-align: center; color: white; z-index: 10;
+}
+.top-center { top: 30px; font-size: 1.8rem; }
+.bottom-center { bottom: 10px; font-size: 1.2rem; line-height: 1.3; }
+
+.title-font { font-family: 'Lets Be Glyphs Bouncy', cursive; font-weight: 400; }
+.small-desc { font-family: 'Avenir LT Std', sans-serif; font-weight: 700; font-size: 1rem; }
+
+/* Imagens 4 Colunas */
+.bg-d41 { background-image: url('assets/images/d41.png'); } /* Roxo */
+.bg-d42 { background-image: url('assets/images/d42.png'); } /* Laranja */
+.bg-d43 { background-image: url('assets/images/d43.png'); } /* Verde */
+.bg-d44 { background-image: url('assets/images/d44.png'); } /* Amarelo */
+
+
+/* =========================================
+   6. MEDIA QUERY MOBILE (TUDO UNIFICADO)
    ========================================= */
 @media (max-width: 768px) {
+    
+    /* --- 1. BANNER (CORRIGIDO ESQUERDA) --- */
     .banner-container { height: 100vh; }
-    
+    .logo-wrapper { left: 20%; }
     .logo { width: 130px; }
-
     .content {
-        width: 60%;
-        padding-right: 20px;
-        padding-top: 80px; 
-        justify-content: flex-start;
+        width: 100%; padding-top: 80px; padding-left: 30px; padding-right: 20px; height: 738px;
+        align-items: flex-start !important; justify-content: flex-start !important; text-align: center !important;
     }
+    .text-block { 
+        max-width: 60%; margin-left: 0; padding: 0; align-items: flex-start !important; text-align: center !important;
+    }
+    h1 { font-size: 2.2rem; text-align: center !important; }
+    .line-detail { width: 25px; }
+    .line-1 { top: -15px; left: -0px; }
+    .line-2 { top: 29px; right: -0px; }
+    p { font-size: 1.1rem; text-align: center !important; margin: 0 !important; margin-bottom: 20px !important; }
+    .round-image { margin-top: 120px; margin-left: 0; align-self: center; width: 280px; height: 280px; }
+    .only-desktop { display: none !important; }
+    .only-mobile { display: block !important; }
 
-    .text-block { max-width: 100%; margin-left: 20px; }
-    
-    h1 { 
-        font-size: 2.2rem; 
-    }
+    /* --- 2. FEATURES --- */
+    .features-row { flex-direction: column; margin-top: 0; gap: 20px; }
+    .feature-box { width: 100%; flex: none; height: 428px; }
+    .right-box { padding-bottom: 20px; }
+    .feature-text { font-size: 1.1rem; max-width: 90%; }
+    .features-row br { display: none; }
 
-    /* Ajuste das linhas no Mobile */
-    .line-detail {
-        width: 25px; /* Diminui o tamanho das linhas no celular */
-    }
-    .line-1 {
-        top: -15px;
-        left: -20px;
-    }
-    .line-2 {
-        top: 30px;
-        right: -25px;
-    }
+    /* --- 3. MOSAICO --- */
+    .mosaic-container { flex-direction: column; margin-top: 0; gap: 20px; }
+    .mosaic-col { gap: 20px; }
+    .split-row { flex-direction: column; height: auto; gap: 20px; }
+    .split-row .mosaic-item { height: 300px; }
+    .mosaic-col > .mosaic-item { height: 488px !important; }
+    .mosaic-text { font-size: 1rem; padding: 15px; }
+    .bottom-text { padding-bottom: 20px; }
+    .side-text { top: auto; bottom: 0; right: 0; width: 100%; transform: none; text-align: center; padding-bottom: 30px; }
 
-    p { font-size: 1.1rem; }
-    
-    .round-image {
-        margin-top: 140px; 
-        margin-left: 20px;
+    /* --- 4. QUARTA DOBRA (MOBILE) --- */
+    .four-cols-container {
+        flex-direction: column;
+        margin-top: 0;
+        gap: 20px;
     }
-    
-    /* No mobile, esconde a desktop e mostra a mobile */
-    .only-desktop {
-        display: none;
+    .col-item {
+        width: 100%;
+        height: 400px;
     }
-    .only-mobile {
-        display: block;
-    }
+    .top-center { font-size: 1.5rem; }
+    .bottom-center { font-size: 1.1rem; bottom: 20px; }
 }
