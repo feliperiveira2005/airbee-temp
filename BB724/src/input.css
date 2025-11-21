@@ -409,7 +409,7 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
 
 /* Logo Footer */
 .footer-logo {
-    width: 200px; /* Ajuste conforme o tamanho do seu recorte */
+    width: 300px; /* Ajuste conforme o tamanho do seu recorte */
     height: auto;
     display: block;
     margin-bottom: 25px;
