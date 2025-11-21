@@ -9,6 +9,11 @@
 html, body { width: 100%; height: 100%; overflow-x: hidden; }
 body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 
+/* Utilitários de Visibilidade */
+.only-desktop { display: flex; } 
+.only-mobile { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
 /* =========================================
    2. PRIMEIRA DOBRA (BANNER TOPO)
    ========================================= */
@@ -41,10 +46,7 @@ h1 {
 .line-1 { top: -30px; left: -30px; }
 .line-2 { top: 65px; right: -45px; }
 p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin: 0 auto; }
-.round-image { object-fit: cover; margin-top: 40px; display: block; }
-.only-mobile { display: none; }
-.only-desktop { display: block; }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+.round-image { object-fit: cover; margin-top: 40px;  }
 
 /* =========================================
    3. SEGUNDA DOBRA (FEATURES)
@@ -64,10 +66,10 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
 }
 
 /* =========================================
-   4. TERCEIRA DOBRA (MOSAICO)
+   4. TERCEIRA DOBRA (MOSAICO - GERAL)
    ========================================= */
 .mosaic-container {
-    display: flex; width: 100%; margin-top: 35px; gap: 35px;
+    width: 100%; margin-top: 35px; gap: 35px;
 }
 .mosaic-col {
     flex: 1; display: flex; flex-direction: column; gap: 35px;
@@ -126,11 +128,23 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
 
 
 /* =========================================
-   6. MEDIA QUERY MOBILE (TUDO UNIFICADO)
+   6. MEDIA QUERY MOBILE (TODOS OS AJUSTES)
    ========================================= */
 @media (max-width: 768px) {
+    .bottom-center { bottom: 0px;
+    } 
+    /* --- CONTROLE DE EXIBIÇÃO GERAL --- */
+    .only-desktop { display: none !important; }
     
-    /* --- 1. BANNER (CORRIGIDO ESQUERDA) --- */
+    .only-mobile { 
+        display: flex !important; 
+        flex-direction: column; 
+        gap: 15px; 
+        width: 100%; 
+        margin-top: 20px;
+    }
+
+    /* --- 1. BANNER --- */
     .banner-container { height: 100vh; }
     .logo-wrapper { left: 20%; }
     .logo { width: 130px; }
@@ -145,38 +159,313 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     .line-detail { width: 25px; }
     .line-1 { top: -15px; left: -0px; }
     .line-2 { top: 29px; right: -0px; }
-    p { font-size: 1.1rem; text-align: center !important; margin: 0 !important; margin-bottom: 20px !important; }
+    p { font-size: 1.1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
     .round-image { margin-top: 120px; margin-left: 0; align-self: center; width: 280px; height: 280px; }
-    .only-desktop { display: none !important; }
-    .only-mobile { display: block !important; }
 
     /* --- 2. FEATURES --- */
-    .features-row { flex-direction: column; margin-top: 0; gap: 20px; }
-    .feature-box { width: 100%; flex: none; height: 428px; }
-    .right-box { padding-bottom: 20px; }
-    .feature-text { font-size: 1.1rem; max-width: 90%; }
+    .features-row { flex-direction: column; margin-top: 0; gap: 0px; }
+    .feature-box { width: 100%; flex: none; height: 428px; margin-top: 20px;}
+    .right-box { padding-bottom: 0px; }
+    .feature-text { font-size: 1rem; max-width: 90%; margin-top: 10px;}
     .features-row br { display: none; }
 
-    /* --- 3. MOSAICO --- */
-    .mosaic-container { flex-direction: column; margin-top: 0; gap: 20px; }
-    .mosaic-col { gap: 20px; }
-    .split-row { flex-direction: column; height: auto; gap: 20px; }
-    .split-row .mosaic-item { height: 300px; }
-    .mosaic-col > .mosaic-item { height: 488px !important; }
-    .mosaic-text { font-size: 1rem; padding: 15px; }
-    .bottom-text { padding-bottom: 20px; }
-    .side-text { top: auto; bottom: 0; right: 0; width: 100%; transform: none; text-align: center; padding-bottom: 30px; }
+    /* --- 3. MOSAICO MOBILE --- */
+    .mobile-pair-row {
+        display: flex;
+        flex-direction: row; /* Força lado a lado */
+        gap: 15px;
+        width: 100%;
+        height: 250px;
+    }
+    .mobile-pair-row .mosaic-item {
+        flex: 1;
+        width: 50%;
+        height: 100% !important;
+        min-height: auto;
+    }
+    .mobile-full-item {
+        width: 100%;
+        height: 400px !important;
+        background-position: top center;
+    }
+    .mobile-font-adjust {
+        font-size: 0.8rem !important; 
+        padding: 10px !important;
+        line-height: 1.1 !important;
+    }
 
-    /* --- 4. QUARTA DOBRA (MOBILE) --- */
-    .four-cols-container {
+    /* --- 4. PARTE FINAL (4 Colunas viram pares + Banner meio) --- */
+    .final-rows-mobile {
+        display: flex;
         flex-direction: column;
-        margin-top: 0;
-        gap: 20px;
+        gap: 15px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .middle-banner {
+        width: 100%;
+        min-height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+    .middle-banner-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
     }
     .col-item {
-        width: 100%;
-        height: 400px;
+        flex: 1;
+        height: 100%; /* Herda do pai */
+        width: 50%;
     }
-    .top-center { font-size: 1.5rem; }
-    .bottom-center { font-size: 1.1rem; bottom: 20px; }
+    .overlay-text.top-center {
+        font-size: 1.2rem !important;
+        width: 100%;
+    }
+
+    /* --- 5. PRODUTOS (CORREÇÃO DE LAYOUT) --- */
+    /* Remove bordas cinzas do desktop */
+    .cta-blue-box, .product-card {
+         border-right: 0px !important; 
+    }
+    
+    /* Container dos produtos mobile */
+    .products-section-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    /* Ajuste do CTA Azul Mobile */
+    .mobile-cta-size {
+        width: 100%;
+        min-height: 200px;
+        padding: 30px;
+    }
+    .mobile-cta-size h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Produto 1 (Sozinho) */
+    .mobile-single-card {
+        width: 100%;
+        align-items: center;
+    }
+
+    /* --- AQUI ESTÁ A CORREÇÃO PRINCIPAL --- */
+    /* Força a linha dos produtos 2 e 3 a ficarem lado a lado */
+    .mobile-product-pair-row {
+        display: flex !important; /* Importante para sobrescrever comportamento padrão */
+        flex-direction: row !important; /* Garante linha */
+        gap: 15px;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /* Ajuste dos cards pares */
+    .mobile-pair-card {
+        flex: 1; /* Divide espaço */
+        width: 48%; /* Garante largura */
+        padding: 10px !important;
+    }
+    .mobile-pair-card .product-img {
+        max-height: 120px; /* Imagem menor para não quebrar */
+        width: 100%;
+    }
+    .mobile-pair-card h3 {
+        font-size: 0.8rem; /* Fonte menor */
+    }
+    /* AJUSTE DO BLOCO AZUL QUANDO FICA PEQUENO (LADO A LADO) */
+    .blue-mobile-adjust {
+        padding: 10px !important;       /* Menos padding para caber o texto */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #6EC6E8;      /* Garante a cor azul */
+        height: auto !important;        /* Deixa a altura se ajustar ao vizinho */
+    }
+
+    .blue-mobile-adjust h2 {
+        font-size: 0.9rem !important;   /* Fonte bem menor para caber no quadrado */
+        line-height: 1.2;
+    }
+    .cta-blue-box {
+        flex: 0 0 50% !important; /* Ocupa metade do espaço */
+    }
+    .brand-banner p {
+         font-size: 0.7rem!important;
+    }
+
+}
+
+/* =========================================
+   7. ESTILOS DESKTOP (PRODUTOS)
+   ========================================= */
+
+/* Barra da Marca */
+.brand-banner {
+    width: 100%;
+    background-color: #1E7AD1;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+.brand-banner p {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Container Desktop */
+.products-section-desktop {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    background-color: #F4F4F4;
+}
+
+/* Bloco Azul */
+.cta-blue-box {
+    background-color: #6EC6E8;
+    flex: 0 0 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border-right: 20px solid #F4F4F4;
+}
+.cta-blue-box h2 {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 900;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Grid Produtos */
+.products-grid-container {
+    flex: 1;
+    display: flex;
+    padding: 20px 0;
+}
+
+.product-card {
+    flex: 1;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    text-align: center;
+    border-right: 20px solid #F4F4F4;
+}
+.product-card.no-border {
+    border-right: none;
+}
+
+.product-img {
+    width: 80%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.product-title {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #000;
+    margin-bottom: 5px;
+}
+.product-sku {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+}
+/* =========================================
+   ESTILOS DO RODAPÉ (FOOTER)
+   ========================================= */
+.main-footer {
+    width: 100%;
+    background-color: #1E7AD1; /* Azul do fundo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    margin-top: 0; /* Cola na seção anterior */
+}
+
+/* Logo Footer */
+.footer-logo {
+    width: 200px; /* Ajuste conforme o tamanho do seu recorte */
+    height: auto;
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* Texto Grupo Multi */
+.footer-text p {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 900; /* Negrito */
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.footer-text a {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 900;
+    font-size: 1rem;
+    color: white;
+    text-decoration: underline; /* Linha embaixo do link */
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+/* Redes Sociais (Imagem Única) */
+.social-img {
+    width: 180px; /* Tamanho das 3 bolinhas juntas */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Copyright */
+.copyright {
+    font-family: 'Avenir LT Std', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   AJUSTES RODAPÉ MOBILE
+   ========================================= */
+@media (max-width: 768px) {
+    .main-footer {
+        padding: 40px 20px;
+    }
+    
+    .footer-logo {
+        width: 300px; /* Um pouco menor no celular */
+    }
+
+    .footer-text p, 
+    .footer-text a {
+        font-size: 0.9rem;
+    }
+
+    .social-img {
+        width: 150px;
+    }
 }
