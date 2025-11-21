@@ -1,10 +1,108 @@
 /* =========================================
    1. FONTES E RESET GERAL
    ========================================= */
-@font-face { font-family: 'Avenir LT Std'; src: url('./fonts/AvenirLTStd-Book.otf') format('opentype'); font-weight: 400; font-style: normal; }
-@font-face { font-family: 'Avenir LT Std'; src: url('./fonts/AvenirLTStd-Black.otf') format('opentype'); font-weight: 900; font-style: normal; }
-@font-face { font-family: 'Lets Be Glyphs Bouncy'; src: url('./fonts/LetsBeGlyphs-Bouncy.otf') format('opentype'); font-weight: 400; font-style: normal; }
+   b{
+    font-weight: 900;
+   }
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-LightOblique.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
 
+/* --- Avenir LT Std: Book / Regular (Peso 400) --- */
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-BookOblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* --- Avenir LT Std: Roman / Oblique (Alternativa ao Peso 400) --- */
+/* Nota: Roman e Book geralmente competem pelo peso 400. 
+   O navegador usará o último declarado se houver conflito. */
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Roman.otf') format('opentype');
+    font-weight: 400; /* Ou 400 */
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Oblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* --- Avenir LT Std: Medium (Peso 500) --- */
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-MediumOblique.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* --- Avenir LT Std: Heavy (Peso 800) --- */
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Heavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-HeavyOblique.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* --- Avenir LT Std: Black (Peso 900) --- */
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-BlackOblique.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* --- Outras Fontes --- */
+@font-face {
+    font-family: 'Lets Be Glyphs';
+    src: url('./fonts/LetsBeGlyphs-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lets Be Glyphs Bouncy';
+    src: url('./fonts/LetsBeGlyphs-Bouncy.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 100%; height: 100%; overflow-x: hidden; }
 body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
@@ -29,23 +127,23 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 .logo-wrapper {
     position: absolute; top: 0; left: 20%; transform: translateX(-50%); z-index: 10;
 }
-.logo { width: 240px; display: block; }
+.logo { width: 300px; display: block; }
 
 .content {
     position: absolute; top: 0; left: 0; width: 40%; height: 100%; z-index: 2;
     display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 140px;
 }
 .text-block {
-    max-width: 600px; color: white; display: flex; flex-direction: column; align-items: center; position: relative;
+    max-width: 500px; color: white; display: flex; flex-direction: column; align-items: center; position: relative;
 }
 h1 {
-    font-family: 'Avenir LT Std', sans-serif; font-weight: 900; font-size: 4rem; line-height: 1.2; margin-bottom: 20px; position: relative; display: inline-block;
+    font-family: 'Avenir LT Std', sans-serif; font-weight: 900; font-size: 4rem;  margin-bottom: 5px; position: relative; display: inline-block;
 }
 .title-highlight { font-family: 'Lets Be Glyphs Bouncy', cursive; color: white; font-weight: 700; }
 .line-detail { position: absolute; width: 40px; height: auto; z-index: 1; }
 .line-1 { top: -30px; left: -30px; }
 .line-2 { top: 65px; right: -45px; }
-p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin: 0 auto; }
+p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
 .round-image { object-fit: cover; margin-top: 40px;  }
 
 /* =========================================
@@ -62,7 +160,7 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     background-image: url('assets/images/d22.png'); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 15px;
 }
 .feature-text {
-    font-family: 'Avenir LT Std', sans-serif; font-weight: 900; color: #009CDE; text-align: center; font-size: 1.5rem; line-height: 1.3; max-width: 80%;
+    font-family: 'Avenir LT Std', sans-serif; font-weight: 900; color: #009CDE; text-align: center; font-size: 1.5rem; max-width: 80%;
 }
 
 /* =========================================
@@ -93,7 +191,7 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
 
 /* Textos Mosaico */
 .mosaic-text {
-    font-family: 'Avenir LT Std', sans-serif; font-size: 1.2rem; line-height: 1.3; position: absolute; padding: 20px; z-index: 10;
+    font-family: 'Avenir LT Std', sans-serif; font-size: 1.2rem; position: absolute; padding: 20px; z-index: 10;
 }
 .txt-blue { color: #1E7AD1; }
 .txt-white { color: #FFFFFF; }
@@ -115,7 +213,7 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     position: absolute; width: 90%; left: 50%; transform: translateX(-50%); text-align: center; color: white; z-index: 10;
 }
 .top-center { top: 30px; font-size: 1.8rem; }
-.bottom-center { bottom: 10px; font-size: 1.2rem; line-height: 1.3; }
+.bottom-center { bottom: 10px; font-size: 1.2rem;  }
 
 .title-font { font-family: 'Lets Be Glyphs Bouncy', cursive; font-weight: 400; }
 .small-desc { font-family: 'Avenir LT Std', sans-serif; font-weight: 700; font-size: 1rem; }
@@ -160,7 +258,7 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     .line-1 { top: -15px; left: -0px; }
     .line-2 { top: 29px; right: -0px; }
     p { font-size: 1.1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
-    .round-image { margin-top: 120px; margin-left: 0; align-self: center; width: 280px; height: 280px; }
+    .round-image { margin-top: 180px; margin-left: 0; align-self: center; width: 280px; height: 280px; }
 
     /* --- 2. FEATURES --- */
     .features-row { flex-direction: column; margin-top: 0; gap: 0px; }
@@ -189,9 +287,11 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
         background-position: top center;
     }
     .mobile-font-adjust {
-        font-size: 0.8rem !important; 
-        padding: 10px !important;
-        line-height: 1.1 !important;
+        font-size: 0.7rem !important; 
+         padding: 0px;
+        padding-block: 7px !important;
+        
+      
     }
 
     /* --- 4. PARTE FINAL (4 Colunas viram pares + Banner meio) --- */
@@ -289,11 +389,12 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     }
 
     .blue-mobile-adjust h2 {
-        font-size: 0.9rem !important;   /* Fonte bem menor para caber no quadrado */
-        line-height: 1.2;
+        font-size: 1.2rem !important;   /* Fonte bem menor para caber no quadrado */
+       
     }
     .cta-blue-box {
         flex: 0 0 50% !important; /* Ocupa metade do espaço */
+        border-radius: 10px;
     }
     .brand-banner p {
          font-size: 0.7rem!important;
@@ -338,7 +439,7 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     align-items: center;
     justify-content: center;
     padding: 30px;
-    border-right: 20px solid #F4F4F4;
+    border-right: 20px solid #D5D5D5;
 }
 .cta-blue-box h2 {
     font-family: 'Avenir LT Std', sans-serif;
@@ -346,14 +447,14 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     color: white;
     font-size: 2rem;
     text-align: center;
-    line-height: 1.2;
+    
 }
 
 /* Grid Produtos */
 .products-grid-container {
     flex: 1;
     display: flex;
-    padding: 20px 0;
+    padding: 0px 0;
 }
 
 .product-card {
@@ -365,30 +466,30 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
     justify-content: flex-start;
     padding: 20px;
     text-align: center;
-    border-right: 20px solid #F4F4F4;
+    border-right: 20px solid #D5D5D5;
 }
 .product-card.no-border {
     border-right: none;
 }
 
 .product-img {
-    width: 80%;
+    width: 90%;
     height: auto;
-    max-height: 250px;
+    max-height: 320px;
     object-fit: contain;
-    margin-bottom: 20px;
+
 }
 .product-title {
     font-family: 'Avenir LT Std', sans-serif;
     font-weight: 900;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #000;
     margin-bottom: 5px;
 }
 .product-sku {
     font-family: 'Avenir LT Std', sans-serif;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: #000;
 }
 /* =========================================
@@ -467,5 +568,8 @@ p { font-size: 1.5rem; line-height: 1.5; opacity: 0.95; max-width: 100%; margin:
 
     .social-img {
         width: 150px;
+    }
+    .product-sku {
+        font-size: 0.9rem;
     }
 }
