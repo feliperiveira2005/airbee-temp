@@ -229,6 +229,7 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
    6. MEDIA QUERY MOBILE (TODOS OS AJUSTES)
    ========================================= */
 @media (max-width: 768px) {
+    
     .bottom-center { bottom: 0px;
     } 
     /* --- CONTROLE DE EXIBIÇÃO GERAL --- */
@@ -247,8 +248,8 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     .logo-wrapper { left: 20%; }
     .logo { width: 130px; }
     .content {
-        width: 100%; padding-top: 80px; padding-left: 30px; padding-right: 20px; height: 738px;
-        align-items: flex-start !important; justify-content: flex-start !important; text-align: center !important;
+        width: 100%; padding-top: 80px; padding-left: 50px; padding-right: 5px; height: 738px;margin-top: -40px;
+        align-items: flex-end !important; justify-content: flex-start !important; text-align: center !important;
     }
     .text-block { 
         max-width: 60%; margin-left: 0; padding: 0; align-items: flex-start !important; text-align: center !important;
@@ -257,8 +258,8 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     .line-detail { width: 25px; }
     .line-1 { top: -15px; left: -0px; }
     .line-2 { top: 29px; right: -0px; }
-    p { font-size: 1.1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
-    .round-image { margin-top: 180px; margin-left: 0; align-self: center; width: 280px; height: 280px; }
+    p { font-size: 1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
+    .round-image { margin-top: 250px; margin-left: -300px; align-self: center; width: 300px; height: 300px; }
 
     /* --- 2. FEATURES --- */
     .features-row { flex-direction: column; margin-top: 0; gap: 0px; }
