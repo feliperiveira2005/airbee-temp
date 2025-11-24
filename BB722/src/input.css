@@ -1,9 +1,9 @@
 /* =========================================
    1. FONTES E RESET GERAL
    ========================================= */
-   b{
+b {
     font-weight: 900;
-   }
+}
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('./fonts/AvenirLTStd-Light.otf') format('opentype');
@@ -16,8 +16,6 @@
     font-weight: 300;
     font-style: italic;
 }
-
-/* --- Avenir LT Std: Book / Regular (Peso 400) --- */
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('./fonts/AvenirLTStd-Book.otf') format('opentype');
@@ -30,14 +28,10 @@
     font-weight: 400;
     font-style: italic;
 }
-
-/* --- Avenir LT Std: Roman / Oblique (Alternativa ao Peso 400) --- */
-/* Nota: Roman e Book geralmente competem pelo peso 400. 
-   O navegador usará o último declarado se houver conflito. */
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('./fonts/AvenirLTStd-Roman.otf') format('opentype');
-    font-weight: 400; /* Ou 400 */
+    font-weight: 400;
     font-style: normal;
 }
 @font-face {
@@ -46,8 +40,6 @@
     font-weight: 400;
     font-style: italic;
 }
-
-/* --- Avenir LT Std: Medium (Peso 500) --- */
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('./fonts/AvenirLTStd-Medium.otf') format('opentype');
@@ -60,8 +52,6 @@
     font-weight: 500;
     font-style: italic;
 }
-
-/* --- Avenir LT Std: Heavy (Peso 800) --- */
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('./fonts/AvenirLTStd-Heavy.otf') format('opentype');
@@ -74,8 +64,6 @@
     font-weight: 800;
     font-style: italic;
 }
-
-/* --- Avenir LT Std: Black (Peso 900) --- */
 @font-face {
     font-family: 'Avenir LT Std';
     src: url('./fonts/AvenirLTStd-Black.otf') format('opentype');
@@ -88,21 +76,19 @@
     font-weight: 900;
     font-style: italic;
 }
-
-/* --- Outras Fontes --- */
 @font-face {
     font-family: 'Lets Be Glyphs';
     src: url('./fonts/LetsBeGlyphs-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'Lets Be Glyphs Bouncy';
     src: url('./fonts/LetsBeGlyphs-Bouncy.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { width: 100%; height: 100%; overflow-x: hidden; }
 body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
@@ -226,12 +212,51 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
 
 
 /* =========================================
+   AJUSTES PARA LAPTOP (Entre 769px e 1366px)
+   Redução de alturas e fontes excessivas
+   ========================================= */
+@media (min-width: 769px) and (max-width: 1366px) {
+    /* Banner */
+    .banner-container {
+        height: auto !important;
+        min-height: 650px;
+        max-height: 800px;
+    }
+    .content {
+        padding-top: 100px;
+        width: 45%;
+    }
+    h1 { font-size: 3rem; }
+    .text-block p { font-size: 1.2rem; }
+
+    /* Features */
+    .feature-box {
+        height: 600px !important; /* Sobrescreve o 900px do desktop grande */
+    }
+
+    /* Mosaico - Sobrescrevendo estilos inline */
+    .mosaic-col > .mosaic-item {
+        height: 600px !important;
+        min-height: auto;
+    }
+    .split-row {
+        height: 290px;
+    }
+    .side-text { font-size: 1.2rem; }
+
+    /* 4 Colunas */
+    .col-item { height: 350px; }
+    .overlay-text.top-center { font-size: 1.4rem; }
+    .overlay-text.bottom-center { font-size: 1rem; }
+}
+
+
+/* =========================================
    6. MEDIA QUERY MOBILE (TODOS OS AJUSTES)
    ========================================= */
 @media (max-width: 768px) {
     
-    .bottom-center { bottom: 0px;
-    } 
+    .bottom-center { bottom: 0px; } 
     /* --- CONTROLE DE EXIBIÇÃO GERAL --- */
     .only-desktop { display: none !important; }
     
@@ -244,22 +269,33 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     }
 
     /* --- 1. BANNER --- */
-    .banner-container { height: 100vh; }
+    .banner-container { height: 100vh; min-height: 600px; /* Garante altura mínima */ }
     .logo-wrapper { left: 20%; }
     .logo { width: 130px; }
     .content {
-        width: 100%; padding-top: 80px; padding-left: 50px; padding-right: 5px; height: 738px;margin-top: -40px;
-        align-items: flex-end !important; justify-content: flex-start !important; text-align: center !important;
+        width: 100%; padding-top: 90px; padding-left: 20px; padding-right: 20px; height: auto; margin-top: 0;
+        align-items: center !important; justify-content: flex-start !important; text-align: center !important;
     }
     .text-block { 
-        max-width: 60%; margin-left: 0; padding: 0; align-items: flex-start !important; text-align: center !important;
+        max-width: 100%; margin-left: 0; padding: 0; align-items: center !important; text-align: center !important;
     }
-    h1 { font-size: 2.2rem; text-align: center !important; }
+    h1 { font-size: 2.2rem; text-align: center !important; line-height: 1.1; }
     .line-detail { width: 25px; }
-    .line-1 { top: -15px; left: -0px; }
-    .line-2 { top: 29px; right: -0px; }
-    p { font-size: 1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
-    .round-image { margin-top: 250px; margin-left: -300px; align-self: center; width: 300px; height: 300px; }
+    .line-1 { top: -15px; left: -10px; }
+    .line-2 { top: 29px; right: -10px; }
+    p { font-size: 1rem; text-align: center !important; margin: 10px 0 !important; line-height: 1.4; }
+    
+    /* Imagem da criança no mobile */
+    .round-image { 
+        margin-top: 20px; 
+        margin-left: 0; 
+        align-self: center; 
+        width: 80%; 
+        height: auto; 
+        max-width: 300px;
+        position: relative;
+        top: auto; left: auto; right: auto; bottom: 50px; /* Ajuste posicional */
+    }
 
     /* --- 2. FEATURES --- */
     .features-row { flex-direction: column; margin-top: 0; gap: 0px; }
@@ -271,8 +307,8 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     /* --- 3. MOSAICO MOBILE --- */
     .mobile-pair-row {
         display: flex;
-        flex-direction: row; /* Força lado a lado */
-        gap: 15px;
+        flex-direction: row;
+        gap: 10px;
         width: 100%;
         height: 250px;
     }
@@ -284,18 +320,16 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     }
     .mobile-full-item {
         width: 100%;
-        height: 400px !important;
+        height: 350px !important; /* Altura ajustada */
         background-position: top center;
     }
     .mobile-font-adjust {
-        font-size: 0.7rem !important; 
-         padding: 0px;
-        padding-block: 7px !important;
-        
-      
+        font-size: 0.85rem !important; /* Levemente maior para leitura */
+        padding: 10px;
+        line-height: 1.2;
     }
 
-    /* --- 4. PARTE FINAL (4 Colunas viram pares + Banner meio) --- */
+    /* --- 4. PARTE FINAL --- */
     .final-rows-mobile {
         display: flex;
         flex-direction: column;
@@ -305,7 +339,7 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     }
     .middle-banner {
         width: 100%;
-        min-height: 400px;
+        min-height: auto;
         position: relative;
         overflow: hidden;
     }
@@ -313,11 +347,11 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
         width: 100%;
         height: auto;
         display: block;
-        object-fit: contain;
+        object-fit: cover;
     }
     .col-item {
         flex: 1;
-        height: 100%; /* Herda do pai */
+        height: 100%;
         width: 50%;
     }
     .overlay-text.top-center {
@@ -326,12 +360,10 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     }
 
     /* --- 5. PRODUTOS (CORREÇÃO DE LAYOUT) --- */
-    /* Remove bordas cinzas do desktop */
     .cta-blue-box, .product-card {
          border-right: 0px !important; 
     }
     
-    /* Container dos produtos mobile */
     .products-section-mobile {
         display: flex;
         flex-direction: column;
@@ -340,7 +372,6 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
         margin-bottom: 30px;
     }
 
-    /* Ajuste do CTA Azul Mobile */
     .mobile-cta-size {
         width: 100%;
         min-height: 200px;
@@ -350,57 +381,80 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
         font-size: 1.5rem;
     }
 
-    /* Produto 1 (Sozinho) */
     .mobile-single-card {
         width: 100%;
         align-items: center;
     }
 
-    /* --- AQUI ESTÁ A CORREÇÃO PRINCIPAL --- */
-    /* Força a linha dos produtos 2 e 3 a ficarem lado a lado */
+    /* Ajuste produtos lado a lado */
     .mobile-product-pair-row {
-        display: flex !important; /* Importante para sobrescrever comportamento padrão */
-        flex-direction: row !important; /* Garante linha */
-        gap: 15px;
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 10px;
         justify-content: space-between;
         width: 100%;
+        align-items: stretch; /* Garante mesma altura */
     }
 
-    /* Ajuste dos cards pares */
     .mobile-pair-card {
-        flex: 1; /* Divide espaço */
-        width: 48%; /* Garante largura */
-        padding: 10px !important;
+        flex: 1;
+        width: 48%;
+        padding: 15px 5px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .mobile-pair-card .product-img {
-        max-height: 120px; /* Imagem menor para não quebrar */
-        width: 100%;
+        max-height: 100px;
+        width: auto;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
     .mobile-pair-card h3 {
-        font-size: 0.8rem; /* Fonte menor */
+        font-size: 0.85rem;
+        line-height: 1.2;
     }
-    /* AJUSTE DO BLOCO AZUL QUANDO FICA PEQUENO (LADO A LADO) */
+    
     .blue-mobile-adjust {
-        padding: 10px !important;       /* Menos padding para caber o texto */
+        padding: 15px !important;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #6EC6E8;      /* Garante a cor azul */
-        height: auto !important;        /* Deixa a altura se ajustar ao vizinho */
+        background-color: #6EC6E8;
+        height: auto !important;
     }
 
     .blue-mobile-adjust h2 {
-        font-size: 1.2rem !important;   /* Fonte bem menor para caber no quadrado */
-       
+        font-size: 1.1rem !important;
+        margin: 0;
     }
     .cta-blue-box {
-        flex: 0 0 50% !important; /* Ocupa metade do espaço */
-        border-radius: 10px;
+        flex: 1 !important; /* Ajuste para flexível */
+        border-radius: 8px;
     }
     .brand-banner p {
-         font-size: 0.7rem!important;
+         font-size: 0.8rem!important;
+         padding: 0 10px;
     }
 
+    /* Footer Mobile */
+    .main-footer {
+        padding: 40px 20px;
+    }
+    .footer-logo {
+        width: 220px; /* Reduzido para caber melhor */
+    }
+    .footer-text p, 
+    .footer-text a {
+        font-size: 0.9rem;
+    }
+    .social-img {
+        width: 150px;
+    }
+    .product-sku {
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
 }
 
 /* =========================================
@@ -493,6 +547,7 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     font-size: 1.4rem;
     color: #000;
 }
+
 /* =========================================
    ESTILOS DO RODAPÉ (FOOTER)
    ========================================= */
@@ -548,29 +603,4 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     font-weight: 400;
     font-size: 0.9rem;
     opacity: 0.9;
-}
-
-/* =========================================
-   AJUSTES RODAPÉ MOBILE
-   ========================================= */
-@media (max-width: 768px) {
-    .main-footer {
-        padding: 40px 20px;
-    }
-    
-    .footer-logo {
-        width: 300px; /* Um pouco menor no celular */
-    }
-
-    .footer-text p, 
-    .footer-text a {
-        font-size: 0.9rem;
-    }
-
-    .social-img {
-        width: 150px;
-    }
-    .product-sku {
-        font-size: 0.9rem;
-    }
 }
