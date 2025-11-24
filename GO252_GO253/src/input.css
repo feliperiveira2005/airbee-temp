@@ -44,12 +44,18 @@ body {
   font-size: 26px;
   font-weight: 400;
   color: #2F2F2F;
+  
+}
+#d1txt{
   margin-left: 3rem;
 }
 @media screen and (max-width: 768px) {
+  #d1txt{
+  margin-left: 1rem;
+}
   .ep-lamina .feature__description {
     font-size: 16px;
-    margin-left: 1rem;
+   
   }
 }
 .ep-lamina .image {
@@ -132,6 +138,7 @@ body {
     max-width: 100%;
   }
 }
+
 .ep-lamina .dobra-01 .feature__content {
   color: #fff;
   display: flex;
@@ -141,12 +148,27 @@ body {
   border-radius: 59px;
   background: rgba(255, 130, 0, 0.631372549);
   padding: 0 50px;
-  padding-top: 300px;
+  padding-top: 250px;
   padding-bottom: 88px;
   margin-top: -200px;
   margin-left: 200px;
 }
+#sku{
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 10px!important;
+  padding-bottom: 10px;
+}
+#mobile{
+  display: none;
+}
 @media screen and (max-width: 768px) {
+  #mobile{
+  display: block;
+}
+#sku{
+  display: none;
+}
   .ep-lamina .dobra-01 .feature__content {
     max-width: 320px;
     border-radius: 22px;
@@ -190,7 +212,7 @@ body {
   max-width: 500px;
   font-size: 54px;
   font-weight: 400;
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   line-height: 100%;
   color: #fff;
 }
@@ -294,7 +316,7 @@ body {
 }
 @media screen and (max-width: 991px) {
   .ep-lamina .dobra-02 .feature__content .card .feature__description {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .ep-lamina .dobra-02 .feature__content .card:nth-child(1) .feature__description {
@@ -325,10 +347,10 @@ body {
   max-width: 250px;
 }
 .ep-lamina .dobra-02 .feature__content .card:nth-child(4) .feature__description {
-  max-width: 150px;
+  max-width: 250px;
 }
 .ep-lamina .dobra-02 .feature__content .card:last-child .feature__description {
-  max-width: 210px;
+  max-width: 250px;
 }
 .ep-lamina .dobra-flex-column {
   padding-top: 0;
@@ -889,4 +911,227 @@ body {
   .ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description {
     font-size: 10px;
   }
-}/*# sourceMappingURL=input.css.map */
+}
+.only-desktop {
+  display: flex !important;
+}
+.only-mobile {
+  display: none !important;
+}
+@media screen and (max-width: 768px) {
+  .only-desktop {
+  display: none !important;
+}
+.only-mobile {
+  display: block !important;
+}
+}
+@media screen and (max-width: 768px) {
+    /* Selecionamos especificamente a feature__content DENTRO da dobra-02 que é only-mobile */
+    .ep-lamina .dobra-02.only-mobile .feature__content {
+        display: flex !important;       /* Desativa o Grid e usa Flex */
+        justify-content: center;        /* Centraliza o item horizontalmente */
+        align-items: center;            /* Centraliza verticalmente se necessário */
+        grid-template-columns: none;    /* Remove a divisão em 2 colunas */
+        width: 100%;
+        margin-top: -20px;
+    }
+    
+    /* Garantir que o card não tente esticar de forma estranha */
+    .ep-lamina .dobra-02.only-mobile .feature__content .card {
+        margin: 0 auto; /* Reforça a centralização */
+    }
+}
+/* --- CONFIGURAÇÃO GERAL DA SEÇÃO --- */
+.dobra-receitas {
+    padding: 50px 0;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.dobra-receitas .feature__content {
+    display: grid;
+    /* Define 2 colunas: A esquerda (produto) ocupa mais espaço, a direita (texto/comida) menos */
+    grid-template-columns: 1.2fr 0.8fr; 
+    /* Define áreas nomeadas para facilitar o posicionamento */
+    grid-template-areas: 
+        "produto texto"
+        "produto comida";
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+/* --- ESTILO DO TEXTO --- */
+.dobra-receitas .receitas__texto {
+    grid-area: texto;
+    text-align: right; /* Alinhado à direita no Desktop */
+    justify-self: end;
+    margin-bottom: 20px;
+}
+
+.dobra-receitas .receitas__texto p {
+    font-family: "elza", sans-serif;
+    font-weight: 700; /* Negrito conforme a imagem */
+    font-size: 28px;
+    line-height: 1.2;
+    color: #FF8200; /* Laranja da sua identidade */
+    margin: 0;
+}
+
+/* --- ESTILO DO PRODUTO (AIR FRYER) --- */
+.dobra-receitas .receitas__produto {
+    grid-area: produto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.dobra-receitas .receitas__produto img {
+    width: 100%;
+    max-width: 600px; /* Limite para não ficar gigante */
+    height: auto;
+    display: block;
+}
+
+/* --- ESTILO DAS COMIDAS (IMAGEM ÚNICA) --- */
+.dobra-receitas .receitas__comidas {
+    grid-area: comida;
+    display: flex;
+    justify-content: flex-end; /* Alinha a imagem à direita */
+}
+
+.dobra-receitas .receitas__comidas img {
+    width: 100%;
+    max-width: 350px; /* Ajuste conforme a largura real da sua imagem de comidas */
+    height: auto;
+    border-radius: 20px; /* Arredondamento conforme a imagem */
+}
+
+/* --- VERSÃO MOBILE (Até 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    .dobra-receitas .feature__content {
+        display: flex; /* Muda de Grid para Flex */
+        flex-direction: column; /* Um item embaixo do outro */
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    /* 1. O Texto aparece primeiro */
+    .dobra-receitas .receitas__texto {
+        order: 1;
+        text-align: center; /* Centraliza o texto no mobile */
+        justify-self: center;
+        margin-bottom: 0;
+    }
+    
+    .dobra-receitas .receitas__texto p {
+        font-size: 20px; /* Fonte um pouco menor no mobile */
+    }
+
+    /* 2. O Produto aparece em segundo */
+    .dobra-receitas .receitas__produto {
+        order: 2;
+        justify-content: center;
+    }
+    
+    .dobra-receitas .receitas__produto img {
+        max-width: 280px; /* Tamanho da Air Fryer no mobile */
+    }
+
+    /* 3. As comidas aparecem por último */
+    .dobra-receitas .receitas__comidas {
+        order: 3;
+        justify-content: center;
+    }
+
+    .dobra-receitas .receitas__comidas img {
+        max-width: 100%; /* Ocupa a largura disponível se necessário */
+    }
+}
+/* --- CONFIGURAÇÃO DA DOBRA --- */
+.dobra-03 {
+    padding: 200px 0!important;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dobra-03 .feature__content {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative; /* Necessário para posicionar o texto absoluto dentro dele */
+   
+}
+
+/* Classe utilitária para as imagens ocuparem o espaço correto */
+.dobra-03 .img-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 1920px; /* Limite de largura no desktop para não ficar gigante */
+    margin: 0 auto;   /* Centraliza a imagem */
+}
+
+/* --- ESTILO DO TEXTO --- */
+.dobra-03 .receitas__texto p {
+    font-family: "elza", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #FF8200;
+    margin: 0;
+}
+
+/* --- COMPORTAMENTO DESKTOP (acima de 768px) --- */
+@media screen and (min-width: 769px) {
+    .dobra-03 .receitas__texto {
+        position: absolute;
+        top: 0;
+        right: 20px; /* Ajuste para alinhar com a lateral direita */
+        text-align: right;
+        z-index: 2; /* Garante que o texto fique por cima se encostar na imagem */
+        width: 100%;
+        max-width: 1200px; /* Garante que o texto respeite a largura do container */
+    }
+    
+    /* Um pequeno ajuste para garantir que o texto fique na posição da coluna da direita */
+    .dobra-03 .receitas__texto p {
+        /* Empurra o texto para a direita, alinhando visualmente com a parte das comidas */
+        margin-right: 2%; 
+      
+    }
+}
+
+/* --- COMPORTAMENTO MOBILE (até 768px) --- */
+@media screen and (max-width: 768px) {
+    .dobra-03 .feature__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dobra-03 .receitas__texto {
+        position: static; /* Remove o posicionamento absoluto */
+        text-align: right;
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+
+    .dobra-03 .receitas__texto p {
+        font-size: 20px; /* Texto menor no mobile */
+    }
+
+    .dobra-03 .img-full {
+        max-width: 400px; /* Tamanho controlado no mobile */
+    }
+    .dobra-03 {
+    padding: 00px 0!important;
+}
+
+}
