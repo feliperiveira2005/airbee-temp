@@ -248,7 +248,7 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     .logo-wrapper { left: 20%; }
     .logo { width: 130px; }
     .content {
-        width: 100%; padding-top: 80px; padding-left: 50px; padding-right: 5px; height: 738px;
+        width: 100%; padding-top: 80px; padding-left: 50px; padding-right: 5px; height: 738px;margin-top: -40px;
         align-items: flex-end !important; justify-content: flex-start !important; text-align: center !important;
     }
     .text-block { 
@@ -258,7 +258,7 @@ p { font-size: 1.5rem;  opacity: 0.95; max-width: 100%; margin: 0 auto; }
     .line-detail { width: 25px; }
     .line-1 { top: -15px; left: -0px; }
     .line-2 { top: 29px; right: -0px; }
-    p { font-size: 1.1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
+    p { font-size: 1rem; text-align: center !important; margin: 0 !important; margin-bottom: 0px !important; }
     .round-image { margin-top: 180px; margin-left: 0; align-self: center; width: 280px; height: 280px; }
 
     /* --- 2. FEATURES --- */
