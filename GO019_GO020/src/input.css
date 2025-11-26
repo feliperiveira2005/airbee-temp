@@ -178,14 +178,14 @@ body {
 #mobile { display: none; }
 
 /* Responsivo Dobra 01 */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     .ep-lamina .dobra-01 {
         padding: 0;
         border-radius: 0 0 20px 20px;
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .mais { margin-left: -1rem; }
     #d1txt { margin-left: 1rem; }
     #mobile { display: block; }
