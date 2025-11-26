@@ -1,0 +1,291 @@
+/* =========================================
+   1. FONTES E RESET GERAL
+   ========================================= */
+b {
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-LightOblique.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-BookOblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Roman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Oblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-MediumOblique.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Heavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-HeavyOblique.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-BlackOblique.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Lets Be Glyphs';
+    src: url('./fonts/LetsBeGlyphs-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lets Be Glyphs Bouncy';
+    src: url('./fonts/LetsBeGlyphs-Bouncy.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow-x: hidden; }
+body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
+
+/* Utilitários de Visibilidade */
+.only-desktop { display: flex; } 
+.only-mobile { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+.dobra-fisher {
+    width: 100%;
+    background-color: #00B4A7; /* Cor Teal aproximada da imagem */
+    position: relative;
+    overflow: hidden; /* Para cortar círculos que vazem */
+    font-family: "Georgia", serif; /* Fonte serifada similar à imagem */
+}
+
+/* Container do Conteúdo (Centralizado) */
+.dobra-fisher .fp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo Fisher-Price (Canto Superior Direito) */
+.dobra-fisher .fp-brand-tag {
+    position: absolute;
+    top: 0;
+    right: 20px; /* Ajuste conforme necessidade */
+    z-index: 10;
+    width: 120px;
+}
+
+.dobra-fisher .fp-brand-tag img {
+    width: 100%;
+    display: block;
+}
+
+/* Tipografia */
+.dobra-fisher .fp-title {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* --- VERSÃO DESKTOP (> 768px) --- */
+@media screen and (min-width: 769px) {
+    
+    .dobra-fisher {
+        padding: 80px 0; /* Espaço vertical */
+    }
+
+    .dobra-fisher .fp-container {
+        display: grid;
+        grid-template-columns: 45% 55%; /* Texto na esq, Imagens na dir */
+        align-items: center;
+        min-height: 500px; /* Altura mínima para ficar imponente */
+    }
+
+    /* Ajuste do Texto */
+    .dobra-fisher .fp-title {
+        font-size: 48px;
+        position: relative;
+        z-index: 5;
+    }
+
+    /* Área Visual (Direita) */
+    .dobra-fisher .fp-visual-col {
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Foto da Mãe (Círculo Grande) */
+    .dobra-fisher .fp-mom-photo {
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid rgba(255,255,255,0.1); /* Borda sutil opcional */
+        position: relative;
+        right: -50px; /* Puxa um pouco para a direita para cortar na tela se quiser */
+    }
+
+    .dobra-fisher .fp-mom-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Produto Flutuante */
+    .dobra-fisher .fp-product-float {
+        position: absolute;
+        left: 0; /* Fica à esquerda da coluna visual, sobrepondo o texto e a mãe */
+        bottom: -20px;
+        width: 280px;
+        z-index: 6; /* Fica na frente de tudo */
+        filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2));
+    }
+
+    .dobra-fisher .fp-product-float img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Elemento decorativo (Círculo Branco atrás do produto) */
+    .dobra-fisher .fp-circle-deco {
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background-color: #fff;
+        border-radius: 50%;
+        left: -40px;
+        bottom: -60px;
+        z-index: 1; /* Atrás do produto */
+    }
+}
+
+/* --- VERSÃO MOBILE (<= 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    .dobra-fisher .fp-container {
+        display: flex;
+        flex-direction: column;
+        padding-top: 0; /* Remove padding do topo para imagem encostar se quiser */
+    }
+
+    /* Logo no mobile pode ser menor */
+    .dobra-fisher .fp-brand-tag {
+        width: 90px;
+        right: 15px;
+    }
+
+    /* 1. Área Visual no Topo */
+    .dobra-fisher .fp-visual-col {
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Foto da Mãe */
+    .dobra-fisher .fp-mom-photo {
+        width: 100%;
+        /* Truque para criar o arco inferior se a imagem for quadrada */
+        border-radius: 0 0 50% 50% / 0 0 20% 20%; 
+        overflow: hidden;
+        mask-image: radial-gradient(circle at center bottom, transparent 0, black 0); /* Opcional */
+    }
+    
+    /* Na imagem de referência mobile, a foto é um recorte arredondado simples ou ocupa o topo */
+    .dobra-fisher .fp-mom-photo img {
+        width: 100%;
+        height: auto;
+        border-radius: 0 0 150px 150px; /* Arredonda embaixo */
+        display: block;
+    }
+
+    /* 2. Texto vem depois */
+    .dobra-fisher .fp-text-col {
+        padding: 0 20px;
+        margin-bottom: 80px; /* Espaço para o produto não cobrir o texto */
+    }
+
+    .dobra-fisher .fp-title {
+        font-size: 28px;
+        text-align: left;
+    }
+
+    /* 3. Produto no canto inferior direito */
+    .dobra-fisher .fp-product-float {
+        position: absolute;
+        bottom: -20px;
+        right: 0;
+        width: 180px;
+        z-index: 10;
+    }
+
+    .dobra-fisher .fp-product-float img {
+        width: 100%;
+    }
+
+    /* Círculo decorativo branco no mobile */
+    .dobra-fisher .fp-circle-deco {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: #fff; /* Ou anel branco: border: 15px solid #fff; background: transparent; */
+        border-radius: 50%;
+        bottom: -60px;
+        right: -30px;
+        z-index: 5;
+    }
+}
