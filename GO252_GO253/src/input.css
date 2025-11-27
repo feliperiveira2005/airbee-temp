@@ -134,7 +134,7 @@ body {
     padding-top: 250px;
     padding-bottom: 88px;
     margin-top: -200px;
-    margin-left: 200px;
+    margin-left: 7%;
 }
 
 .ep-lamina .dobra-01 .feature__content .image {
@@ -165,7 +165,7 @@ body {
 
 .ep-lamina .dobra-01 .feature__content .sku__card__name {
     font-size: 44px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 /* Ajustes específicos Dobra 01 */
@@ -241,7 +241,11 @@ body {
         max-width: 100%;
     }
 }
-
+@media screen and (max-width: 400px) {
+    .ep-lamina .dobra-01 .feature__content {
+        margin-left: -100px;
+    }
+}
 /* =========================================
    DOBRA 02 (Grid Icons)
    ========================================= */
@@ -385,7 +389,7 @@ body {
 
 .dobra-03 .receitas__texto p {
     font-family: "elza", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 40px;
     line-height: 1.2;
     color: #FF8200;
@@ -393,7 +397,7 @@ body {
 }
 
 /* Desktop Dobra 03 */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 950px) {
     .dobra-03 .receitas__texto {
         position: absolute;
         top: 0;
@@ -401,7 +405,7 @@ body {
         text-align: right;
         z-index: 2;
         width: 100%;
-        max-width: 1200px;
+        max-width: 30%;
     }
     
     .dobra-03 .receitas__texto p {
@@ -410,7 +414,7 @@ body {
 }
 
 /* Mobile Dobra 03 */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
     .dobra-03 {
         padding: 0px 0!important;
     }
@@ -431,13 +435,18 @@ body {
 
     .dobra-03 .receitas__texto p {
         font-size: 20px;
+        margin: 20px;
     }
 
     .dobra-03 .img-full {
         max-width: 400px;
     }
 }
-
+@media screen and (min-width: 950px) and (max-width: 1400px) {
+    .dobra-03 .receitas__texto {
+        max-width: 50%;
+    }
+}
 /* =========================================
    DOBRA "ASSA FRITA" (Imagem sobreposta)
    ========================================= */
@@ -451,7 +460,7 @@ body {
 
 .dobra-assa-frita .text-block h3 {
     font-family: "elza", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     line-height: 1.1;
     margin: 0 0 20px 0;
@@ -636,10 +645,12 @@ body {
    DOBRA 09 (Footer)
    ========================================= */
 .ep-lamina .dobra-09 {
-    margin: 30px auto;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: -2px;
     padding: 2.5% 56px;
     background-color: #0050DC;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0 ;
     width: 100%;
     max-width: 1920px;
 }
@@ -670,7 +681,7 @@ body {
 }
 
 .ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description > span {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
@@ -728,7 +739,7 @@ body {
 /* Ajustes finos de Tipografia para esta dobra */
 .dobra-potencia .feature__title {
     color: #FF8200; /* Garante o laranja */
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -745,6 +756,7 @@ body {
     }
 
     .dobra-potencia .text-container {
+        margin-top: 30px;
         text-align: center; /* Centraliza o texto no desktop */
         margin-bottom: 60px;
     }
@@ -803,7 +815,7 @@ body {
 /* Títulos e Textos Específicos desta dobra */
 .dobra-tamanho .feature__title {
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 
@@ -827,8 +839,8 @@ body {
     background-color: #FF8200;
     color: #fff;
     font-family: "elza", sans-serif;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 30px;
     padding: 10px 30px;
     border-radius: 50px; /* Formato de pílula */
     margin-top: 30px;
@@ -899,6 +911,7 @@ body {
 /* --- VERSÃO laptop --- */
 @media screen and (min-width: 800px) and (max-width: 1366px) {
 .dobra-tamanho .orange-card {
+    max-width: 100%;
     background-color: #FF8200;
     border-radius: 30px;
     padding: 15% 15% 15% 20%;
@@ -1027,7 +1040,7 @@ body {
     /* Tipografia Específica desta dobra */
     .dobra-espaco-interno .feature__title {
         color: #ffffff;
-        font-weight: 700;
+        font-weight: 600;
         font-size: 28px;
         margin-bottom: 15px;
     }
@@ -1079,9 +1092,9 @@ body {
 }
 
 .dobra-capacidade .capacity-item img {
-    width: 100%;
+    width: 110%;
     height: auto;
-    max-width: 350px; /* Limite de tamanho da imagem */
+
     margin-bottom: 25px;
     /* Caso a imagem não tenha sombra embutida, descomente abaixo: */
     /* filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); */
@@ -1089,7 +1102,7 @@ body {
 
 .dobra-capacidade .capacity-item .caption {
     font-family: "elza", sans-serif;
-    font-weight: 700; /* Negrito conforme a imagem */
+    font-weight: 600; /* Negrito conforme a imagem */
     color: #FF8200;
     font-size: 24px;
     line-height: 1.2;
@@ -1168,7 +1181,7 @@ body {
 /* Tipografia */
 .dobra-controle-temperatura .feature__title {
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 20px;
 }
 
@@ -1254,7 +1267,7 @@ body {
 /* Tipografia */
 .dobra-especificacoes .feature__title {
     color: #fff; /* Título branco no fundo laranja */
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     margin: 0;
 }
@@ -1268,7 +1281,7 @@ body {
 }
 
 .dobra-especificacoes strong {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 /* --- VERSÃO DESKTOP --- */
@@ -1303,7 +1316,7 @@ body {
     .dobra-especificacoes .specs-header-orange {
         margin-top: -100px; /* Ajuste fino para colar no topo */
         background-color: #FF8200;
-        padding: 80px 40px 60px 0;
+        padding: 220px 40px 0px 0;
         z-index: 1;
         
         /* Truque para ir até o final da tela à esquerda */
@@ -1317,7 +1330,7 @@ body {
 
     .dobra-especificacoes .feature__title {
         font-size: 42px;
-        max-width: 400px;
+        max-width: 80%;
     }
 
     .dobra-especificacoes .specs-details {
@@ -1339,14 +1352,17 @@ body {
     /* A Imagem em si */
     .dobra-especificacoes .specs-image-col img {
         /* Define que a imagem será 115% da largura da sua coluna */
-        width: 115%; 
+        width: 130%; 
         max-width: none; /* Permite que ela cresça além de 100% */
         height: auto;
         
         /* Puxa a imagem 15% para a esquerda para fazer a sobreposição */
-        margin-left: -15%; 
+        margin-left: -30%; 
         
         filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    }
+    .specs-extra{
+        margin-bottom: 300px!important;
     }
 }
 
