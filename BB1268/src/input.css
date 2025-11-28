@@ -98,194 +98,867 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 .only-mobile { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
 
-.dobra-fisher {
-    width: 100%;
-    background-color: #00B4A7; /* Cor Teal aproximada da imagem */
-    position: relative;
-    overflow: hidden; /* Para cortar círculos que vazem */
-    font-family: "Georgia", serif; /* Fonte serifada similar à imagem */
-}
+/* Utilitários */
+    .img-desktop { display: block; }
+    .img-mobile { display: none; }
 
-/* Container do Conteúdo (Centralizado) */
-.dobra-fisher .fp-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    position: relative;
-    z-index: 2;
-}
-
-/* Logo Fisher-Price (Canto Superior Direito) */
-.dobra-fisher .fp-brand-tag {
-    position: absolute;
-    top: 0;
-    right: 20px; /* Ajuste conforme necessidade */
-    z-index: 10;
-    width: 120px;
-}
-
-.dobra-fisher .fp-brand-tag img {
-    width: 100%;
-    display: block;
-}
-
-/* Tipografia */
-.dobra-fisher .fp-title {
-    color: #fff;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
-}
-
-/* --- VERSÃO DESKTOP (> 768px) --- */
-@media screen and (min-width: 769px) {
-    
-    .dobra-fisher {
-        padding: 80px 0; /* Espaço vertical */
+    :root {
+        --fp-teal: #00BFB2;
+        --fp-red: #E4002B;
+        --fp-white: #ffffff;
+        --teal-bg: #00BFB2;
+            --white-text: #ffffff;
+            --yellow-bullet: #f7d300;
+            --fp-red: #E4002B;
+            --fp-white: #ffffff;
+            --fp-bg-light: #EFF5F0; /* Cor de fundo desta seção */
+            --fp-yellow: #FFD600; /* Cor do círculo amarelo */
+            --fp-blue-circle: #4AD0E8; /* Cor do círculo azul */
     }
 
-    .dobra-fisher .fp-container {
-        display: grid;
-        grid-template-columns: 45% 55%; /* Texto na esq, Imagens na dir */
-        align-items: center;
-        min-height: 500px; /* Altura mínima para ficar imponente */
+    /* Container Principal */
+    .banner-fisher {
+        position: relative;
+        width: 100%;
+        background-color: var(--fp-teal);
+        overflow: hidden;
+        display: flex;
+        /* Por padrão (desktop) alinha no centro */
+        align-items: center; 
     }
 
-    /* Ajuste do Texto */
-    .dobra-fisher .fp-title {
-        font-size: 48px;
+    /* Logo */
+    .fp-logo {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        z-index: 10;
+        width: 200px;
+    }
+    .fp-logo img { width: 100%; display: block; }
+
+    /* Texto */
+    .banner-content {
         position: relative;
         z-index: 5;
+        color: var(--fp-white);
+    }
+    .banner-title {
+        font-family: 'Lets Be Glyphs';
+        font-weight: 400;
+        line-height: 1.1;
     }
 
-    /* Área Visual (Direita) */
-    .dobra-fisher .fp-visual-col {
+    /* Anel Branco (Adicionei a borda que faltava no seu código) */
+    .white-ring {
+        position: absolute;
+        background: transparent;
+        z-index: 4;
+    }
+
+    /* Produto */
+    .product-shot {
+        position: absolute;
+        z-index: 6;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    }
+
+    /* =========================================
+       VERSÃO DESKTOP (> 1000px)
+       ========================================= */
+    @media screen and (min-width: 1001px) {
+        .banner-fisher {
+            height: 600px;
+            justify-content: space-between;
+        }
+
+        .banner-content {
+            width: 40%;
+            padding-left: 8%;
+        }
+
+        .banner-title {
+            font-size: 48px;
+            max-width: 450px;
+        }
+
+        .banner-visuals {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            border-radius: 300px 0 0 300px; 
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .lifestyle-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+        }
+
+        .white-ring {
+            width: 400px;
+            height: 400px;
+            left: 35%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .product-shot {
+            left: 50%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+        }
+
+        .img-mobile { display: none !important; }
+    }
+
+    /* =========================================
+       VERSÃO MOBILE / TABLET (< 1000px)
+       ========================================= */
+    @media screen and (max-width: 1000px) {
+        .banner-fisher {
+            flex-direction: column;
+            height: auto;
+            min-height: 800px;
+            /* Removemos padding bottom exagerado se necessário, mas mantemos segurança */
+            padding-bottom: 20px; 
+            justify-content: flex-start; /* Alinha tudo ao topo */
+        }
+
+        /* 1. Imagem da Mãe (Visuals) */
+        /* ORDER 1: Faz a imagem subir para o topo, antes do texto */
+        .banner-visuals {
+            order: 1; 
+            width: 100%;
+            height: 400px;
+            position: relative;
+            z-index: 1;
+            border-radius: 0 0 50% 50% / 0 0 15% 15%; /* Efeito sorriso */
+            overflow: hidden;
+            background-color: #00BFB2;
+            flex-shrink: 0; /* Garante que não encolha */
+            max-width: 428px;
+        }
+
+        .lifestyle-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        /* 2. Texto */
+        /* ORDER 2: Faz o texto ficar abaixo da imagem */
+        .banner-content {
+            order: 2;
+            width: 75%; /* Ocupa apenas 55% da tela para deixar espaço pro produto na direita */
+            padding: 20px 0 0px 0px;
+            margin-left: -20px; /* Ajuste leve para centralizar */
+            text-align: left;
+            margin-top: 0; 
+        }
+
+        .banner-title {
+            font-size: 32px; /* Mantido seu tamanho */
+            margin-bottom: 10px;
+            /* Removemos max-width forçado ou ajustamos se quebrar errado */
+            width: 100%; 
+        }
+
+        /* Logo Mobile */
+        .fp-logo {
+            width: 120px;
+            right: 20px;
+            /* Mantém topo 0 relative ao container, fica em cima da foto */
+        }
+
+        /* 3. Elementos Flutuantes (Produto e Anel) */
+        /* Eles continuam absolute, mas posicionados na parte inferior */
+
+        .white-ring {
+            width: 300px;
+            height: 300px;
+            border-width: 20px; /* Garante espessura */
+            
+            /* Posicionamento */
+            bottom: -50px;
+            right: -60px;
+            top: auto; left: auto;
+            transform: none;
+        }
+
+        .product-shot {
+            width: 260px; /* Ajuste leve no tamanho para caber ao lado do texto */
+            
+            /* Posicionamento */
+            bottom: 0px; /* Sobe um pouco para alinhar com o texto */
+            right: -20px;
+            top: auto; left: auto;
+            transform: none;
+        }
+
+        .img-desktop { display: none !important; }
+        .img-mobile { display: block !important; }
+    }
+    .conteudo-embalagem-section {
+            background-color: #00BFB2;
+            position: relative;
+            width: 100%;
+            /* IMPORTANTE: overflow: hidden corta a imagem que exceder este container */
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column; /* Mobile: empilhado */
+            padding: 40px 20px 0px 20px;
+        }
+
+        /* Área de Texto */
+        .text-content {
+            text-align: center;
+            margin-bottom: 20px;
+            z-index: 2; /* Texto acima da imagem */
+            color: var(--white-text);
+        }
+
+        .text-content h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        /* Lista com Bullet Amarelo */
+        .custom-list {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .custom-list li {
+            display: flex;
+            align-items: baseline;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .custom-list li::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: var(--yellow-bullet);
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+            transform: translateY(-1px);
+        }
+
+        /* Área Gráfica (Apenas a imagem agora) */
+        .graphic-content {
+            position: relative;
+            height: 300px; /* Altura reservada no mobile */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        /* A Imagem do Produto (que já contém a borda) */
+        .product-image {
+            /* Mobile: garante que a imagem caiba no espaço sem distorcer */
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ==========================================================================
+           MEDIA QUERY PARA DESKTOP (Ex: a partir de 900px)
+           ========================================================================== */
+        @media (min-width: 1000px) {
+            .conteudo-embalagem-section {
+                flex-direction: row; /* Lado a lado */
+                align-items: center;
+                justify-content: space-between;
+                padding: 0;
+                height: 500px; /* Altura fixa para o banner desktop */
+            }
+
+            /* Ajustes de Texto Desktop */
+            .text-content {
+                text-align: left;
+                margin-bottom: 0;
+                width: 40%;
+                padding-left: 10%;
+            }
+
+            .text-content h2 { font-size: 2.5rem; font-family: 'Lets Be Glyphs'; font-weight: 400; }
+            .text-content h2 br { display: none; }
+            .custom-list li { font-size: 1.2rem; }
+
+            /* Ajustes Gráficos Desktop */
+            .graphic-content {
+                width: 60%;
+                height: 100%;
+                /* Mantém centralizado vertical e horizontalmente na direita */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .product-image {
+                /* TRUQUE PARA O DESKTOP:
+                   Forçamos a altura da imagem ser MAIOR que o container (130%).
+                   Como o container pai (.conteudo-embalagem-section) tem overflow:hidden,
+                   as bordas superior e inferior da imagem serão cortadas.
+                */
+                height: 100%; 
+                width: auto;
+                max-width: none;
+                max-height: none;
+            }
+        }
+        /* =========================================
+           SEÇÃO: SUA ESSÊNCIA
+           ========================================= */
+        .essencia-section {
+            background-color: var(--fp-bg-light);
+            padding: 40px 20px;
+            overflow: hidden; /* Evita scroll horizontal por causa das setas */
+        }
+
+        .essencia-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .essencia-header h2 {
+            font-size: 2.5rem; font-family: 'Lets Be Glyphs'; font-weight: 400;
+            
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .essencia-header p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Grid Principal de Conteúdo --- */
+        .essencia-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Imagem Central Principal */
+        .main-product-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            order: 2; /* No mobile fica no meio */
+        }
+        .main-product-center img {
+            width: 80%;
+          
+        }
+
+        /* Colunas de Features */
+        .features-col-left, .features-col-right {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .features-col-left { order: 1; } /* No mobile fica em cima */
+        .features-col-right { order: 3; } /* No mobile fica embaixo */
+
+        /* --- Itens de Feature Individuais --- */
+        .feature-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto; /* Centraliza no mobile */
+        }
+
+        .feature-bullet {
+            color: var(--fp-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .feature-text {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        /* --- Estilos das Setas (Padrão Mobile) --- */
+        .arrow-img {
+            position: absolute;
+            width: 50px;
+            /* No mobile, escondemos ou simplificamos as setas complexas, 
+               pois o fluxo vertical já é claro. Vou esconder para limpar o mobile 
+               conforme a image_10.png sugere um fluxo diferente */
+            display: none; 
+            z-index: 1;
+        }
+
+        /* --- Itens com Círculos (Highlights) --- */
+        .highlight-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 280px;
+            height: 280px;
+            margin: 20px auto;
+        }
+        .highlight-item img.product-in-circle {
+            width: 75%;
+            height: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Texto associado ao círculo */
+        .highlight-text-container {
+            text-align: center;
+            max-width: 300px;
+            margin: -10px auto 30px; /* Puxa um pouco para cima do círculo no mobile */
+        }
+        /* =========================================
+   DESKTOP (min-width: 1024px) - LAYOUT POSITION
+   ========================================= */
+@media (min-width: 1024px) {
+    .essencia-section {
+        padding: 40px 0;
+        height: 900px; /* Aumentei um pouco para caber tudo solto */
         position: relative;
+    }
+
+    .essencia-content {
+        position: relative;
+        width: 100%;
+        max-width: 1200px; /* Largura máxima da área de trabalho */
         height: 100%;
+        margin: 0 auto;
+        display: block; /* Garante que não é grid nem flex */
+    }
+
+    /* --- ITEM CENTRAL (IMAGEM) --- */
+    .main-product-center {
+        position: absolute;
+        width: 30%;
+        z-index: 2;
+        /* Centralizado na tela */
+        top: 45%; 
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+    .main-product-center img { width: 100%; }
+
+    /* CONFIG GERAL DOS ITENS */
+    .feature-item, .highlight-wrapper {
+        position: absolute; /* A MÁGICA: Libera eles para voarem */
+        z-index: 5;
+        width: 300px; /* Largura padrão dos textos */
+        margin: 0;
+        
+    }
+    
+    /* CONFIG GERAL DAS SETAS */
+    .arrow-img {
+        display: block;
+        position: absolute;
+        width: 80px;
+    }
+
+    /* =========================================================
+       COORDENADAS INDIVIDUAIS (Mude aqui para mover cada um)
+       ========================================================= */
+
+    /* --- 1. CONFORTO (Esq Topo) --- */
+    .pos-conforto {
+        top: 5%;       /* Altura */
+        left: 35%;       /* Distância da esquerda */
+    }
+    .arrow-conforto {
+        top: 30px; 
+        left: -35%;
+        transform: rotate(10deg);
+    }
+
+    /* --- 2. PRATICIDADE (Esq Meio) --- */
+    .pos-praticidade {
+        top: 30%;       /* Altura */
+        left: -4%;       /* Mais perto da borda */
+        text-align: left;
+    }
+    .arrow-praticidade {
+        top: -70%; right: 20%; 
+        width: 130px;
+    }
+
+    /* --- 3. RESISTENTE (Esq Baixo) --- */
+    .pos-resistente {
+        top: 55%;
+        left: -2%;
+        text-align: left;
+    }
+    .arrow-resistente {
+        top: 40px; right: 80px; 
+        transform: rotate(-110deg);
+    }
+
+    /* --- 4. DESIGN (Dir Topo) --- */
+    .pos-design {
+        top: 18%;       /* Altura */
+       left: 45%;
+        text-align: left;
+    }
+    .arrow-design {
+        top: 0px;
+        left: -140px;
+        transform: rotate(35deg);
+    }
+
+    /* --- 5. PORTÁTIL (Dir Meio - Círculo Amarelo) --- */
+    .pos-portatil {
+        top: 15%;       /* Altura */
+        right: 5%;      /* Colado na direita */
+        width: 450px;   /* Mais largo por causa do círculo + texto */
         display: flex;
-        justify-content: flex-end;
         align-items: center;
+        gap: 15px;
     }
-
-    /* Foto da Mãe (Círculo Grande) */
-    .dobra-fisher .fp-mom-photo {
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        overflow: hidden;
-        border: 5px solid rgba(255,255,255,0.1); /* Borda sutil opcional */
-        position: relative;
-        right: -50px; /* Puxa um pouco para a direita para cortar na tela se quiser */
+    .highlight-item { width: 500px; height: 140px; flex-shrink: 0; }
+    .pos-portatil .feature-text { text-align: left; position: relative; } /* Reset de alinhamento */
+    
+    .arrow-portatil {
+        top: -75%; left: -50px; 
+        transform: translateY(-50%) rotate(120deg);
     }
-
-    .dobra-fisher .fp-mom-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .portatil{
+        right: -50%;
+        top: 150%;
     }
-
-    /* Produto Flutuante */
-    .dobra-fisher .fp-product-float {
-        position: absolute;
-        left: 0; /* Fica à esquerda da coluna visual, sobrepondo o texto e a mãe */
-        bottom: -20px;
-        width: 280px;
-        z-index: 6; /* Fica na frente de tudo */
-        filter: drop-shadow(0 15px 30px rgba(0,0,0,0.2));
+    /* --- 6. SEGURO (Dir Baixo - Círculo Azul) --- */
+    .pos-seguro {
+        top: 50%;       /* Altura */
+        right: 22%;      /* Distância da direita */
+        width: 450px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
-
-    .dobra-fisher .fp-product-float img {
-        width: 100%;
-        height: auto;
+    .pos-seguro .feature-text { text-align: left; position: relative; }
+    .seguro{
+        left: 110%;
+        top: 60%;
     }
-
-    /* Elemento decorativo (Círculo Branco atrás do produto) */
-    .dobra-fisher .fp-circle-deco {
-        position: absolute;
-        width: 350px;
-        height: 350px;
-        background-color: #fff;
-        border-radius: 50%;
-        left: -40px;
-        bottom: -60px;
-        z-index: 1; /* Atrás do produto */
+    .arrow-seguro {
+        top: -90px;
+        left: -110px;
+        transform: rotate(90deg);
     }
 }
-
-/* --- VERSÃO MOBILE (<= 768px) --- */
-@media screen and (max-width: 768px) {
-    
-    .dobra-fisher .fp-container {
-        display: flex;
-        flex-direction: column;
-        padding-top: 0; /* Remove padding do topo para imagem encostar se quiser */
+@media (min-width: 1000px) and (max-width: 1349px) {
+   .essencia-content {
+        max-width: 900px; /* Largura máxima da área de trabalho */
+    }
+    .highlight-item img.product-in-circle {
+        width: 63%;
+    }
+        .pos-portatil {
+        top: 10%;
+        right: -5%;
+    }
+    .portatil {
+        right: -25%;
+    }
+    .arrow-portatil {
+        left: 80px;
+    }
+    .pos-seguro {
+        top: 40%;
+        right: 14%;
+    }
+        .seguro {
+        left: 90%;
+        top: 110%;
+    }
+    .arrow-seguro {
+        left: -70px;
+    }
+    .main-product-center img {
+        width: 100%;
+    }
+    .pos-praticidade {
+        top: 35%;
+        left: -8%;
+    }
+    .pos-resistente {
+                top: 68%;
+        left: -6%;
+    }
+        .arrow-resistente {
+        top: -35px;
+        right: 10px;
+        transform: rotate(200deg);
+    }
+        .pos-design {
+        top: 18%;
+        left: 42%;
+        text-align: left;
+    }
+        .pos-conforto {
+        top: 2%;
+        left: 35%;
+    }
+    .arrow-conforto {
+        top: 60px;
+    }
+}
+/* =========================================
+   MOBILE / TABLET (< 1024px) - LAYOUT POSITION
+   ========================================= */
+@media screen and (max-width: 1000px) {
+    .highlight-item img.product-in-circle {
+        width: 120%;
+    }
+    .essencia-section {
+        padding: 30px 10px;
+        background-color: var(--fp-bg-light);
+        overflow: hidden; 
     }
 
-    /* Logo no mobile pode ser menor */
-    .dobra-fisher .fp-brand-tag {
-        width: 90px;
-        right: 15px;
+    .essencia-header h2 {
+        font-size: 1.8rem;
     }
 
-    /* 1. Área Visual no Topo */
-    .dobra-fisher .fp-visual-col {
+    /* O container vira um "canvas" alto para posicionarmos as coisas */
+    .essencia-content {
         position: relative;
         width: 100%;
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* Foto da Mãe */
-    .dobra-fisher .fp-mom-photo {
-        width: 100%;
-        /* Truque para criar o arco inferior se a imagem for quadrada */
-        border-radius: 0 0 50% 50% / 0 0 20% 20%; 
-        overflow: hidden;
-        mask-image: radial-gradient(circle at center bottom, transparent 0, black 0); /* Opcional */
-    }
-    
-    /* Na imagem de referência mobile, a foto é um recorte arredondado simples ou ocupa o topo */
-    .dobra-fisher .fp-mom-photo img {
-        width: 100%;
-        height: auto;
-        border-radius: 0 0 150px 150px; /* Arredonda embaixo */
+        /* Altura fixa necessária para caber todos os itens empilhados verticalmente */
+        height: 1100px; 
+        margin-top: 20px;
         display: block;
     }
 
-    /* 2. Texto vem depois */
-    .dobra-fisher .fp-text-col {
-        padding: 0 20px;
-        margin-bottom: 80px; /* Espaço para o produto não cobrir o texto */
+    /* --- 1. PRODUTO CENTRAL (Bomba) --- */
+    /* Posicionado no terço superior */
+    .main-product-center {
+        position: absolute;
+        top: 100px; /* Empurrado para baixo para dar espaço aos textos de cima */
+        left: 60%;
+        transform: translateX(-50%);
+        width: 60%; /* Tamanho da imagem no mobile */
+        z-index: 1;
+        display: block;
+    }
+    
+    .main-product-center img {
+        width: 200px;
     }
 
-    .dobra-fisher .fp-title {
-        font-size: 28px;
+    /* CONFIG GERAL DOS ITENS (Texto + Seta) */
+    .feature-item {
+        position: absolute;
+        z-index: 5;
+        width: 45%; /* Os textos ocupam quase metade da tela cada */
+        font-size: 0.9rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+
+    .feature-text {
+        font-size: 1rem; /* Texto um pouco menor no mobile */
+    }
+
+    /* As setas precisam aparecer no mobile agora */
+    .arrow-img {
+        display: block; 
+        position: absolute;
+        width: 40px; /* Setas menores */
+    }
+
+    /* =========================================================
+       POSICIONAMENTO INDIVIDUAL (Baseado na imagem enviada)
+       ========================================================= */
+
+    /* --- A. CONFORTO (Topo Esquerda) --- */
+    .pos-conforto {
+        top: 0;
+        left: 5%;
         text-align: left;
     }
+    .arrow-conforto {
+        bottom: -40px; /* Seta aponta para baixo */
+        right: 10px;
+        transform: rotate(190deg) scaleY(-1); /* Ajuste de rotação para apontar p/ funil */
+    }
 
-    /* 3. Produto no canto inferior direito */
-    .dobra-fisher .fp-product-float {
-        position: absolute;
-        bottom: -20px;
+    /* --- B. DESIGN (Topo Direita) --- */
+    .pos-design {
+        top: 40px; /* Um pouco mais baixo que o conforto */
+        right: -8%;
+        text-align: right; /* Alinhado à direita */
+    }
+    .arrow-design {
+        bottom: -50px;
+        left: 0;
+        transform: rotate(260deg) scaleY(-1); /* Aponta para a esquerda/baixo */
+    }
+
+    /* --- C. PRATICIDADE (Meio Esquerda - Lado da garrafa) --- */
+    .pos-praticidade {
+        top: 450px; /* Altura média */
+        left: 2%;
+        text-align: left;
+    }
+    .arrow-praticidade {
+        top: -30px;
         right: 0;
-        width: 180px;
-        z-index: 10;
+                transform: rotate(337deg);
+        width: 65px;
     }
 
-    .dobra-fisher .fp-product-float img {
-        width: 100%;
+    /* --- D. RESISTENTE (Meio Direita - Lado da tampa) --- */
+    .pos-resistente {
+        top: 480px;
+        right: 2%;
+        text-align: right;
+    }
+    .arrow-resistente {
+        top: -60px;
+        left: 20px;
+        transform: rotate(101deg);
     }
 
-    /* Círculo decorativo branco no mobile */
-    .dobra-fisher .fp-circle-deco {
+    /* --- E. PORTÁTIL (Círculo Amarelo) --- */
+    .pos-portatil {
         position: absolute;
+        top: 600px; /* Abaixo do produto principal */
+        left: 30%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .pos-portatil .highlight-item {
+        width: 200px; /* Tamanho do círculo amarelo */
+        height: 200px;
+        position: relative;
+        margin-right: -40px; /* Sobrepõe levemente com o texto */
+    }
+
+    /* O texto do portátil fica à direita do círculo na imagem */
+    .pos-portatil .highlight-text-container {
+        position: relative;
+        width: 150px;
+        text-align: left;
+        margin-top: -50px; /* Sobe um pouco */
+        left: 90px;
+    }
+    
+    .portatil { /* Classe específica do container de texto */
+        position: relative;
+        right: auto; top: auto; /* Reset das posições do desktop */
+    }
+
+    .arrow-portatil {
+        top: -10px;
+        left: -55px;
+        transform: rotate(225deg);
+    }
+
+    /* --- F. SEGURO (Círculo Azul) --- */
+    .pos-seguro {
+        position: absolute;
+        top: 850px; /* Abaixo do amarelo */
+        left: 70%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse; /* Inverte: Texto na Esquerda, Círculo na Direita */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pos-seguro .highlight-item {
         width: 200px;
         height: 200px;
-        background: #fff; /* Ou anel branco: border: 15px solid #fff; background: transparent; */
-        border-radius: 50%;
-        bottom: -60px;
+        position: relative;
+        margin-left: -40px;
+    }
+
+    .pos-seguro .highlight-text-container {
+        position: relative;
+        width: 150px;
+        text-align: right; /* Texto alinhado à direita (perto do círculo) */
+        margin-top: -50px;
+        right: 60px;
+    }
+
+    .seguro { /* Classe específica do container de texto */
+        position: relative;
+        left: auto; top: auto; /* Reset */
+    }
+
+    .arrow-seguro {
+        top: 0;
         right: -30px;
-        z-index: 5;
+        left: auto; /* Reset do desktop */
+        transform: rotate(10deg) scaleX(-1); /* Aponta para o círculo azul */
+    }
+}
+/* =========================================
+   VERSÃO MOBILE / TABLET (< 1000px)
+   ========================================= */
+@media screen and (max-width: 1000px) {
+    
+    /* --- TRAVA DE LARGURA (Layout Mobile Centralizado) --- */
+    .banner-fisher,
+    .essencia-section,
+    .conteudo-embalagem-section {
+        max-width: 428px; /* Largura máxima estilo iPhone Pro Max */
+        width: 100%;      /* Ocupa 100% se a tela for menor que 428px */
+        margin-left: auto;  /* Centraliza horizontalmente */
+        margin-right: auto; /* Centraliza horizontalmente */
+    }
+    
+    /* Opcional: Cor de fundo para a "sobra" da tela no tablet */
+    body {
+        background-color:var(--fp-teal); /* Um cinza claro para não ficar tudo branco nas laterais */
+    }
+
+    /* ... O RESTO DO SEU CÓDIGO MOBILE CONTINUA AQUI ... */
+    
+    .banner-fisher {
+        flex-direction: column;
+        height: auto;
+        min-height: 800px;
+        padding-bottom: 20px; 
+        justify-content: flex-start;
+        /* IMPORTANTE: Garante que a cor de fundo do banner preencha o bloco travado */
+        background-color: var(--fp-teal); 
     }
 }
