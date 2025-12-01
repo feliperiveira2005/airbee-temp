@@ -1,0 +1,65 @@
+/* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 800px; /* Largura máxima do container */
+            margin: 0 auto;
+            background-color: #fff;
+        }
+
+        /* 1. O Banner (Imagem Inteira) */
+        .banner-full {
+            width: 100%;
+            height: auto;
+            display: block; /* Remove espaços vazios abaixo da imagem */
+            border-radius: 0 0 20px 20px; /* Opcional: arredonda a borda inferior */
+        }
+
+        /* 2. Área dos Ícones (Features) */
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap; /* Permite que os itens quebrem linha */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            gap: 40px; /* Espaço entre os itens */
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .feature-item {
+            /* Define uma largura base para os itens. 
+               40% garante que caibam 2 por linha com um pouco de folga */
+            flex: 0 1 200px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Estilização dos Ícones (Placeholder) */
+        .icon-box {
+            font-size: 3rem; /* Tamanho do ícone */
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        /* Cores específicas para imitar a imagem */
+        .icon-google { color: #EA4335; } 
+        .icon-android { color: #000; }
+
+        /* Tipografia */
+        .feature-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #000;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.4;
+        }
