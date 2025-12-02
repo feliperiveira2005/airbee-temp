@@ -809,7 +809,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
         text-align: left;
     }
     .arrow-conforto {
-        bottom: -40px; /* Seta aponta para baixo */
+        bottom: -55px; /* Seta aponta para baixo */
         right: 10px;
         transform: rotate(190deg) scaleY(-1); /* Ajuste de rotação para apontar p/ funil */
     }
