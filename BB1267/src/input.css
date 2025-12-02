@@ -1,0 +1,773 @@
+/* =========================================
+   1. FONTES E RESET GERAL
+   ========================================= */
+b {
+    font-weight: 900;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-LightOblique.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-BookOblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Roman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Oblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-MediumOblique.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Heavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-HeavyOblique.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('./fonts/AvenirLTStd-BlackOblique.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Lets Be Glyphs';
+    src: url('./fonts/LetsBeGlyphs-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lets Be Glyphs Bouncy';
+    src: url('./fonts/LetsBeGlyphs-Bouncy.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 100%; height: 100%; overflow-x: hidden; }
+body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
+
+/* Utilitários de Visibilidade */
+.only-desktop { display: flex; } 
+.only-mobile { display: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
+
+/* Utilitários */
+    .img-desktop { display: block; }
+    .img-mobile { display: none; }
+
+    :root {
+        --fp-teal: #00BFB2;
+        --fp-red: #E4002B;
+        --fp-white: #ffffff;
+        --teal-bg: #00BFB2;
+            --white-text: #ffffff;
+            --yellow-bullet: #f7d300;
+            --fp-red: #E4002B;
+            --fp-white: #ffffff;
+            --fp-bg-light: #EFF5F0; /* Cor de fundo desta seção */
+            --fp-yellow: #FFD600; /* Cor do círculo amarelo */
+            --fp-blue-circle: #4AD0E8; /* Cor do círculo azul */
+    }
+
+    /* Container Principal */
+    .banner-fisher {
+        position: relative;
+        width: 100%;
+        background-color: var(--fp-teal);
+        overflow: hidden;
+        display: flex;
+        /* Por padrão (desktop) alinha no centro */
+        align-items: center; 
+    }
+
+    /* Logo */
+    .fp-logo {
+        position: absolute;
+        top: 0;
+        right: 5%;
+        z-index: 10;
+        width: 200px;
+    }
+    .fp-logo img { width: 100%; display: block; }
+
+    /* Texto */
+    .banner-content {
+        position: relative;
+        z-index: 5;
+        color: var(--fp-white);
+    }
+    .banner-title {
+        font-family: 'Lets Be Glyphs';
+        font-weight: 400;
+        line-height: 1.1;
+    }
+
+    /* Anel Branco */
+    .white-ring {
+        position: absolute;
+        background: transparent;
+        z-index: 4;
+    }
+
+    /* Produto */
+    .product-shot {
+        position: absolute;
+        z-index: 6;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    }
+
+    /* =========================================
+       VERSÃO DESKTOP (> 1000px)
+       ========================================= */
+    @media screen and (min-width: 1001px) {
+        .banner-fisher {
+            height: 600px;
+            justify-content: space-between;
+        }
+
+        .banner-content {
+            width: 40%;
+            padding-left: 14%;
+        }
+
+        .banner-title {
+            font-size: 48px;
+            max-width: 450px;
+        }
+
+        .banner-visuals {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 55%;
+            height: 100%;
+            border-radius: 300px 0 0 300px; 
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .lifestyle-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+        }
+
+        .white-ring {
+            width: 400px;
+            height: 400px;
+            left: 35%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .product-shot {
+            left: 50%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+        }
+
+        .img-mobile { display: none !important; }
+    }
+
+    /* =========================================
+       VERSÃO MOBILE / TABLET (< 1000px)
+       ========================================= */
+    @media screen and (max-width: 1000px) {
+        .banner-fisher {
+            flex-direction: column;
+            height: auto;
+            min-height: 800px;
+            padding-bottom: 20px; 
+            justify-content: flex-start; /* Alinha tudo ao topo */
+        }
+
+        /* 1. Imagem da Mãe (Visuals) */
+        .banner-visuals {
+            order: 1; 
+            width: 100%;
+            height: 400px;
+            position: relative;
+            z-index: 1;
+            border-radius: 0 0 50% 50% / 0 0 15% 15%; /* Efeito sorriso */
+            overflow: hidden;
+            background-color: #00BFB2;
+            flex-shrink: 0;
+            max-width: 428px;
+        }
+
+        .lifestyle-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        /* 2. Texto */
+        .banner-content {
+            order: 2;
+            width: 75%;
+            padding: 20px 0 0px 0px;
+            margin-left: -20px;
+            text-align: left;
+            margin-top: 0; 
+        }
+
+        .banner-title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            width: 100%; 
+        }
+
+        /* Logo Mobile */
+        .fp-logo {
+            width: 120px;
+            right: 20px;
+        }
+
+        /* 3. Elementos Flutuantes */
+        .white-ring {
+            width: 300px;
+            height: 300px;
+            border-width: 20px; 
+            bottom: -50px;
+            right: -60px;
+            top: auto; left: auto;
+            transform: none;
+        }
+
+        .product-shot {
+            width: 260px; 
+            bottom: 0px;
+            right: -20px;
+            top: auto; left: auto;
+            transform: none;
+        }
+
+        .img-desktop { display: none !important; }
+        .img-mobile { display: block !important; }
+    }
+    .conteudo-embalagem-section {
+            background-color: #00BFB2;
+            position: relative;
+            width: 100%;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column; /* Mobile: empilhado */
+            padding: 40px 20px 0px 20px;
+        }
+
+        /* Área de Texto */
+        .text-content {
+            text-align: center;
+            margin-bottom: 20px;
+            z-index: 2; /* Texto acima da imagem */
+            color: var(--white-text);
+        }
+
+        .text-content h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        /* Lista com Bullet Amarelo */
+        .custom-list {
+            list-style: none;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .custom-list li {
+            display: flex;
+            align-items: baseline;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        /* Área Gráfica (Apenas a imagem agora) */
+        .graphic-content {
+            position: relative;
+            height: 300px; /* Altura reservada no mobile */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .product-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        /* ==========================================================================
+           MEDIA QUERY PARA DESKTOP (Ex: a partir de 900px)
+           ========================================================================== */
+        @media (min-width: 1000px) {
+            .conteudo-embalagem-section {
+                flex-direction: row; /* Lado a lado */
+                align-items: center;
+                justify-content: space-between;
+                padding: 0;
+                height: 500px; /* Altura fixa para o banner desktop */
+            }
+
+            /* Ajustes de Texto Desktop */
+            .text-content {
+                text-align: left;
+                margin-bottom: 0;
+                width: 40%;
+                padding-left: 15%;
+            }
+
+            .text-content h2 { font-size: 2.5rem; font-family: 'Lets Be Glyphs'; font-weight: 400; }
+            .text-content h2 br { display: none; }
+            .custom-list li { font-size: 1.2rem; }
+
+            /* Ajustes Gráficos Desktop */
+            .graphic-content {
+                width: 60%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .product-image {
+                height: 100%; 
+                width: auto;
+                max-width: none;
+                max-height: none;
+            }
+        }
+        /* =========================================
+           SEÇÃO: SUA ESSÊNCIA (COMUM)
+           ========================================= */
+        .essencia-section {
+            background-color: var(--fp-bg-light);
+            padding: 40px 20px;
+            overflow: hidden; 
+        }
+
+        .essencia-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .essencia-header h2 {
+            font-size: 2.5rem; font-family: 'Lets Be Glyphs'; font-weight: 400;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .essencia-header p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Grid Principal de Conteúdo --- */
+        .essencia-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Imagem Central Principal */
+        .main-product-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            order: 2; 
+        }
+        .main-product-center img {
+            width: 80%;
+        }
+
+        /* --- Itens de Feature Individuais --- */
+        .feature-item {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto; 
+        }
+
+        .feature-bullet {
+            color: var(--fp-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .feature-text {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            color: #333;
+        }
+
+        .arrow-img {
+            position: absolute;
+            width: 50px;
+            display: none; 
+            z-index: 1;
+        }
+
+        /* --- Itens com Círculos (Highlights) --- */
+        .highlight-item {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 280px;
+            height: 280px;
+            margin: 20px auto;
+        }
+        .highlight-item img.product-in-circle {
+            width: 75%;
+            height: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Texto associado ao círculo */
+        .highlight-text-container {
+            text-align: center;
+            max-width: 300px;
+            margin: -10px auto 30px;
+        }
+        
+    /* =========================================
+       DESKTOP (min-width: 1024px) - LAYOUT POSITION
+       (MANTIDO ORIGINAL CONFORME SOLICITADO)
+       ========================================= */
+@media (min-width: 1024px) {
+    .essencia-section {
+        padding: 40px 0;
+        height: 900px; 
+        position: relative;
+    }
+
+    .essencia-content {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        display: block; 
+    }
+
+    /* --- ITEM CENTRAL (IMAGEM) --- */
+    .main-product-center {
+        position: absolute;
+        width: 30%;
+        z-index: 2;
+        top: 45%; 
+        left: 30%;
+        transform: translate(-50%, -50%);
+    }
+    .main-product-center img { width: 120%; }
+
+    /* CONFIG GERAL DOS ITENS */
+    .feature-item, .highlight-wrapper {
+        position: absolute; 
+        z-index: 5;
+        width: 400px; 
+        margin: 0;
+    }
+    
+    .arrow-img {
+        display: block;
+        position: absolute;
+        width: 80px;
+    }
+
+    /* COORDENADAS DESKTOP */
+    .pos-conforto { top: 18%; left: 50%; }
+    .arrow-conforto { top: -60px; left: -35%; width: 120px; transform: rotate(40deg); }
+
+    .pos-praticidade { top: 20%; left: -5%; text-align: left; }
+    .arrow-praticidade { top: -60%; right: 15%; transform: rotate(54deg); }
+
+    .pos-resistente { top: 50%; left: -5%; text-align: left; }
+    .arrow-resistente { top: -60px; right: 0px; transform: rotate(50deg); }
+
+    .pos-design { top: 45%; left: 48%; text-align: left; }
+    .arrow-design { top: -120px; left: -80px; transform: rotate(291deg); }
+
+    /* PORTÁTIL (Desktop) */
+    .pos-portatil { top: 15%; right: 5%; width: 450px; display: flex; align-items: center; gap: 15px; }
+    .highlight-item { width: 500px; height: 140px; flex-shrink: 0; }
+    .pos-portatil .feature-text { text-align: left; position: relative; } 
+    .arrow-portatil { top: -75%; left: -50px; transform: translateY(-50%) rotate(120deg); }
+    .portatil{ right: -50%; top: 150%; }
+
+    /* SEGURO (Desktop) */
+    .pos-seguro { top: 35%; right: 0%; width: 450px; display: flex; align-items: center; gap: 15px; }
+    .pos-seguro .feature-text { text-align: left; position: relative; }
+    .seguro{ left: 70%; top: -120%; }
+    .arrow-seguro { top: 100px; left: 0px; transform: rotate(194deg); }
+}
+
+@media (min-width: 1000px) and (max-width: 1349px) {
+   .essencia-content { max-width: 900px; }
+    .highlight-item img.product-in-circle { width: 63%; }
+    .pos-portatil { top: 10%; right: -5%; }
+    .portatil { right: -25%; }
+    .arrow-portatil { left: 80px; }
+    .pos-seguro { top: 30%; right: 0%; }
+    .seguro { left: 70%; top: -90%; }
+    .arrow-seguro { left: 0px; }
+    .main-product-center img { width: 130%; }
+    .pos-praticidade { top: 20%; left: -8%; }
+    .pos-resistente { top: 58%; left: -8%; }
+    .arrow-resistente { top: -35px; right: 10px; transform: rotate(200deg); }
+    .pos-design { top: 40%; left: 40%; text-align: left; }
+    .arrow-design { left: 0px; }
+    .pos-conforto { top: 5%; left: 55%; }
+    .arrow-conforto { top: 30px; left: -45%; width: 120px; transform: rotate(344deg); }
+}
+
+/* =========================================
+   MOBILE / TABLET (< 1000px) - LAYOUT POSITION REFORMULADO
+   (Baseado na Imagem 1 fornecida)
+   ========================================= */
+@media screen and (max-width: 1000px) {
+    /* TRAVA DE LARGURA */
+    .banner-fisher, .essencia-section, .conteudo-embalagem-section {
+        max-width: 428px; 
+        width: 100%;     
+        margin-left: auto; margin-right: auto;
+    }
+    body { background-color: var(--fp-teal); }
+    .banner-fisher { background-color: var(--fp-teal); }
+
+    /* SEÇÃO ESSÊNCIA - CANVAS */
+    .essencia-section {
+        padding: 30px 10px;
+        background-color: var(--fp-bg-light);
+        overflow: hidden; 
+    }
+
+    .essencia-header h2 { font-size: 1.8rem; }
+
+    /* Container Relativo para Posicionamento Absoluto */
+    .essencia-content {
+        position: relative;
+        width: 100%;
+        height: 900px; /* Altura ajustada para caber a Imagem 1 */
+        margin-top: 20px;
+        display: block;
+    }
+
+    /* === PRODUTO CENTRAL === */
+    .main-product-center {
+        position: absolute;
+        top: 5%; /* Posicionado logo abaixo dos textos do topo */
+        left: 45%;
+        transform: translateX(-50%);
+    
+        z-index: 2;
+        display: block;
+    }
+    .main-product-center img { width: 250px; }
+
+    /* CONFIG GERAL DOS TEXTOS */
+    .feature-item {
+        position: absolute;
+        z-index: 5;
+        width: 45%; 
+        font-size: 0.9rem;
+        line-height: 1.2;
+        margin: 0;
+    }
+    .feature-text { font-size: 0.95rem; }
+    .arrow-img {
+        display: block; 
+        position: absolute;
+        width: 45px; 
+    }
+
+    /* === 1. PORTÁTIL (Topo Esquerdo) === */
+    /* No HTML, "Portátil" está na classe .pos-conforto */
+    .pos-conforto {
+        top: -20px;
+        left: 70%;
+        text-align: left;
+        
+    }
+    .arrow-conforto {
+        bottom: 0px;
+        
+        left: -45%;
+        width: 70px;
+        transform: rotate(145deg) scaleY(-1) scaleX(-1);
+    }
+
+    /* === 2. EXTRAÇÃO (Topo Direito) === */
+    /* No HTML, "Extração" está na classe .pos-design */
+    .pos-design {
+        top: 20%;
+        right: -20%;
+        text-align: left;
+        display: block; /* Garante alinhamento à direita */
+    }
+    .arrow-design {
+        bottom: 100%;
+        left: -20%;
+        transform: rotate(183deg) scaleY(-1);
+    }
+
+    /* === 3. SEGURO / BPA (Meio Esquerdo) === */
+    /* No HTML, "Seguro" está na classe .pos-praticidade */
+    .pos-praticidade {
+        top: 0%;
+        left: 0%;
+        text-align: left;
+    }
+    .arrow-praticidade {
+        top: 60px;
+        right: 40px;
+        transform: rotate(126deg);
+    }
+
+    /* === 4. COLETA (Meio Direito) === */
+    /* No HTML, "Coleta" está na classe .pos-resistente */
+    .pos-resistente {
+        top: 48%;
+        left: 30%;
+        text-align: left;
+        display: block;
+    }
+    .arrow-resistente {
+        top: -60px;
+        left: -10px;
+        transform: rotate(351deg); /* Aponta para a base/garrafa */
+    }
+
+/* === 5. CONFORTO IDEAL (Rodapé com Círculo Azul) === */
+    /* No HTML, é um wrapper .pos-seguro contendo imagem e texto */
+    .highlight-wrapper.pos-seguro {
+        position: absolute;
+        bottom: 20px; /* Um pouco de margem inferior */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        /* IMPORTANTE: column-reverse faz o texto (que vem depois no HTML) ficar ACIMA da imagem */
+        flex-direction: column-reverse; 
+        justify-content: center;
+        align-items: center;
+        gap: 60px; 
+    }
+    
+    /* Imagem do círculo azul */
+    .pos-seguro .highlight-item.highlight-blue {
+        width: 220px; /* Círculo um pouco maior para destaque */
+        height: 220px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+    
+    .pos-seguro .highlight-item img.product-in-circle {
+        width: 120%; 
+        left: -10px; /* Centraliza visualmente o produto dentro do círculo */
+    }
+
+    /* Texto "Conforto Ideal" */
+    .pos-seguro .highlight-text-container.seguro {
+        position: relative;
+        text-align: center; /* Texto centralizado */
+        width: auto;
+        margin: 0;
+        right: auto; /* Remove deslocamentos laterais anteriores */
+        margin-bottom: -30px; /* Puxa o texto para cima do círculo levemente (overlap) */
+        z-index: 10;
+    }
+    
+    /* Seta do Conforto */
+    .arrow-seguro {
+        top: 65px;
+        right: 40px;
+        transform: rotate(140deg); 
+        width: 40px;
+    }
+}
+@media screen and (max-width: 330px) {
+        .main-product-center img {
+        width: 200px;
+    }
+    .pos-design {
+        right: -12%;
+    }
+    .pos-conforto {
+        left: 65%;
+    }
+    .pos-resistente {
+        width: 200px;
+        top: 42%;
+    }
+    .banner-title {
+        font-size: 32px;
+        margin-bottom: 300px;
+    }
+
+}
