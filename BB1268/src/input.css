@@ -211,7 +211,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 
         .product-shot {
             left: 50%;
-            top: 70%;
+            top: 65%;
             transform: translate(-50%, -50%);
         }
 
@@ -342,21 +342,11 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
         .custom-list li {
             display: flex;
             align-items: baseline;
-            font-size: 1rem;
+            font-size: 1.2rem;
             line-height: 1.4;
         }
 
-        .custom-list li::before {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: var(--yellow-bullet);
-            border-radius: 50%;
-            margin-right: 10px;
-            flex-shrink: 0;
-            transform: translateY(-1px);
-        }
+       
 
         /* Área Gráfica (Apenas a imagem agora) */
         .graphic-content {
@@ -400,7 +390,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 
             .text-content h2 { font-size: 2.5rem; font-family: 'Lets Be Glyphs'; font-weight: 400; }
             .text-content h2 br { display: none; }
-            .custom-list li { font-size: 1.2rem; }
+            .custom-list li { font-size: 1.4rem; }
 
             /* Ajustes Gráficos Desktop */
             .graphic-content {
@@ -554,7 +544,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
     .essencia-content {
         position: relative;
         width: 100%;
-        max-width: 1200px; /* Largura máxima da área de trabalho */
+        max-width: 1250px; /* Largura máxima da área de trabalho */
         height: 100%;
         margin: 0 auto;
         display: block; /* Garante que não é grid nem flex */
@@ -654,7 +644,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
         transform: translateY(-50%) rotate(120deg);
     }
     .portatil{
-        right: -50%;
+        right: -40%;
         top: 150%;
     }
     /* --- 6. SEGURO (Dir Baixo - Círculo Azul) --- */
@@ -789,6 +779,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 
     .feature-text {
         font-size: 1rem; /* Texto um pouco menor no mobile */
+        text-align: left;
     }
 
     /* As setas precisam aparecer no mobile agora */
@@ -924,10 +915,10 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
     }
 
     .arrow-seguro {
-        top: 0;
+        top: -20px;
         right: -30px;
-        left: auto; /* Reset do desktop */
-        transform: rotate(10deg) scaleX(-1); /* Aponta para o círculo azul */
+        left: auto;
+        transform: rotate(239deg) scaleX(-1) scaley(-1);
     }
 }
 /* =========================================
