@@ -1,65 +1,667 @@
-/* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+/* --- CONFIGURAÇÃO DA FONTE ELZA (LOCAL) --- */
 
-        .container {
-            max-width: 800px; /* Largura máxima do container */
-            margin: 0 auto;
-            background-color: #fff;
-        }
 
-        /* 1. O Banner (Imagem Inteira) */
+    /* --- GERAL --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'elza', sans-serif; 
+    }
+
+    .site-root {
+        background-color: #fff;
+    }
+
+    .container {
+        max-width: 1920px;
+        margin: 0 auto;
+        background-color: #fff;
+    }
+
+    /* --- NOVO BANNER KID PAD (COM MARGEM) --- */
+    .kidpad-wrapper {
+        width: 100%;
+        /* Aqui está a margem branca ao redor do bloco laranja */
+        padding: 20px; 
+        background-color: #fff;
+    }
+
+    .kidpad-box {
+        background-color: #FE7837; /* Laranja solicitado */
+        width: 100%;
+        /* Altura mínima para garantir destaque */
+        min-height: 250px; 
+        border-radius: 20px; /* Bordas arredondadas */
+        
+        /* Centralizar a logo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .kidpad-logo {
+        max-width: 300px; /* Tamanho máximo da logo */
+        width: 80%;       /* Responsivo no mobile */
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* --- BANNERS GERAIS (Imagem Inteira) --- */
+    .banner-full {
+        width: 100%;
+        height: auto;
+        display: block;
+        padding: 1%; /* Pequeno respiro nas imagens normais */
+    }
+
+    /* --- GRADE DE ÍCONES (FEATURES) --- */
+    .features-grid {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 40px; 
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .feature-item {
+        flex: 0 1 200px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ícones Padronizados */
+    .icon-box img {
+        height: 60px; 
+        width: auto;
+        display: block;
+        margin-bottom: 15px;
+        object-fit: contain;
+    }
+    
+    .icon-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px; 
+    }
+
+    /* Tipografia */
+    .feature-title {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #000;
+    }
+
+    .feature-desc {
+        font-size: 1.1rem;
+        color: #333;
+        line-height: 1.2;
+    }
+    
+    .bold-text {
+        font-weight: 700;
+    }
+
+    /* --- MOBILE (Ajustes) --- */
+    @media screen and (max-width: 768px) {
+        /* Remove padding lateral da imagem banner comum no mobile se desejar full bleed */
         .banner-full {
-            width: 100%;
-            height: auto;
-            display: block; /* Remove espaços vazios abaixo da imagem */
-            border-radius: 0 0 20px 20px; /* Opcional: arredonda a borda inferior */
+            padding: 0%;
         }
 
-        /* 2. Área dos Ícones (Features) */
+        /* Ajuste do Banner Kid Pad no mobile */
+        .kidpad-wrapper {
+            padding: 0px; /* Margem menor no celular */
+            padding-top: 30px;
+        }
+        .kidpad-box {
+            min-height: 180px; /* Altura menor no celular */
+            border-radius: 0px;
+        }
+        
+        /* Grid 2/2/1 */
         .features-grid {
-            display: flex;
-            flex-wrap: wrap; /* Permite que os itens quebrem linha */
-            justify-content: center; /* Centraliza os itens horizontalmente */
-            gap: 40px; /* Espaço entre os itens */
-            padding: 50px 20px;
-            text-align: center;
+            gap: 20px;
+            padding: 30px 10px;
         }
 
         .feature-item {
-            /* Define uma largura base para os itens. 
-               40% garante que caibam 2 por linha com um pouco de folga */
-            flex: 0 1 200px; 
-            display: flex;
+            flex: 0 0 calc(50% - 20px); 
+            max-width: calc(50% - 20px);
+        }
+        .kidpad-logo {
+            width: 80%;
+            max-width: 150px;
+        }
+    }
+    /* ------------------------------------------------ */
+    /* --- NOVA DOBRA: APRENDER, DIVERTIR (SECTION) --- */
+    /* ------------------------------------------------ */
+    
+    .learning-section {
+        padding: 60px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    /* Título Principal (Só Desktop) */
+    .main-heading {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 50px;
+        color: #000;
+        line-height: 1.2;
+    }
+
+    /* Grid do Conteúdo */
+    .learning-grid {
+        display: flex;
+        gap: 40px;
+        align-items: flex-end;
+    }
+
+    /* Coluna Esquerda (Texto + Fada + Foto Família) */
+    .col-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Bloco do Título + Fada */
+    .title-fairy-wrapper {
+        margin-left: 10%;
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .sub-heading {
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.2;
+        max-width: 80%; /* Deixa espaço pra fada */
+        color: #000;
+    }
+
+    .fairy-img {
+        width: 100px; /* Ajuste o tamanho da fada */
+        height: auto;
+    }
+
+    .text-desc {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #333;
+        max-width: 90%;
+        margin-left: 10%;
+    }
+
+    .family-img {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+
+    /* Coluna Direita (Foto Menina) */
+    .col-image {
+        flex: 1;
+    }
+
+    .girl-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        min-height: 500px; /* Garante altura no desktop */
+    }
+    .desktop-only { display: block !important; }
+    .mobile-only  { display: none !important;}
+
+    /* --- MOBILE --- */
+    @media screen and (max-width: 768px) {
+        .kidpad-wrapper { padding: 0px;padding-top: 20px;padding-bottom: 20px; }
+        .kidpad-box { min-height: 180px; border-radius: 0px; }
+        .title-fairy-wrapper { justify-content: center;margin-left: 0%; }
+        .features-grid { gap: 20px; padding: 30px 10px; }
+        .feature-item { flex: 0 0 calc(50% - 20px); max-width: calc(50% - 20px); }
+        .learning-section { padding: 0px 0px; }
+        /* --- Ajustes da Nova Dobra Mobile --- */
+        
+        /* 1. Esconde o que foi pedido */
+        .desktop-only { display: none !important; }
+        .mobile-only  { display: block !important;}
+        /* 2. Layout em Coluna Única */
+        .learning-grid {
             flex-direction: column;
-            align-items: center;
+            gap: 10px;
         }
 
-        /* Estilização dos Ícones (Placeholder) */
-        .icon-box {
-            font-size: 3rem; /* Tamanho do ícone */
-            margin-bottom: 15px;
-            color: #000;
+        /* 3. Reorganização (Ordem Visual) */
+        /* Queremos: Menina (topo) -> Texto -> Família */
+        
+        .col-image {
+            order: 1; /* Menina vai para o topo */
+            width: 100%;
+        }
+        
+        .girl-img {
+            min-height: auto; /* Remove altura forçada */
         }
 
-        /* Cores específicas para imitar a imagem */
-        .icon-google { color: #EA4335; } 
-        .icon-android { color: #000; }
+        .col-content {
+            order: 2; /* Texto e Família vão para baixo */
+            width: 100%;
+            gap: 10px;
+        }
 
-        /* Tipografia */
-        .feature-title {
+        .sub-heading {
+            font-size: 1.5rem;
+            max-width: 100%; /* Texto ocupa tudo sem a fada */
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .text-desc {
+            text-align: center;
+            margin: 0 auto;
+            padding-bottom: 20px;
             font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #000;
+        }
+        
+        /* A imagem da família já está dentro de col-content, 
+           logo abaixo do texto, então a ordem natural funciona aqui */
+    }
+    @media screen and (max-width: 768px) {
+        .section-1 .col-image { order: 1; }
+        .section-1 .col-content { order: 2; }
+
+        /* Seção 2: Texto fica em cima, Imagem desce */
+        .section-2 .col-content { order: 1; }
+        .section-2 .col-image { order: 2; }
+
+   
+        .girl-img { min-height: auto; }
+        
+        
+
+    }
+    .possibilities-section {
+        padding: 60px 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #000;
+        line-height: 1.2;
+    }
+
+    .section-subtitle {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 40px;
+        line-height: 1.5;
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Imagem que contém o tablet + specs */
+    .full-feature-img {
+        width: 100%;
+        max-width: 1400px; /* Limita a largura máxima para não estourar em telas gigantes */
+        height: auto;
+        display: block;
+        margin: 0 auto 30px auto; /* Centraliza e dá margem inferior */
+        border-radius: 20px; /* Opcional: Arredonda a imagem se ela for quadrada */
+    }
+
+    /* Box Cinza (Disclaimer) */
+    .disclaimer-box {
+        background-color: #EAEAEA;
+        border-radius: 20px;
+        padding: 20px;
+        max-width: 1400px; 
+        margin: 0 auto;
+    }
+
+    .disclaimer-text {
+        font-size: 0.75rem;
+        color: #555;
+        line-height: 1.5;
+        font-weight: 500;
+    }
+
+    /* Ajuste Mobile */
+    @media screen and (max-width: 768px) {
+        .section-title { font-size: 1.6rem; }
+        
+        .section-subtitle {font-size: 1rem;}
+        .possibilities-section { padding: 40px 0px; }
+        .main-heading {
+            font-size: 1.5rem;
         }
 
-        .feature-desc {
-            font-size: 0.9rem;
-            color: #333;
-            line-height: 1.4;
-        }
+    }
+    /* --- SEÇÃO ANDROID 13 --- */
+
+.android-section {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Cabeçalho */
+.android-header {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.android-logo {
+    max-width: 400px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-bottom: 150px;
+}
+.google-logo {
+    max-width: 400px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-top: 50px;
+}
+.android-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.android-subtitle {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.5;
+    max-width: 800px;
+}
+
+/* Grid dos Cards */
+.android-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo do Card Verde */
+.android-card {
+    background-color: #389F56; /* Verde Android ajustado */
+    border-radius: 20px;
+    padding: 120px 40px;
+    flex: 1; /* Ocupam o mesmo tamanho */
+    color: #fff;
+    text-align: left; /* No Desktop o texto é alinhado à esquerda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-green-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.card-green-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.card-green-desc strong {
+    font-weight: 700;
+}
+
+/* --- MOBILE --- */
+@media screen and (max-width: 768px) {
+    .android-section {
+        padding: 50px 0px;
+    }
+
+    .android-title {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+    
+    .android-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .android-grid {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 15px;
+    }
+
+    .android-card {
+        text-align: center; /* No Mobile o texto fica centralizado */
+        padding: 40px 60px;
+        min-height: auto;
+    }
+    
+    .card-green-title {
+        font-size: 1.5rem;
+    }
+
+    .card-green-desc {
+        font-size: 1rem;
+    }
+    
+    /* Quebras de linha manuais (<br>) podem atrapalhar no mobile, 
+       então as escondemos se necessário, ou deixamos o fluxo natural */
+    .card-green-desc br {
+        display: none; 
+    }
+    .android-logo {
+    max-width: 200px; /* Ajuste conforme necessário */
+    height: auto;
+    margin-bottom: 50px;
+    }
+}
+/* Reativa o br apenas no desktop para manter o design exato */
+@media screen and (min-width: 769px) {
+    .card-green-desc br {
+        display: block;
+    }
+}
+/* =========================================
+   CSS DA SEÇÃO "SOBRA" (Parental/Kids)
+========================================= */
+
+/* Helper para limitar a largura do conteúdo em telas grandes e centralizar */
+.container-narrow {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.parental-kids-section {
+    padding: 60px 0 80px 0;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+}
+
+/* --- Bloco do Robô Chippy --- */
+.chippy-wrapper {
+    margin-bottom: 40px;
+}
+
+.chippy-header-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.chippy-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-align: center; /* No desktop, texto alinha à direita perto do robô */
+    line-height: 1.2;
+    color: #000;
+}
+
+.chippy-img {
+    max-width: 120px;
+    height: auto;
+    display: block;
+}
+
+.chippy-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+/* --- Imagem da Família --- */
+.family-feature-img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px; /* Bordas arredondadas como na imagem */
+    margin-bottom: 60px;
+    display: block;
+}
+
+/* --- Bloco da Onda Laranja + Texto Sobreposto --- */
+.wavy-kids-container {
+    position: relative; /* Necessário para posicionar o texto sobre a imagem */
+    margin-bottom: 60px;
+    border-radius: 25px;
+    overflow: hidden; /* Garante que a imagem não vaze as bordas arredondadas */
+}
+
+/* A imagem da onda funciona como base */
+.wavy-bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* O container do texto que fica por cima */
+.kids-space-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    /* Adiciona um fundo branco semi-transparente para garantir a leitura do texto sobre a onda laranja */
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.kids-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #000;
+}
+
+/* --- Logo Final --- */
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.footer-multi-logo {
+    max-width: 300px;
+    height: auto;
+}
+
+
+/* =========================================
+   AJUSTES RESPONSIVOS (MOBILE)
+========================================= */
+@media screen and (max-width: 768px) {
+    .container-narrow {
+        padding: 0 0px;
+    }
+    .parental-kids-section {
+        padding: 0px 0 60px 0;
+    }
+
+    /* Ajuste do Robô: Fica acima do título e centralizado */
+    .chippy-header-block {
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 10px;
+    }
+
+    .chippy-title {
+        text-align: center;
+        font-size: 1.5rem;
+        padding-bottom: 20px;
+    }
+
+    .chippy-img {
+        max-width: 70px;
+    }
+    
+    .chippy-text {
+        font-size: 1rem;
+        width: 80%;
+    }
+
+    .family-feature-img {
+        margin-bottom: 40px;
+        border-radius: 15px; /* Bordas um pouco menores no mobile */
+    }
+
+    /* Ajuste do Texto sobre a onda no mobile */
+    .wavy-kids-container {
+        border-radius: 15px;
+        margin-bottom: 40px;
+    }
+
+    .kids-space-overlay {
+        position: relative; /* No mobile, o texto pode ficar abaixo da imagem para não cobrir os tablets */
+        background: #fff; /* Fundo branco sólido */
+        padding: 20px 10px 0 10px; /* Ajuste de padding */
+        border-radius: 0;
+    }
+
+    /* Se preferir que o texto continue sobreposto no mobile (como na imagem de referência vertical),
+       comente o bloco .kids-space-overlay acima e descomente este abaixo: */
+    /*
+    .kids-space-overlay {
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    */
+
+    .kids-text {
+        font-size: 1rem;
+    }
+}
