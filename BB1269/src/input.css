@@ -225,7 +225,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
         .banner-fisher {
             flex-direction: column;
             height: auto;
-            min-height: 800px;
+            min-height: 700px;
             padding-bottom: 20px; 
             justify-content: flex-start; /* Alinha tudo ao topo */
         }
@@ -285,7 +285,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
         }
 
         .product-shot {
-            width: 260px; 
+            width: 250px; 
             bottom: 0px;
             right: -20px;
             top: auto; left: auto;
@@ -767,7 +767,10 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
     }
     .banner-title {
         font-size: 32px;
-        margin-bottom: 300px;
+        margin-bottom: -10px;
+    }
+    .txt-ia{
+        margin-bottom: 150px;
     }
 
 }
@@ -856,6 +859,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     background: #fff;
     margin-top: 30px;
+    border: 2px solid #00BFB2;
 }
 
 .card-header {
