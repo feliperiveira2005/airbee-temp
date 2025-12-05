@@ -625,6 +625,8 @@
 
     .chippy-img {
         max-width: 70px;
+        margin-right: -80%;
+        margin-bottom: -20%;
     }
     
     .chippy-text {
@@ -664,4 +666,24 @@
     .kids-text {
         font-size: 1rem;
     }
+}
+@media screen and (max-width: 350px) {
+    .chippy-img {
+        max-width: 60px;
+        margin-right: -80%;
+        margin-bottom: -20%;
+    }
+    .chippy-title {
+        text-align: center;
+        font-size: 1.3rem;
+        padding-bottom: 20px;
+    }
+}
+@media screen and (min-width: 475px) and (max-width: 768px){
+    .chippy-img {
+        max-width: 70px;
+        margin-right: -70%;
+        margin-bottom: -15%;
+    }
+
 }
