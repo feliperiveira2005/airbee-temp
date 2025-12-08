@@ -286,7 +286,7 @@ body { font-family: 'Avenir LT Std', sans-serif; background: #FFFFFF; }
 
         .product-shot {
             width: 250px; 
-            bottom: 0px;
+            bottom: -5px;
             right: -20px;
             top: auto; left: auto;
             transform: none;
