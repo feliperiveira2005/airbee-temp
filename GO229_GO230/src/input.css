@@ -1,0 +1,1603 @@
+/* =========================================
+   RESET E ESTILOS GERAIS
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.ep-lamina {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    overflow-x: hidden; /* Evita rolagem lateral indesejada */
+}
+
+.ep-lamina * {
+    font-family: "elza", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.ep-lamina h3, .ep-lamina h4, .ep-lamina h5, .ep-lamina h6, .ep-lamina p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos e Descrições Globais */
+.ep-lamina .feature__title {
+    font-size: 48px;
+    font-weight: 600;
+    color: #FF8200;
+}
+
+.ep-lamina .feature__description {
+    font-size: 26px;
+    font-weight: 400;
+    color: #2F2F2F;
+}
+
+.ep-lamina .image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.ep-lamina section {
+    padding: 46px 0px 0px 0px;
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+/* Responsividade Global */
+@media screen and (min-width: 900px) {
+    .ep-lamina section {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .ep-lamina section {
+        margin-top: 0px !important;
+        padding: 0;
+        margin: 0 auto;
+    }
+    
+    .ep-lamina .feature__title {
+        font-size: 32px;
+        margin-bottom: 7px !important;
+    }
+
+    .ep-lamina .feature__description {
+        font-size: 16px;
+    }
+    
+    .ep-lamina .image {
+        border-radius: 5px !important;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .ep-lamina section {
+        margin: 0 10px;
+    }
+}
+
+/* =========================================
+   UTILITÁRIOS (Mobile/Desktop)
+   ========================================= */
+.only-desktop {
+    display: flex !important;
+}
+
+.only-mobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+    .only-desktop {
+        display: none !important;
+    }
+    .only-mobile {
+        display: block !important;
+    }
+}
+
+/* =========================================
+   DOBRA 01 (Hero / Header)
+   ========================================= */
+.ep-lamina .dobra-01 {
+    background-image: url("./assets/images/d1.png");
+    background-size: cover;
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    min-height: 1202px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 1920px;
+}
+
+.ep-lamina .dobra-01 .feature__content {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    max-width: 646px;
+    border-radius: 59px;
+    background: rgba(255, 130, 0, 0.631372549);
+    padding: 0 50px;
+    padding-top: 250px;
+    padding-bottom: 88px;
+    margin-top: -200px;
+    margin-left: 7%;
+}
+
+.ep-lamina .dobra-01 .feature__content .image {
+    max-width: 481px;
+    margin-left: -80px;
+    margin-bottom: 27px;
+}
+
+.ep-lamina .dobra-01 .feature__content h3.feature__title {
+    line-height: 115%;
+    color: #ffffff;
+    font-size: 78px;
+    font-weight: 400;
+}
+
+.ep-lamina .dobra-01 .feature__content h3.feature__title span {
+    font-weight: 600;
+}
+
+.ep-lamina .dobra-01 .feature__content .feature__description {
+    max-width: 500px;
+    font-size: 54px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: 100%;
+    color: #fff;
+}
+
+.ep-lamina .dobra-01 .feature__content .sku__card__name {
+    font-size: 44px;
+    font-weight: 600;
+}
+
+/* Ajustes específicos Dobra 01 */
+.mais { margin-left: -2.8rem; }
+#d1txt { margin-left: 3rem; }
+#sku {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 10px!important;
+    padding-bottom: 10px;
+}
+#mobile { display: none; }
+
+/* Responsivo Dobra 01 */
+@media screen and (min-width: 900px) {
+    .ep-lamina .dobra-01 {
+        padding: 0;
+        border-radius: 0 0 20px 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .mais { margin-left: -1rem; }
+    #d1txt { margin-left: 1rem; }
+    #mobile { display: block; }
+    #sku { display: none; }
+
+    .ep-lamina .dobra-01 {
+        max-width: 428px;
+        min-height: 760px;
+        background-image: url("./assets/images/d1m.png");
+        background-size: auto 100%;
+        align-items: center;
+    }
+
+    .ep-lamina .dobra-01 .feature__content {
+        max-width: 320px;
+        border-radius: 22px;
+        gap: 0;
+        margin: 0;
+        padding: 0 20px;
+        padding-top: 250px;
+        padding-bottom: 35px;
+        margin-top: -200px;
+        margin-left: -130px;
+    }
+
+    .ep-lamina .dobra-01 .feature__content .image {
+        max-width: 170px;
+        margin-left: -30px;
+    }
+
+    .ep-lamina .dobra-01 .feature__content h3.feature__title {
+        font-size: 30px;
+        line-height: 100%;
+    }
+
+    .ep-lamina .dobra-01 .feature__content .feature__description {
+        font-size: 20px;
+        max-width: 200px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .ep-lamina .dobra-01 .feature__content .sku__card__name {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .ep-lamina .dobra-01 {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .ep-lamina .dobra-01 .feature__content {
+        margin-left: -100px;
+    }
+}
+
+/* =========================================
+   DOBRA 02 (Grid Icons)
+   ========================================= */
+.ep-lamina .dobra-02 {
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+.ep-lamina .dobra-02 .feature__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 29px;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.ep-lamina .dobra-02 .feature__content .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    text-align: center;
+    max-width: 345px;
+    width: 100%;
+    height: 400px;
+}
+
+.ep-lamina .dobra-02 .feature__content .card div {
+    height: 170px;
+    max-width: 205px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ep-lamina .dobra-02 .feature__content .card .feature__description {
+    color: #FF8200;
+    text-transform: uppercase;
+    max-width: 250px;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 112%;
+    text-align: center;
+}
+
+/* Ajustes de largura dos textos na Dobra 02 Desktop */
+.ep-lamina .dobra-02 .feature__content .card:nth-child(1) .feature__description { max-width: 220px; }
+.ep-lamina .dobra-02 .feature__content .card:nth-child(2) .feature__description { max-width: 220px; }
+.ep-lamina .dobra-02 .feature__content .card:nth-child(3) .feature__description { max-width: 250px; }
+.ep-lamina .dobra-02 .feature__content .card:nth-child(4) .feature__description { max-width: 250px; }
+.ep-lamina .dobra-02 .feature__content .card:last-child .feature__description { max-width: 250px; }
+
+/* Responsivo Dobra 02 */
+@media screen and (max-width: 991px) {
+    .ep-lamina .dobra-02 {
+        padding-top: 46px;
+        padding-bottom: 46px;
+    }
+
+    .ep-lamina .dobra-02 .feature__content {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+        row-gap: 40px;
+        max-width: 340px;
+        width: 100%;
+    }
+
+    .ep-lamina .dobra-02 .feature__content .card {
+        height: auto;
+        width: 100%;
+    }
+
+    .ep-lamina .dobra-02 .feature__content .card div {
+        height: auto;
+        max-height: 64px;
+    }
+
+    .ep-lamina .dobra-02 .feature__content .card div img {
+        width: 102px;
+    }
+
+    .ep-lamina .dobra-02 .feature__content .card .feature__description {
+        font-size: 18px;
+    }
+
+    .ep-lamina .dobra-02 .feature__content .card:nth-child(2) .feature__description { max-width: 150px; }
+    
+    .ep-lamina .dobra-02 .feature__content .card:nth-child(3) {
+        height: 200px;
+        gap: 25px;
+    }
+    .ep-lamina .dobra-02 .feature__content .card:nth-child(3) div {
+        max-height: 90px;
+        margin-top: 5px;
+    }
+    .ep-lamina .dobra-02 .feature__content .card:nth-child(3) .feature__description { max-width: 150px; }
+}
+
+/* Ajuste específico para o Mobile Only Card (Centralizar o último card) */
+@media screen and (max-width: 900px) {
+    .ep-lamina .dobra-02.only-mobile .feature__content {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: none;
+        width: 100%;
+        margin-top: -20px;
+    }
+    
+    .ep-lamina .dobra-02.only-mobile .feature__content .card {
+        margin: 0 auto;
+    }
+}
+
+/* =========================================
+   DOBRA 03 (AirFryer + Comidas)
+   ========================================= */
+.dobra-03 {
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dobra-03 .feature__content {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.dobra-03 .img-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.dobra-03 .receitas__texto p {
+    font-family: "elza", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #FF8200;
+    margin: 0;
+}
+
+/* Desktop Dobra 03 */
+@media screen and (min-width: 950px) {
+    .dobra-03 .receitas__texto {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        text-align: right;
+        z-index: 2;
+        width: 100%;
+        max-width: 30%;
+    }
+    
+    .dobra-03 .receitas__texto p {
+        margin-right: 2%; 
+    }
+}
+
+/* Mobile Dobra 03 */
+@media screen and (max-width: 950px) {
+    .dobra-03 {
+        padding: 0px 0!important;
+    }
+
+    .dobra-03 .feature__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .dobra-03 .receitas__texto {
+        position: static;
+        text-align: right;
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+
+    .dobra-03 .receitas__texto p {
+        font-size: 20px;
+        margin: 20px;
+    }
+
+    .dobra-03 .img-full {
+        max-width: 400px;
+    }
+}
+@media screen and (min-width: 950px) and (max-width: 1400px) {
+    .dobra-03 .receitas__texto {
+        max-width: 50%;
+    }
+}
+
+/* =========================================
+   DOBRA POTÊNCIA (1.350 W)
+   ========================================= */
+
+/* Configuração Geral */
+.dobra-potencia {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-bottom: 0; /* A imagem encosta no fundo se necessário */
+}
+
+.dobra-potencia .feature__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dobra-potencia .text-container {
+    max-width: 1400px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Ajustes finos de Tipografia para esta dobra */
+.dobra-potencia .feature__title {
+    color: #FF8200; /* Garante o laranja */
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.dobra-potencia .feature__description {
+    color: #2F2F2F; /* Cinza escuro padrão */
+}
+
+
+/* --- VERSÃO DESKTOP (Centralizado) --- */
+@media screen and (min-width: 769px) {
+    .dobra-potencia {
+        padding-top: 80px;
+    }
+
+    .dobra-potencia .text-container {
+        margin-top: 30px;
+        text-align: center; /* Centraliza o texto no desktop */
+        margin-bottom: 60px;
+    }
+
+    /* Ajuste da imagem desktop para não estourar 1920px */
+    .dobra-potencia .image.only-desktop {
+        max-width: 100%;
+        width: 100%; 
+    }
+}
+
+
+/* --- VERSÃO MOBILE (Alinhado à Esquerda) --- */
+@media screen and (max-width: 900px) {
+    .dobra-potencia {
+        padding-top: 40px;
+    }
+
+    .dobra-potencia .text-container {
+        text-align: center; /* Texto alinhado à esquerda no mobile */
+        padding: 0 20px; /* Garante margem lateral no texto */
+        margin-bottom: 30px;
+    }
+
+    .dobra-potencia .feature__title {
+        margin-top: 0px;
+        font-size: 28px; /* Ajuste de tamanho para caber bem */
+        line-height: 1.1;
+    }
+
+    .dobra-potencia .feature__description {
+        font-size: 16px;
+    }
+
+    .dobra-potencia .image.only-mobile {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* =========================================
+   DOBRA TAMANHO (3,5L)
+   ========================================= */
+
+.dobra-tamanho {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden; /* Evita que elementos vazem */
+}
+
+/* Títulos e Textos Específicos desta dobra */
+.dobra-tamanho .feature__title {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.dobra-tamanho .feature__description {
+    color: #fff;
+    line-height: 1.3;
+}
+
+/* O Card Laranja com bordas arredondadas */
+.dobra-tamanho .orange-card {
+    background-color: #FF8200;
+    border-radius: 30px;
+    padding: 10% 15% 20% 20%;
+    margin-top: -25%;
+    margin-bottom: 10%;
+}
+
+/* --- VERSÃO DESKTOP --- */
+@media screen and (min-width: 769px) {
+    .dobra-tamanho {
+        padding: 80px 0;
+    }
+
+    .dobra-tamanho .feature__content {
+        display: flex;
+        flex-direction: row; /* Imagem esquerda, Texto direita */
+        align-items: center;
+        justify-content: center;
+        gap: 0px; /* Sem gap, controlaremos com margem se precisar */
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 0px;
+    }
+
+    /* Área das Imagens */
+    .dobra-tamanho .tamanho-images {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; /* Encosta a imagem perto do texto */
+        z-index: 1; /* Fica atrás ou no mesmo nível */
+    }
+
+    .dobra-tamanho .image-desktop {
+        width: 150%;
+        margin-right: -50%;
+        object-fit: contain; 
+    }
+
+    /* Área do Texto */
+    .dobra-tamanho .tamanho-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 0;
+        padding-left: 20px; /* Pequeno respiro entre imagem e texto */
+    }
+
+    .dobra-tamanho .orange-card {
+        max-width: 80%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .dobra-tamanho .feature__title {
+        font-size: 36px;
+    }
+    
+    .dobra-tamanho .feature__description {
+        font-size: 22px;
+    }
+}
+
+/* --- VERSÃO LAPTOP --- */
+@media screen and (min-width: 800px) and (max-width: 1366px) {
+    .dobra-tamanho .orange-card {
+        max-width: 100%;
+        background-color: #FF8200;
+        border-radius: 30px;
+        padding: 15% 15% 15% 20%;
+        margin-top: -10%;
+    }
+    .dobra-tamanho .image-desktop {
+        width: 130%;
+        margin-right: -30%;
+        object-fit: contain;
+    }
+}
+
+/* --- VERSÃO MOBILE --- */
+@media screen and (max-width: 900px) {
+    .dobra-tamanho .orange-card {
+        margin-top: 0%;
+    }
+    .dobra-tamanho .feature__content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0px;
+    }
+
+    /* 1. MUDAR A ORDEM: Texto primeiro, Imagem depois */
+    .dobra-tamanho .tamanho-info {
+        order: 1;
+        width: 95%;
+        position: relative;
+        z-index: 1; /* Fica ATRÁS da imagem na parte inferior */
+    }
+
+    .dobra-tamanho .tamanho-images {
+        order: 2;
+        width: 100%;
+        position: relative;
+        z-index: 2; /* Fica NA FRENTE do card */
+        margin-top: -60px; /* SOBREPOSIÇÃO: Puxa a imagem para cima do card */
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Estilo do Card no Mobile */
+    .dobra-tamanho .orange-card {
+        margin-top: 10%;
+        padding: 40px 30px 350px 50px; /* Padding bottom gigante para dar espaço à imagem */
+        border-radius: 30px;
+        margin-left: 2.5%;
+        text-align: left;
+    }
+
+    .dobra-tamanho .feature__title {
+        font-size: 28px;
+    }
+
+    .dobra-tamanho .feature__description {
+        font-size: 16px;
+        max-width: 300px;
+    }
+
+    /* Estilo da Imagem Mobile */
+    .dobra-tamanho .image-mobile {
+        width: 100%;
+        height: auto;
+        margin-top: -300px;
+    }
+}
+
+/* =========================================
+   SEÇÃO SABOR (Área Útil)
+   ========================================= */
+.flavor-section {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding: 20px 0;
+    max-width: 90%;
+}
+
+/* Coluna de Texto (Laranja) */
+.text-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 500px; /* Altura mínima para o bloco de texto */
+    position: relative; /* Para posicionar o disclaimer */
+    margin-right: -200px;
+}
+
+.laranja {
+    background-color: #FF8200; /* Cor laranja do fundo */
+    color: #FFFFFF;
+    padding: 40px;
+    border-radius: 30px; /* Cantos arredondados */
+    min-height: 350px; /* Altura mínima para o bloco de texto */
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800; /* Negrito extra */
+    margin-bottom: 20px;
+    line-height: 1.1;
+    margin-left: 8%;
+}
+
+.description-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 450px;
+    margin-left: 8% !important;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    top: 500px;
+    position: absolute;
+    bottom: 30px;
+    left: 15%;
+}
+
+/* Coluna da Imagem */
+.image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.product-image {
+    max-width: 90%;
+    height: auto;
+    display: block;
+}
+
+/* --- RESPONSIVO (MOBILE) --- */
+@media screen and (max-width: 900px) {
+    .flavor-section {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+
+    .text-box {
+        text-align: center;
+        align-items: center;
+        min-height: auto; /* Remove altura mínima */
+        margin-right: 0px;
+        margin-top: -200px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-left: 0%;
+    }
+
+    .description-text {
+        font-size: 1rem;
+        margin-left: 0%;
+    }
+
+    .disclaimer {
+        position: static; /* Remove posição absoluta no mobile */
+        margin-top: 30px!important;
+        text-align: center;
+    }
+    
+    .product-image {
+        width: 100%;
+        max-width: 400px; /* Imagem um pouco menor no mobile */
+    }
+    
+    .laranja {
+        min-height: 0px;
+        padding: 150px 40px 40px 40px;
+    }
+}
+
+/* =========================================
+   DOBRA CAPACIDADE (Cestos de Alimentos)
+   ========================================= */
+.dobra-capacidade {
+    padding: 60px 0;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.dobra-capacidade .feature__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Container dos 3 itens */
+.dobra-capacidade .capacity-grid {
+    display: flex;
+    justify-content: space-between; /* Espalha os itens */
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+/* Estilo individual de cada item */
+.dobra-capacidade .capacity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    flex: 1; /* Faz todos terem a mesma largura base */
+}
+
+.dobra-capacidade .capacity-item img {
+    width: 110%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.dobra-capacidade .capacity-item .caption {
+    font-family: "elza", sans-serif;
+    font-weight: 600; /* Negrito conforme a imagem */
+    color: #FF8200;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+/* Disclaimer (Texto pequeno no rodapé) */
+.dobra-capacidade .disclaimer-text p {
+    font-family: "elza", sans-serif;
+    color: #666666; /* Cinza escuro */
+    font-size: 14px;
+    text-align: center;
+}
+
+/* --- VERSÃO MOBILE / TABLET --- */
+@media screen and (max-width: 991px) {
+    .dobra-capacidade {
+        padding: 40px 0;
+    }
+
+    .dobra-capacidade .capacity-grid {
+        flex-direction: column; /* Empilha um embaixo do outro */
+        gap: 60px; /* Mais espaço entre os itens no mobile */
+        align-items: center;
+    }
+
+    .dobra-capacidade .capacity-item {
+        max-width: 400px; /* Limita a largura no mobile */
+    }
+
+    .dobra-capacidade .capacity-item img {
+        margin-bottom: 15px;
+    }
+
+    .dobra-capacidade .capacity-item .caption {
+        font-size: 20px; /* Fonte um pouco menor */
+    }
+    
+    .dobra-capacidade .disclaimer-text p {
+        font-size: 10px;
+        padding: 0 20px;
+    }
+}
+
+/* =========================================
+   SEÇÃO SABOR EXTRA (Cópia para Dobra 08)
+   ========================================= */
+.dobra-sabor-extra {
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding: 20px 0;
+    max-width: 90%;
+    margin: 0 auto; 
+}
+
+/* Coluna de Texto */
+.sabor-extra-text-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 500px;
+    position: relative;
+    margin-right: -1000px;
+}
+
+.sabor-extra-card {
+    background-color: #FF8C00;
+    color: #FFFFFF;
+    padding: 40px;
+    border-radius: 30px;
+    min-height: 350px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sabor-extra-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    margin-left: 8%;
+}
+
+.sabor-extra-desc {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 450px;
+    margin-left: 8% !important;
+}
+
+.sabor-extra-disclaimer {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    position: absolute;
+    bottom: 30px; 
+    left: 15%;
+}
+
+/* Coluna da Imagem */
+.sabor-extra-img-col {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.sabor-extra-img {
+    width: 180%;
+    height: auto;
+    display: block;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1500px) and (min-width: 900px)  {
+    .sabor-extra-img {
+    width: 1000px;
+    margin-right: -400px;
+    }
+}
+
+/* --- RESPONSIVO (MOBILE) --- */
+@media screen and (max-width: 900px) {
+    .sabor-extra-img-col {
+        justify-content: end;
+        align-items: flex-end;
+    }
+    .sabor-extra-img {
+        width: 100%;
+    }
+    .dobra-sabor-extra {
+        flex-direction: column;
+        gap: 30px;
+        max-width: 100%; /* Ajuste para mobile */
+        padding: 0 20px; /* Ajuste para mobile */
+    }
+
+    .sabor-extra-text-col {
+        text-align: center;
+        align-items: center;
+        min-height: auto;
+        margin-right: 0px;
+        margin-top: 50px;
+        width: 90%;
+    }
+
+    .sabor-extra-title {
+        font-size: 2rem;
+        margin-left: 0%;
+    }
+
+    .sabor-extra-desc {
+        font-size: 1rem;
+        margin-left: 0% !important;
+    }
+
+    .sabor-extra-disclaimer {
+        position: static;
+        margin-top: 30px !important;
+        text-align: center;
+    }
+    
+    .sabor-extra-img {
+        width: 100%;
+        max-width: 400px;
+        margin-top: -200px;
+    }
+
+    .sabor-extra-card {
+        min-height: 0px;
+        padding: 40px 40px 180px 40px;
+    }
+}
+
+/* =========================================
+   DOBRA VERSATILIDADE MÁXIMA (Fundo Laranja + Grid Comidas)
+   ========================================= */
+.dobra-versatilidade-maxima {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #FF8200; /* Fundo Laranja Total */
+    padding: 60px 0;
+    color: #fff;
+}
+
+.dobra-versatilidade-maxima .feature__content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Cabeçalho --- */
+.dobra-versatilidade-maxima .header-content {
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.dobra-versatilidade-maxima .feature__title {
+    color: #fff; /* Força branco sobre o fundo laranja */
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.dobra-versatilidade-maxima .feature__description {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.dobra-versatilidade-maxima strong {
+    font-weight: 700;
+}
+
+/* --- Grid de Imagens --- */
+.dobra-versatilidade-maxima .food-grid {
+    display: grid;
+    width: 100%;
+    gap: 30px;
+}
+
+.dobra-versatilidade-maxima .food-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px; /* Bordas arredondadas nas fotos */
+    display: block;
+    /* Opcional: Sombra suave nas imagens */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+}
+
+/* VERSÃO DESKTOP (Grid 2x2) */
+@media screen and (min-width: 769px) {
+    .dobra-versatilidade-maxima .food-grid {
+        grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
+        max-width: 1400px; /* Limita a largura do grid para não ficar muito espalhado */
+    }
+}
+
+/* VERSÃO MOBILE (Pilha Vertical) */
+@media screen and (max-width: 768px) {
+    .dobra-versatilidade-maxima {
+        padding: 40px 0;
+    }
+
+    .dobra-versatilidade-maxima .feature__title {
+        font-size: 28px;
+    }
+
+    .dobra-versatilidade-maxima .feature__description {
+        font-size: 16px;
+    }
+
+    .dobra-versatilidade-maxima .food-grid {
+        grid-template-columns: 1fr; /* Uma coluna (um embaixo do outro) */
+        gap: 20px;
+    }
+}
+
+/* =========================================
+   DOBRA 09 (Footer)
+   ========================================= */
+.ep-lamina .dobra-09 {
+    margin: 0px auto;
+    margin-top: 20px;
+    padding: 2.5% 56px;
+    background-color: #0050DC;
+    border-radius: 20px 20px 0 0 ;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.ep-lamina .dobra-09 .feature__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ep-lamina .dobra-09 .feature__content > .image {
+    max-width: 242px;
+    height: 91px;
+    border-radius: 0 !important;
+}
+
+.ep-lamina .dobra-09 .feature__content > .text__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description > span {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 900px) {
+    .ep-lamina .dobra-09 {
+        margin: 0 11px;
+        margin-top: 60px;
+        border-radius: 10px;
+        padding: 12px 13px;
+        width: 100%;
+        justify-self: center;
+        height: 70px;
+        align-items: center;
+    }
+
+    .ep-lamina .dobra-09 .feature__content > .image {
+        max-width: 122px;
+        height: auto;
+    }
+
+    .ep-lamina .dobra-09 .feature__content > .text__content {
+        gap: 4px;
+    }
+
+    .ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description {
+        font-size: 10px;
+    }
+}
+/* =========================================
+   DOBRA FÁCIL DE LIMPAR (Corrigida)
+   ========================================= */
+
+.dobra-facil-limpeza {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 60px 0;
+    overflow: hidden; /* Evita vazamento lateral */
+}
+
+.dobra-facil-limpeza .feature__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    /* Usaremos Flex para organizar */
+    display: flex;
+}
+
+/* --- Estilos Gerais --- */
+.dobra-facil-limpeza img {
+    display: block;
+    width: 150%;
+    height: auto;
+}
+
+.dobra-facil-limpeza .orange-card-limpeza {
+    background-color: #FF8200;
+    color: #fff;
+    border-radius: 40px;
+    padding: 50px;
+}
+
+.dobra-facil-limpeza .feature__title {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.dobra-facil-limpeza .feature__description {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.dobra-facil-limpeza strong {
+    font-weight: 700;
+}
+
+/* Selo de Garantia (Pílula Laranja) */
+.dobra-facil-limpeza .warranty-badge {
+    background-color: #FF8200;
+    color: #fff;
+    font-family: "elza", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    padding: 12px 40px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+    /* Sombra suave para destacar */
+    box-shadow: 0 4px 10px rgba(255, 130, 0, 0.3);
+}
+
+
+/* =========================================
+   VERSÃO DESKTOP (Lado a Lado)
+   ========================================= */
+@media screen and (min-width: 1000px) {
+    
+    .dobra-facil-limpeza .feature__content {
+        flex-direction: row-reverse; /* Imagem na Direita, Texto na Esquerda */
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Imagem */
+    .dobra-facil-limpeza .limpeza-img-wrapper {
+        width: 50%; /* Ocupa metade da tela */
+        display: flex;
+        justify-content: center;
+        z-index: 2; /* Fica na frente se encostar */
+    }
+
+   
+
+    /* Container "falso" para agrupar Texto + Selo na esquerda */
+    /* Como no HTML eles estão soltos, vamos usar position ou grid, 
+       mas o jeito mais fácil sem mudar HTML é ajustar as margens */
+    
+    .dobra-facil-limpeza .orange-card-limpeza {
+        width: 65%;
+        /* Aumentamos o padding à direita para criar o visual alongado da ref */
+        padding: 80px 40px 80px 160px; 
+        
+        /* Truque para estender o laranja para a esquerda da tela (infinito) */
+   
+     
+        border-radius: 0 40px 40px 0;
+        
+        /* Posicionamento relativo para o selo se alinhar a ele */
+        margin-bottom: 80px; /* Espaço para o selo caber embaixo */
+    }
+
+    .dobra-facil-limpeza .feature__title {
+        font-size: 42px;
+    }
+
+    /* Posicionando o Selo no Desktop */
+    .dobra-facil-limpeza .warranty-badge {
+        position: absolute;
+        top: 70%;
+        left: 50%; /* Alinha com o início do conteúdo */
+        /* Ajuste fino vertical */
+        margin-bottom: 20px; 
+    }
+}
+
+
+/* =========================================
+   VERSÃO MOBILE (Empilhado)
+   ========================================= */
+@media screen and (max-width: 1000px) {
+    .dobra-facil-limpeza img {
+        width: 100%;
+    }
+    .dobra-facil-limpeza {
+        padding-top: 0;
+        padding-bottom: 60px;
+    }
+
+    .dobra-facil-limpeza .feature__content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 1. Imagem no topo */
+    .dobra-facil-limpeza .limpeza-img-wrapper {
+        width: 100%;
+        max-width: 450px;
+        position: relative;
+        z-index: 2; /* Importante: Fica NA FRENTE do card laranja */
+    }
+
+    /* 2. Card Laranja */
+    .dobra-facil-limpeza .orange-card-limpeza {
+        max-width: 380px;
+        border-radius: 30px;
+        /* Padding superior grande para compensar a imagem que vai descer */
+        padding: 220px 30px 40px 30px; 
+        
+        /* Margem negativa para o card "subir" e ficar embaixo da imagem */
+        margin-top: -330px; 
+        
+        position: relative;
+        z-index: 1; /* Fica ATRÁS da imagem */
+    }
+
+    .dobra-facil-limpeza .feature__title {
+        font-size: 28px;
+    }
+
+    .dobra-facil-limpeza .feature__description {
+        font-size: 16px;
+    }
+
+    /* 3. Selo de Garantia */
+    .dobra-facil-limpeza .warranty-badge {
+        margin-top: 30px;
+        font-size: 20px;
+        width: 50%; /* Fica larguinho no mobile */
+        max-width: 300px;
+    }
+}
+/* =========================================
+   DOBRA SPECS MIXER (Copo + Processador)
+   ========================================= */
+
+.dobra-specs-mixer {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+    
+}
+
+.dobra-specs-mixer .feature__content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 0px;
+    position: relative;
+    display: flex;
+    
+}
+
+/* --- Estilos Gerais --- */
+.dobra-specs-mixer .bg-decoration {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.dobra-specs-mixer .bg-decoration img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.dobra-specs-mixer .product-image {
+    position: relative;
+    z-index: 1;
+}
+
+.dobra-specs-mixer .product-image img {
+    display: flex;
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+    
+}
+
+.dobra-specs-mixer .specs-text {
+    position: relative;
+    z-index: 2;
+}
+
+.dobra-specs-mixer .feature__title {
+    color: #FF8200;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.dobra-specs-mixer .feature__subtitle {
+    color: #2F2F2F;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.dobra-specs-mixer .specs-title {
+    color: #FF8200;
+    font-family: "elza", sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.dobra-specs-mixer ul.specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.dobra-specs-mixer ul.specs-list li {
+    font-family: "elza", sans-serif;
+    color: #2F2F2F;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.dobra-specs-mixer .package-content p,
+.dobra-specs-mixer .materials-content p {
+    font-family: "elza", sans-serif;
+    color: #2F2F2F;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.dobra-specs-mixer strong {
+    font-weight: 600;
+}
+
+
+/* =========================================
+   VERSÃO DESKTOP (Texto Esquerda / Imagem Direita)
+   ========================================= */
+@media screen and (min-width: 950px) {
+    
+    .dobra-specs-mixer .feature__content {
+        /* Inverte a ordem: Texto (que está por último no HTML) vai para a esquerda */
+        flex-direction: row-reverse; 
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    /* Posicionamento do Fundo Laranja (Direita) */
+    .dobra-specs-mixer .bg-decoration {
+        top: 0;
+        right: 0%; 
+        left: auto;
+        width: 60%; 
+        height: 100%;
+       
+    }
+    
+    .dobra-specs-mixer .bg-decoration img {
+        height: 100%;
+        object-fit: contain; 
+        object-position: right center;
+    }
+
+    /* Imagem do Produto (Direita) */
+    .dobra-specs-mixer .product-image {
+        flex: 1;
+        max-width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dobra-specs-mixer .product-image img {
+        max-width: 600px;
+    }
+
+    /* Texto (Esquerda) */
+    .dobra-specs-mixer .specs-text {
+        flex: 1;
+        max-width: 45%;
+        text-align: left; /* Alinha texto à esquerda */
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    .dobra-specs-mixer .feature__title {
+        font-size: 36px;
+    }
+    
+    .dobra-specs-mixer .feature__subtitle {
+        font-size: 22px;
+        margin-right: auto; 
+        max-width: 400px;
+    }
+
+    .dobra-specs-mixer .technical-data {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinha listas à esquerda */
+        margin-left: 30%;
+    }
+}
+
+
+/* =========================================
+   VERSÃO MOBILE (Empilhado: Imagem Topo / Texto Baixo)
+   ========================================= */
+@media screen and (max-width: 950px) {
+    
+    .dobra-specs-mixer .feature__content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Fundo Laranja */
+    .dobra-specs-mixer .bg-decoration {
+        top: 50px;
+        left: auto;
+        right: auto;
+        width: 100%;
+        max-width: 400px;
+        
+    }
+    
+    .dobra-specs-mixer .bg-decoration img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Imagem do Produto */
+    .dobra-specs-mixer .product-image {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 40px;
+    }
+
+    /* Texto */
+    .dobra-specs-mixer .specs-text {
+        width: 100%;
+    }
+
+    .dobra-specs-mixer .feature__title {
+        font-size: 26px;
+    }
+
+    .dobra-specs-mixer .specs-title {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+    
+    .dobra-specs-mixer .technical-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 360px) {
+    
+    /* 1. Ajuste Geral: Remove margens laterais que causam rolagem */
+    .ep-lamina section {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 100% !important;
+    }
+
+}
