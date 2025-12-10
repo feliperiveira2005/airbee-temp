@@ -1,0 +1,149 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #262626; 
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- HERO SECTION (DOBRA 1) --- */
+        .hero-section {
+            width: 100%;
+            background-color: #262626;
+        }
+
+        /* Configuração Mobile First */
+        .banner-mobile {
+            display: block;
+            width: 100%;
+            /* SOLICITADO: Limita a largura para não esticar demais */
+            max-width: 450px; 
+            /* Centraliza a imagem se a tela for maior que 450px */
+            margin: 0 auto; 
+        }
+
+        .banner-desktop {
+            display: none; /* Esconde desktop no mobile */
+        }
+
+        /* --- MEDIA QUERY (DESKTOP) --- */
+        @media (min-width: 992px) {
+            
+            .banner-mobile {
+                display: none; /* Esconde mobile no desktop */
+            }
+
+            .banner-desktop {
+                display: block;
+                width: 100%;
+                /* Opcional: Centralizar desktop se quiser limitar também */
+                /* max-width: 1920px; 
+                margin: 0 auto; */
+            }
+        }
+        /* --- DOBRA 2: GRID DE ESPECIFICAÇÕES --- */
+.specs-section {
+    background-color: #1a1a1a;
+    padding: 40px 0;
+}
+
+.specs-grid {
+    display: grid;
+    /* Mobile: 2 colunas (o 5º item vai para a linha de baixo naturalmente) */
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* Limite largura no mobile */
+    margin: 0 auto;
+}
+
+/* Card Individual */
+.spec-card {
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px 5px; /* Padding lateral reduzido para caber texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Container do Ícone (Sem borda, pois a imagem já tem) */
+.spec-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    /* Borda CSS removida conforme solicitado */
+}
+
+.spec-icon img {
+    width: 100%; /* A imagem ocupa todo o container */
+    height: auto;
+    display: block;
+}
+
+/* Texto */
+.spec-text {
+    color: #fff;
+    font-size: 0.65rem; /* Fonte ajustada para mobile pequeno */
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 992px) {
+    .specs-section {
+        padding: 60px 0;
+    }
+
+    .specs-grid {
+        /* Desktop: 5 colunas para acomodar o item extra */
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 1200px;
+        gap: 20px;
+    }
+
+    .spec-card {
+        padding: 30px 10px;
+    }
+
+    .spec-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .spec-text {
+        font-size: 0.85rem;
+    }
+}
+.only-desktop {
+    display: flex !important;
+}
+
+.only-mobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 992px) {
+    .only-desktop {
+        display: none !important;
+    }
+    .only-mobile {
+        display: block !important;
+    }
+}
