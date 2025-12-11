@@ -297,7 +297,7 @@
 }
 
 .connection-title {
-    color: #af52de; /* Roxo vibrante conforme a imagem */
+    color: #9C30B3; /* Roxo vibrante conforme a imagem */
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 1.2;
@@ -389,7 +389,7 @@
 }
 
 .comp-card.text-wrapper h2 {
-    color: #af52de; /* Roxo vibrante (mesmo tom da seção anterior) */
+    color: #9C30B3; /* Roxo vibrante (mesmo tom da seção anterior) */
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 15px;
