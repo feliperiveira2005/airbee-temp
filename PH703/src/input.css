@@ -248,27 +248,28 @@
     }
 
     .connection-img-container {
+        width: 10%;
+        max-width: 200px;
         order: 1; /* Imagem vai para a ESQUERDA */
-        flex: 1.2; /* Ocupa um pouco mais de metade da largura */
+        flex: 2; /* Ocupa um pouco mais de metade da largura */
     }
 
     .connection-content {
         order: 2; /* Texto vai para a DIREITA */
-        flex: 0.8;
+        flex: 0;
         align-items: flex-end; /* Garante que o bloco flex alinhe os itens à direita */
-        padding-left: 40px; /* Espaço entre imagem e texto */
-        max-width: none; /* Remove limite de largura para desktop */
+        max-width: 1000px !important    ; /* Remove limite de largura para desktop */
     }
 
     .connection-title {
-        margin-top: 20%;
+        margin-top: 25%;
         font-size: 3rem;
-        margin-right: 20%;
+        margin-right: 35%;
     }
 
     .connection-desc {
         font-size: 1.3rem;
-        margin-right: 20%;
+        margin-right: 35%;
     }
     
 }
