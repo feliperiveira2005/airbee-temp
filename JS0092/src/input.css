@@ -1,0 +1,567 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #262626; 
+            font-family: 'Montserrat', 'Manrope', sans-serif;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        @media (min-width: 992px) {
+            body {
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- HERO SECTION (DOBRA 1) --- */
+        .hero-section {
+            width: 100%;
+            background-color: #262626;
+        }
+
+        /* Configuração Mobile First */
+        .banner-mobile {
+            display: block;
+            width: 100%;
+            /* SOLICITADO: Limita a largura para não esticar demais */
+            max-width: 500px; 
+            /* Centraliza a imagem se a tela for maior que 450px */
+            margin: 0 auto; 
+            padding: 0px 0px;
+        }
+
+        .banner-desktop {
+            display: none; /* Esconde desktop no mobile */
+        }
+
+        /* --- MEDIA QUERY (DESKTOP) --- */
+        @media (min-width: 992px) {
+            
+            .banner-mobile {
+                display: none; /* Esconde mobile no desktop */
+            }
+
+            .banner-desktop {
+                display: block;
+                width: 100%;
+                padding: 0px;
+            }
+        }
+        /* --- DOBRA 2: GRID DE ESPECIFICAÇÕES --- */
+.specs-section {
+    background-color: #262626;
+    padding: 30px 0px;
+}
+
+.specs-grid {
+    display: grid;
+    /* Mobile: 2 colunas (o 5º item vai para a linha de baixo naturalmente) */
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+    width: 100%;
+    max-width: 500px; /* Limite largura no mobile */
+    margin: 0 auto;
+}
+
+/* Card Individual */
+.spec-card {
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 36px;
+    padding: 20px 5px; /* Padding lateral reduzido para caber texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Container do Ícone (Sem borda, pois a imagem já tem) */
+.spec-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    /* Borda CSS removida conforme solicitado */
+}
+
+.spec-icon img {
+    width: 100%; /* A imagem ocupa todo o container */
+    height: auto;
+    display: block;
+}
+
+/* Texto */
+.spec-text {
+    color: #fff;
+    font-size: 0.8rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 992px) {
+    .specs-section {
+        padding: 20px 0px;
+    }
+
+    .specs-grid {
+        /* Desktop: 5 colunas para acomodar o item extra */
+        grid-template-columns: repeat(5, 1fr);
+        max-width: 1920px;
+        gap: 20px;
+    }
+
+    .spec-card {
+        padding: 30px 0px;
+    }
+
+    .spec-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .spec-text {
+        font-size: 1rem;
+    }
+}
+.only-desktop {
+    display: flex !important;
+}
+
+.only-mobile {
+    display: none !important;
+}
+.only-mobile2 {
+    display: none !important;
+}
+@media screen and (max-width: 992px) {
+    .only-desktop {
+        display: none !important;
+    }
+    .only-mobile {
+        display: block !important;
+    }
+    .only-mobile2 {
+        display: block !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .specs-grid {
+        /* Desktop: 5 colunas para acomodar o item extra */
+        grid-template-columns: repeat(3, 2fr);
+        max-width: 1920px;
+        gap: 20px;
+    }
+}
+/* --- DOBRA 3: TRÊS MODELOS DE CONEXÃO --- */
+.connection-section {
+    background-color: #262626; /* Fundo preto */
+    padding: 0px 0;
+}
+
+.connection-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center; /* Mobile: Texto centralizado */
+}
+
+/* Bloco de Texto */
+.connection-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    /* Ordem 1 no Mobile (Texto em cima) */
+    order: 1; 
+}
+
+.connection-title {
+    color: #9C30B3; /* Roxo vibrante conforme a imagem */
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.connection-title span {
+    display: block; /* Força quebra de linha se necessário para estilizar */
+}
+
+.connection-desc {
+    color: #ccc; /* Cinza claro para leitura confortável no preto */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Container da Imagem */
+.connection-img-container {
+    width: 100%;
+    max-width: 500px;
+    /* Ordem 2 no Mobile (Imagem embaixo) */
+    order: 2; 
+}
+
+.connection-img-container img {
+    border-radius: 15px; /* Arredondamento suave nos cantos da foto */
+    width: 100%;
+    height: auto;
+}
+    #d3m{
+        display: block!important;
+    }
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 1200px) {
+    #d3m{
+        display: none!important;
+    }
+    .connection-section {
+        padding: 0px 0;
+        height: 100vh;
+        background: url(assets/images/d3.png) no-repeat center center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         border-radius: 30px;
+    }
+
+    .connection-wrapper {
+        flex-direction: row; /* Lado a lado */
+        justify-content: space-between;
+        align-items: center;
+        text-align: right; /* Desktop: Alinhado à direita */
+    }
+
+    .connection-img-container {
+        order: 1; /* Imagem vai para a ESQUERDA */
+        flex: 2; /* Ocupa um pouco mais de metade da largura */
+    }
+
+    .connection-content {
+        order: 2; /* Texto vai para a DIREITA */
+        flex: 0;
+        align-items: flex-end; /* Garante que o bloco flex alinhe os itens à direita */
+        padding-left: 40px; /* Espaço entre imagem e texto */
+        max-width: none; /* Remove limite de largura para desktop */
+    }
+
+    .connection-title {
+        margin-top: 50%;
+        font-size: 3rem;
+        margin-right: 25%;
+    }
+
+    .connection-desc {
+        font-size: 1.3rem;
+        margin-right: 25%;
+    }
+    
+}
+/* --- DOBRA 3: TRÊS MODELOS DE CONEXÃO --- */
+.connection-section {
+    background-color: #000; /* Fundo preto */
+    padding: 0px 0;
+}
+
+.connection-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center; /* Mobile: Texto centralizado */
+}
+
+/* Bloco de Texto */
+.connection-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    /* Ordem 1 no Mobile (Texto em cima) */
+    order: 1; 
+}
+
+.connection-title {
+    color: #9C30B3; /* Roxo vibrante conforme a imagem */
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.connection-title span {
+    display: block; /* Força quebra de linha visual se necessário */
+}
+
+.connection-desc {
+    color: #ccc; /* Cinza claro para leitura confortável no preto */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Container da Imagem */
+.connection-img-container {
+    width: 100%;
+    max-width: 500px;
+    /* Ordem 2 no Mobile (Imagem embaixo) */
+    order: 2; 
+}
+
+.connection-img-container img {
+    border-radius: 15px; /* Arredondamento suave nos cantos da foto */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 992px) {
+    .connection-section {
+        padding: 80px 0;
+    }
+    
+    .connection-wrapper {
+        flex-direction: row; /* Lado a lado */
+        justify-content: space-between;
+        align-items: center;
+        text-align: right; /* Desktop: Texto alinhado à direita */
+    }
+
+    .connection-img-container {
+        order: 1; /* Imagem vai para a ESQUERDA */
+        flex: 1.2; /* Ocupa um pouco mais de espaço */
+        margin-right: 40px; /* Espaço entre imagem e texto */
+    }
+
+    .connection-content {
+        order: 2; /* Texto vai para a DIREITA */
+        flex: 0.8;
+        align-items: flex-end; /* Garante que o bloco flex alinhe os itens à direita */
+    }
+
+    .connection-title {
+        font-size: 2.5rem;
+    }
+
+    .connection-desc {
+        font-size: 1.3rem;
+        max-width: 400px; /* Limita a largura do texto para não ficar muito esticado */
+    }
+}
+/* --- DOBRA 4: COMPATIBILIDADE --- */
+.compatibility-section {
+    background-color: #262626; /* Mesmo fundo do body */
+    padding: 20px 0px 0px 0px;
+    
+}
+
+/* Estilo Base dos Cards (Preto com bordas arredondadas) */
+.comp-card {
+    background-color: #262626;
+    border-radius: 0px;
+    width: 100%;
+    margin-bottom: 20px; /* Espaço entre o texto e a imagem no mobile */
+    overflow: hidden;
+}
+
+/* --- Card de Texto --- */
+.comp-card.text-wrapper {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.comp-card.text-wrapper h2 {
+    color: #9C30B3; /* Roxo vibrante (mesmo tom da seção anterior) */
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.comp-card.text-wrapper p {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px; /* Evita que o texto fique muito comprido no desktop */
+}
+
+/* --- Card de Imagem --- */
+.comp-card.img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Remove padding se quiser que a imagem encoste nas bordas, 
+       ou mantenha se quiser a imagem "flutuando" no preto */
+}
+
+.comp-card.img-wrapper img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 992px) {
+    .compatibility-section {
+        padding: 20px 0px 0px 0px;
+    }
+    .comp-card.img-wrapper img {
+        max-width: 1920px;
+    }
+    .comp-card {
+        background-color: #000000;
+        border-radius: 40px; /* Bordas um pouco mais arredondadas no desktop */
+        margin-bottom: 30px; /* Aumenta o espaço entre os blocos */
+    }
+
+    .comp-card.text-wrapper {
+        padding: 60px 40px;
+    }
+
+    .comp-card.text-wrapper h2 {
+        font-size: 2.5rem; /* Título maior no desktop */
+    }
+
+    .comp-card.text-wrapper p {
+        font-size: 1.3rem;
+        max-width: none; /* Evita que o texto fique muito comprido no desktop */
+    }
+}
+/* --- NOVA DOBRA: MIC SECTION (Texto Esquerda / Imagem Direita no Desktop) --- */
+
+/* Estilos Gerais (Mobile First) - Idêntico ao original */
+.mic-section {
+    background-color: #262626; /* Fundo cinza escuro base */
+    padding: 0px 0;
+    /* Se quiser imagem de fundo específica para essa dobra, adicione aqui ou no media query */
+}
+
+.mic-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center; /* Mobile: Texto centralizado */
+}
+
+/* Bloco de Texto */
+.mic-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    /* Ordem 1 no Mobile (Texto em cima) */
+    order: 1; 
+}
+
+.mic-title {
+    color: #9C30B3; /* Roxo mantido */
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mic-title span {
+    display: block;
+}
+
+.mic-desc {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Container da Imagem */
+.mic-img-container {
+    width: 100%;
+    max-width: 500px;
+    /* Ordem 2 no Mobile (Imagem embaixo) */
+    order: 2; 
+}
+
+.mic-img-container img {
+   
+    width: 100%;
+    height: auto;
+    display: block;
+}
+#d6m{
+        display: block!important;
+    }
+/* --- MEDIA QUERY (DESKTOP) - AQUI ESTÁ A MUDANÇA --- */
+@media (min-width: 1200px) {
+    .mic-section .container  {
+    margin-left: 10%;
+}
+
+    #d6m{
+        display: none!important;
+    }
+    .mic-section {
+        padding: 0px 0;
+        min-height: 100vh; /* Altura total se desejar, igual ao original */
+        margin-bottom: 20px;
+        /* Se tiver um background específico para desktop, coloque aqui: */
+        background: url(assets/images/d6.png) no-repeat center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 30px;
+        
+        /* Ajuste de flex para centralizar o conteudo verticalmente na tela cheia */
+        display: flex;
+        align-items: center; 
+    }
+
+    .mic-wrapper {
+        flex-direction: row; /* Lado a lado */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left; /* MUDANÇA: Alinhado à ESQUERDA */
+        width: 100%;
+    }
+
+    /* Lógica Invertida do original */
+    
+    .mic-content {
+        order: 1; /* MUDANÇA: Texto fica na ESQUERDA (primeiro) */
+        flex: 2;
+        align-items: flex-start; /* Alinha os itens do flex à esquerda */
+        padding-left: 0;
+        max-width: none;
+    }
+
+    .mic-img-container {
+        order: 2; /* MUDANÇA: Imagem fica na DIREITA (segundo) */
+        flex: 0;
+    }
+
+    /* Tamanhos de fonte desktop (iguais ao original) */
+    .mic-title {
+        font-size: 3rem;
+        /* Removemos a margem direita do original e podemos ajustar se necessário */
+    }
+
+    .mic-desc {
+        font-size: 1.3rem;
+    }
+}
