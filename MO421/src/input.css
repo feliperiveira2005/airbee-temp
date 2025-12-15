@@ -39,6 +39,7 @@
             max-width: 500px; 
             /* Centraliza a imagem se a tela for maior que 450px */
             margin: 0 auto; 
+            margin-bottom: 20px;
             padding: 0px 0px;
         }
 
@@ -194,6 +195,7 @@
 }
 
 .connection-title {
+    margin-top: 20px;
     color: #9C30B3; /* Roxo vibrante conforme a imagem */
     font-size: 1.8rem;
     font-weight: 700;
@@ -355,6 +357,8 @@
 
     .connection-title {
         font-size: 2.5rem;
+        
+        
     }
 
     .connection-desc {
@@ -566,4 +570,13 @@
     .mic-desc {
         font-size: 1.3rem;
     }
+}
+@media (min-width: 1200px) and (max-width: 1500px) {
+    .mic-section .container  {
+    margin-left: 3%;
+}
+.mic-title {
+        font-size: 2.5rem;
+    }
+    
 }
