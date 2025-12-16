@@ -11,7 +11,7 @@
             padding-left: 15px;
             padding-right: 15px;
         }
-        @media (min-width: 992px) {
+        @media (min-width: 1200px) {
             body {
                 padding-left: 30px;
                 padding-right: 30px;
@@ -47,7 +47,7 @@
         }
 
         /* --- MEDIA QUERY (DESKTOP) --- */
-        @media (min-width: 992px) {
+        @media (min-width: 1200px) {
             
             .banner-mobile {
                 display: none; /* Esconde mobile no desktop */
@@ -115,7 +115,13 @@
 }
 
 /* --- MEDIA QUERY (DESKTOP) --- */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
+    .connection-wrapper {
+        gap: 0px;
+    }
+    .connection-img-container {
+        max-width: 1100px !important;
+    }
     .specs-section {
         padding: 20px 0px;
     }
@@ -150,7 +156,7 @@
 .only-mobile2 {
     display: none !important;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
     .only-desktop {
         display: none !important;
     }
@@ -161,14 +167,7 @@
         display: block !important;
     }
 }
-@media (min-width: 992px) and (max-width: 1200px) {
-    .specs-grid {
-        /* Desktop: 5 colunas para acomodar o item extra */
-        grid-template-columns: repeat(3, 2fr);
-        max-width: 1920px;
-        gap: 20px;
-    }
-}
+
 /* --- DOBRA 3: TRÊS MODELOS DE CONEXÃO --- */
 .connection-section {
     background-color: #262626; /* Fundo preto */
@@ -228,12 +227,13 @@
     }
 /* --- MEDIA QUERY (DESKTOP) --- */
 @media (min-width: 1200px) {
+
     #d3m{
         display: none!important;
     }
     .connection-section {
         padding: 0px 0;
-        height: 100vh;
+       
         background: url(assets/images/d3.png) no-repeat center center;
          background-repeat: no-repeat;
          background-size: cover;
@@ -261,7 +261,7 @@
     }
 
     .connection-title {
-        margin-top: 50%;
+        margin-top: 30%;
         font-size: 3rem;
         margin-right: 25%;
     }
@@ -329,7 +329,7 @@
 }
 
 /* --- MEDIA QUERY (DESKTOP) --- */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .connection-section {
         padding: 80px 0;
     }
@@ -421,7 +421,7 @@
 }
 
 /* --- MEDIA QUERY (DESKTOP) --- */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .compatibility-section {
         padding: 20px 0px 0px 0px;
     }
@@ -510,6 +510,7 @@
     }
 /* --- MEDIA QUERY (DESKTOP) - AQUI ESTÁ A MUDANÇA --- */
 @media (min-width: 1200px) {
+    
     .mic-section .container  {
     margin-left: 10%;
 }
@@ -519,7 +520,7 @@
     }
     .mic-section {
         padding: 0px 0;
-        min-height: 100vh; /* Altura total se desejar, igual ao original */
+       
         margin-bottom: 20px;
         /* Se tiver um background específico para desktop, coloque aqui: */
         background: url(assets/images/d6.png) no-repeat center center;
@@ -544,7 +545,7 @@
     
     .mic-content {
         order: 1; /* MUDANÇA: Texto fica na ESQUERDA (primeiro) */
-        flex: 2;
+        flex: 0.8;
         align-items: flex-start; /* Alinha os itens do flex à esquerda */
         padding-left: 0;
         max-width: none;
@@ -552,7 +553,7 @@
 
     .mic-img-container {
         order: 2; /* MUDANÇA: Imagem fica na DIREITA (segundo) */
-        flex: 0;
+        flex: 1.2;
     }
 
     /* Tamanhos de fonte desktop (iguais ao original) */
@@ -563,5 +564,9 @@
 
     .mic-desc {
         font-size: 1.3rem;
+    }
+    .mic-img-container {
+        width: 150%;
+        max-width:1300px;
     }
 }
