@@ -1,0 +1,1283 @@
+/* --- RESET E BASE --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: white; 
+        font-family: "elza", sans-serif;
+    }
+
+    /* Classes Utilitárias de Visibilidade */
+    .only-desktop { display: none !important; }
+    .only-mobile { display: block !important; }
+
+    @media (min-width: 1000px) {
+        .only-desktop { display: block !important; }
+        .only-mobile { display: none !important; }
+    }
+
+    /* --- SEÇÃO INFINITY (DOBRA) --- */
+    .infinity-section {
+        width: 100%;
+        
+        /* --- ALTERAÇÃO AQUI (SÓ PARA MOBILE) --- */
+        max-width: 430px; /* Trava a largura máxima */
+        margin: 0 auto;   /* Centraliza o bloco na tela */
+        /* --------------------------------------- */
+        
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .infinity-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    /* Imagens de Fundo (Banner) */
+    .bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Camada de Texto (Overlay) */
+    .overlay-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 30px 20px; 
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; 
+        align-items: flex-start;
+    }
+
+    /* Grupo de Textos */
+    .text-group {
+        max-width: 300px; 
+    }
+
+    /* Logo Multi Azul */
+    .logo-img {
+        width: 140px; 
+        margin-bottom: 50px;
+    }
+    
+    .logo-text {
+        color: #0050DC;
+        font-size: 2rem;
+        font-weight: 800; 
+        margin-bottom: 15px;
+    }
+
+    .title {
+        color: #0050DC; 
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 10px;
+        line-height: 1.1;
+    }
+
+    .subtitle {
+        color: #2F2F2F; 
+        font-size: 1.4rem;
+        line-height: 1.4;
+        margin-bottom: 25px;
+        font-weight: 400;
+    }
+
+    /* --- ALTERAÇÃO NO BOTÃO (MOBILE) --- */
+    .pill-tag {
+        display: inline-block;
+        background-color: #0050DC; 
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 8px 25px;
+        border-radius: 30px; 
+        text-transform: uppercase;
+        
+        /* Fixa no final da dobra no Mobile */
+        position: absolute;
+        bottom: 30px; /* Mesma distância do padding top */
+        left: 20px;   /* Mesma distância do padding left */
+    }
+
+    /* --- MEDIA QUERY (DESKTOP) --- */
+    @media (min-width: 1000px) {
+        .infinity-section {
+            /* --- REVERTER A TRAVA NO PC --- */
+            max-width: none; /* Remove o limite de 430px no PC */
+            width: 100%;     /* Garante que o PC ocupe a tela toda */
+            margin: 0;       /* Remove a centralização forçada */
+            /* ----------------------------- */
+            
+            max-height: 100vh;
+        }
+
+        .overlay-content {
+            padding: 0 0 0 10%; 
+            justify-content: flex-start; 
+        }
+
+        .text-group {
+            max-width: 450px; 
+        }
+
+        .logo-img {
+            width: 200px;
+            margin-bottom: 50%;
+            margin-top: 40%;
+        }
+        .logo-text {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 3.5rem; 
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            margin-bottom: 100px;
+            margin-top: 0px;
+        }
+
+        .pill-tag {
+            /* --- RESTAURA POSIÇÃO NORMAL NO DESKTOP --- */
+            position: static; /* Tira o absolute */
+            /* ------------------------------------------ */
+            
+            font-size: 2rem;
+            padding: 10px 35px;
+        }
+    }
+    
+    @media (min-width: 1000px) and (max-width: 1600px) {
+         .logo-img {
+                width: 200px;
+                margin-bottom: 20%;
+                margin-top: 20%;
+            }   
+    }
+    /* --- CSS ESPECÍFICO DA DOBRA 2 (MOBILE FIRST) --- */
+    
+    .features-section {
+        width: 100%;
+        max-width: 430px; /* TRAVA MOBILE OBRIGATÓRIA */
+        margin: 0 auto;
+        background-color: #FFFFFF;
+        padding: 50px 20px;
+    }
+
+    .features-container {
+        display: flex;
+        flex-wrap: wrap; /* Permite quebra de linha no mobile */
+        justify-content: center; /* Centraliza itens, essencial para o 5º item ficar no meio */
+        gap: 40px 10px; /* Espaçamento Vertical | Horizontal */
+    }
+
+    .feature-item {
+        width: 45%; /* Quase metade para formar 2 colunas */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .icon-box {
+        margin-bottom: 15px;
+        /* Tamanho fixo para garantir alinhamento se as imagens variarem */
+        height: 80px; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .feat-icon {
+        max-width: 70px; /* Tamanho do ícone no mobile */
+        height: auto;
+        display: block;
+    }
+
+    .feat-text {
+        color: #2F2F2F;
+        font-size: 0.9rem; /* ~14px */
+        line-height: 1.2;
+        text-transform: uppercase;
+        font-weight: 400; /* Regular/Medium conforme imagem */
+    }
+
+    /* --- DESKTOP (Min-width 1000px) --- */
+    @media (min-width: 1000px) {
+        
+        .features-section {
+            max-width: none; /* DESTRAVA LARGURA */
+            margin: 0;
+            padding: 80px 0;
+        }
+
+        .features-section .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-container {
+            flex-wrap: nowrap; /* Impede quebra de linha: todos numa linha só */
+            justify-content: space-between; /* Espalha uniformemente */
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .feature-item {
+            width: auto;
+            flex: 1; /* Todos ocupam o mesmo espaço */
+        }
+
+        .feat-icon {
+            max-width: 90px; /* Ícones maiores no desktop */
+        }
+
+        .feat-text {
+            font-size: 1rem; /* Texto um pouco maior */
+            margin-top: 10px;
+        }
+    }
+    /* --- CSS ESPECÍFICO DA DOBRA 3 (MOBILE FIRST) --- */
+
+    .smartscroll-section {
+        width: 100%;
+        max-width: 430px; /* TRAVA MOBILE OBRIGATÓRIA */
+        margin: 0 auto;
+        padding: 20px; /* Espaço externo para não colar na borda da tela */
+        background-color: #fff; /* Fundo geral da seção */
+    }
+
+    /* Container "Card" */
+    .smart-card {
+        background-color: #0050DC; /* Azul extraído da imagem */
+        border-radius: 30px; /* Arredondamento forte do card */
+        overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
+        display: flex;
+        flex-direction: column; /* Vertical no Mobile */
+    }
+
+    .img-container {
+        width: 100%;
+        /* Altura controlada pela imagem, mas podemos limitar se necessário */
+    }
+
+    .product-img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    .text-content {
+        padding: 40px 20px;
+        text-align: center; /* Centralizado no Mobile */
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .scroll-icon {
+        width: 60px; /* Ajuste conforme o tamanho real do ícone */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .scroll-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .scroll-desc {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.4;
+        max-width: 300px; /* Limita largura do texto para leitura confortável */
+    }
+
+    /* --- DESKTOP (Min-width 1000px) --- */
+    @media (min-width: 1000px) {
+
+    .smartscroll-section {
+        max-width: none;
+        margin: 0;
+        padding: 50px 0; /* Aumentei o padding vertical para dar espaço ao mouse vazando */
+    }
+
+    .smartscroll-section .wrapper {
+        max-width: 1200px; /* Leve ajuste para centralizar melhor */
+        margin: 0 auto;
+    }
+
+    .smart-card {
+        flex-direction: row;
+        align-items: center; /* Alinha verticalmente ao centro */
+        border-radius: 40px;
+        
+        /* --- ALTERAÇÃO CRÍTICA PARA O EFEITO --- */
+        overflow: visible; /* Permite que a imagem saia das bordas do card */
+        position: relative; /* Contexto de posicionamento */
+        /* --------------------------------------- */
+    }
+
+    .img-container {
+        width: 50%;
+        position: relative;
+        
+        /* --- EFEITO DE "POP-OUT" (VAZAMENTO) --- */
+        /* Puxa a imagem para a esquerda (fora do card) e aumenta um pouco */
+        width: 55%;          /* Ocupa mais que a metade para crescer */
+        margin-bottom: -40px;/* Puxa para baixo (vaza no rodapé) */
+        z-index: 10;         /* Garante que o mouse fique "por cima" de tudo */
+        border-radius: 0px 0px 0px 0px;
+        /* --------------------------------------- */
+    }
+
+    .product-img {
+        height: auto;
+        width: 100%;
+        border-radius: 20px 0px 0px 0px;
+
+    }
+
+    .text-content {
+        width: 50%;
+        padding: 60px 80px 60px 40px; /* Ajuste fino no padding */
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .scroll-title {
+        font-size: 2.5rem;
+    }
+
+    .scroll-desc {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+    
+    .scroll-icon {
+        width: 80px;
+        margin-bottom: 30px;
+    }
+}
+/* --- CSS MOBILE FIRST (Trava 430px) --- */
+    
+    .buttons-section {
+        width: 100%;
+        max-width: 430px; /* TRAVA */
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    .blue-card-buttons {
+        background-color: #0044CC;
+        border-radius: 30px;
+        padding: 40px 20px 0 20px; /* Padding bottom 0 para a imagem colar embaixo */
+        color: #fff;
+        position: relative;
+        overflow: hidden; /* No mobile, a imagem fica dentro */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content-side {
+        text-align: center;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chart-icon {
+        width: 60px;
+        margin-bottom: 15px;
+    }
+
+    .buttons-title {
+        font-size: 1.5rem; /* ~24px */
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .buttons-desc {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 30px;
+        max-width: 320px;
+    }
+
+    /* Grid da Lista */
+    .specs-list {
+        list-style: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 Colunas */
+        gap: 15px 10px; /* Espaço vertical e horizontal */
+        text-align: left;
+    }
+
+    .specs-list li {
+        display: flex;
+        align-items: center;
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+
+    /* Bolinha Branca com Número */
+    .num-badge {
+        background-color: #fff;
+        color: #0044CC;
+        font-weight: 800;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 8px;
+        flex-shrink: 0; /* Garante que a bolinha não amasse */
+        font-size: 0.9rem;
+    }
+
+    .image-side {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mouse-numbered-img {
+        width: 100%;
+       
+        display: block;
+        margin-right: -40px;
+        margin-bottom: -10px; /* Pequeno ajuste para colar no fundo se precisar */
+    }
+
+    /* --- DESKTOP (Min-width 1000px) --- */
+    @media (min-width: 1000px) {
+
+        .buttons-section {
+            max-width: none;
+            margin: 0;
+            padding: 100px 0;
+        }
+
+        .buttons-section .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blue-card-buttons {
+            flex-direction: row; /* Lado a lado */
+            align-items: center;
+            border-radius: 40px;
+            padding: 0; /* Reset do padding mobile */
+            overflow: visible; /* CRUCIAL: Deixa a imagem vazar */
+            min-height: 500px; /* Garante altura para o layout respirar */
+        }
+
+    .content-side {
+        width: 50%;
+        padding: 60px 0 60px 80px;
+        text-align: left;
+        margin-bottom: 0;
+        z-index: 2;
+        
+        /* Grid de 2 colunas: Ícone | Texto */
+        display: grid;
+        grid-template-columns: max-content 1fr; 
+        column-gap: 30px; /* Espaço horizontal entre ícone e texto */
+        /* Removemos o row-gap global para controlar via margens */
+    }
+
+    .chart-icon {
+        /* O ícone abrange as linhas 1 e 2 (Título e Descrição) */
+        grid-row: 1 / 3; 
+        grid-column: 1;
+        width: 80px;
+        margin: 0;
+        align-self: start; /* Garante que fique no topo */
+    }
+
+    .buttons-title {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .buttons-desc {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 1.1rem;
+        max-width: 450px;
+        margin-bottom: 40px; /* Dá espaço para a lista embaixo */
+    }
+
+    /* --- CORREÇÃO: A LISTA VAI PARA BAIXO --- */
+    .specs-list {
+        /* Ocupa da coluna 1 até o final (-1), ficando embaixo do ícone e texto */
+        grid-column: 1 / -1; 
+        grid-row: 3;
+        
+        /* Mantém a formatação interna da lista */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+        width: 100%;
+    }
+
+        .specs-list li {
+            font-size: 1.1rem;
+        }
+
+        .num-badge {
+            width: 32px;
+            height: 32px;
+            font-size: 1.1rem;
+            margin-right: 12px;
+        }
+
+        /* Configuração do Vazamento da Imagem (Right Breakout) */
+        .image-side {
+            width: 50%;
+            position: relative;
+            height: 100%;
+            display: block; /* Reset do flex center */
+        }
+
+        .mouse-numbered-img {
+            max-width: none; /* Remove limite do mobile */
+            width: 80%; /* Aumenta para vazar para a direita */
+            position: absolute;
+            margin-right: 0px;
+            right: 0%; /* Ajuste fino horizontal */
+            transform: translateY(-57.5%); /* Centraliza verticalmente na section */
+            
+            /* Sombra para destacar o recorte */
+          
+        }
+    }
+    /* --- SEÇÃO DESIGN ERGONÔMICO (MOBILE FIRST) --- */
+
+.ergonomic-section {
+    width: 100%;
+    max-width: 430px; /* Trava Mobile */
+    margin: 0 auto;
+    
+    /* --- CONFIGURAÇÃO DE BACKGROUND (A imagem do produto) --- */
+    background-image: url('assets/images/d5m.png'); /* Imagem Mobile (idealmente limpa) */
+    background-size: cover; /* Cobre toda a área */
+    background-position: center top; /* Alinha ao topo centro */
+    background-repeat: no-repeat;
+    background-color: #EBECEE; /* Cor de fundo de segurança */
+
+    /* Altura mínima para garantir que a mão apareça */
+    min-height: 600px; 
+
+    /* Espaço no topo para o conteúdo não colar na borda superior */
+    padding-top: 60px;
+    padding-bottom: 20px;
+    
+    /* Centraliza o conteúdo HTML (ícone/texto) horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.ergonomic-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.text-group-center {
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* O conteúdo HTML fica sobre a imagem de fundo */
+}
+
+/* --- Estilos do Ícone e Texto HTML --- */
+.ergo-icon {
+    width: 70px; /* Tamanho do ícone no mobile */
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.ergo-title {
+    color: #0050DC;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.ergo-desc {
+    color: #2F2F2F;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    max-width: 320px;
+    /* Opcional: sombra suave no texto para melhorar leitura sobre o fundo se necessário */
+    /* text-shadow: 0px 1px 3px rgba(255,255,255,0.5); */
+}
+
+
+/* --- DESKTOP (Min-width 1000px) --- */
+@media (min-width: 1000px) {
+
+    .ergonomic-section {
+        max-width: none;
+        margin: 0;
+
+        background-image: url('assets/images/d5.png');
+        background-position: center center; 
+
+        padding-top: 60px;
+        min-height: 1000px;
+    }
+
+    /* --- ALTERAÇÃO AQUI --- */
+    .text-group-center {
+    
+        max-width: 1000px; 
+        width: 100%;
+    }
+
+    .ergo-icon {
+        width: 90px;
+        margin-bottom: 30px;
+    }
+
+    .ergo-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .ergo-desc {
+        font-size: 1.2rem;
+        /* O max-width do pai (.text-group-center) já controla isso, 
+           mas podemos garantir que o texto ocupe 100% dessa nova área menor */
+        max-width: 100%; 
+    }
+}
+/* --- SEÇÃO CARDS INFORMATIVOS (MOBILE FIRST) --- */
+
+.info-cards-section {
+    width: 100%;
+    max-width: 430px; /* Trava Mobile */
+    margin: 0 auto;
+   
+    padding: 50px 20px;
+}
+
+.cards-grid {
+    display: flex;
+    flex-direction: column; /* Empilha um embaixo do outro no mobile */
+    gap: 20px; /* Espaço entre os cards */
+}
+
+.info-card {
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    padding: 40px 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Sombra suave opcional para destacar do fundo cinza */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03); 
+}
+
+.card-icon {
+    width: 60px; /* Tamanho do ícone */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    color: #0050DC;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+/* Texto azul específico do DPI */
+.card-highlight {
+    color: #0050DC;
+    font-size: 0.9rem;
+    font-weight: 800; /* Mais grosso conforme imagem */
+    margin-bottom: 15px;
+}
+
+.card-desc {
+    color: #2F2F2F;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* --- DESKTOP (Min-width 1000px) --- */
+@media (min-width: 1000px) {
+
+    .info-cards-section {
+        max-width: none; /* Destrava */
+        margin: 0;
+        padding: 100px 0; /* Mais respiro vertical */
+    }
+
+    .info-cards-section .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .cards-grid {
+        /* Muda para Grid ou Flex Row */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+        gap: 30px; /* Espaço maior entre eles */
+        align-items: stretch; /* Faz todos terem a mesma altura */
+    }
+
+    .info-card {
+        padding: 100px 30px;
+        /* Garante alinhamento vertical interno */
+        justify-content: flex-start; 
+        height: 100%;
+        
+    }
+
+    .card-icon {
+        width: 80px; /* Ícone maior */
+        margin-bottom: 30px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .card-highlight {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .card-desc {
+        font-size: 1rem;
+        max-width: 300px; /* Limita largura do texto para ficar bonito */
+    }
+}
+/* --- SEÇÃO CLIQUES SILENCIOSOS (MOBILE FIRST) --- */
+
+.silent-section {
+    width: 100%;
+    max-width: 430px; /* Trava Mobile */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0 0px 50px 0px; /* Padding nas laterais e fundo */
+}
+
+.silent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.silent-img-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2; /* Garante que o mouse fique POR CIMA do card azul */
+    margin-bottom: -40px; /* Puxa o mouse para baixo para sobrepor o card azul */
+}
+
+.silent-mouse {
+    width: 100%;
+    max-width: 428px; /* Tamanho visual do mouse no mobile */
+    height: auto;
+    display: block;
+    margin-bottom: -45px;
+}
+
+.silent-card {
+    background-color: #0050DC; /* Azul vibrante */
+    width: 100%;
+    border-radius: 30px; /* Bordas arredondadas */
+    padding: 120px 30px 40px 30px; /* Padding Top alto para compensar o mouse entrando */
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+
+.silent-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.silent-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+    /* Filtro para garantir que o ícone fique branco se for imagem preta */
+    filter: brightness(0) invert(1); 
+}
+
+.silent-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.silent-desc {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    max-width: 280px;
+}
+
+/* --- DESKTOP (Min-width 1000px) --- */
+@media (min-width: 1000px) {
+
+    .silent-section {
+        max-width: none;
+        margin: 0;
+        padding: 50px 0;
+    }
+
+    .silent-section .wrapper {
+        max-width: 1400px; /* Largura um pouco menor para concentrar o design */
+        margin: 0 auto;
+    }
+
+    .silent-container {
+        flex-direction: row; /* Lado a lado */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .silent-img-box {
+        width: 55%; /* Mouse ocupa mais da metade */
+        justify-content: flex-end; /* Empurra imagem para a direita, colando no card */
+        margin-bottom: 0; /* Remove margem negativa mobile */
+        margin-right: -130px; /* CRUCIAL: Faz o mouse invadir a área do card azul */
+    }
+
+    .silent-mouse {
+        max-width: 800px; /* Mouse bem grande no desktop */
+        margin-bottom: 0px;
+    }
+
+    .silent-card {
+        width: 45%;
+        padding: 60px 40px 60px 120px; /* Padding ESQUERDO grande para o texto não ficar embaixo do mouse */
+        text-align: left; /* Texto alinhado à esquerda */
+        border-radius: 40px;
+        min-height: 350px; /* Altura do card azul */
+        
+        display: flex;
+        align-items: center; /* Centraliza conteúdo verticalmente */
+    }
+
+    .silent-content {
+        align-items: flex-start; /* Ícone e texto alinhados à esquerda */
+    }
+
+    .silent-icon {
+        width: 80px;
+        margin-bottom: 25px;
+    }
+
+    .silent-title {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+
+    .silent-desc {
+        font-size: 1.1rem;
+        max-width: 350px;
+    }
+}
+/* --- SEÇÃO CONEXÃO INTELIGENTE (MOBILE FIRST) --- */
+
+.connection-section {
+    width: 100%;
+    max-width: 430px; /* Trava Mobile */
+    margin: 0 auto;
+    background-color: #fff;
+    /* No mobile, o fundo é branco e os elementos empilham */
+}
+
+.connection-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Card Azul */
+.connection-card {
+    background-color: #0050DC; /* Azul padrão */
+    width: 100%;
+    color: #fff;
+    padding: 50px 30px;
+    text-align: center;
+    
+    /* Arredondamento apenas no topo no mobile para criar o efeito da imagem */
+    border-radius: 30px 30px 0 0; 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conn-icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 20px;
+    /* Garante que o ícone fique branco se for preto originalmente */
+    filter: brightness(0) invert(1); 
+}
+
+.conn-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.conn-desc {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 400;
+    max-width: 350px;
+}
+
+/* Imagem Mobile */
+.conn-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -1px; /* Remove linha branca se houver */
+}
+
+/* --- DESKTOP (Min-width 1000px) --- */
+@media (min-width: 1000px) {
+
+    .connection-section {
+        max-width: none;
+        margin: 0;
+        
+        /* --- BACKGROUND IMAGE PARA DESKTOP --- */
+        background-image: url('assets/images/d8.png');
+        background-size: cover;
+        background-position: center center;
+        
+        min-height: 1000px; /* Altura da seção */
+        
+        display: flex;
+        align-items: start; /* Centraliza verticalmente */
+        justify-content: center;
+    }
+
+    .connection-section .wrapper {
+        width: 100%;
+        
+        padding: 0 0px;
+    }
+
+    .connection-container {
+        flex-direction: row;
+        justify-content: flex-end; /* Empurra o card para a DIREITA */
+    }
+
+    .connection-card {
+        width: 50%; /* Ocupa metade da tela ou ajuste conforme imagem */
+        margin-top: 5%;
+        padding: 60px 50px;
+        text-align: left; /* Texto alinhado à esquerda no PC */
+        align-items: flex-start;
+        
+        /* Card flutuante totalmente arredondado ou conforme design */
+        border-radius: 30px 0px 0px 30px; 
+        
+        /* Opcional: Se quiser que ele encoste no topo ou lado, use margens */
+        margin-right: 0; 
+    }
+
+    .conn-icon {
+        width: 70px;
+        margin-bottom: 25px;
+    }
+
+    .conn-title {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .conn-desc {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+}
+/* =========================================
+   DOBRA 09 (Footer)
+   ========================================= */
+ .dobra-09 {
+    margin: 0px auto;
+    margin-top: 0px;
+    padding: 2.5% 56px;
+    background-color: #0050DC;
+    border-radius: 20px 0px 0 0 ;
+    width: 100%;
+    max-width: 1920px;
+}
+
+ .dobra-09 .feature__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ .dobra-09 .feature__content > .image {
+    max-width: 242px;
+    height: 91px;
+    border-radius: 0 !important;
+}
+
+ .dobra-09 .feature__content > .text__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+ .dobra-09 .feature__content > .text__content > .line > .feature__description {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+ .dobra-09 .feature__content > .text__content > .line > .feature__description > span {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+     .dobra-09 {
+        margin: 0 11px;
+        margin-top: 60px;
+        border-radius: 10px;
+        padding: 12px 13px;
+        width: 100%;
+        justify-self: center;
+        height: 70px;
+        align-items: center;
+    }
+
+     .dobra-09 .feature__content > .image {
+        max-width: 122px;
+        height: auto;
+    }
+
+     .dobra-09 .feature__content > .text__content {
+        gap: 4px;
+    }
+
+     .dobra-09 .feature__content > .text__content > .line > .feature__description {
+        font-size: 10px;
+    }
+}
+/* =========================================
+   DOBRA ESPECIFICAÇÕES TÉCNICAS (MOUSE)
+   ========================================= */
+
+.dobra-especificacoes-mouse {
+    width: 100%;
+    /* Segue o padrão das suas outras dobras mobile first */
+    max-width: 430px; 
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: hidden; 
+}
+
+/* Tipografia */
+.dobra-especificacoes-mouse .feature__title {
+    color: #0050DC; /* Texto branco sobre fundo azul */
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    text-align: center;
+}
+
+.dobra-especificacoes-mouse .specs-details p {
+    font-family: "elza", sans-serif; /* Ou sua fonte padrão */
+    color: #2F2F2F;
+    font-size: 1rem; /* Ajustado para mobile */
+    line-height: 1.6;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.dobra-especificacoes-mouse strong {
+    font-weight: 700;
+    color: black; /* Destaque azul nos rótulos */
+}
+
+/* --- MOBILE (Padrão inicial) --- */
+
+.dobra-especificacoes-mouse .feature__content {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 0;
+}
+
+/* 1. Faixa Azul no Topo (Mobile) */
+.dobra-especificacoes-mouse .specs-header-blue {
+ 
+    width: 100%;
+    padding: 20px 20px;
+    border-radius: 0 0 30px 0;
+    margin-bottom: 0px;
+}
+
+/* 2. Texto */
+.dobra-especificacoes-mouse .specs-details {
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+/* 3. Imagem */
+.dobra-especificacoes-mouse .specs-image-col {
+    padding: 0 0px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.dobra-especificacoes-mouse .specs-image-col img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* --- VERSÃO DESKTOP --- */
+@media screen and (min-width: 1000px) {
+    
+    .dobra-especificacoes-mouse {
+        max-width: none;
+        padding-top: 0 !important; 
+        padding-bottom: 0px; 
+        margin-top: 0 !important;
+        /* Garante que nada gere barra de rolagem horizontal */
+        overflow-x: hidden; 
+    }
+
+    .dobra-especificacoes-mouse .feature__content {
+        display: grid;
+        /* Texto (40%) | Imagem (60%) */
+        grid-template-columns: 40% 60%; 
+        align-items: center; 
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 0 0 50px; /* Padding apenas na esquerda */
+        position: relative;
+    }
+
+    /* Coluna da Esquerda (Texto) */
+    .dobra-especificacoes-mouse .specs-left-col {
+        position: relative;
+        z-index: 1;
+        padding-top: 0; 
+    }
+
+    /* Faixa AZUL (Mantida a lógica de fundo infinito para a ESQUERDA) */
+    .dobra-especificacoes-mouse .specs-header-blue {
+        margin-top: 0px; 
+        background-color: white;
+        padding: 60px 40px 40px 0;
+        z-index: 1;
+        
+        margin-left: -100vw; 
+        padding-left: 100vw; 
+        width: 200vw; 
+        
+        margin-bottom: 0px;
+        border-radius: 0 40px 40px 0;
+    }
+
+    .dobra-especificacoes-mouse .feature__title {
+        font-size: 42px;
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .dobra-especificacoes-mouse .specs-details {
+        padding-left: 0;
+        max-width: 400px;
+    }
+    
+    .dobra-especificacoes-mouse .specs-details p {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    /* --- ALTERAÇÃO PRINCIPAL AQUI (Direita) --- */
+    
+    .dobra-especificacoes-mouse .specs-image-col {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end; /* Garante alinhamento à direita */
+        
+        /* CÁLCULO MÁGICO: */
+        /* Calcula o espaço vazio à direita do container (1200px) e puxa a margem */
+        margin-right: calc((100vw - 1200px) / -2);
+        
+        /* Ajuste fino para monitores menores que 1200px não quebrarem */
+        min-width: 100%; 
+    }
+
+    .dobra-especificacoes-mouse .specs-image-col img {
+        /* A imagem ocupa 100% desse novo espaço esticado */
+        width: 85%;
+        height: auto;
+        max-width: none; /* Remove limites */
+        
+        /* Ajuste de objeto para preencher bem o espaço */
+        object-fit: cover; 
+        object-position: right center; /* Foco na direita */
+        
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+    }
+}
