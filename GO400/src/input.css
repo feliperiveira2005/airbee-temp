@@ -259,6 +259,9 @@ body {
 .ep-lamina .dobra-02 {
     overflow: hidden;
     padding-bottom: 0;
+    padding-left: 80px;
+    padding-right: 80px;
+    
 }
 
 .ep-lamina .dobra-02 .feature__content {
@@ -296,7 +299,7 @@ body {
     text-transform: uppercase;
     max-width: 250px;
     width: 100%;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     line-height: 112%;
     text-align: center;
@@ -314,6 +317,9 @@ body {
     .ep-lamina .dobra-02 {
         padding-top: 46px;
         padding-bottom: 46px;
+        padding-left: 0px;
+        padding-right: 0px;
+        
     }
 
     .ep-lamina .dobra-02 .feature__content {
@@ -447,7 +453,7 @@ body {
         padding: 10px;
     }
     .dobra-03-features .feature__title {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .dobra-03-features .feature__description {
@@ -1004,7 +1010,14 @@ body {
     height: auto;
    
 }
-
+@media screen and (max-width: 1150px) {
+    .dobra-04-details .feature__title {
+        text-align: center;
+    }
+    .dobra-04-details .feature__description {
+        text-align: center;
+    }
+}
 /* =========================================
    LAYOUT DESKTOP (> 769px)
    ========================================= */
@@ -1041,18 +1054,18 @@ body {
     }
 
     /* --- LINHA 2 (Luz + Lifestyle) - CORRIGIDO PARA IMAGEM EMBAIXO DO TEXTO --- */
+    /* --- LINHA 2 (Luz + Lifestyle) - DESKTOP --- */
     .dobra-04-details .row-light {
-        /* Alinha os itens pela base */
         align-items: flex-end;
         margin-bottom: 100px;
         position: relative;
     }
 
     .dobra-04-details .card-bottom {
-        width: 70%; /* Largura do card laranja */
+        width: 70%;
         display: flex;
-        flex-direction: column; /* Texto em cima, Imagem embaixo */
-        align-items: flex-start; /* Alinha o texto à esquerda */
+        flex-direction: column;
+        align-items: flex-start;
         position: relative;
         padding: 0;
         overflow: hidden;
@@ -1060,18 +1073,42 @@ body {
         border-radius: 40px;
     }
 
+    /* --- AQUI A MÁGICA DO 50/50 --- */
     .dobra-04-details .card-bottom .text-area {
-        width: 100%; /* Ocupa toda a largura superior */
-        padding: 40px 40px 20px 40px; /* Espaço para o texto */
+        width: 70%;
+         margin: auto;
+        padding: 50px 40px 30px 40px; /* Ajuste de padding */
         z-index: 2;
+        
+        /* Transforma em linha */
+        display: flex; 
+        flex-direction: row; 
+        align-items: center; /* Centraliza verticalmente */
     }
 
-    /* Área da Imagem Interna (Lifestyle/Café) */
+    /* Título (Luz Indicativa) - 50% */
+    .dobra-04-details .card-bottom .text-area .feature__title {
+        flex: 0 0 50%; /* Trava em 50% */
+        width: 50%;
+        margin-bottom: 0; /* Remove margem de baixo */
+        line-height: 1.1;
+        padding-right: 20px; /* Espaço para não colar na descrição */
+        white-space: nowrap; /* Garante que não quebre linha estranha */
+    }
+
+    /* Descrição (Mostra de forma...) - 50% */
+    .dobra-04-details .card-bottom .text-area .feature__description {
+        flex: 0 0 50%; /* Trava em 50% */
+        width: 50%;
+        margin: 0;
+        text-align: left;
+    }
+    /* -------------------------------- */
+
     .dobra-04-details .card-bottom .lifestyle-area {
         width: 100%;
-        /* Ocupa o restante da altura do card */
         flex: 1;
-        min-height: 250px; /* Altura mínima para a imagem aparecer bem */
+        min-height: 250px;
         position: relative;
         z-index: 1;
     }
@@ -1079,21 +1116,19 @@ body {
     .dobra-04-details .card-bottom .lifestyle-area img {
         height: 100%;
         width: 100%;
-        object-fit: cover; /* Cobre toda a área sem distorcer */
-        /* A borda arredondada do pai (card-bottom) com overflow:hidden já corta a imagem */
+        object-fit: cover;
         border-radius: 0; 
     }
 
-    /* Correção da Chaleira Grande Externa */
     .dobra-04-details .img-product-bottom {
         width: 40%;
-        
-        z-index: 3; /* Fica na frente de tudo */
+        z-index: 3;
         position: absolute;
-        right: 5%; /* Posiciona à direita */
-        bottom: -30px; /* Posiciona na base, descendo um pouco */
+        right: 5%;
+        bottom: -30px;
     }
-    #d42{
+    
+    #d42 {
         margin-left: 0%;
     }
 }
@@ -1140,6 +1175,7 @@ body {
         margin-bottom: -60px; /* Puxa a imagem pra cima */
         z-index: 1;
         margin-left: -40px;
+        padding-left: 60px;
     }
 
     .dobra-04-details .img-product-top {
@@ -1159,6 +1195,7 @@ body {
     }
 
     .dobra-04-details .card-bottom .text-area {
+         
         padding: 0 30px 20px 30px;
         text-align: center;
     }
@@ -1242,7 +1279,7 @@ body {
 /* --- Texto Técnico (Direita) --- */
 .dobra-specs-chaleira .specs-text {
     flex: 1;
-    padding-left: 50px; /* Espaço entre imagem e texto */
+    padding-left: 100px; /* Espaço entre imagem e texto */
     color: #2F2F2F;
   
 }
