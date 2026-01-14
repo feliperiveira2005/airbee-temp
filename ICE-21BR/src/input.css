@@ -1,0 +1,596 @@
+/* --- FONTES PERSONALIZADAS --- */
+/* 1. Extra Light (Peso 200) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Extra-Light.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* 2. Light (Peso 300) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* 3. Regular (Peso 400 - Padrão) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Regular.otf') format('opentype');
+    font-weight: 400; /* ou 'normal' */
+    font-style: normal;
+}
+
+/* 4. Italic (Peso 400 - Itálico) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* 5. Medium (Peso 500) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* 6. Semi-Bold (Peso 600) */
+/* Nota: O nome deste arquivo estava diferente na imagem (sem o 'fonnts.com-') */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/Gelica-Semi-Bold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* 7. Bold (Peso 700 - Negrito) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Bold.otf') format('opentype');
+    font-weight: 700; /* ou 'bold' */
+    font-style: normal;
+}
+
+/* 8. Black (Peso 900 - Extra Negrito) */
+@font-face {
+    font-family: 'Gelica';
+    src: url('./fonts/fonnts.com-Gelica-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+        /* --- RESET BÁSICO --- */
+        .only-desktop {
+            display: flex !important;
+        }
+
+        .only-mobile {
+            display: none !important;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .only-desktop {
+                display: none !important;
+            }
+            .only-mobile {
+                display: block !important;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gelica', serif; 
+            line-height: 1.4;
+            color: #233C28;
+            background-color: #ffffff;
+            /* Garante que o body não ultrapasse a largura em telas gigantes */
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Isso obriga a usar margin auto para centralizar */
+        }
+
+        /* --- ESTRUTURA GERAL --- */
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* --- CABEÇALHO (HEADER) --- */
+        .header-cuisinart {
+            background-color: #233C28;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        .logo-img {
+            /* CORREÇÃO DE ALINHAMENTO: 
+               Como a imagem é display: block, precisamos das margens automáticas 
+               para centralizar horizontalmente. */
+            margin: 0 auto; 
+            max-width: 150px; /* Ajuste o tamanho conforme necessário */
+        }
+
+        /* --- ESTILOS DA DOBRA (MOBILE FIRST) --- */
+        .dobra-banner {
+            /* Imagem Mobile (Retrato) */
+            background-image: url('./assets/images/d1m.png'); 
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 500px; 
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 1rem;
+            text-align: center;
+        }
+
+        .banner-texto {
+            max-width: 90%;
+            /* CORREÇÃO DE ALINHAMENTO: 
+               Garante que o bloco de texto esteja no centro do container */
+            margin: 0 auto; 
+        }
+
+        .banner-titulo {
+            font-size: 28px;
+            font-weight: normal;
+            line-height: 1.1;
+            margin-bottom: 0rem;
+            color: #233C28;
+        }
+
+        .banner-subtitulo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #233C28;
+            line-height: 1.1;
+        }
+
+        /* --- MEDIA QUERIES (DESKTOP/TABLET) --- */
+        @media (min-width: 1000px) {
+            
+            .header-cuisinart {
+                padding: 1.5rem 0;
+            }
+            
+            /* Ajuste opcional do tamanho do logo no desktop */
+            .logo-img {
+                max-width: 350px; /* Ajuste o tamanho conforme necessário */
+            }
+
+            .dobra-banner {
+                /* Imagem Desktop (Paisagem) */
+                background-image: url('./assets/images/d1.png'); 
+                background-position: center center;
+                min-height: 900px; 
+                align-items: flex-start;
+                padding-top: 2rem;
+            }
+            
+            .banner-texto {
+                max-width: 100%;
+            }
+
+            .banner-titulo {
+                font-size: 50px;
+            }
+
+            .banner-subtitulo {
+                margin-top: -10px;
+                font-size: 80px;
+                font-style: italic;
+            }
+        }
+        @media (max-width: 1000px) {
+            .dobra-banner {
+                max-width: 500px;
+                margin: auto;
+            }
+        }
+        /* --- ESTILOS DA DOBRA DE CARACTERÍSTICAS (FEATURES) --- */
+.features-dobra {
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.features-titulo {
+    font-family: 'Work Sans' , sans-serif;
+    font-size: 1.125rem;
+    color: #233C28;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+}
+
+/* Container dos ícones */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Reduzi o gap para aproximar os itens */
+    gap: 1rem; 
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* No mobile, ajustado para ficarem próximos, mas legíveis */
+    width: 45%; 
+    max-width: 160px;
+}
+
+/* Imagem do ícone (agora sem o div circular em volta) */
+.feature-icon-img {
+    /* Tamanho ajustado para o círculo que vem na imagem */
+    max-width: 90px; 
+    height: auto;
+    margin-bottom: 0.5rem; /* Aproxima o texto da imagem */
+    display: block;
+}
+
+.feature-desc {
+    font-family: 'Gelica', serif;
+    font-size: 0.9rem;
+    color: #233C28;
+    line-height: 1.3;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 1000px) {
+    .feature-desc {
+        font-size: 20px;
+    }
+    .features-dobra {
+        padding: 2rem 1.5rem;
+    }
+
+    .features-titulo {
+        font-size: 28px;
+        margin-bottom: 5rem;
+    }
+
+    .features-grid {
+    
+        flex-wrap: nowrap; 
+       
+        justify-content: center; 
+        
+    
+        gap: 1.5rem; 
+    }
+
+    .feature-item {
+        width: auto;
+        /* Garante que todos tenham a mesma largura base para alinhamento */
+        flex: 0 1 180px; 
+         max-width: 250px;
+    }
+}
+@media (max-width: 1000px) {
+            .features-dobra {
+                max-width: 600px;
+                margin: auto;
+            }
+}
+/* --- ESTILOS DA DOBRA "CREMOSO E RÁPIDO" --- */
+.cremoso-dobra {
+    padding: 3rem 1.5rem;
+    background-color: #ffffff;
+    margin-bottom: 0rem;
+}
+
+/* Container do Cabeçalho (Título + Texto) */
+.cremoso-header {
+    display: flex;
+    flex-direction: column; /* Mobile: um embaixo do outro */
+    gap: 1.5rem; /* Espaço entre título e texto */
+    margin-bottom: 2.5rem; /* Espaço entre o texto e a imagem */
+}
+
+.cremoso-titulo {
+    font-family: 'Gelica', serif;
+    font-size: 2rem; /* Tamanho grande no mobile */
+    line-height: 1.2;
+    color: #2e4033;
+    font-weight: normal;
+}
+
+/* Estilo para a palavra "irresistível" em itálico e negrito */
+.cremoso-titulo em {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.cremoso-desc {
+    font-family: 'Work Sans', serif; /* Ou sans-serif se preferir contraste */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4a4a4a; /* Um cinza escuro para leitura, ou use o verde #2e4033 */
+}
+
+/* Imagem Responsiva */
+.cremoso-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* Opcional: leve arredondamento se desejar */
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 1000px) {
+    .cremoso-dobra {
+        padding: 4rem 1.5rem;
+    }
+    .cremoso-dobra{
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    .cremoso-header {
+        flex-direction: row; /* Desktop: lado a lado */
+        justify-content: center; /* Separa os dois blocos */
+        align-items: flex-start; /* Alinha pelo topo */
+        gap: 2rem; /* Aumenta o espaço entre as colunas */
+    }
+
+    .cremoso-titulo {
+        font-size: 50px; /* Aumenta o título no desktop */
+        flex: 1; /* Ocupa espaço proporcional */
+        max-width: 45%; /* Limita a largura para não esticar demais */
+        padding-left: 2%;
+    }
+
+    .cremoso-desc {
+        
+        font-size: 22px;
+        flex: 1;
+        max-width: 45%;
+        margin-top: 0.5rem; /* Pequeno ajuste visual para alinhar com a altura da fonte do título */
+    }
+}
+@media (max-width: 1000px) {
+    .cremoso-dobra {
+            padding: 1rem 0rem;
+    }
+    .sorvete {
+           padding: 0rem;
+    }
+    .cremoso-header {
+        padding: 2rem;
+        margin-bottom: 0rem;
+    }
+}
+/* --- ESTILOS DA DOBRA "CRIE DO SEU JEITO" (DUO FEATURES) --- */
+.duo-section {
+    padding: 2rem 0rem;
+    background-color: #ffffff;
+}
+
+/* Container de cada linha (Texto + Imagem) */
+.duo-row {
+    display: flex;
+    flex-direction: column; /* Mobile: Empilha verticalmente */
+    gap: 1.5rem;
+    margin-bottom: 2rem; /* Espaço entre o bloco 1 e o bloco 2 */
+}
+
+/* Remove a margem do último item para não sobrar espaço extra */
+.duo-row:last-child {
+    margin-bottom: 0;
+}
+
+/* --- TIPOFRAGIA E TEXTOS --- */
+.duo-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.duo-titulo {
+    font-family: 'Gelica', serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: #2e4033;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para a ênfase (itálico/bold) nos títulos */
+.duo-titulo em {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.duo-desc {
+    font-family: 'Work Sans', serif; /* Ou sans-serif, seguindo o padrão anterior */
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4a4a4a;
+    max-width: 500px; /* Evita que o texto fique muito largo em telas médias */
+}
+
+/* --- IMAGENS --- */
+.duo-img-wrapper {
+    width: 100%;
+    /* Opcional: define altura ou deixa automático */
+}
+
+.duo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 1000px) {
+    .duo-section {
+        padding: 5rem 1.5rem;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .duo-row {
+        flex-direction: row; /* Coloca lado a lado */
+        align-items: center; /* Centraliza verticalmente */
+        justify-content: center;
+        gap: 0rem; /* Espaço generoso entre texto e imagem */
+        margin-bottom: 6rem;
+    }
+
+    /* TRUQUE PARA O ZIG-ZAG:
+       Na segunda linha (que tem a classe .reverse), invertemos a direção.
+       Assim, a imagem (que é o 2º elemento no HTML) vai para a esquerda visualmente. */
+    .duo-row.reverse {
+        flex-direction: row-reverse;
+    }
+    /* Garante que texto e imagem ocupem 50% cada (menos o gap) */
+    .duo-content, 
+    .duo-img-wrapper {
+        flex: 1;
+    }
+    
+    .duo-titulo {
+        font-size: 50px;
+        margin-left: 50px;
+        
+    }
+    
+    .duo-desc {
+        font-size: 22px;
+        margin-left: 50px;
+       
+    }
+}
+@media (max-width: 1000px) {
+    .duo-content {
+            padding: 0rem 2rem;
+    }
+}
+/* --- ESTILOS DA DOBRA "CONTEÚDO DA EMBALAGEM" --- */
+.embalagem-dobra {
+    padding: 1.5rem 1rem;
+    
+    /* ALTERADO: Background agora é a imagem d51.png */
+    /* Ajuste o caminho ('./assets/images/') conforme a estrutura do seu projeto */
+    background-image: url('./assets/images/d51.png'); 
+    background-size: cover;      /* Garante que a imagem cubra toda a área da seção */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    
+    color: #ffffff; /* Mantém o texto branco para contraste */
+}
+
+/* Container flex para alinhar texto e imagem */
+.embalagem-grid {
+    display: flex;
+    flex-direction: column; /* Mobile: Coluna (Texto em cima, Imagem embaixo) */
+    gap: 2.5rem;
+    align-items: center; /* Centraliza tudo no mobile */
+}
+
+/* --- BLOCO DE TEXTO --- */
+.embalagem-content {
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+}
+
+.embalagem-titulo {
+    font-family: 'Gelica', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.embalagem-titulo em {
+    font-style: italic;
+}
+
+/* Estilo da Lista */
+.embalagem-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.embalagem-lista li {
+    font-family: 'Work sans', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+/* Bolinha amarela personalizada */
+.embalagem-lista li::before {
+    content: "•";
+    color: #ffc107;
+    font-size: 2rem;
+    line-height: 0;
+    margin-right: 0.75rem;
+    padding-bottom: 5px;
+}
+
+/* --- BLOCO DE IMAGEM --- */
+.embalagem-img-wrapper {
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+}
+
+.embalagem-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- MEDIA QUERY (DESKTOP) --- */
+@media (min-width: 1000px) {
+    .embalagem-dobra {
+        padding: 5rem 1.5rem;
+    }
+
+    .embalagem-grid {
+        flex-direction: row; /* Desktop: Lado a lado */
+        justify-content: center;
+        gap: 6rem;
+        align-items: center;
+    }
+
+    .embalagem-titulo {
+        font-size: 50px;
+    }
+
+    .embalagem-lista li {
+        font-size: 20px;
+    }
+}
+@media (max-width: 1000px) {
+    .d5 {
+        max-width: 600px;
+        margin: auto;
+    }
+}
