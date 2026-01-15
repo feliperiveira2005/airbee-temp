@@ -1,93 +1,65 @@
-/* Reset básico */
-        .only-desktop {
-            display: flex !important;
-        }
-
-        .only-mobile {
-            display: none !important;
-        }
-
-        @media screen and (max-width: 1000px) {
-            .only-desktop {
-                display: none !important;
-            }
-            .only-mobile {
-                display: block !important;
-            }
-        }
+/* -----------------------------------------------------------
+   RESET E ESTILOS GLOBAIS
+----------------------------------------------------------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; background: #736DA6; color: #fff; }
-html, body, * {
-  font-family: 'Montserrat', sans-serif !important;
-}
-/* Seu arquivo de estilos (style.css, ou dentro de uma tag <style>) */
+html, body, * { font-family: 'Montserrat', sans-serif !important; }
 
-/* 1. Definir o Bloco Seguro (a área bege) como o contêiner de referência */
-.bloco-seguro {
-  background-color: #F5DEC8;
-  padding: 60px 0;
-  display: flex;
-  justify-content: center;
-  position: relative; /* <--- NOVO: ESTE DEVE SER O PAI RELATIVO */
-}
-
-/* 2. Opcional: Remova o position: relative do .conteudo se ele só servia para o coração */
-.conteudo {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  max-width: 1200px;
-  width: 90%;
-  /* position: relative; <--- REMOVA ISSO SE A ÚNICA RAZÃO ERA O CORAÇÃO */
-}
-
-/* 3. O estilo do coração (o seu já estava certo para posicionamento no canto) */
-.coracao-canto {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  /* Você pode querer adicionar um pequeno ajuste para não encostar na borda */
-  /* margin-left: 20px;
-  margin-bottom: 20px; */
-}
-@media (max-width: 700px) {
-  .coracao-canto {
-    width: 300px;
-  }
-}
-/* SITE ROOT */
 .site-root {
   background: #000;
   color: #fff;
 }
 
-/* Sections */
-.section {
-  padding: 0px 0px 0px 0px;
-}
-.section-mobile-only {
-    display: block !important; /* Visível por padrão (mobile) */
+/* -----------------------------------------------------------
+   UTILITÁRIOS DE VISIBILIDADE (Desktop/Mobile)
+----------------------------------------------------------- */
+.only-desktop { display: flex !important; }
+.only-mobile { display: none !important; }
+
+.section-mobile-only { display: block !important; }
+.section-desktop-only { display: none !important; }
+
+@media screen and (max-width: 1000px) {
+  .only-desktop { display: none !important; }
+  .only-mobile { display: block !important; }
 }
 
-.section-desktop-only {
-    display: none !important; /* Escondido por padrão (mobile) */
-}
-
-/* Media Query para telas grandes (Breakpoint XL, geralmente 1280px) */
+/* Media Query principal para alternar seções de cabeçalho */
 @media (min-width: 1080px) { 
-    .section-mobile-only {
-        display: none !important; /* Esconde a seção mobile no desktop */
-    }
-    
-    .section-desktop-only {
-        display: flex !important; /* Mostra a seção desktop no desktop. Usamos 'flex' para respeitar 'display: flex' da section. */
-    }
+    .section-mobile-only { display: none !important; }
+    .section-desktop-only { display: flex !important; }
 }
+
+/* -----------------------------------------------------------
+   ESTRUTURAS GERAIS DE SEÇÃO
+----------------------------------------------------------- */
+.section-container {
+    background-color: #6e6ca0; /* Roxo padrão (sobrescrito inline quando necessário) */
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px 0px 20px;
+}
+@media (max-width: 768px) {
+    .section-container { padding: 40px 20px; }
+}
+
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    gap: 40px;
+    width: 100%;
+}
+
+/* -----------------------------------------------------------
+   BLOCO SEGURO (Seção Bege 2 em 1)
+----------------------------------------------------------- */
 .bloco-seguro {
   background-color: #F5DEC8;
   padding: 60px 0;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .conteudo {
@@ -96,6 +68,12 @@ html, body, * {
   gap: 50px;
   max-width: 1200px;
   width: 90%;
+}
+
+.coracao-canto {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .lado-esquerdo .foto {
@@ -119,428 +97,83 @@ html, body, * {
   line-height: 1.5;
 }
 
-
-.lado-esquerdo2 p {
-  font-size: 18px;
-  font-weight: 400;
-  color: #736DA6;
-  max-width: 400px;
-  line-height: 1.5;
-}
-.lado-direito2 .foto {
-  width: 600px;
-  height: auto;
-  border-radius: 20px;
-  object-fit: cover;
-}
-
-.lado-esquerdo2 h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #736DA6;
-  margin-bottom: 10px;
-}
-
-.lado-esquerdo2 p {
-  font-size: 18px;
-  font-weight: 400;
-  color: #736DA6;
-  max-width: 400px;
-  line-height: 1.5;
-}
-
-/* --------------------
-    📱 MOBILE RESPONSIVO
-    -------------------- */
-@media (max-width: 768px) {
-
+@media (max-width: 1100px) {
     .conteudo {
-        /* Mude de 'column' para 'column-reverse' para inverter a ordem */
-        /* O lado-direito (texto) vai para cima, o lado-esquerdo (imagem) vai para baixo. */
         flex-direction: column-reverse; 
         text-align: center;
         gap: 25px;
     }
-
     .lado-esquerdo .foto {
         width: 100%;
         max-width: 350px;
     }
-
-    .lado-direito h2 {
-        font-size: 24px;
-    }
-
+    .lado-direito h2 { font-size: 24px; }
     .lado-direito p {
         font-size: 16px;
         max-width: 90%;
         margin: 0 auto;
     }
-}
-.section-container {
-    background-color: #6e6ca0; /* Cor roxa do fundo */
-    display: flex;
-    justify-content: center;
-    padding: 50px 20px 0px 20px;
-  }
-  @media (max-width: 768px) {
-    .section-container {
-    padding: 40px 20px;
-  }
-  }
-
-  /* Layout em Colunas (Flexbox) */
-  .content-wrapper {
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha no mobile */
-    max-width: 1400px;
-    gap: 40px; /* Espaço entre as colunas */
-    width: 100%;
-  }
-
-  /* Cada coluna (Esquerda e Direita) */
-  .feature-box {
-    flex: 1; /* Divide o espaço igualmente */
-    min-width: 300px; /* Largura mínima para não quebrar layout */
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* Estilos de Texto */
-  .feature-title {
-    color: #ffdb00; /* Amarelo */
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-
-  .feature-text {
-    color: #FDEDDD; /* Branco */
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-  }
-
-  /* Estilo da Imagem */
-  .feature-img {
-    width: 100%;
-    max-width: 400px; /* Limita tamanho da imagem */
-    height: auto;
-    align-self: center; /* Centraliza a imagem na coluna */
-    margin-top: auto; /* Empurra a imagem para o fundo se sobrar espaço */
-  }
-
-  /* Ajuste Mobile: Texto centralizado fica melhor em telas pequenas */
-  @media (max-width: 768px) {
-    .feature-box {
-      text-align: center;
-    }
-  }
-  /* A nova div de baixo */
-.full-width-box {
-  width: 100%; /* Força a div a ocupar a linha inteira */
-}
-@media (min-width: 769px) {
-  .apenas-mobile {
-    display: none !important;
-  }
+    .coracao-canto { width: 300px; }
 }
 
-@media (max-width: 768px) {
-  .apenas-mobile {
-    display: flex !important; 
-  }
-}
-/* Container Roxo */
-.secao-conforto {
-  background-color: #6e6ca0; 
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Wrapper que segura os 3 itens */
-.wrapper-conforto {
-  display: flex;
-  align-items: center; 
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  gap: 20px;
-}
-
-/* Configuração das Colunas de Texto */
-.col-texto {
-  flex: 1; 
-  min-width: 250px;
-}
-
-/* Configuração da Coluna da Imagem */
-.col-imagem {
-  flex: 1.2; 
-  display: flex;
-  justify-content: center;
-}
-
-.img-central {
-  width: 150%;
-  
-  height: auto;
-}
-
-/* --- ESTILOS DE TEXTO PADRONIZADOS --- */
-.titulo-conforto {
-  color: #FDEDDD; 
-  font-size: 28px; 
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.desc-conforto {
-  color: #FFEDDA;
-  font-size: 18px; 
-  line-height: 1.5;
-}
-
-.mt-extra {
-  margin-top: 20px; 
-}
-
-/* --- ALINHAMENTOS ESPECÍFICOS --- */
-.texto-esq {
-  text-align: right; 
-}
-
-.texto-dir {
-  text-align: left;
-}
-
-/* --- RESPONSIVO (MOBILE) --- */
-@media (max-width: 900px) {
-  .wrapper-conforto {
-    flex-direction: column; 
-    text-align: center; 
-  }
-
-  .texto-esq, .texto-dir {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-
-  /* Ajuste de fonte para mobile (para não ficar gigante no celular) */
-  .titulo-conforto {
-    font-size: 24px; /* Padrão mobile */
-  }
-  .desc-conforto {
-    font-size: 16px; /* Padrão mobile */
-  }
-
-  .col-imagem {
-    
-    margin-bottom: 30px;
-  }
-  
-  .img-central {
-    max-width: 300px; 
-  }
-}
-.img-desktop {
-  display: block;
-}
-.img-mobile {
-  display: none;
-}
-
-/* Quando a tela for menor que 900px (Mobile/Tablet): Inverte */
-@media (max-width: 900px) {
-  .img-desktop {
-    display: none !important;
-  }
-  .img-mobile {
-    display: block !important;
-    /* Removemos margens negativas laterais no mobile se necessário, 
-       para centralizar certinho, ou mantemos o style inline se ele for desejado */
-    margin-left: 0 !important; 
-    margin-right: 0 !important;
-  }
-  .secao-conforto {
-  padding: 20px 20px;
-}
-  .bloco-seguro {
-  padding: 20px 20px;
-}
-}
-.secao-ficha {
-  background-color: #FFF0E5; /* Bege claro do fundo */
-  padding: 60px 20px 0px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Container Central */
-.container-ficha {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  gap: 40px;
-}
-
-/* --- Estilos do Texto --- */
-.ficha-texto {
-  flex: 0.8; /* ALTERADO: Reduzi de 1 para 0.8 para dar espaço à imagem */
-  max-width: 500px;
-  padding-right: 20px; /* Espaço para não grudar na imagem */
-}
-
-.titulo-ficha {
-  color: #736DA6; 
-  font-size: 32px;
-  font-weight: 800; 
-  margin-bottom: 30px;
-}
-
-.lista-ficha {
-  list-style: none; 
-  padding: 0;
-}
-
-.lista-ficha li {
-  color: #736DA6; 
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.lista-ficha li strong {
-  color: #736DA6;
-  font-weight: 700;
-}
-
-/* --- Estilos da Imagem --- */
-.ficha-imagem {
-  flex: 1.5; /* ALTERADO: Aumentei de 1 para 1.5 (a imagem domina o layout) */
-  display: flex;
-  justify-content: flex-end; 
-  align-items: center; /* Centraliza verticalmente */
-  position: relative;
-}
-
-.ficha-imagem img {
-  width: 100%;
-  max-width: 850px; /* ALTERADO: Aumentei de 500px para 850px */
-  height: auto;
-}
-
-/* Controle de troca de imagem (Desktop/Mobile) */
-.img-desk { display: block; }
-.img-mob { display: none; }
-
-
-/* --- RESPONSIVO (MOBILE) --- */
-@media (max-width: 900px) {
-  .secao-ficha {
-    background-color: #FFF0E5; 
-    padding: 20px 0px 0px 0px; 
-  }
-  
-  .container-ficha {
-    flex-direction: column; 
-    text-align: center;
-    gap: 20px;
-  }
-
-  .ficha-texto {
-    flex: 1; /* Reseta o tamanho no mobile */
-    max-width: 100%;
-    padding-right: 0; /* Remove o espaçamento lateral do desktop */
-    padding-left: 20px; /* Adiciona margem de segurança no mobile */
-    padding-right: 20px;
-  }
-
-  .titulo-ficha {
-    font-size: 28px; 
-    margin-bottom: 20px;
-  }
-
-  .ficha-imagem {
-    flex: 1; /* Reseta o tamanho no mobile */
-    justify-content: center;
-    width: 100%;
-  }
-  
-  /* Troca de imagens no mobile */
-  .img-desk { display: none; }
-  .img-mob { 
-    display: block; 
-  }
-  
-  .lista-ficha li {
-    font-size: 16px;
-  }
-}
+/* -----------------------------------------------------------
+   GRID CONFORTO (Berço com tela)
+----------------------------------------------------------- */
 .grid-conforto {
       display: grid;
-      /* Alterado para 4 partes (40%) e 6 partes (60%) */
       grid-template-columns: 4fr 6fr; 
       grid-template-rows: auto auto;    
       gap: 20px;
       width: 100%;
       max-width: 1100px;
-    }
+}
 
-    /* Posições no Desktop */
-    .item-texto-topo {
+.item-texto-topo {
       grid-column: 1;
       grid-row: 1;
       align-self: end; 
       margin-bottom: 40px;
-    }
+}
 
-    .item-imagem-central {
+.item-imagem-central {
       grid-column: 2;
       grid-row: 1 / span 2; 
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+}
 
-    .item-texto-baixo {
+.item-texto-baixo {
       grid-column: 1;
       grid-row: 2;
       align-self: start;
       position: relative; 
-    }
+}
 
-    /* Estilização dos Textos */
-    .titulo-amarelo {
+.titulo-amarelo {
       color: #FAE400; 
       font-size: 28px;
       font-weight: 700;
       margin-bottom: 15px;
       line-height: 1.2;
-    }
+}
 
-    .texto-branco {
+.texto-branco {
       color: #FDEDDD;
       font-size: 18px;
       line-height: 1.5;
       font-weight: 400;
-    }
+}
 
-    /* Seta Rosa */
-    .seta-rosa {
+.seta-rosa {
       position: absolute;
-      /* Mantive seus ajustes manuais */
       top: 170px; 
       right: -400px;
       width: 400px;
       display: block;
-    }
+}
 
-    /* Responsivo Mobile */
-    @media (max-width: 1100px) {
+@media (max-width: 1100px) {
       .grid-conforto {
         display: flex;
         flex-direction: column;
@@ -566,170 +199,151 @@ html, body, * {
         display: block; 
         width: 160px;
       }
-    }
-    /* Estilos Locais da Seção Transporte */
-    .section-transporte {
-      background-color: #FFEDDA; /* Mesmo bege da ficha técnica */
+}
+
+/* -----------------------------------------------------------
+   SEÇÃO TRANSPORTE (Bolsa)
+----------------------------------------------------------- */
+.section-transporte {
+      background-color: #FFEDDA;
       padding: 80px 20px 0px 20px;
       display: flex;
       justify-content: center;
-    }
+}
 
-    .wrapper-transporte {
+.wrapper-transporte {
       display: grid;
-      /* Desktop: 50% imagem, 50% texto */
       grid-template-columns: 1fr 1fr; 
       align-items: center;
       max-width: 1100px;
       width: 100%;
       gap: 50px;
-    }
+}
 
-    /* Lado da Imagem */
-    .col-img-transporte {
+.col-img-transporte {
       display: flex;
-      justify-content: center; /* Centraliza a imagem no bloco dela */
-    }
+      justify-content: center;
+}
 
-    .img-bolsa {
+.img-bolsa {
       width: 100%;
-      max-width: 550px; /* Tamanho máximo da composição */
+      max-width: 550px;
       height: auto;
       display: block;
-    }
+}
 
-    /* Lado do Texto */
-    .col-text-transporte {
+.col-text-transporte {
       display: flex;
       flex-direction: column;
       justify-content: center;
-    }
+}
 
-    .titulo-roxo-transporte {
-      color: #736DA6; /* Roxo Litet */
+.titulo-roxo-transporte {
+      color: #736DA6;
       font-size: 32px;
-      font-weight: 800; /* Extra bold conforme imagem */
+      font-weight: 800;
       margin-bottom: 20px;
       line-height: 1.2;
-    }
+}
 
-    .desc-roxo-transporte {
+.desc-roxo-transporte {
       color: #736DA6;
       font-size: 18px;
       line-height: 1.6;
       font-weight: 400;
-    }
+}
 
-    /* Responsividade Mobile */
-    @media (max-width: 900px) {
+@media (max-width: 900px) {
       .section-transporte {
-        padding: 50px 20px 0px 20px; /* Menos padding embaixo pois a mancha encosta na borda */
+        padding: 50px 20px 0px 20px;
       }
-
       .wrapper-transporte {
         display: flex;
-        flex-direction: column-reverse; /* Inverte: Texto sobe, Imagem desce */
+        flex-direction: column-reverse;
         text-align: center;
         gap: 30px;
       }
-
-      .titulo-roxo-transporte {
-        font-size: 26px;
-      }
-
+      .titulo-roxo-transporte { font-size: 26px; }
       .desc-roxo-transporte {
         font-size: 16px;
         padding: 0 10px;
       }
-
       .img-bolsa {
-        /* No mobile a imagem geralmente cresce ou ajusta margem */
         width: 100%;
         max-width: 450px;
-       
       }
-    }
-/* Grid Xadrez para Desktop */
-    .grid-detalhes {
+}
+
+/* -----------------------------------------------------------
+   GRID DETALHES (Montagem e Colchão)
+----------------------------------------------------------- */
+.grid-detalhes {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* Duas colunas iguais */
-      grid-template-rows: auto auto;    /* Duas linhas */
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: auto auto;    
       gap: 40px;
       max-width: 1000px;
       width: 100%;
-      position: relative; /* Referência para a seta absoluta */
-    }
+      position: relative;
+}
 
-    /* Posicionamento dos Elementos no Grid Desktop */
-    
-    /* 1. Texto Topo Esquerda */
-    .area-texto-top {
+.area-texto-top {
       grid-column: 1;
       grid-row: 1;
       align-self: center;
       justify-self: start;
       max-width: 420px;
-    }
+}
 
-    /* 2. Imagem Topo Direita (Dobrada) */
-    .area-img-dobrada {
+.area-img-dobrada {
       grid-column: 2;
       grid-row: 1;
       align-self: center;
       justify-self: center;
-    }
+}
 
-    /* 3. Imagem Baixo Esquerda (Aberta) */
-    .area-img-aberta {
+.area-img-aberta {
       grid-column: 1;
       grid-row: 2;
       align-self: center;
       justify-self: center;
-    }
+}
 
-    /* 4. Texto Baixo Direita */
-    .area-texto-bottom {
+.area-texto-bottom {
       grid-column: 2;
       grid-row: 2;
       align-self: center;
       justify-self: start;
       max-width: 400px;
-    }
+}
 
-    /* Estilização da Seta (Conector) */
-    .seta-conector {
+.seta-conector {
       position: absolute;
-      /* Centraliza a seta no meio do grid para conectar as pontas */
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 250px; /* Ajuste o tamanho conforme sua imagem */
-      pointer-events: none; /* Deixa clicar através dela se precisar */
+      width: 250px;
+      pointer-events: none;
       z-index: 1;
-    }
+}
 
-    /* Estilos de Texto */
-    .titulo-amarelo-detalhe {
+.titulo-amarelo-detalhe {
       color: #FAE400;
       font-size: 28px;
       font-weight: 700;
       margin-bottom: 15px;
       line-height: 1.2;
-    }
+}
 
-    .texto-branco-detalhe {
+.texto-branco-detalhe {
       color: #FDEDDD;
       font-size: 18px;
       line-height: 1.5;
       font-weight: 400;
-    }
+}
 
-    /* Responsividade Mobile */
-    @media (max-width: 1100px) {
-      #d5{
-        max-width: 300px !important;
-      }
-      #d51{
+@media (max-width: 1100px) {
+      #d5, #d51 {
         max-width: 300px !important;
       }
       .grid-detalhes {
@@ -739,54 +353,48 @@ html, body, * {
         gap: 30px;
         max-width: 425px;
       }
-
-      /* Reordenando para ficar: Texto -> Imagem -> Seta -> Imagem -> Texto */
       .area-texto-top     { order: 1; justify-self: center; margin: 0 auto; }
       .area-img-dobrada   { order: 2; }
       .seta-conector      { 
         order: 3; 
-        position: relative; /* Seta deixa de ser absoluta e entra no fluxo */
+        position: relative; 
         top: auto; left: auto; 
         transform: none; 
-        margin: -110px auto -90px 70px; /* Aproxima das imagens */
-        width: 150px; /* Menor no mobile */
-        transform: rotate(338deg); /* Opcional: Se precisar girar a seta para apontar pra baixo */
+        margin: -110px auto -90px 70px;
+        width: 150px; 
+        transform: rotate(338deg);
       }
       .area-img-aberta    { order: 4; }
       .area-texto-bottom  { order: 5; justify-self: center; margin: 0 auto; }
 
       .titulo-amarelo-detalhe { font-size: 28px; }
       .texto-branco-detalhe { font-size: 16px; padding: 0 10px; }
-      
-      
-    }
-        /* Estilos Locais desta dobra */
-    .section-final {
-      background-color: #FFF0E5; /* Fundo Bege Claro */
-      padding: 60px 20px;       /* Espaçamento em cima e embaixo */
+}
+
+/* -----------------------------------------------------------
+   SEÇÃO FINAL
+----------------------------------------------------------- */
+.section-final {
+      background-color: #FFF0E5;
+      padding: 60px 20px;      
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+}
 
-    .container-banner-final {
+.container-banner-final {
       width: 100%;
-      max-width: 1200px; /* Largura máxima para não esticar demais em telas grandes */
+      max-width: 1200px;
       display: flex;
       justify-content: center;
-    }
+}
 
-    /* Ajuste para garantir que a imagem seja fluida */
-    .img-banner-final {
+.img-banner-final {
       width: 100%;
       height: auto;
       display: block;
-    }
+}
 
-    /* Reaproveitando a lógica de esconder/mostrar do seu CSS global, 
-       mas reforçando aqui caso precise de ajustes específicos */
-    @media (max-width: 900px) {
-      .section-final {
-        padding: 40px 20px; /* Um pouco menos de padding no mobile */
-      }
-    }
+@media (max-width: 900px) {
+      .section-final { padding: 40px 20px; }
+}
