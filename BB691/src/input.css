@@ -74,6 +74,7 @@ html, body, * { font-family: 'Montserrat', sans-serif !important; }
   position: absolute;
   left: 0;
   bottom: 0;
+  width: 600px;
 }
 
 .lado-esquerdo .foto {
@@ -96,7 +97,14 @@ html, body, * { font-family: 'Montserrat', sans-serif !important; }
   max-width: 450px;
   line-height: 1.5;
 }
-
+@media (min-width: 1100px) and (max-width: 1500px) {
+.coracao-canto {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 450px;
+}
+}
 @media (max-width: 1100px) {
     .conteudo {
         flex-direction: column-reverse; 
