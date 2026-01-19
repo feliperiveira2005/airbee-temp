@@ -1012,10 +1012,10 @@ body {
 }
 @media screen and (max-width: 1150px) {
     .dobra-04-details .feature__title {
-        text-align: center;
+        text-align: left;
     }
     .dobra-04-details .feature__description {
-        text-align: center;
+        text-align: left;
     }
 }
 /* =========================================
