@@ -1,0 +1,316 @@
+/* --- CONFIGURAÇÃO DA FONTE ELZA (LOCAL) --- */
+
+
+    /* --- GERAL --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'elza', sans-serif; 
+    }
+
+    .site-root {
+        background-color: #ffffff;
+    }
+
+    .container {
+        max-width: 1920px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+
+    /* --- DOBRA MULTI ULTRA --- */
+
+.ultra-banner-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #fff; /* Texto Branco */
+    border-radius: 20px;
+}
+
+/* Configuração da Imagem de Fundo */
+.ultra-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    min-height: 400px; /* Garante altura mínima no desktop */
+}
+
+/* Container do Texto (Posicionamento Absoluto sobre a imagem) */
+.ultra-content {
+    position: absolute;
+    top: 50%;
+    left: 8%; /* Margem esquerda alinhada ao design */
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    max-width: 500px;
+    z-index: 2;
+}
+
+/* Logo Multi | ULTRA */
+.ultra-logo-group {
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.logo-multi {
+    font-family: 'Manrope', sans-serif; /* Ou a fonte arredondada do logo */
+    font-weight: 800;
+    font-size: 2.5rem;
+    display: block;
+}
+
+.logo-ultra {
+    font-family: 'elza', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: -5px; /* Ajuste fino para aproximar do Multi */
+}
+
+/* Título Principal */
+.ultra-title {
+    font-family: 'elza', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.ultra-title strong {
+    font-weight: 800;
+}
+
+/* Badge (Botão) UB262 */
+.ultra-badge {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #4A90E2; /* Azul similar ao da imagem */
+    font-weight: 400;
+    font-size: 31px;
+    padding: 8px 25px;
+    border-radius: 50px; /* Borda pílula */
+    
+}
+
+/* --- MOBILE (Responsividade) --- */
+@media screen and (max-width: 900px) {
+    .ultra-banner-wrapper {
+        border-radius: 0px;
+        max-height: 250px;
+        max-width: 600px;
+        margin: auto;
+    }
+    /* Ajuste da Imagem de Fundo */
+    .ultra-bg-img {
+        min-height: 250px; 
+        object-position: 65% center; 
+    }
+
+    /* Ajuste de Posicionamento do Texto */
+    .ultra-content {
+        top: 8%; /* Subi um pouco mais para dar espaço */
+        left: 8%;
+        transform: none; 
+        width: 80%;
+    }
+
+    /* --- NOVO: Ajuste do tamanho da Logo Multi no Mobile --- */
+    .ultra-logo-group img {
+        max-width: 80px; /* Ajuste este valor para o tamanho desejado (ex: 80px ou 120px) */
+        height: auto;     /* Mantém a proporção para não esticar */
+    }
+
+    /* Ajuste do tamanho do título */
+    .ultra-title {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    /* Sombra para garantir leitura */
+    .ultra-title {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .ultra-badge {
+        font-size: 15px;
+        padding: 4px 8px;  
+    }
+}
+
+/* Utilitários de Visibilidade (Mantive igual) */
+.only-desktop { display: none !important; }
+.only-mobile { display: block !important; }
+
+@media screen and (min-width: 900px) {
+    .only-desktop { display: block !important; }
+    .only-mobile { display: none !important; }
+}
+/* --- DOBRA LINUX (FACILITE O SEU DIA) --- */
+
+.linux-section {
+    padding: 100px 0px 0px 0px; /* Padding bottom 0 se a imagem encostar no final */
+    background-color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Garante que as letras azuis não vazem se forem muito grandes */
+}
+
+.linux-text-content {
+    max-width: 1400px;
+    margin: 0 auto 7% auto;
+}
+
+.linux-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+    line-height: 1.2;
+}
+
+.linux-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Container da imagem para centralizar */
+.linux-img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.linux-feature-img {
+    width: 100%;
+    max-width:1920px; /* Limita largura no desktop para não ficar gigante */
+    height: auto;
+    display: block;
+}
+
+/* --- MOBILE --- */
+@media screen and (max-width: 900px) {
+    body{
+        max-width: 600px;
+        margin: auto;
+    }
+    .linux-section {
+        padding: 40px 0px;
+    }
+
+    .linux-title {
+        font-size: 24px; /* Título menor no celular */
+        margin-bottom: 10px;
+    }
+
+    .linux-desc {
+        font-size: 16px;
+        padding: 0 20px; /* Margem de segurança para o texto não colar na borda */
+    }
+    
+    /* Remove as quebras de linha manuais (<br>) no mobile para o texto fluir */
+    .linux-desc br {
+        display: none;
+    }
+}
+/* --- DOBRA PROCESSADOR INTEL --- */
+
+.processor-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Grid Flex para alinhar lado a lado */
+.processor-grid {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    gap: 80px; /* Espaço entre imagem e texto */
+    max-width:1400px;
+    margin: 0 auto;
+}
+
+/* Coluna da Imagem */
+.proc-col-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* No desktop, empurra a imagem para perto do texto */
+}
+
+.intel-img {
+    width: 100%;
+
+    height: auto;
+    border-radius: 30px; /* Arredondamento dos cantos igual à imagem */
+  
+    display: block;
+}
+
+/* Coluna do Texto */
+.proc-col-content {
+    flex: 1;
+    text-align: left;
+}
+
+.proc-title {
+    font-size: 46px; /* Tamanho grande */
+    font-weight: 800;  /* Negrito forte */
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.proc-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 500px; /* Limita a largura do parágrafo para leitura confortável */
+}
+
+/* --- MOBILE (Responsividade) --- */
+@media screen and (max-width: 900px) {
+    .processor-section {
+        padding: 20px 20px;
+    }
+
+    .processor-grid {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 30px;
+    }
+
+    /* Inverte a ordem visual: Texto em cima, Imagem embaixo */
+    .proc-col-content {
+        order: 1; 
+        text-align: center; /* Centraliza o texto no mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proc-col-image {
+        order: 2;
+        justify-content: center;
+    }
+
+    .proc-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .proc-desc {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .intel-img {
+        max-width: 100%; /* Imagem ocupa a largura disponível no celular */
+        border-radius: 20px;
+    }
+}
