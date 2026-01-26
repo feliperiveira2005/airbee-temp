@@ -255,7 +255,7 @@
 /* --- MOBILE (Responsividade) --- */
 @media screen and (max-width: 1400px) {
     .processor-grid {
-    
+        gap: 20px;
         max-width: 1100px;
 
     }
