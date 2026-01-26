@@ -253,6 +253,13 @@
     max-width: 500px; /* Limita a largura do parágrafo para leitura confortável */
 }
 /* --- MOBILE (Responsividade) --- */
+@media screen and (max-width: 1400px) {
+    .processor-grid {
+    
+        max-width: 1100px;
+
+    }
+}
 @media screen and (max-width: 900px) {
     .processor-section {
         padding: 20px 20px;
