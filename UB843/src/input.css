@@ -253,7 +253,7 @@
     max-width: 500px; /* Limita a largura do parágrafo para leitura confortável */
 }
 /* --- MOBILE (Responsividade) --- */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1500px) {
     .processor-grid {
         gap: 60px;
         max-width: 1200px;

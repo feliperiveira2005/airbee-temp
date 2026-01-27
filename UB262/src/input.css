@@ -275,6 +275,13 @@
 }
 
 /* --- MOBILE (Responsividade) --- */
+@media screen and (max-width: 1500px) {
+    .processor-grid {
+        gap: 60px;
+        max-width: 1200px;
+
+    }
+}
 @media screen and (max-width: 900px) {
     .processor-section {
         padding: 20px 20px;
