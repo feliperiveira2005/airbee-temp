@@ -10,7 +10,7 @@
     }
 
     .site-root {
-        background-color: #dedede;
+        background-color: #ffffff;
     }
 
     .container {
@@ -547,7 +547,7 @@
             }
         }
         .features-section {
-        background-color: #dedede; /* Fundo cinza claro */
+        background-color: #DEDEDE; /* Fundo cinza claro */
         display: flex;
         justify-content: center; /* Centraliza os itens no container */
         align-items: center;
