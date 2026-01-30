@@ -81,6 +81,7 @@
     .aio-banner-wrapper {
         max-width: 500px;
         margin: auto;
+        border-radius: 0px;
     }
     .aio-badge {
         font-size: 12px;
