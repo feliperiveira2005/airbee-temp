@@ -1,0 +1,602 @@
+/* --- CONFIGURAÇÃO DA FONTE ELZA (LOCAL) --- */
+
+
+    /* --- GERAL --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'elza', sans-serif; 
+    }
+
+    .site-root {
+        background-color: #ffffff;
+    }
+
+    .container {
+        max-width: 1920px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+
+/* --- DOBRA ALL IN ONE (UB842) --- */
+
+.aio-banner-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+}
+
+.aio-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Container do Conteúdo (Padrão Desktop) */
+.aio-content {
+    position: absolute;
+    top: 50%;
+    right: 10%; /* Desktop: Fica na direita */
+    transform: translateY(-50%);
+   
+    text-align: left; /* Desktop: Alinhado à esquerda */
+    z-index: 2;
+}
+
+/* Badge Azul */
+.aio-badge {
+    background-color: #0046C0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 2px 25px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Título */
+.aio-title {
+    color: #0046C0;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.aio-title strong {
+    font-weight: 800;
+}
+@media screen and (max-width: 1400px) {
+    .aio-content {
+        right: 3%; /* Ajusta margem direita em telas menores */
+    }
+}
+/* --- MOBILE (Responsividade - Texto na Direita) --- */
+@media screen and (max-width: 900px) {
+    .aio-banner-wrapper {
+        max-width: 500px;
+        margin: auto;
+    }
+    .aio-badge {
+        font-size: 12px;
+        padding: 2px 12px;
+        margin-bottom: 10px;
+    }
+    .aio-bg-img {
+        min-height: 250px; 
+        object-position: center;
+    }
+
+    .aio-content {
+        /* Resetando posicionamento do desktop/versões anteriores */
+        left: auto;
+        transform: none;
+        
+        /* Novo posicionamento Mobile */
+        position: absolute;
+        top: 15%; /* Ajuste a altura vertical aqui */
+        right: 5%; /* Encostado na direita com uma pequena margem */
+        
+        /* Tamanho e Alinhamento */
+        width: auto;
+        max-width: 65%; /* Limita a largura para não cobrir a imagem toda */
+        text-align: left; /* O texto em si fica alinhado à esquerda */
+    }
+
+    .aio-title {
+        font-size: 15px;
+        /* Sombra opcional para melhorar leitura sobre fundos variados */
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); 
+    }
+}
+
+/* Utilitários de Visibilidade (Mantive igual) */
+.only-desktop { display: none !important; }
+.only-mobile { display: block !important; }
+
+@media screen and (min-width: 900px) {
+    .only-desktop { display: block !important; }
+    .only-mobile { display: none !important; }
+}
+/* --- DOBRA LINUX (FACILITE O SEU DIA) --- */
+
+.linux-section {
+    padding: 100px 0px 0px 0px; /* Padding bottom 0 se a imagem encostar no final */
+    background-color: #ffffff;
+    text-align: center;
+    overflow: hidden; /* Garante que as letras azuis não vazem se forem muito grandes */
+}
+
+.linux-text-content {
+    max-width: 1400px;
+    margin: 0 auto 7% auto;
+}
+
+.linux-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+    line-height: 1.2;
+}
+
+.linux-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Container da imagem para centralizar */
+.linux-img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.linux-feature-img {
+    width: 100%;
+    max-width:1920px; /* Limita largura no desktop para não ficar gigante */
+    height: auto;
+    display: block;
+}
+
+/* --- MOBILE --- */
+@media screen and (max-width: 900px) {
+    body{
+        max-width: 600px;
+        margin: auto;
+    }
+    .linux-section {
+        padding: 20px 0px;
+    }
+
+    .linux-title {
+        font-size: 24px; /* Título menor no celular */
+        margin-bottom: 10px;
+    }
+
+    .linux-desc {
+        font-size: 16px;
+        padding: 0 20px; /* Margem de segurança para o texto não colar na borda */
+    }
+    
+    /* Remove as quebras de linha manuais (<br>) no mobile para o texto fluir */
+    .linux-desc br {
+        display: none;
+    }
+}
+/* --- DOBRA PROCESSADOR INTEL --- */
+
+.processor-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Grid Flex para alinhar lado a lado */
+.processor-grid {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    gap: 80px; /* Espaço entre imagem e texto */
+    max-width:1400px;
+    margin: 0 auto;
+}
+
+/* Coluna da Imagem */
+.proc-col-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* No desktop, empurra a imagem para perto do texto */
+}
+
+.intel-img {
+    width: 100%;
+
+    height: auto;
+    border-radius: 30px; /* Arredondamento dos cantos igual à imagem */
+  
+    display: block;
+}
+
+/* Coluna do Texto */
+.proc-col-content {
+    flex: 1;
+    text-align: left;
+}
+
+.proc-title {
+    font-size: 46px; /* Tamanho grande */
+    font-weight: 800;  /* Negrito forte */
+    color: #000;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.proc-desc {
+    font-size: 24px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 500px; /* Limita a largura do parágrafo para leitura confortável */
+}
+.proc-alert {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    margin-top: 160px;
+    max-width: 500px; /* Limita a largura do parágrafo para leitura confortável */
+}
+/* --- MOBILE (Responsividade) --- */
+@media screen and (max-width: 1400px) {
+    .processor-grid {
+        gap: 60px;
+        max-width: 1200px;
+
+    }
+}
+@media screen and (max-width: 900px) {
+    .processor-section {
+        padding: 0px 0px;
+    }
+
+    .processor-grid {
+        flex-direction: column; /* Um embaixo do outro */
+        gap: 30px;
+    }
+    #d4{
+        flex-direction: column-reverse;
+    }
+    /* Inverte a ordem visual: Texto em cima, Imagem embaixo */
+    .proc-col-content {
+        order: 1; 
+        text-align: center; /* Centraliza o texto no mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proc-col-image {
+        order: 2;
+        justify-content: center;
+    }
+
+    .proc-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .proc-desc {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .proc-alert {
+        font-size: 12px;
+        margin-top: 0px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .intel-img {
+        max-width: 100%; /* Imagem ocupa a largura disponível no celular */
+        border-radius: 20px;
+    }
+}
+/* --- DOBRA COMPARATIVO --- */
+
+.comparison-section {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+/* Grid Principal (4 colunas no desktop) */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* Estilo do Card Individual */
+.comp-card {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comp-prod-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.comp-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+/* Bolinha de Cor */
+.color-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.color-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    border: 1px solid #ddd;
+}
+
+.black-dot { background-color: #000; }
+.white-dot { background-color: #fff; border: 1px solid #000; }
+
+.color-name {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+/* Lista de Especificações */
+.specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaço entre cada item (ícone+texto) */
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80px; /* Garante alinhamento horizontal mesmo se texto for curto */
+}
+
+.spec-icon {
+    height: 40px; /* Altura fixa para os ícones */
+    width: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.spec-text {
+    font-size: 18px;
+    line-height: 1.3;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* Logo Windows */
+.os-logo {
+    height: 30px;
+    width: auto;
+    margin-top: auto; /* Empurra para o fundo se sobrar espaço */
+}
+
+/* --- MOBILE E TABLET --- */
+@media screen and (max-width: 1024px) {
+    .comparison-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Colunas em Tablets/Laptops pequenos */
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .comparison-grid {
+        grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas no celular para comparar lado a lado */
+        gap: 15px;
+    }
+
+    .comp-title {
+        font-size: 1.2rem;
+    }
+
+    .spec-text {
+        font-size: 0.8rem;
+    }
+    
+    .spec-icon {
+        height: 30px;
+    }
+}
+
+/* Para telas MUITO pequenas (ex: Galaxy Fold fechado), vira 1 coluna */
+@media screen and (max-width: 350px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- SEÇÃO ROKU TV (BASE MOBILE) --- */
+        .dobra-roku {
+            width: 100%;
+            /* TRAVA MOBILE */
+            max-width: 430px; 
+            margin: 0 auto;
+            
+            position: relative;
+            overflow: hidden;
+            background-color: #FFFFFF; /* Fundo de segurança */
+             border-radius: 30px !important; 
+        }
+
+        .roku-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Imagens de Fundo */
+        .bg-roku {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px; /* Arredondamento suave no mobile conforme imagem */
+        }
+
+        /* Camada de Conteúdo (Sobreposta) */
+        .roku-content {
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 40px 20px; /* Espaço do topo */
+           
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza no Mobile */
+            justify-content: flex-start; /* Texto no topo */
+            text-align: center;
+        }
+
+        /* Logo */
+        .roku-logo {
+            width: 180px; /* Tamanho da logo no mobile */
+            margin-bottom: 20px;
+        }
+
+        /* Título */
+        .roku-title {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        /* --- DESKTOP (> 1150px) --- */
+        @media screen and (min-width: 900px) {
+            .dobra-roku {
+                /* RESET TRAVA */
+                max-width: none;
+                margin: 0;
+                border-radius: 0; /* Remove borda arredondada no full screen */
+            }
+
+            .bg-roku {
+                border-radius: 0; /* Remove borda da imagem */
+                width: 100%;
+                height: auto; /* Ou height: 100vh se quiser tela cheia vertical */
+            }
+
+            .roku-content {
+                /* Alinha conteúdo à esquerda e centralizado verticalmente */
+                align-items: flex-start;
+                justify-content: center;
+                text-align: left;
+                padding-left: 10%; /* Margem esquerda */
+                padding-top: 0;
+            }
+
+            .roku-logo {
+                width: 400px; /* Logo maior no desktop */
+                margin-bottom: 30px;
+            }
+
+            .roku-title {
+                font-size: 48px; /* Título maior */
+               
+            }
+        }
+        @media screen and (max-width: 900px) {
+            .dobra-roku {
+                padding: 20px;
+                max-height: 720px !important; 
+                margin: 0 auto;
+                border-radius: 30px;
+            }
+        }
+        .features-section {
+        background-color: #FFFFFF; /* Fundo cinza claro */
+        display: flex;
+        justify-content: center; /* Centraliza os itens no container */
+        align-items: center;
+        flex-wrap: wrap; /* Permite quebrar linha no mobile */
+        gap: 20px; /* Espaçamento entre os cards */
+        padding: 40px 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Card Individual */
+    .feature-card {
+        background-color: #FFFFFF;
+        width: 250px;  /* Largura fixa */
+        height: 250px; /* Altura fixa para manter o quadrado */
+        border-radius: 24px; /* Bordas arredondadas */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    /* Imagem do Ícone */
+    .feature-card img {
+        width: auto; /* Ajuste o tamanho conforme necessário */
+        height: 80px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    /* Texto do Card */
+    .feature-text {
+        font-size: 18px;
+        font-weight: 400; /* Negrito forte */
+        color: #000;
+        line-height: 1.3;
+    }
+
+    /* Ajuste para telas muito pequenas (Mobile) */
+    @media (max-width: 900px) {
+        .feature-card {
+            width: 140px;
+            height: 140px;
+        }
+        .feature-card img {
+            height: 50px;
+        }
+        .feature-text {
+            font-size: 12px;
+        }
+    }
+    
