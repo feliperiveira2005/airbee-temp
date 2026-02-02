@@ -311,8 +311,8 @@ body {
 }
 
 /* Ajustes de largura dos textos na Dobra 02 Desktop */
-.ep-lamina .dobra-02 .feature__content .card:nth-child(1) .feature__description { max-width: 220px; }
-.ep-lamina .dobra-02 .feature__content .card:nth-child(2) .feature__description { max-width: 220px; }
+.ep-lamina .dobra-02 .feature__content .card:nth-child(1) .feature__description { max-width: 250px; }
+.ep-lamina .dobra-02 .feature__content .card:nth-child(2) .feature__description { max-width: 250px; }
 .ep-lamina .dobra-02 .feature__content .card:nth-child(3) .feature__description { max-width: 250px; }
 .ep-lamina .dobra-02 .feature__content .card:nth-child(4) .feature__description { max-width: 250px; }
 .ep-lamina .dobra-02 .feature__content .card:last-child .feature__description { max-width: 250px; }
@@ -335,8 +335,8 @@ body {
 
     .ep-lamina .dobra-02 .feature__content {
         grid-template-columns: 1fr 1fr;
-        column-gap: 60px;
-        row-gap: 40px;
+        column-gap: 40px;
+        row-gap: 20px;
         max-width: 340px;
         width: 100%;
     }
@@ -352,11 +352,11 @@ body {
     }
 
     .ep-lamina .dobra-02 .feature__content .card div img {
-        width: 102px;
+        height: 102px;
     }
 
     .ep-lamina .dobra-02 .feature__content .card .feature__description {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .ep-lamina .dobra-02 .feature__content .card:nth-child(2) .feature__description { max-width: 150px; }
@@ -422,7 +422,7 @@ body {
     font-size: 24px; 
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 10px;
+    margin-bottom: 15px !important;
     text-align: center;
 }
 
@@ -475,6 +475,7 @@ body {
     .orange-title {
         font-size: 48px; 
         text-align: left;
+        
     }
 
     .gray-desc {
@@ -541,6 +542,7 @@ body {
         justify-content: space-between;
         padding-left: 20px !important;
         padding-bottom: 20px !important;
+        
     }
 
     /* Imagem */
@@ -580,6 +582,7 @@ body {
         align-items: center;
         text-align: center;
         padding: 0 0px !important;
+        margin-bottom: 30px;
     }
 
     /* 1. Imagem no topo */
@@ -776,7 +779,7 @@ body {
         left: auto;
         right: auto;
         width: 100%;
-        max-width: 400px;
+        
     }
     
     .dobra-specs-mixer .bg-decoration img {
@@ -1385,10 +1388,12 @@ body {
 /* --- VERSÃO MOBILE --- */
 @media screen and (max-width: 950px) {
     .dobra-specs-mixer {
-        padding-top: 0; /* Background encosta no topo */
+        padding: 0; /* Background encosta no topo */
+
     }
 
     .dobra-specs-mixer .feature__content {
+        padding: 0px;
         flex-direction: column;
         align-items: center;
         text-align: center;
