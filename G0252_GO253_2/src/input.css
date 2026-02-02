@@ -1006,6 +1006,22 @@ body {
 }
 
 /* --- VERSÃO MOBILE (Card Vertical Único) --- */
+@media screen and (max-width: 1444px) {
+.dobra-tamanho .feature__content {
+    max-width: 1250px;
+}
+.dobra-tamanho .img-basket {
+        width: 200%;
+}
+    .dobra-tamanho .img-full-product {
+        width: 190%;
+        margin-bottom: -100px;
+    }
+    .dobra-tamanho .feature__title {
+        font-size: 38px;
+    }
+    
+}
 @media screen and (max-width: 1100px) {
     .dobra-tamanho {
         padding: 40px 0;
