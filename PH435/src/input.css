@@ -1,0 +1,646 @@
+
+    /* --- IMPORTAÇÃO DA FONTE NEO SANS STD --- */
+
+   /* 1. Light (Peso 300) */
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Light.otf') format('opentype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Light_Italic.otf') format('opentype');
+        font-weight: 300;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    /* 2. Regular (Peso 400 - Padrão) */
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* 3. Medium (Peso 500) */
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Medium_Italic.otf') format('opentype');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    /* 4. Bold (Peso 700 - Negrito) */
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Neon Sans';
+        src: url('fonts/Neo_Sans_Std_Bold_Italic.otf') format('opentype');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    /* --- APLICAÇÃO GERAL --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* Aplica a fonte importada em todo o site */
+        font-family: 'Neon Sans', sans-serif;
+    }
+
+        body {
+            background-color: #000; /* Fundo preto padrão */
+            color: #fff;
+        }
+        .img-desktop { display: block !important; }
+        .sec-desktop { display: flex !important; }
+        .img-mobile { display: none !important; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* --- 3. SEÇÃO HERO (PRINCIPAL) --- */
+        .hero-section {
+            /* Aqui vai a imagem de fundo da festa (pessoas dançando) */
+            background-image: url('assets/images/d1.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            /* Altura mínima para caber tudo */
+            min-height: 94vh; 
+            border-radius: 30px;
+            display: flex;
+            align-items: start;
+            justify-content: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Máscara escura opcional para o texto aparecer melhor sobre a foto da festa */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+          
+            z-index: 1;
+        }
+        .borda{
+            padding: 20px;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1300px;
+            position: relative;
+            z-index: 2; /* Fica acima da máscara escura */
+        }
+
+        /* Coluna da Esquerda (Textos) */
+        .hero-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .brand-logo {
+            max-width: 300px;
+            margin-bottom: 150px;
+            display: block;
+        }
+
+        .product-title {
+            color: #FFD700; /* Amarelo/Dourado Pulse */
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold; /* Se a fonte suportar */
+        }
+
+        .product-subtitle {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        .product-specs {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 30px;
+        }
+
+        .product-tagline {
+            font-size: 1.8rem;
+            color: #eee;
+            font-weight: 300;
+        }
+
+        /* Coluna da Direita (Imagem da Caixa) */
+        .hero-image-col {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end; /* Alinha a caixa na base se precisar */
+        }
+
+        .pulsebox-img {
+            max-width: 100%;
+            height: auto;
+            /* Efeito de sombra/brilho atrás da caixa */
+            filter: drop-shadow(0 0 20px rgba(255, 0, 255, 0.3)); 
+            transform: scale(1.1); /* Aumenta um pouco para destaque */
+        }
+
+        /* --- 4. SEÇÃO DE ÍCONES (Features) --- */
+        .features-section {
+            background-color: #000;
+            padding: 50px 20px;
+        }
+
+        .features-grid {
+            display: flex;
+            justify-content: space-around; /* Espalha os ícones */
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 180px;
+        }
+
+        .feature-icon {
+            /* Tamanho dos ícones amarelos */
+            width: 60px; 
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .feature-text {
+            color: #FFD700; /* Amarelo Pulse */
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+        /* Badge Azul */
+        .aio-badge {
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: 400;
+            font-size: 24px;
+            padding: 2px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+        /* --- 5. RESPONSIVO (MOBILE) --- */
+        @media screen and (max-width: 900px) {
+            .aio-badge {
+                font-size: 12px;
+                padding: 2px 12px;
+                margin-bottom: 10px;
+            }
+            .borda{
+                padding: 0px;
+            }
+            .img-desktop { display: none !important; }
+            .sec-desktop { display: none !important; }
+            .img-mobile { display: block !important; }
+            .hero-section {
+                /* No mobile, a imagem de fundo foca no centro */
+                background-position: center top;
+                padding-top: 40px;
+                text-align: left;
+                background-image: url('assets/images/d1m.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                min-height: 451px;
+                max-width: 450px;
+                margin: 0 auto;
+                align-items: flex-start;
+                border-radius: 0px;
+            }
+            
+             .brand-logo {
+                max-width: 150px;
+                margin-bottom: 0px;
+            }
+
+            .hero-grid {
+                flex-direction: column; /* Empilha texto e imagem */
+                align-items: flex-start;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+
+            .product-title { font-size: 28px; }
+            .product-subtitle { font-size: 1.4rem; }
+            .product-specs { font-size: 1.2rem; }
+
+            .pulsebox-img {
+                max-width: 80%; /* Caixa menor no mobile */
+                transform: scale(1);
+            }
+
+            .features-grid {
+                gap: 40px;
+            }
+            
+            .feature-item {
+                /* No mobile, 2 ícones por linha */
+                width: 40%;
+            }
+        }
+        /* --- ESTILO DA SEÇÃO --- */
+        .audio-section {
+            background-color: #000000; /* Fundo preto sólido */
+            padding: 60px 20px; /* Espaçamento interno */
+            text-align: center; /* Centraliza tudo horizontalmente */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Garante centralização dos blocos */
+        }
+
+        /* Container para limitar a largura do texto */
+        .text-container {
+            max-width: 1000px;
+            margin-bottom: 40px; /* Espaço entre o texto e a imagem abaixo */
+        }
+
+        /* Título Amarelo */
+        .highlight-title {
+            color: #FFD700; /* Cor amarela/dourada */
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* Texto Descritivo Branco */
+        .description-text {
+            color: #FFFFFF; /* Cor branca */
+            font-size: 1.4rem;
+            line-height: 1.5;
+            font-weight: 400;
+            max-width: 1100px; /* Limita a largura para ficar mais legível */
+            margin: 0 auto; /* Centraliza o bloco de texto */
+        }
+
+        /* --- IMAGEM DO PRODUTO --- */
+        .product-image {
+            width: 100%; /* Ocupa a largura disponível */
+            height: auto; /* Mantém a proporção */
+            display: block;
+            /* Opcional: se quiser que a imagem tenha cantos arredondados como no print */
+            border-radius: 20px; 
+        }
+
+        /* --- RESPONSIVO (MOBILE) --- */
+        @media screen and (max-width: 900px) {
+            .audio-section {
+                padding: 40px 0px;
+            }
+
+            .highlight-title {
+                font-size: 1.8rem; /* Título menor no mobile */
+            }
+            .product-image {
+                border-radius: 0px; 
+             }
+
+            .description-text {
+                font-size: 14px; /* Texto menor no mobile */
+            }
+        }
+        /* --- SEÇÃO ILUMINAÇÃO (LEDS) --- */
+    .lighting-section {
+        /* Imagem de fundo da festa */
+        background-image: url('assets/images/d5.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        position: relative;
+        width: 100%;
+        min-height: 100vh; /* Altura da dobra */
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+        overflow: hidden; /* Evita que a imagem vaze se for grande */
+    }
+
+    /* Máscara escura para melhorar leitura do texto (opcional) */
+    .lighting-overlay {
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+        z-index: 1;
+    }
+
+    .lighting-container {
+        max-width: 1100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2; /* Fica acima da máscara */
+    }
+
+    /* Coluna de Texto */
+    .lighting-text-col {
+        flex: 1;
+        max-width: 500px; /* Limita a largura do texto */
+        padding-right: 20px;
+    }
+
+    .lighting-title {
+        color: #FFD700; /* Amarelo Pulse */
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        text-transform: none;
+    }
+
+    .lighting-desc {
+        color: #fff;
+        font-size: 1.5rem;
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    /* Coluna da Imagem */
+    .lighting-img-col {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; /* Joga a caixa para a direita */
+    }
+
+    .pulsebox-led-img {
+      
+        height: auto;
+       
+       
+    }
+
+    /* --- RESPONSIVO (MOBILE) --- */
+    @media screen and (max-width: 900px) {
+        .lighting-section {
+            padding: 40px 10px;
+            /* No mobile, escurece mais o fundo geral */
+            background: #000; 
+            /* Se quiser manter a foto de fundo no mobile, use:
+               background-image: url('assets/images/bg-iluminacao.jpg'); 
+            */
+        }
+
+
+        .lighting-container {
+            flex-direction: column; /* Empilha: Texto em cima, Imagem embaixo */
+            text-align: center;
+        }
+
+        .lighting-text-col {
+            padding-right: 0;
+            margin-bottom: 30px;
+            max-width: 100%;
+        }
+
+        .lighting-title {
+            font-size: 1.8rem;
+        }
+        
+        .lighting-desc {
+            font-size: 1rem;
+        }
+
+        .lighting-img-col {
+            justify-content: center; /* Centraliza a caixa no mobile */
+        }
+        
+    }
+    /* --- SEÇÃO DE ESPECIFICAÇÕES --- */
+    .specs-section {
+        background-color: #000;
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* --- BARRA AMARELA (HEADER) --- */
+    .specs-header-bar {
+        background-color: #FFD700;
+        width: 100%;
+        max-width: 1920px; /* Largura igual da tabela */
+        border-radius: 20px;
+        padding: 15px 30px;
+        
+        /* Mantém Logo na Esquerda e Texto na Direita sempre */
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+    }
+
+    .specs-logo {
+        max-width: 120px; /* Tamanho Desktop */
+        height: auto;
+        filter: brightness(0); 
+    }
+
+    .specs-social {
+        text-align: right;
+        color: #000;
+        font-weight: 700;
+        font-size: 0.9rem;
+        line-height: 1.3;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .social-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .insta-icon-img {
+        width: 24px;
+        display: block;
+    }
+
+    /* --- TABELA (Desktop) --- */
+    .specs-table-container {
+        width: 100%;
+        max-width: 1800px;
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 20px;
+        overflow: hidden; /* Arredonda cantos */
+    }
+
+    .specs-table {
+        width: 100%;
+        border-collapse: separate; /* Necessário para o Sticky funcionar */
+        border-spacing: 0;
+    }
+
+    /* Cabeçalho (Cinza) */
+    .specs-table th {
+        background-color: #C6C6C6;
+        color: #000;
+        font-weight: 700;
+        padding: 5px 10px;
+        font-size: 0.95rem;
+        vertical-align: middle;
+        white-space: nowrap; /* Não quebra linha no título */
+        border-right: 10px solid #fff; /* Divisória branca */
+    }
+    .specs-table th:last-child { border-right: none; }
+
+    /* Corpo (Cinza Claro) */
+    .specs-table td {
+        background-color: #F2F2F2;
+        color: #555;
+        padding: 20px 10px;
+        font-size: 0.9rem;
+        text-align: center;
+        vertical-align: middle;
+        border-right: 10px solid #fff;
+    }
+    .specs-table td:last-child { border-right: none; }
+
+    /* Coluna SP519 (Destaque) */
+    .col-product {
+        background-color: #E6E6E6 !important;
+        width: 130px;
+        min-width: 130px;
+        color: #000 !important;
+        font-weight: 800;
+    }
+
+    .mini-speaker-img {
+        width: 70px;
+        margin: 5px auto;
+        display: block;
+    }
+    .model-name { display: block; font-weight: 800; color: #000; margin-bottom: 5px; }
+
+
+    /* --- RESPONSIVO MOBILE --- */
+    @media screen and (max-width: 768px) {
+        
+        .specs-section { padding: 40px 10px; }
+
+        /* 1. Ajuste da Barra Amarela no Mobile */
+        .specs-header-bar {
+            padding: 10px 15px; /* Menos espaçamento */
+            border-radius: 10px;
+            /* Mantém o flex row (um ao lado do outro) */
+            flex-direction: row; 
+            justify-content: space-between;
+        }
+
+        .specs-logo {
+            max-width: 90px; /* Logo menor para caber */
+        }
+
+        .specs-social {
+            font-size: 0.75rem; /* Texto menor */
+        }
+        .insta-icon-img { width: 18px; }
+
+        /* 2. Ajuste da Tabela (Scroll com Coluna Fixa) */
+        .specs-table-container {
+            padding: 0px;
+            overflow-x: auto; /* Permite rolar para o lado */
+            border-radius: 10px;
+            /* Padding inferior para a barra de rolagem não cobrir conteúdo */
+            padding-bottom: 5px; 
+        }
+
+        .specs-table {
+            min-width: 700px; /* Força a tabela a ser larga para ter scroll */
+        }
+
+        /* --- MÁGICA DA COLUNA FIXA --- */
+        /* Fixa o cabeçalho da 1ª coluna */
+        .specs-table th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+            background-color: #C6C6C6; 
+            border-right: 1px solid #aaa;
+        }
+
+        /* Fixa o corpo da 1ª coluna (SP519) */
+        .specs-table td:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+            background-color: #E6E6E6 !important;
+            border-right: 1px solid #bbb;
+            /* Sombra para dar efeito de profundidade */
+            box-shadow: 4px 0 8px rgba(0,0,0,0.1); 
+        }
+    }
+    .textos{
+        display: flex;
+        gap: 400px;
+        text-align: left;
+    }
+    @media screen and (max-width: 1200px) {
+        .textos{
+            gap: 200px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .textos{
+            flex-direction: column;
+            gap: 0px;
+            
+        }
+        #d8{
+            padding: 0px 0px;
+        }
+    }
