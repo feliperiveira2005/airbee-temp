@@ -1,0 +1,1190 @@
+/* =========================================
+   RESET E ESTILOS GERAIS
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.ep-lamina {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    overflow-x: hidden;
+}
+
+.ep-lamina * {
+    font-family: "elza", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.ep-lamina h3, .ep-lamina h4, .ep-lamina h5, .ep-lamina h6, .ep-lamina p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos e Descrições Globais */
+.ep-lamina .feature__title {
+    font-size: 48px;
+    font-weight: 600;
+    color: #FF8200;
+}
+
+
+
+/* =========================================
+   UTILITÁRIOS (Mobile/Desktop)
+   ========================================= */
+.only-desktop {
+    display: flex !important;
+}
+
+.only-mobile {
+    display: none !important;
+}
+.only-mobile2 {
+    display: none !important;
+}
+.only-desktop2 {
+        display: flex !important;
+}
+@media screen and (max-width: 900px) {
+    .only-desktop {
+        display: none !important;
+    }
+    .only-mobile {
+        display: block !important;
+    }
+    
+}
+@media screen and (max-width: 1100px) {
+    .only-mobile2 {
+        display: block !important;
+    }
+        .only-desktop2 {
+        display: none !important;
+    }
+    
+}
+
+
+
+
+/* =========================================
+   SEÇÃO FICHA TÉCNICA (TECLADO)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.kb-specs-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 0 0 60px 0; /* Padding bottom para o texto não colar no fim */
+    
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    position: relative;
+    overflow: hidden;
+    font-family: "elza", sans-serif;
+    color: #000;
+}
+
+.kb-specs-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- Coluna Visual (Mobile: Topo) --- */
+.kb-visual-col {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Altura suficiente para o M e o teclado */
+    padding-top: 40px; 
+    margin-bottom: 40px;
+}
+
+/* Fundo M Azul */
+.kb-bg-m {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0; /* Fica atrás do teclado */
+}
+
+.bg-m-mobile {
+    width: 100%;
+    display: block;
+    /* Ajuste para garantir que o M fique só no topo */
+
+    height: 450px; /* Limita a altura para não descer até o texto */
+    object-fit: contain;
+    object-position: top;
+}
+
+/* Imagem do Teclado */
+.kb-prod-specs-img {
+    position: relative;
+    z-index: 1; /* Fica na frente do M */
+    width: 90%;
+    max-width: 425px;
+    height: auto;
+    margin-top: 20px; /* Empurra o teclado para baixo para centralizar no M */
+    display: block;
+}
+
+/* --- Coluna Texto (Mobile: Baixo) --- */
+.kb-text-col {
+    width: 100%;
+    padding: 0 30px;
+    text-align: center;
+    z-index: 2; /* Garante que fique sobre qualquer resquício de fundo */
+    background-color: #fff; /* Garante legibilidade */
+}
+
+.specs-title {
+    color: #0050DC; /* Azul Multi */
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px !important;
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.specs-list li {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    color: black;
+}
+
+.specs-list strong {
+    font-weight: 700;
+    color: #000;
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 1150px) {
+    
+    .kb-specs-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .kb-specs-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        
+        /* Layout Lado a Lado */
+        flex-direction: row; 
+        align-items: flex-start; /* Alinha no topo */
+        justify-content: space-between;
+        position: relative;
+    }
+
+    /* --- INVERSÃO: Texto na Esquerda, Imagem na Direita --- */
+    
+    /* 1. Coluna de Texto (Esquerda) */
+    .kb-text-col {
+        width: 40%; /* Ocupa menos da metade */
+        text-align: left; /* Alinha texto à esquerda */
+        padding: 40px 0 0 50px; /* Espaço do topo e esquerda */
+        background-color: transparent; /* Remove fundo branco */
+        order: 1; /* Vem primeiro */
+    }
+
+    .specs-title {
+        font-size: 36px;
+        margin-bottom: 30px !important;
+    }
+
+    .specs-list {
+        text-align: left;
+    }
+
+    .specs-list li {
+        font-size: 22px;
+        margin-bottom: 5px;
+    }
+
+    /* 2. Coluna Visual (Direita) */
+    .kb-visual-col {
+        width: 55%; /* Ocupa o resto */
+        order: 2; /* Vem depois */
+        margin-bottom: 0;
+        padding-top: 0;
+        
+        /* Posicionamento absoluto para o M vazar para a direita */
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        display: block; /* Remove o flex para controlar posição */
+    }
+
+    /* O Fundo M Desktop */
+    .kb-bg-m {
+        position: absolute;
+        top: -50px; /* Sobe um pouco para cortar no topo */
+        right: -250px; /* Joga para fora da tela à direita */
+        width: 135%;
+        height: 120%; /* Aumenta altura */
+        z-index: 0;
+    }
+
+    .bg-m-desktop {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: right top;
+    }
+
+    /* O Teclado Desktop */
+    .kb-prod-specs-img {
+        width: 140%; /* Teclado grande */
+        max-width: 1400px;
+        margin-top: 150px; /* Desce para ficar no meio do M */
+        margin-left: -50px; /* Puxa um pouco para a esquerda sobre o texto */
+    }
+}
+@media screen and (min-width: 1150px) and (max-width: 1440px) {
+    .kb-prod-specs-img {
+        width: 110%; /* Teclado grande */
+        max-width: 1400px;
+        margin-top: 300px; /* Desce para ficar no meio do M */
+        margin-left: -50px; /* Puxa um pouco para a esquerda sobre o texto */
+    }
+}
+/* =========================================
+   SEÇÃO TECLADO (TS050)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.keyboard-section {
+    width: 100%;
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    /* CONFIGURAÇÃO DE FUNDO MOBILE */
+    background-image: url('assets/images/teclado-mobile.png'); /* Sua imagem vertical */
+    background-size: cover; /* Cobre todo o espaço */
+    background-position: center bottom; /* Garante que o teclado (embaixo) apareça */
+    background-repeat: no-repeat;
+    
+    /* Altura mínima para garantir que a imagem apareça toda */
+    min-height: 650px; 
+    
+    padding: 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.keyboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Texto no topo */
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* --- Texto e Logo --- */
+.kb-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Adicione margin-top se precisar descer o texto para não bater no topo da foto */
+    margin-top: 20px; 
+}
+
+.kb-logo {
+    width: 180px;
+    margin-bottom: 30px;
+}
+
+.kb-title {
+    color: #0050DC; /* Azul Multi */
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.kb-subtitle {
+    color: #000;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 30px!important;
+}
+
+/* --- Botão / Pill --- */
+.kb-pill {
+    display: inline-block;
+    background-color: #0050DC;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px 35px;
+    border-radius: 40px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    
+    .keyboard-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        
+        /* TROCA PARA IMAGEM DESKTOP */
+        background-image: url('assets/images/teclado-desktop.png'); /* Sua imagem horizontal */
+        background-size: cover;
+        background-position: center center;
+        
+        min-height: 950px; /* Altura do banner desktop */
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 0;
+    }
+
+    .keyboard-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 50px;
+        
+        /* Alinha o bloco de texto à esquerda */
+        flex-direction: row;
+        justify-content: flex-start; 
+        align-items: center;
+        text-align: left;
+    }
+
+    /* --- Ajustes Texto Desktop --- */
+    .kb-text-col {
+        align-items: flex-start; /* Alinha itens à esquerda */
+        margin-top: 0;
+        max-width: 500px; 
+       
+    }
+
+    .kb-logo {
+        margin-top: 60px;
+        width: 260px;
+        margin-bottom: 40px;
+    }
+
+    .kb-title {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    .kb-subtitle {
+        font-size: 34px;
+        margin-bottom: 200px!important;
+    }
+
+    .kb-pill {
+        font-size: 38px;
+        padding: 14px 30px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1250px) {
+    .kb-text-col {
+        max-width: 350px;
+    }
+}
+/* =========================================
+   SEÇÃO FEATURES (ÍCONES)
+   ========================================= */
+
+/* --- BASE (MOBILE - GRID 2x2) --- */
+.kb-features-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 50px 20px;
+    
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    font-family: "elza", sans-serif; /* Use sua fonte padrão */
+    box-sizing: border-box;
+}
+
+.features-wrapper {
+    display: grid;
+    /* Define 2 colunas de tamanho igual */
+    grid-template-columns: 1fr 1fr; 
+    /* Espaçamento: 40px vertical, 20px horizontal */
+    gap: 40px 20px; 
+    justify-items: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo da Imagem (que já contém o círculo) */
+.feature-icon {
+    width: 90px; /* Tamanho total da imagem com círculo no mobile */
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    /* Opcional: garante que a imagem não estoure se for muito grande */
+    max-width: 100%; 
+}
+
+/* Texto abaixo do ícone */
+.feature-text {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    
+    .kb-features-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .features-wrapper {
+        width: 100%;
+        max-width: 1200px;
+        
+        /* Muda de Grid para Flex para distribuir em linha */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; /* Espalha igualmente */
+        align-items: flex-start;
+        gap: 0; /* O space-around cuida do espaçamento */
+    }
+
+    /* Ajustes finos para Desktop */
+    .feature-icon {
+        width: 160px; /* Imagem maior no Desktop */
+        margin-bottom: 20px;
+    }
+
+    .feature-text {
+        font-size: 24px; /* Texto maior no PC */
+        font-weight: 400; /* Um pouco mais de peso para leitura */
+    }
+}
+/* =========================================
+   SEÇÃO DESTAQUE CONEXÃO USB (Fundo Azul)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.usb-highlight-section {
+    width: 100%;
+    /* Azul vibrante conforme imagem */
+    background-color: #0050DC; 
+    
+    /* Padding generoso no topo, zero embaixo para colar a imagem */
+    padding-top: 30px;
+    padding-bottom: 0;
+    
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    border-radius: 20px; /* Arredondamento nos cantos (visível se tiver margem externa) */
+    overflow: hidden;
+    font-family: "elza", sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.usb-highlight-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ícone */
+.usb-icon {
+    width: 80px; /* Ajuste conforme tamanho do seu ícone */
+    height: auto;
+    margin-bottom: 25px;
+    display: block;
+}
+
+/* Títulos */
+.usb-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
+    max-width: 300px; /* Quebra de linha controlada */
+}
+
+.usb-subtitle {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0 0 40px 0;
+    opacity: 0.9;
+    max-width: 280px;
+}
+
+/* Imagem Teclado */
+.usb-kb-img {
+    width: 100%;
+    max-width: 420px; /* Tamanho máximo no mobile */
+    height: auto;
+    display: block;
+    margin-bottom: -5px; /* Garante que cola no fundo */
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 1150px) {
+    
+    .usb-highlight-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        border-radius: 0; /* Remove borda arredondada no full width */
+        
+        padding-top: 80px;
+        /* Padding bottom opcional dependendo se quer colar no chão ou não */
+        padding-bottom: 0; 
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .usb-highlight-wrapper {
+        width: 100%;
+        max-width: 1200px; /* Largura do conteúdo centralizado */
+    }
+
+    /* Ajustes Tamanhos Desktop */
+    .usb-icon {
+        width: 100px;
+        margin-bottom: 30px;
+    }
+
+    .usb-title {
+        font-size: 40px;
+        margin-bottom: 15px!important;
+        max-width: none; /* Deixa o texto fluir */
+    }
+
+    .usb-subtitle {
+        font-size: 24px;
+        margin-bottom: 60px;
+        max-width: none;
+    }
+
+    .usb-kb-img {
+        max-width: 1400px; /* Teclado bem maior no desktop */
+    }
+}
+/* =========================================
+   SEÇÃO MULTIMÍDIA (CARD AZUL)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.multimedia-section {
+    width: 100%;
+    background-color: #fff; /* Fundo da página branco */
+    padding: 40px 0px;     /* Espaço externo */
+    
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.multimedia-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* O Cartão Azul */
+.mm-blue-card {
+    width: 100%;
+    background-color: #0050DC; /* Azul Multi */
+    border-radius: 30px;       /* Bordas bem arredondadas */
+    padding-top: 50px;         /* Espaço topo */
+    padding-bottom: 0;         /* Imagem cola no chão */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;          /* Corta a imagem se passar da borda arredondada */
+    position: relative;
+}
+
+/* Ícone */
+.mm-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Textos */
+.mm-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.mm-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0 0 40px 0;
+    padding: 0 20px; /* Margem lateral para não colar na borda no mobile */
+    opacity: 0.9;
+}
+
+/* Imagem do Teclado */
+.mm-kb-img {
+    width: 100%;
+    /* Ajuste para mobile: focar nas teclas */
+    max-width: 500px; 
+    height: auto;
+    display: block;
+    /* Margin bottom negativa se precisar ajustar o corte */
+    margin-bottom: -1px; 
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 1150px) {
+    
+    .multimedia-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        padding: 80px 0; /* Mais respiro na página */
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .multimedia-wrapper {
+        width: 100%;
+        max-width: 1200px; /* Largura máxima do conteúdo */
+        padding: 0 20px;
+    }
+
+    .mm-blue-card {
+        width: 100%;
+        /* No desktop, o card é largo */
+        padding-top: 70px;
+        border-radius: 40px;
+    }
+
+    /* Ajustes Tamanhos Desktop */
+    .mm-icon {
+        width: 100px;
+        margin-bottom: 30px;
+    }
+
+    .mm-title {
+        font-size: 40px;
+        margin-bottom: 15px!important;
+    }
+
+    .mm-desc {
+        font-size: 24px;
+        margin-bottom: 20px!important;
+        max-width: 600px; /* Limita largura do texto para leitura */
+    }
+
+    .mm-kb-img {
+        max-width: 1400px; /* Imagem bem maior */
+        margin-bottom: 0;
+    }
+}
+/* =========================================
+   SEÇÃO RESISTENTE À LÍQUIDOS
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.resistant-section {
+    width: 100%;
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    /* Configuração da Imagem de Fundo Mobile */
+    background-image: url('assets/images/resistant-mobile.png'); /* Sua imagem vertical */
+    background-size: cover;
+    background-position: center bottom; /* Foca no teclado molhado */
+    background-repeat: no-repeat;
+    
+    height: 600px; /* Altura fixa para mostrar bem a imagem */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Conteúdo no topo */
+    padding-top: 20px;
+    
+    font-family: "elza", sans-serif;
+    color: #0050DC; /* Azul Multi para o texto */
+    text-align: center;
+    position: relative;
+}
+
+.resistant-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.resistant-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    /* Adicione um fundo branco semi-transparente se o texto ficar ilegível, 
+       mas nas imagens parece estar direto sobre uma área desfocada/clara */
+}
+
+/* Ícone */
+.res-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Títulos */
+.res-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 5px 0;
+}
+
+.res-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 1150px) {
+    
+    .resistant-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        
+        /* Troca para imagem horizontal */
+        background-image: url('assets/images/resistant-desktop.png'); 
+        background-position: center center;
+        
+        height: 850px; /* Altura do banner desktop */
+        
+        padding-top: 60px; /* Mantém conteúdo no topo */
+    }
+
+    .resistant-content {
+        /* No desktop, o texto parece um pouco mais alto */
+        margin-top: -20px; 
+    }
+
+    .res-icon {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .res-title {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .res-desc {
+        font-size: 26px;
+    }
+}
+/* =========================================
+   SEÇÃO CARDS ABNT2 (Branco/Cinza)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.cards-section {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 60px;
+    padding-bottom: 0; /* Imagem cola no chão */
+    
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Corta a imagem se vazar */
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column; /* Empilha cards no mobile */
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: -50px; /* Faz os cards entrarem "atrás" da imagem do teclado */
+    z-index: 1;
+}
+
+/* Estilo do Card Individual */
+.info-card {
+    background-color: #F5F5F5; /* Cinza bem claro */
+    border-radius: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Sombra suave */
+}
+
+.card-icon {
+    width: 70px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    color: #0050DC; /* Azul Multi */
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 10px 0 !important;
+
+}
+
+.card-desc {
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Imagem do Teclado (Frente) */
+.front-kb-img {
+    width: 120%; /* Estoura um pouco a largura no mobile para efeito de perspectiva */
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin-top: 20px; 
+    position: relative;
+    z-index: 2; /* Fica na frente dos cards */
+    transform: translateY(10px); /* Ajuste fino */
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 1150px) {
+    
+    .cards-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        padding-top: 80px;
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .cards-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        /* No desktop, precisamos de espaço para a imagem sobrepor */
+        position: relative; 
+    }
+
+    .cards-container {
+        flex-direction: row; /* Cards lado a lado */
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: -100px; /* Teclado sobrepõe mais no desktop */
+    }
+
+    .info-card {
+        width: 300px; /* Largura fixa para ficarem iguais */
+        padding: 50px 30px 120px 30px; /* Padding bottom grande para o teclado cobrir o texto */
+    }
+
+    .card-icon {
+        width: 80px;
+    }
+
+    .card-title {
+        font-size: 30px;
+        margin-bottom: 10px!important;
+    }
+
+    .card-desc {
+        font-size: 18px;
+    }
+
+    .front-kb-img {
+        width: 100%;
+        max-width: 1400px;
+        margin-top: 0;
+        transform: translateY(20px);
+    }
+}
+/* =========================================
+   SEÇÃO GARANTIA 3 ANOS
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.warranty-section {
+    width: 100%;
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    /* Imagem de fundo Mobile (Vertical) */
+    background-image: url('assets/images/warranty-mobile.png'); 
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    
+    /* Altura suficiente para mostrar a cena */
+    height: 600px; 
+    
+    display: flex;
+    justify-content: center;
+    padding-top: 60px; /* Espaço do topo */
+    
+    font-family: "elza", sans-serif;
+    color: #fff;
+    text-align: left; /* No mobile parece alinhado com o selo */
+    position: relative;
+}
+
+.warranty-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Conteúdo no topo */
+}
+
+.warranty-content {
+    display: flex;
+    flex-direction: row; /* Selo ao lado do texto no mobile */
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    background: rgba(0,0,0,0.0); /* Fundo transparente */
+}
+
+/* Selo de Garantia */
+.warranty-seal {
+    width: 80px; /* Tamanho do selo no mobile */
+    height: auto;
+    display: block;
+    
+    border-radius: 10px;
+    padding: 0px; /* Borda branca simulada se a imagem não tiver */
+}
+
+/* Título */
+.warranty-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0;
+   
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 1150px)
+   ========================================= */
+@media screen and (min-width: 1150px) {
+    
+    .warranty-section {
+        /* RESET TRAVA */
+        max-width: none;
+        margin: 0;
+        
+        /* Imagem de fundo Desktop (Horizontal) */
+        background-image: url('assets/images/warranty-desktop.png'); 
+        background-position: center center;
+        
+        height: 916px; /* Altura do banner desktop */
+        
+        /* No desktop, o conteúdo fica à esquerda, alinhado verticalmente */
+        align-items: center; 
+        padding-top: 0;
+    }
+
+    .warranty-wrapper {
+        width: 100%;
+        max-width: 1400px; /* Largura do conteúdo */
+        justify-content: flex-start; /* Alinha à esquerda */
+        padding-left: 50px;
+    }
+
+    .warranty-content {
+        flex-direction: column; /* Selo em cima, texto embaixo (ou vice-versa, ver imagem) */
+        /* Na imagem desktop: Texto em cima, Selo embaixo */
+        flex-direction: column-reverse; 
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .warranty-seal {
+        width: 120px; /* Selo maior no desktop */
+    }
+
+    .warranty-title {
+        font-size: 44px;
+        margin-bottom: 10px;
+    }
+}
+/* =========================================
+   DOBRA 09 (Footer)
+   ========================================= */
+.ep-lamina .dobra-09 {
+    margin: 0px auto;
+    margin-top: 0px;
+    padding: 2.5% 56px;
+    background-color: #0050DC;
+    border-radius: 20px 20px 0 0 ;
+    width: 100%;
+    max-width: 1920px;
+}
+
+.ep-lamina .dobra-09 .feature__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ep-lamina .dobra-09 .feature__content > .image {
+    max-width: 242px;
+    height: 91px;
+    border-radius: 0 !important;
+}
+
+.ep-lamina .dobra-09 .feature__content > .text__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description > span {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 900px) {
+    .ep-lamina .dobra-09 {
+        margin: 0 11px;
+        margin-top: 60px;
+        border-radius: 10px;
+        padding: 12px 13px;
+        width: 100%;
+        justify-self: center;
+        height: 70px;
+        align-items: center;
+    }
+
+    .ep-lamina .dobra-09 .feature__content > .image {
+        max-width: 122px;
+        height: auto;
+    }
+
+    .ep-lamina .dobra-09 .feature__content > .text__content {
+        gap: 4px;
+    }
+
+    .ep-lamina .dobra-09 .feature__content > .text__content > .line > .feature__description {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    /* 1. Ajuste Geral: Remove margens laterais que causam rolagem */
+    .ep-lamina section {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        width: 100% !important;
+    }
+}
