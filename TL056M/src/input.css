@@ -552,7 +552,7 @@
         align-items: center;
         flex-wrap: wrap; /* Permite quebrar linha no mobile */
         gap: 20px; /* Espaçamento entre os cards */
-        padding: 40px 20px;
+        padding: 40px 0px;
         font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -569,7 +569,13 @@
         text-align: center;
 
     }
+    @media (min-width: 991px) and (max-width: 1380px) {
+        .feature-card {
+            width: 200px;  
+            height: 200px; 
+        }
 
+    }
     /* Imagem do Ícone */
     .feature-card img {
         width: auto; /* Ajuste o tamanho conforme necessário */
@@ -587,7 +593,7 @@
     }
 
     /* Ajuste para telas muito pequenas (Mobile) */
-    @media (max-width: 900px) {
+    @media (max-width: 991px) {
         .feature-card {
             width: 140px;
             height: 140px;
