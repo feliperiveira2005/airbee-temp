@@ -146,7 +146,7 @@ body {
     padding: 0 30px;
     text-align: center;
     z-index: 2; /* Garante que fique sobre qualquer resquício de fundo */
-    background-color: #fff; /* Garante legibilidade */
+    
 }
 
 .specs-title {
