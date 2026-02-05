@@ -244,7 +244,7 @@ body {
 }
 
 /* =========================================
-   SEÇÃO TECLADO (DOBRA 01)
+   SEÇÃO TECLADO (DOBRA 01 - HERO)
    ========================================= */
 
 /* --- BASE (MOBILE) --- */
@@ -453,96 +453,6 @@ body {
 }
 
 /* =========================================
-   SEÇÃO RESISTENTE À LÍQUIDOS
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.resistant-section {
-    width: 100%;
-    max-width: 430px; 
-    margin: 0 auto;
-    background-image: url('assets/images/resistant-mobile.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    height: 600px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 20px;
-    font-family: "elza", sans-serif;
-    color: #0050DC;
-    text-align: center;
-    position: relative;
-}
-
-.resistant-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.resistant-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.res-icon {
-    width: 80px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.res-title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 5px 0;
-    margin-bottom: 10px!important;
-}
-
-.res-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .resistant-section {
-        max-width: none;
-        margin: 0;
-        background-image: url('assets/images/resistant-desktop.png'); 
-        background-position: center center;
-        height: 850px;
-        padding-top: 60px;
-    }
-
-    .resistant-content {
-        margin-top: -20px; 
-    }
-
-    .res-icon {
-        width: 100px;
-        margin-bottom: 20px;
-    }
-
-    .res-title {
-        font-size: 40px;
-        margin-bottom: 10px !important;
-    }
-
-    .res-desc {
-        font-size: 26px;
-    }
-}
-
-/* =========================================
    DOBRA 09 (Footer)
    ========================================= */
 .ep-lamina .dobra-09 {
@@ -626,7 +536,6 @@ body {
 
 /* --- BASE (MOBILE) --- */
 .powerbank-section {
-    
     width: 100%;
     max-width: 430px; 
     margin: 0 auto;
@@ -644,16 +553,11 @@ body {
     color: #fff;
     box-sizing: border-box;
     margin-bottom: 40px;
-    
 }
 
 .powerbank-wrapper {
     width: 100%;
     text-align: center;
-}
-
-.pb-content {
-    max-width: 300px;
 }
 
 .pb-title {
@@ -688,10 +592,6 @@ body {
         padding-left: 120px;
     }
     
-    .pb-content {
-        max-width: 550px;
-    }
-
     .pb-title {
         font-size: 40px;
         margin-bottom: 25px!important;
@@ -848,8 +748,6 @@ body {
         position: relative;
         z-index: 10; /* Garante que fique acima de tudo */
         
-        /* Sombra opcional para destacar do fundo branco da página */
-        
     }
 
     /* Coluna Texto (Direita) */
@@ -876,500 +774,7 @@ body {
         max-width: 500px;
     }
 }
-/* =========================================
-   SEÇÃO DESEMPENHO E VERSATILIDADE
-   ========================================= */
 
-/* --- BASE (MOBILE) --- */
-.perf-vers-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 30px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.pv-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-}
-
-.pv-card {
-    background-color: #F5F5F5;
-    border-radius: 30px;
-    padding: 40px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.pv-icon {
-    width: 85px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px!important;
-}
-
-.pv-title {
-    color: #0050DC;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px !important;
-}
-
-.pv-desc {
-    color: black;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .perf-vers-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .pv-wrapper {
-        width: 100%;
-        max-width: 1200px;
-        padding: 0 20px;
-        flex-direction: row; 
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .pv-card {
-        flex: 1;
-        max-width: 400px; 
-        padding: 100px 40px;
-        border-radius: 40px;
-    }
-
-    .pv-icon {
-        width: 100px;
-        margin-bottom: 20px;
-    }
-
-    .pv-title {
-        font-size: 36px;
-        margin-bottom: 20px !important;
-    }
-
-    .pv-desc {
-        font-size: 22px;
-        line-height: 1.5;
-    }
-}
-
-/* =========================================
-   SEÇÃO VISOR LCD DIGITAL
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.lcd-visor-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 20px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.lcd-wrapper {
-    width: 100%;
-}
-
-.lcd-card {
-    background-color: #0050DC;
-    border-radius: 30px;
-    padding-top: 50px;
-    padding-bottom: 0; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-}
-
-.lcd-text-col {
-    z-index: 2;
-    margin-bottom: 30px;
-    padding: 0 20px;
-}
-
-.lcd-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px !important;
-}
-
-.lcd-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.lcd-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: -5px; 
-}
-
-.lcd-img {
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .lcd-visor-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .lcd-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 0px;
-    }
-
-    .lcd-card {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        text-align: left;
-        padding: 0px 0px 0px 150px;
-        border-radius: 40px;
-        min-height: 700px;
-    }
-
-    .lcd-text-col {
-        width: 30%;
-        margin-bottom: 0;
-        padding: 0;
-        position: relative;
-    }
-
-    .lcd-title {
-        font-size: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .lcd-desc {
-        font-size: 24px;
-        max-width: 400px;
-    }
-
-    .lcd-img-col {
-        width: 50%;
-        justify-content: flex-end;
-        margin-bottom: 0;
-        margin-right: -50px;
-    }
-
-    .lcd-img {
-        width: 100%;
-        margin-top: 100px!important;
-        min-width: 900px;
-    }
-}
-
-/* =========================================
-   SEÇÃO LEVE, SEGURO E CONFIÁVEL (VIAGEM)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.safe-travel-section {
-    width: 100%;
-    max-width: 430px; 
-    margin: 0 auto;
-    background-image: url('assets/images/powerbank-travel-mobile.png'); 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 600px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 40px 40px 0px 40px;
-    font-family: "elza", sans-serif;
-    color: #fff;
-    text-align: center;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.safe-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-}
-
-.safe-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.safe-title {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.1;
-    margin: 0;
-}
-
-.safe-desc {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.flight-alert-box {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    margin-top: 230px;
-    width: 100%;
-    max-width: 420px;
-}
-
-.flight-icon {
-    width: 50px;
-    height: auto;
-}
-
-.flight-text {
-    color: #0050DC;
-    font-size: 14px;
-    line-height: 1.3;
-    text-align: left;
-    margin: 0;
-}
-
-.flight-text strong {
-    font-weight: 700;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .safe-travel-section {
-        max-width: none;
-        margin: 0;
-        background-image: url('assets/images/powerbank-travel-desktop.png'); 
-        background-position: center center;
-        min-height: 850px;
-        justify-content: center;
-        align-items: flex-start;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: left;
-    }
-
-    .safe-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-left: 50px;
-        justify-content: center;
-    }
-
-    .safe-content {
-        align-items: flex-start;
-        max-width: 450px;
-    }
-
-    .safe-title {
-        font-size: 40px;
-        margin-bottom: 10px !important;
-    }
-
-    .safe-desc {
-        font-size: 24px;
-    }
-
-    .flight-alert-box {
-        margin-top: 40px;
-        padding: 20px 30px;
-        max-width: 500px;
-    }
-
-    .flight-icon {
-        width: 80px !important;
-    }
-
-    .flight-text {
-        font-size: 18px;
-    }
-}
-
-/* =========================================
-   SEÇÃO COMPATIBILIDADE AMPLA
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.compatibility-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 20px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.comp-wrapper {
-    width: 100%;
-}
-
-.comp-card {
-    background-color: #0050DC;
-    border-radius: 30px;
-    padding-top: 50px;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-}
-
-.comp-text-col {
-    z-index: 2;
-    margin-bottom: 30px;
-    padding: 0 20px;
-    order: 1; 
-}
-
-.comp-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 20px 0;
-    margin-bottom: 20px !important;
-}
-
-.comp-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.comp-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    order: 2;
-    margin-bottom: -5px;
-}
-
-.comp-img {
-    width: 90%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-}
-
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .compatibility-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .comp-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 0px;
-    }
-
-    .comp-card {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-        text-align: left;
-        padding: 0;
-        border-radius: 40px;
-        min-height: 450px;
-    }
-
-    .comp-img-col {
-        order: 1;
-        width: 60%;
-        justify-content: flex-start;
-        padding-left: 50px;
-        margin-bottom: 0;
-    }
-
-    .comp-img {
-        width: 100%;
-        max-width: 900px;
-    }
-
-    .comp-text-col {
-        order: 2;
-        width: 35%;
-        margin-bottom: 0;
-        padding: 60px 50px 60px 0;
-        align-self: center;
-    }
-
-    .comp-title {
-        font-size: 40px;
-        margin-bottom: 25px !important;
-    }
-
-    .comp-desc {
-        font-size: 24px;
-        max-width: 450px;
-    }
-}
 /* =========================================
    SEÇÃO AGILIDADE E DIA A DIA
    ========================================= */
@@ -1415,18 +820,6 @@ body {
     width: 100%;
     margin-bottom: 0px;
     z-index: 2; /* Fica acima da imagem se encostar */
-}
-
-/* Ícone com Borda */
-.ag-icon-circle {
-    width: 70px;
-    height: 70px;
-    border: 2px solid #0050DC; /* Azul Multi */
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
 }
 
 .ag-icon {
@@ -1543,13 +936,6 @@ body {
         max-width: 300px;
     }
     
-    /* Ícones maiores no desktop */
-    .ag-icon-circle {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 25px;
-    }
-    
     .ag-icon {
         width: 100px;
         margin-bottom: 20px;
@@ -1643,27 +1029,23 @@ body {
 /* Setas (Imagens PNG transparentes) */
 .vers-arrows {
     position: absolute;
-    /* Ajuste fino da posição das setas no mobile */
-    /* Exemplo: Elas precisam conectar o texto à imagem lá embaixo */
     bottom: -140px; 
     left: 50%;
     transform: translateX(-50%);
-    width: 65%; /* Largura das setas */
+    width: 65%; 
     height: auto;
-    z-index: 1; /* Fica atrás do texto se sobrepor */
+    z-index: 1; 
     pointer-events: none;
 }
 @media screen and (max-width: 400px) {
     .vers-arrows {
             position: absolute;
-            /* Ajuste fino da posição das setas no mobile */
-            /* Exemplo: Elas precisam conectar o texto à imagem lá embaixo */
             bottom: -140px; 
             left: 50%;
             transform: translateX(-50%);
-            width: 73%; /* Largura das setas */
+            width: 73%; 
             height: auto;
-            z-index: 1; /* Fica atrás do texto se sobrepor */
+            z-index: 1; 
             pointer-events: none;
     }
 }
@@ -1722,11 +1104,6 @@ body {
 
     /* Coluna Texto Desktop */
     .vers-text-col {
-        /* No desktop, o texto fica nas laterais e a imagem no meio */
-        /* Mas o HTML agrupa os textos. Vamos usar absolute ou ajustar o layout. */
-        /* Opção simples: Texto Esquerda e Direita, Imagem Centro. */
-        
-        /* Como estão agrupados na div .vers-text-col, vamos mudar isso: */
         flex-direction: row; 
         justify-content: space-between;
         width: 100%;
@@ -1815,7 +1192,6 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* No mobile, o texto fica em cima e o selo embaixo */
 }
 
 .compact-content {
@@ -1969,7 +1345,6 @@ body {
     margin: 0 auto;
     
     /* Imagem de fundo Mobile */
-    /* Substitua pelo caminho da sua imagem vertical */
     background-image: url('assets/images/lifestyle-comp-mobile.png'); 
     background-size: cover;
     background-position: center top;
