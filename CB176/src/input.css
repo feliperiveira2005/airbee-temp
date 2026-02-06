@@ -316,11 +316,11 @@ body {
         background-image: url('assets/images/teclado-desktop.png');
         background-size: cover;
         background-position: center center;
-        min-height: 950px;
+        min-height: 1080px;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 80px 0;
+        padding: 20px 0;
     }
 
     .keyboard-wrapper {
@@ -340,7 +340,7 @@ body {
     }
 
     .kb-logo {
-        margin-top: 60px;
+        margin-top: 0px;
         width: 260px;
         margin-bottom: 40px;
     }
@@ -358,7 +358,7 @@ body {
     .kb-pill {
         font-size: 38px;
         padding: 14px 30px;
-        margin-bottom: 150px!important;
+        margin-bottom: 10px!important;
     }
 }
 
@@ -367,7 +367,28 @@ body {
         max-width: 350px;
     }
 }
-
+@media screen and (min-width: 991px) and (max-width: 1400px) {
+    .keyboard-section {
+        max-width: none;
+        margin: 0;
+        background-image: url('assets/images/teclado-desktop.png');
+        background-size: cover;
+        background-position: center center;
+        min-height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .kb-pill {
+        
+        margin-top: 50px;
+        margin-bottom: 50px !important;
+    }
+    .kb-logo {
+        margin-top: 20px;
+    }
+}
 /* =========================================
    SEÇÃO FEATURES (ÍCONES)
    ========================================= */
@@ -1320,5 +1341,53 @@ body {
     .comp-desc {
         font-size: 24px;
         max-width: 450px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1500px) {
+    .powerbank-section {
+        max-width: 1200px;
+    }
+    .capacity-section {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .lcd-visor-section {
+        max-width: 1200px;
+        margin: auto;
+    }
+    .lcd-card {
+        padding: 0px 0px 0px 100px;
+    }
+    .compatibility-section {
+        max-width: 1200px;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1200px) {
+    .powerbank-section {
+        max-width: 1000px;
+    }
+    .capacity-section {
+        max-width: 1000px;
+        margin: auto;
+    }
+    .lcd-img {
+        min-width: 820px;
+        margin-top: 120px !important;
+        
+    }
+    .lcd-card {
+        padding: 0px 0px 0px 50px !important;
+    }
+    .lcd-visor-section {
+        max-width: 1000px;
+        margin: auto;
+    }
+    .lcd-card {
+        padding: 0px 0px 0px 100px;
+    }
+    .compatibility-section {
+        max-width: 1000px;
+        margin: auto;
     }
 }
