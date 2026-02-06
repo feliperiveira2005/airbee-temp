@@ -46,7 +46,993 @@ body {
 }
 
 /* =========================================
-   SEÇÃO FICHA TÉCNICA (TECLADO/SPECS)
+   SEÇÃO TECLADO (DOBRA 01 - HERO)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.keyboard-section {
+    width: 100%;
+    max-width: 430px; 
+    margin: 0 auto;
+    background-image: url('assets/images/teclado-mobile.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-height: 750px; 
+    padding: 20px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.keyboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.kb-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px; 
+}
+
+.kb-logo {
+    width: 140px;
+    margin-bottom: 10px;
+}
+
+.kb-title {
+    color: #0050DC;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.kb-subtitle {
+    color: #000;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 30px!important;
+}
+
+.kb-pill {
+    display: inline-block;
+    background-color: #0050DC;
+    color: #fff;
+    font-weight: 400;
+    font-size: 22px;
+    padding: 10px 25px;
+    border-radius: 40px;
+    text-transform: uppercase;
+    margin-top: 300px;
+}
+
+/* --- MEDIA QUERY DESKTOP (> 991px) --- */
+@media screen and (min-width: 991px) {
+    
+    .keyboard-section {
+        max-width: none;
+        margin: 0;
+        background-image: url('assets/images/teclado-desktop.png');
+        background-size: cover;
+        background-position: center center;
+        min-height: 1080px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .keyboard-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 50px;
+        flex-direction: row;
+        justify-content: flex-start; 
+        align-items: center;
+        text-align: left;
+    }
+
+    .kb-text-col {
+        align-items: flex-start;
+        margin-top: 0;
+        max-width: 500px; 
+    }
+
+    .kb-logo {
+        margin-top: 0px;
+        width: 260px;
+        margin-bottom: 40px;
+    }
+
+    .kb-title {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    .kb-subtitle {
+        font-size: 34px;
+        margin-bottom: 50px!important;
+    }
+
+    .kb-pill {
+        font-size: 38px;
+        padding: 14px 30px;
+        margin-top: 100px;
+        margin-bottom: 200px!important;
+    }
+}
+
+@media screen and (min-width: 991px) and (max-width: 1250px) {
+    .kb-text-col {
+        max-width: 350px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1400px) {
+    .keyboard-section {
+        max-width: none;
+        margin: 0;
+        background-image: url('assets/images/teclado-desktop.png');
+        background-size: cover;
+        background-position: center center;
+        min-height: 650px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .kb-pill {
+        margin-top: 50px;
+        margin-bottom: 50px !important;
+    }
+    .kb-logo {
+        margin-top: 20px;
+    }
+}
+
+/* =========================================
+   SEÇÃO FEATURES (ÍCONES - DOBRA 02)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.kb-features-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 50px 20px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.features-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px 20px; 
+    justify-items: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.feature-icon {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    max-width: 100%; 
+}
+
+.feature-text {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* --- MEDIA QUERY DESKTOP (> 991px) --- */
+@media screen and (min-width: 991px) {
+    
+    .kb-features-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .features-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .feature-icon {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .feature-text {
+        font-size: 24px;
+        font-weight: 400;
+    }
+}
+
+/* =========================================
+   SEÇÃO CAPACIDADE (DOBRA 03 & 07)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.capacity-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.capacity-wrapper {
+    width: 100%;
+}
+
+.capacity-card {
+    background-color: #0050DC;
+    border-radius: 30px;
+    padding: 20px 30px 0 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.cap-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    order: 1; 
+}
+
+.cap-icon {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px!important;
+}
+
+.cap-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    margin-bottom: 15px !important;
+}
+
+.cap-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.cap-img-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    order: 2;
+}
+
+.cap-prod-img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin-bottom: 0px;
+}
+
+/* Utility for Dobra 07 Title */
+.d7title{
+    margin-top: 20px!important;
+}
+
+/* --- MEDIA QUERY DESKTOP (> 991px) --- */
+@media screen and (min-width: 991px) {
+    
+    .capacity-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .capacity-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 0px;
+    }
+
+    .capacity-card {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 0px 80px;
+        border-radius: 40px;
+    }
+    
+    .cap-img-col {
+        order: 1; 
+        width: 45%;
+        justify-content: flex-start;
+    }
+
+    .cap-text-col {
+        order: 2;
+        width: 45%;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .cap-icon {
+        width: 130px;
+        margin-bottom: 20px!important;
+    }
+
+    .cap-title {
+        font-size: 40px;
+        margin-bottom: 20px !important;
+    }
+
+    .cap-desc {
+        font-size: 24px;
+        max-width: 400px;
+    }
+
+    .cap-prod-img {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 0;
+    }
+}
+
+/* =========================================
+   SEÇÃO OTIMIZE O SEU TEMPO (DOBRA 04)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.optimize-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.optimize-wrapper {
+    width: 100%;
+    padding: 0 0px;
+}
+
+/* O Card Azul */
+.optimize-card {
+    background-color: #0050DC; /* Azul Multi */
+    border-radius: 30px;
+    padding-top: 50px;
+    padding-bottom: 0; /* Imagem cola no chão */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; 
+    position: relative;
+}
+
+/* --- Texto --- */
+.opt-text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    z-index: 2;
+    padding: 0 20px;
+    order: 1; 
+}
+
+.opt-icon-circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.opt-icon {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px!important;
+}
+
+.opt-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    margin-bottom: 15px!important;
+}
+
+.opt-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.opt-desc strong {
+    font-weight: 700;
+}
+
+/* --- Imagem --- */
+.opt-img-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    order: 2; 
+    margin-bottom: -5px; 
+}
+
+.opt-full-img {
+    width: 80%; 
+    max-width: 380px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+/* --- MEDIA QUERY DESKTOP (> 1150px) --- */
+@media screen and (min-width: 991px) {
+    
+    .optimize-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .optimize-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 0px;
+    }
+
+    .optimize-card {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        padding: 0; 
+        border-radius: 40px;
+        min-height: 500px;
+    }
+
+    /* Coluna Texto (Esquerda) */
+    .opt-text-col {
+        order: 1;
+        width: 45%;
+        align-items: flex-start; 
+        padding: 60px 0 60px 120px; 
+        margin-bottom: 0;
+    }
+
+    .opt-icon-circle {
+        width: 100px;
+        height: 100px;
+        border-width: 3px;
+        margin-bottom: 30px;
+    }
+
+    .opt-icon {
+        width: 130px;
+        margin-bottom: 15px!important;
+    }
+
+    .opt-title {
+        font-size: 40px;
+        margin-bottom: 20px !important;
+    }
+
+    .opt-desc {
+        font-size: 24px;
+        max-width: 500px;
+    }
+
+    /* Coluna Imagem (Direita) */
+    .opt-img-col {
+        order: 2;
+        width: 50%;
+        justify-content: flex-start;
+        height: 100%;
+        margin-bottom: 0;
+    }
+
+    .opt-full-img {
+        width: 100%;
+        max-width: 600px; 
+        object-fit: cover; 
+        height: 100%;
+        min-height: 500px; 
+    }
+}
+
+
+/* =========================================
+   SEÇÃO DISPOSITIVOS CARREGADOS (CAFÉ - DOBRA 05)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.always-charged-section {
+    width: 100%;
+    max-width: 100%; 
+    background-image: url('assets/images/lifestyle-coffee-mobile.png'); 
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 700px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start;
+    padding: 60px 20px;
+    font-family: "elza", sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    background-color: #EAEAEA; 
+}
+
+.charged-wrapper {
+    width: 100%;
+    max-width: 430px;
+}
+
+.charged-content {
+    width: 100%;
+}
+
+.charged-title {
+    color: #0050DC; 
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    margin-bottom: 15px !important;
+}
+
+.charged-desc {
+    color: #333; 
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* --- MEDIA QUERY DESKTOP (> 1150px) --- */
+@media screen and (min-width: 991px) {
+    
+    .always-charged-section {
+        max-width: 100% !important; 
+        width: 100%;
+        margin: 0; 
+        margin-bottom: 80px;
+        background-image: url('assets/images/lifestyle-coffee-desktop.png'); 
+        background-position: center center;
+        min-height: 860px;
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        padding: 0;
+    }
+
+    .charged-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 100px; 
+        display: flex;
+        justify-content: flex-start; 
+    }
+
+    .charged-content {
+        max-width: 450px;
+        text-align: left; 
+    }
+
+    .charged-title {
+        font-size: 40px;
+        margin-bottom: 20px !important;
+    }
+
+    .charged-desc {
+        font-size: 24px;
+        line-height: 1.5;
+    }
+}
+
+/* =========================================
+   SEÇÃO DESEMPENHO E VERSATILIDADE (DOBRA 06)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.perf-vers-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 30px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.pv-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.pv-card {
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    padding: 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pv-icon {
+    width: 85px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px!important;
+}
+
+.pv-title {
+    color: #0050DC;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    margin-bottom: 15px !important;
+}
+
+.pv-desc {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* --- MEDIA QUERY DESKTOP (> 991px) --- */
+@media screen and (min-width: 991px) {
+    
+    .perf-vers-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pv-wrapper {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 20px;
+        flex-direction: row; 
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .pv-card {
+        flex: 1;
+        max-width: 400px; 
+        padding: 100px 40px;
+        border-radius: 40px;
+    }
+
+    .pv-icon {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+
+    .pv-title {
+        font-size: 36px;
+        margin-bottom: 20px !important;
+    }
+
+    .pv-desc {
+        font-size: 22px;
+        line-height: 1.5;
+    }
+}
+
+/* =========================================
+   SEÇÃO LEVE, SEGURO E CONFIÁVEL (VIAGEM - DOBRA 08)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.safe-travel-section {
+    width: 100%;
+    max-width: 430px; 
+    margin: 0 auto;
+    background-image: url('assets/images/powerbank-travel-mobile.png'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 600px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 40px 0px 40px;
+    font-family: "elza", sans-serif;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.safe-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.safe-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.safe-title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.safe-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.flight-alert-box {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-top: 260px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.flight-icon {
+    width: 50px;
+    height: auto;
+}
+
+.flight-text {
+    color: #0050DC;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: left;
+    margin: 0;
+}
+
+.flight-text strong {
+    font-weight: 700;
+}
+
+/* --- MEDIA QUERY DESKTOP (> 991px) --- */
+@media screen and (min-width: 991px) {
+    
+    .safe-travel-section {
+        max-width: none;
+        margin: 0;
+        background-image: url('assets/images/powerbank-travel-desktop.png'); 
+        background-position: center center;
+        min-height: 850px;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .safe-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-left: 50px;
+        justify-content: center;
+    }
+
+    .safe-content {
+        align-items: flex-start;
+        max-width: 450px;
+    }
+
+    .safe-title {
+        font-size: 40px;
+        margin-bottom: 10px !important;
+    }
+
+    .safe-desc {
+        font-size: 24px;
+    }
+
+    .flight-alert-box {
+        margin-top: 220px;
+        padding: 20px 30px;
+        max-width: 500px;
+    }
+
+    .flight-icon {
+        width: 80px !important;
+    }
+
+    .flight-text {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   SEÇÃO COMPATIBILIDADE (BOLSO JEANS - DOBRA 09)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.pocket-comp-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 40px 0px; 
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.pocket-wrapper {
+    width: 100%;
+}
+
+/* O Card com Background */
+.pocket-card {
+    width: 100%;
+    background-image: url('assets/images/lifestyle-pocket-mobile.png'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 650px; 
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    padding: 60px 20px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.pocket-content {
+    max-width: 300px;
+}
+
+.pocket-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+}
+
+.pocket-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* --- MEDIA QUERY DESKTOP (> 1150px) --- */
+@media screen and (min-width: 991px) {
+    
+    .pocket-comp-section {
+        max-width: none;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pocket-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        padding: 0 0px; 
+    }
+
+    .pocket-card {
+        width: 100%;
+        background-image: url('assets/images/lifestyle-pocket-desktop.png'); 
+        background-position: center center;
+        height: 700px;
+        border-radius: 40px; 
+        align-items: flex-end; 
+        justify-content: center; 
+        padding: 0 100px 0 0; 
+        text-align: left; 
+    }
+
+    .pocket-content {
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+
+    .pocket-title {
+        font-size: 40px;
+        margin-bottom: 20px !important;
+    }
+
+    .pocket-desc {
+        font-size: 24px;
+        line-height: 1.5;
+    }
+}
+
+/* =========================================
+   SEÇÃO FICHA TÉCNICA (SPECS - DOBRA 10)
    ========================================= */
 
 /* --- BASE (MOBILE) --- */
@@ -239,328 +1225,7 @@ body {
 }
 
 /* =========================================
-   SEÇÃO TECLADO (DOBRA 01)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.keyboard-section {
-    width: 100%;
-    max-width: 430px; 
-    margin: 0 auto;
-    background-image: url('assets/images/teclado-mobile.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    min-height: 750px; 
-    padding: 20px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.keyboard-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-}
-
-.kb-text-col {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    margin-top: 20px; 
-}
-
-.kb-logo {
-    width: 140px;
-    margin-bottom: 10px;
-}
-
-.kb-title {
-    color: #0050DC;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 15px;
-    margin-top: 10px;
-}
-
-.kb-subtitle {
-    color: #000;
-    font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 30px!important;
-}
-
-.kb-pill {
-    display: inline-block;
-    background-color: #0050DC;
-    color: #fff;
-    font-weight: 400;
-    font-size: 22px;
-    padding: 10px 25px;
-    border-radius: 40px;
-    text-transform: uppercase;
-    margin-top: 300px;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .keyboard-section {
-        max-width: none;
-        margin: 0;
-        background-image: url('assets/images/teclado-desktop.png');
-        background-size: cover;
-        background-position: center center;
-        min-height: 1080px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 0;
-    }
-
-    .keyboard-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 50px;
-        flex-direction: row;
-        justify-content: flex-start; 
-        align-items: center;
-        text-align: left;
-    }
-
-    .kb-text-col {
-        align-items: flex-start;
-        margin-top: 0;
-        max-width: 500px; 
-    }
-
-    .kb-logo {
-        margin-top: 0px;
-        width: 260px;
-        margin-bottom: 40px;
-    }
-
-    .kb-title {
-        font-size: 70px;
-        margin-bottom: 20px;
-    }
-
-    .kb-subtitle {
-        font-size: 34px;
-        margin-bottom: 50px!important;
-    }
-
-    .kb-pill {
-        font-size: 38px;
-        padding: 14px 30px;
-        margin-top: 100px;
-        margin-bottom: 200px!important;
-    }
-}
-
-@media screen and (min-width: 991px) and (max-width: 1250px) {
-    .kb-text-col {
-        max-width: 350px;
-    }
-}
-@media screen and (min-width: 991px) and (max-width: 1400px) {
-    .keyboard-section {
-        max-width: none;
-        margin: 0;
-        background-image: url('assets/images/teclado-desktop.png');
-        background-size: cover;
-        background-position: center center;
-        min-height: 650px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 0;
-    }
-    .kb-pill {
-        
-        margin-top: 50px;
-        margin-bottom: 50px !important;
-    }
-    .kb-logo {
-        margin-top: 20px;
-    }
-}
-/* =========================================
-   SEÇÃO FEATURES (ÍCONES)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.kb-features-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 50px 20px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.features-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 40px 20px; 
-    justify-items: center;
-}
-
-.feature-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-}
-
-.feature-icon {
-    width: 90px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px;
-    max-width: 100%; 
-}
-
-.feature-text {
-    color: #000;
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 400;
-    text-transform: uppercase;
-    margin: 0;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .kb-features-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .features-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: flex-start;
-        gap: 0;
-    }
-
-    .feature-icon {
-        width: 150px;
-        margin-bottom: 20px;
-    }
-
-    .feature-text {
-        font-size: 24px;
-        font-weight: 400;
-    }
-}
-
-/* =========================================
-   SEÇÃO RESISTENTE À LÍQUIDOS
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.resistant-section {
-    width: 100%;
-    max-width: 430px; 
-    margin: 0 auto;
-    background-image: url('assets/images/resistant-mobile.png');
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    height: 600px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 20px;
-    font-family: "elza", sans-serif;
-    color: #0050DC;
-    text-align: center;
-    position: relative;
-}
-
-.resistant-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.resistant-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.res-icon {
-    width: 80px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.res-title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 5px 0;
-    margin-bottom: 10px!important;
-}
-
-.res-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .resistant-section {
-        max-width: none;
-        margin: 0;
-        background-image: url('assets/images/resistant-desktop.png'); 
-        background-position: center center;
-        height: 850px;
-        padding-top: 60px;
-    }
-
-    .resistant-content {
-        margin-top: -20px; 
-    }
-
-    .res-icon {
-        width: 100px;
-        margin-bottom: 20px;
-    }
-
-    .res-title {
-        font-size: 40px;
-        margin-bottom: 10px !important;
-    }
-
-    .res-desc {
-        font-size: 26px;
-    }
-}
-
-/* =========================================
-   DOBRA 09 (Footer)
+   DOBRA 09 (Footer - DOBRA FINAL)
    ========================================= */
 .ep-lamina .dobra-09 {
     margin: 0px auto;
@@ -638,1148 +1303,8 @@ body {
 }
 
 /* =========================================
-   SEÇÃO POWER BANK (BANNER)
+   AJUSTES FINAIS DE LARGURA (MAX-WIDTH)
    ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.powerbank-section {
-    width: 100%;
-    max-width: 430px; 
-    margin: 0 auto;
-    background-image: url('assets/images/powerbank-mobile.png'); 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 550px; 
-    border-radius: 30px;
-    padding: 60px 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    font-family: "elza", sans-serif;
-    color: #fff;
-    box-sizing: border-box;
-    margin-bottom: 40px;
-}
-
-.powerbank-wrapper {
-    width: 100%;
-}
-
-.pb-content {
-    max-width: 300px;
-}
-
-.pb-title {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 20px 0;
-    margin-bottom: 20px !important;
-}
-
-.pb-desc {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .powerbank-section {
-        max-width: 1400px; 
-        margin: 0 auto;
-        margin-bottom: 80px;
-        background-image: url('assets/images/powerbank-desktop.png'); 
-        background-position: center center;
-        min-height: 650px;
-        justify-content: center;
-        padding-left: 80px;
-    }
-
-    .pb-content {
-        max-width: 400px;
-    }
-
-    .pb-title {
-        font-size: 40px;
-        margin-bottom: 25px!important;
-    }
-
-    .pb-desc {
-        font-size: 24px;
-        line-height: 1.5;
-    }
-}
-
-/* =========================================
-   SEÇÃO CAPACIDADE (CARD AZUL)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.capacity-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 20px 0px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.capacity-wrapper {
-    width: 100%;
-}
-
-.capacity-card {
-    background-color: #0050DC;
-    border-radius: 30px;
-    padding: 20px 30px 0 30px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-}
-
-.cap-text-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-    order: 1; 
-}
-
-.cap-icon {
-    width: 90px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px!important;
-}
-
-.cap-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px !important;
-}
-
-.cap-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.cap-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    order: 2;
-}
-
-.cap-prod-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin-bottom: 0px;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .capacity-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .capacity-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 0px;
-    }
-
-    .capacity-card {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        padding: 0px 80px;
-        border-radius: 40px;
-    }
-    
-    .cap-img-col {
-        order: 1; 
-        width: 45%;
-        justify-content: flex-start;
-    }
-
-    .cap-text-col {
-        order: 2;
-        width: 45%;
-        align-items: flex-start;
-        margin-bottom: 0;
-    }
-
-    .cap-icon {
-        width: 130px;
-        margin-bottom: 20px!important;
-    }
-
-    .cap-title {
-        font-size: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .cap-desc {
-        font-size: 24px;
-        max-width: 400px;
-    }
-
-    .cap-prod-img {
-        width: 100%;
-        max-width: 700px;
-        margin-bottom: 0;
-    }
-}
-
-/* =========================================
-   SEÇÃO DESEMPENHO E VERSATILIDADE
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.perf-vers-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 30px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.pv-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-}
-
-.pv-card {
-    background-color: #F5F5F5;
-    border-radius: 30px;
-    padding: 40px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.pv-icon {
-    width: 85px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px!important;
-}
-
-.pv-title {
-    color: #0050DC;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px !important;
-}
-
-.pv-desc {
-    color: black;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .perf-vers-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .pv-wrapper {
-        width: 100%;
-        max-width: 1200px;
-        padding: 0 20px;
-        flex-direction: row; 
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .pv-card {
-        flex: 1;
-        max-width: 400px; 
-        padding: 100px 40px;
-        border-radius: 40px;
-    }
-
-    .pv-icon {
-        width: 100px;
-        margin-bottom: 20px;
-    }
-
-    .pv-title {
-        font-size: 36px;
-        margin-bottom: 20px !important;
-    }
-
-    .pv-desc {
-        font-size: 22px;
-        line-height: 1.5;
-    }
-}
-
-/* =========================================
-   SEÇÃO VISOR LCD DIGITAL
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.lcd-visor-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 20px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.lcd-wrapper {
-    width: 100%;
-}
-
-.lcd-card {
-    background-color: #0050DC;
-    border-radius: 30px;
-    padding-top: 50px;
-    padding-bottom: 0; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-}
-
-.lcd-text-col {
-    z-index: 2;
-    margin-bottom: 30px;
-    padding: 0 20px;
-}
-
-.lcd-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px !important;
-}
-
-.lcd-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.lcd-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: -5px; 
-}
-
-.lcd-img {
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .lcd-visor-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .lcd-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 0px;
-    }
-
-    .lcd-card {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        text-align: left;
-        padding: 0px 0px 0px 150px;
-        border-radius: 40px;
-        min-height: 700px;
-    }
-
-    .lcd-text-col {
-        width: 30%;
-        margin-bottom: 0;
-        padding: 0;
-        position: relative;
-    }
-
-    .lcd-title {
-        font-size: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .lcd-desc {
-        font-size: 24px;
-        max-width: 400px;
-    }
-
-    .lcd-img-col {
-        width: 50%;
-        justify-content: flex-end;
-        margin-bottom: 0;
-        margin-right: -50px;
-    }
-
-    .lcd-img {
-        width: 100%;
-        margin-top: 100px!important;
-        min-width: 900px;
-    }
-}
-
-/* =========================================
-   SEÇÃO LEVE, SEGURO E CONFIÁVEL (VIAGEM)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.safe-travel-section {
-    width: 100%;
-    max-width: 430px; 
-    margin: 0 auto;
-    background-image: url('assets/images/powerbank-travel-mobile.png'); 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 600px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 40px 40px 0px 40px;
-    font-family: "elza", sans-serif;
-    color: #fff;
-    text-align: center;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.safe-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-}
-
-.safe-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.safe-title {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.1;
-    margin: 0;
-}
-
-.safe-desc {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.flight-alert-box {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 15px 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-    margin-top: 260px;
-    width: 100%;
-    max-width: 420px;
-}
-
-.flight-icon {
-    width: 50px;
-    height: auto;
-}
-
-.flight-text {
-    color: #0050DC;
-    font-size: 14px;
-    line-height: 1.3;
-    text-align: left;
-    margin: 0;
-}
-
-.flight-text strong {
-    font-weight: 700;
-}
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .safe-travel-section {
-        max-width: none;
-        margin: 0;
-        background-image: url('assets/images/powerbank-travel-desktop.png'); 
-        background-position: center center;
-        min-height: 850px;
-        justify-content: center;
-        align-items: flex-start;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: left;
-    }
-
-    .safe-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding-left: 50px;
-        justify-content: center;
-    }
-
-    .safe-content {
-        align-items: flex-start;
-        max-width: 450px;
-    }
-
-    .safe-title {
-        font-size: 40px;
-        margin-bottom: 10px !important;
-    }
-
-    .safe-desc {
-        font-size: 24px;
-    }
-
-    .flight-alert-box {
-        margin-top: 220px;
-        padding: 20px 30px;
-        max-width: 500px;
-    }
-
-    .flight-icon {
-        width: 80px !important;
-    }
-
-    .flight-text {
-        font-size: 18px;
-    }
-}
-
-/* =========================================
-   SEÇÃO COMPATIBILIDADE AMPLA
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.compatibility-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 40px 20px;
-    max-width: 430px; 
-    margin: 0 auto;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.comp-wrapper {
-    width: 100%;
-}
-
-.comp-card {
-    background-color: #0050DC;
-    border-radius: 30px;
-    padding-top: 50px;
-    padding-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    position: relative;
-}
-
-.comp-text-col {
-    z-index: 2;
-    margin-bottom: 30px;
-    padding: 0 20px;
-    order: 1; 
-}
-
-.comp-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 20px 0;
-    margin-bottom: 20px !important;
-}
-
-.comp-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.comp-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    order: 2;
-    margin-bottom: -5px;
-}
-
-.comp-img {
-    width: 90%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-}
-
-
-/* --- MEDIA QUERY DESKTOP (> 991px) --- */
-@media screen and (min-width: 991px) {
-    
-    .compatibility-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .comp-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 0px;
-    }
-
-    .comp-card {
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: space-between;
-        text-align: left;
-        padding: 0;
-        border-radius: 40px;
-        min-height: 450px;
-    }
-
-    .comp-img-col {
-        order: 1;
-        width: 60%;
-        justify-content: flex-start;
-        padding-left: 50px;
-        margin-bottom: 0;
-    }
-
-    .comp-img {
-        width: 100%;
-        max-width: 900px;
-    }
-
-    .comp-text-col {
-        order: 2;
-        width: 35%;
-        margin-bottom: 0;
-        padding: 60px 50px 60px 0;
-        align-self: center;
-    }
-
-    .comp-title {
-        font-size: 40px;
-        margin-bottom: 25px !important;
-    }
-
-    .comp-desc {
-        font-size: 24px;
-        max-width: 450px;
-    }
-}
-/* =========================================
-   SEÇÃO OTIMIZE O SEU TEMPO (Imagem Completa)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.optimize-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 20px 0;
-    
-    /* TRAVA MOBILE */
-    max-width: 430px; 
-    margin: 0 auto;
-    
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.optimize-wrapper {
-    width: 100%;
-    padding: 0 0px;
-}
-
-/* O Card Azul */
-.optimize-card {
-    background-color: #0050DC; /* Azul Multi */
-    border-radius: 30px;
-    padding-top: 50px;
-    padding-bottom: 0; /* Imagem cola no chão */
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    
-    /* Garante que a imagem grande seja cortada nas bordas arredondadas */
-    overflow: hidden; 
-    position: relative;
-}
-
-/* --- Texto --- */
-.opt-text-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 30px;
-    z-index: 2;
-    padding: 0 20px;
-    order: 1; /* Mobile: Texto primeiro */
-}
-
-.opt-icon-circle {
-    width: 80px;
-    height: 80px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.opt-icon {
-    width: 90px;
-    height: auto;
-    display: block;
-    margin-bottom: 15px!important;
-}
-
-.opt-title {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px!important;
-}
-
-.opt-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.opt-desc strong {
-    font-weight: 700;
-}
-
-/* --- Imagem Completa (Produto + Anel) --- */
-.opt-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    order: 2; /* Mobile: Imagem depois */
-    margin-bottom: -5px; /* Ajuste para colar na base */
-}
-
-.opt-full-img {
-    /* Ajuste a largura conforme a sua imagem real. 
-       Se ela tiver muito espaço em branco em volta do anel, aumente a % */
-    width: 80%; 
-    max-width: 380px;
-    height: auto;
-    display: block;
-    margin-bottom: 20px;
-}
-
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 1150px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    
-    .optimize-section {
-        max-width: none;
-        margin: 0;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .optimize-wrapper {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 0px;
-    }
-
-    .optimize-card {
-        flex-direction: row; /* Lado a lado */
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        padding: 0; /* Padding controlado nas colunas internas */
-        border-radius: 40px;
-        min-height: 500px;
-    }
-
-    /* Coluna Texto (Esquerda) */
-    .opt-text-col {
-        order: 1;
-        width: 45%;
-        align-items: flex-start; /* Alinha à esquerda */
-        padding: 60px 0 60px 120px; /* Padding esquerdo generoso */
-        margin-bottom: 0;
-    }
-
-    .opt-icon-circle {
-        width: 100px;
-        height: 100px;
-        border-width: 3px;
-        margin-bottom: 30px;
-    }
-
-    .opt-icon {
-        width: 130px;
-        margin-bottom: 15px!important;
-    }
-
-    .opt-title {
-        font-size: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .opt-desc {
-        font-size: 24px;
-        max-width: 500px;
-    }
-
-    /* Coluna Imagem (Direita) */
-    .opt-img-col {
-        order: 2;
-        width: 50%;
-        justify-content: flex-start; /* Alinha a imagem à direita do container */
-        height: 100%;
-        margin-bottom: 0;
-    }
-
-    .opt-full-img {
-        width: 100%;
-        max-width: 600px; /* Imagem bem maior no desktop */
-        /* O overflow: hidden do card vai cortar o excesso da imagem, criando o efeito desejado */
-        object-fit: cover; 
-        height: 100%;
-        min-height: 500px; /* Garante que preencha a altura do card */
-    }
-}
-
-
-/* =========================================
-   SEÇÃO DISPOSITIVOS CARREGADOS (CAFÉ)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.always-charged-section {
-    width: 100%;
-    /* TRAVA MOBILE: No mobile, geralmente travamos em 430px, 
-       mas se você quiser full-width também no mobile, use 100% */
-    max-width: 100%; 
-    
-    /* Imagem de fundo Mobile (Vertical) */
-    background-image: url('assets/images/lifestyle-coffee-mobile.png'); 
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    
-    /* Altura fixa */
-    min-height: 700px; 
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: flex-start; /* Texto no topo */
-    padding: 60px 20px;
-    
-    font-family: "elza", sans-serif;
-    text-align: center;
-    box-sizing: border-box;
-    margin-bottom: 40px;
-    
-    background-color: #EAEAEA; 
-}
-
-.charged-wrapper {
-    width: 100%;
-    max-width: 430px; /* Trava o conteúdo no mobile */
-}
-
-.charged-content {
-    width: 100%;
-}
-
-/* Títulos e Textos */
-.charged-title {
-    color: #0050DC; /* Azul Multi */
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-    margin-bottom: 15px !important;
-}
-
-.charged-desc {
-    color: #333; /* Cinza escuro */
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
-}
-
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 1150px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    
-    .always-charged-section {
-        /* AQUI ESTÁ A CORREÇÃO: */
-        /* A section ocupa 100% da tela para o background esticar */
-        max-width: 100% !important; 
-        width: 100%;
-        margin: 0; 
-        margin-bottom: 80px;
-        
-        /* Imagem Desktop (Horizontal) */
-        background-image: url('assets/images/lifestyle-coffee-desktop.png'); 
-        background-position: center center;
-        
-        min-height: 860px;
-        
-        /* Centraliza o wrapper verticalmente */
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-        padding: 0;
-    }
-
-    .charged-wrapper {
-        /* O Wrapper limita o conteúdo a 1400px e centraliza na tela */
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 100px; /* Espaço interno lateral */
-        
-        display: flex;
-        justify-content: flex-start; /* Alinha o conteúdo à esquerda dentro do limite 1400 */
-    }
-
-    .charged-content {
-        max-width: 450px;
-        text-align: left; /* Texto alinhado à esquerda */
-    }
-
-    .charged-title {
-        font-size: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .charged-desc {
-        font-size: 24px;
-        line-height: 1.5;
-    }
-}
-.d7title{
-    margin-top: 20px!important;
-}
-/* =========================================
-   SEÇÃO COMPATIBILIDADE (BOLSO JEANS)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.pocket-comp-section {
-    width: 100%;
-    background-color: #fff;
-    /* Padding externo para separar das outras dobras */
-    padding: 40px 0px; 
-    
-    /* TRAVA MOBILE */
-    max-width: 430px; 
-    margin: 0 auto;
-    
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.pocket-wrapper {
-    width: 100%;
-}
-
-/* O Card com Background */
-.pocket-card {
-    width: 100%;
-    /* Imagem Mobile (Vertical) */
-    background-image: url('assets/images/lifestyle-pocket-mobile.png'); 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    
-    /* Altura fixa */
-    height: 650px; 
-    border-radius: 30px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza texto horizontalmente */
-    justify-content: flex-start; /* Texto no topo */
-    padding: 60px 20px;
-    
-    color: #fff;
-    text-align: center;
-    position: relative;
-
-}
-
-.pocket-content {
-    max-width: 300px;
-}
-
-.pocket-title {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
-
-}
-
-.pocket-desc {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.4;
-    margin: 0;
- 
-}
-
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 1150px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    
-    .pocket-comp-section {
-        /* Remove a trava do mobile na section */
-        max-width: none;
-        padding: 80px 0; /* Espaço vertical maior */
-        display: flex;
-        justify-content: center;
-    }
-
-    .pocket-wrapper {
-        width: 100%;
-        /* AQUI APLICAMOS A TRAVA DE 1400PX SOLICITADA */
-        max-width: 1400px;
-        padding: 0 0px; /* Margem de segurança lateral */
-    }
-
-    .pocket-card {
-        width: 100%;
-        /* Imagem Desktop (Horizontal) */
-        background-image: url('assets/images/lifestyle-pocket-desktop.png'); 
-        background-position: center center;
-        
-        height: 700px;
-        border-radius: 40px; /* Borda mais arredondada no desktop */
-        
-        /* Alinhamento: Texto na Direita */
-        align-items: flex-end; /* Joga conteúdo para a direita */
-        justify-content: center; /* Centraliza verticalmente */
-        padding: 0 100px 0 0; /* Espaço na direita */
-        
-        text-align: left; /* Texto alinhado à esquerda dentro do bloco */
-    }
-
-    .pocket-content {
-        max-width: 450px;
-        /* No desktop, o conteúdo encosta na direita, mas o texto alinha à esquerda */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; 
-    }
-
-    .pocket-title {
-        font-size: 40px;
-        margin-bottom: 20px !important;
-    }
-
-    .pocket-desc {
-        font-size: 24px;
-        line-height: 1.5;
-    }
-}
-
-
-
-
-
-
-
 @media screen and (min-width: 1200px) and (max-width: 1500px) {
     .pocket-wrapper {
       max-width: 1200px;
@@ -1790,25 +1315,12 @@ body {
         margin: auto;
         padding: 20px 0;
     }
-    .powerbank-section {
-        max-width: 1200px;
-    }
     .capacity-section {
         max-width: 1200px;
         margin: auto;
     }
-    .lcd-visor-section {
-        max-width: 1200px;
-        margin: auto;
-    }
-    .lcd-card {
-        padding: 0px 0px 0px 100px;
-    }
-    .compatibility-section {
-        max-width: 1200px;
-        margin: auto;
-    }
 }
+
 @media screen and (min-width: 991px) and (max-width: 1200px) {
     .pocket-wrapper {
       max-width: 1000px;
@@ -1819,29 +1331,7 @@ body {
         margin: auto;
         padding: 20px 0;
     }
-    .powerbank-section {
-        max-width: 1000px;
-    }
     .capacity-section {
-        max-width: 1000px;
-        margin: auto;
-    }
-    .lcd-img {
-        min-width: 820px;
-        margin-top: 120px !important;
-        
-    }
-    .lcd-card {
-        padding: 0px 0px 0px 50px !important;
-    }
-    .lcd-visor-section {
-        max-width: 1000px;
-        margin: auto;
-    }
-    .lcd-card {
-        padding: 0px 0px 0px 100px;
-    }
-    .compatibility-section {
         max-width: 1000px;
         margin: auto;
     }
