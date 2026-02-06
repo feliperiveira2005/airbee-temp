@@ -358,8 +358,7 @@ body {
     .kb-pill {
         font-size: 38px;
         padding: 14px 30px;
-        margin-top: 150px;
-        margin-bottom: 200px!important;
+        margin-bottom: 10px!important;
     }
 }
 
