@@ -542,7 +542,7 @@
                 padding: 0px;
                 max-height: 720px !important; 
                 margin: 0 auto;
-                border-radius: 30px;
+                border-radius: 30px !important;
             }
         }
         .features-section {
