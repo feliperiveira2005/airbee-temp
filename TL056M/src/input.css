@@ -539,7 +539,7 @@
         }
         @media screen and (max-width: 900px) {
             .dobra-roku {
-                padding: 20px;
+                padding: 0px;
                 max-height: 720px !important; 
                 margin: 0 auto;
                 border-radius: 30px;
