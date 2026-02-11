@@ -1305,7 +1305,17 @@ body {
 /* =========================================
    AJUSTES FINAIS DE LARGURA (MAX-WIDTH)
    ========================================= */
-@media screen and (min-width: 1200px) and (max-width: 1500px) {
+@media screen and (min-width: 991px) and (max-width: 1500px) {
+    .optimize-card {
+        max-height: 650px;
+    }
+    .opt-full-img {
+        width: 100%;
+        max-width: 500px;
+    }
+    .opt-text-col {
+       padding: 60px 0 60px 150px;
+    }
     .pocket-wrapper {
       max-width: 1200px;
         margin: auto;   
@@ -1314,10 +1324,34 @@ body {
         max-width: 1200px;
         margin: auto;
         padding: 20px 0;
+        margin-bottom: 60px !important;
+        
     }
     .capacity-section {
         max-width: 1200px;
         margin: auto;
+    }
+    .always-charged-section {
+        min-height: 760px;
+    }
+    .charged-wrapper {
+        max-width: 1200px;
+    }
+    .safe-wrapper {
+        max-width: 1200px;
+    }
+    .kb-specs-wrapper {
+        max-width: 1200px;
+    }
+    .kb-prod-specs-img {
+        width: 110%;
+        max-width: 700px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .bg-m-desktop {
+        width: 88%;
+        height: 88%;
     }
 }
 
