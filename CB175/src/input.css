@@ -853,9 +853,10 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 15px;
-    margin-top: 260px;
+    margin-top: 220px;
     width: 100%;
     max-width: 420px;
+    margin-bottom: 30px;
 }
 
 .flight-icon {
