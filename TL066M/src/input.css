@@ -539,7 +539,7 @@
         }
         @media screen and (max-width: 900px) {
             .dobra-roku {
-                padding-top: 20px;
+                padding-top: 0px;
                 padding-bottom: 20px;
                 max-height: 680px !important; 
                 margin: 0 auto;
@@ -589,6 +589,12 @@
     }
 
     /* Ajuste para telas muito pequenas (Mobile) */
+    @media (max-width: 1400px) {
+        .feature-card {
+            width: 160px;
+            height: 160px;
+        }
+    }
     @media (max-width: 900px) {
         .feature-card {
             width: 140px;
