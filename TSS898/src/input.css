@@ -1,0 +1,783 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'proxima-nova', sans-serif;
+    background-color: #F5F5F5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    height: auto;
+    display: block;
+}
+
+/* --- ESTRUTURA GERAL --- */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- UTILITÁRIOS DE VISIBILIDADE --- */
+.only-desktop, .only-desktop-block {
+    display: none !important;
+}
+
+.only-mobile, .only-mobile-block {
+    display: flex !important;
+}
+
+.only-mobile-block {
+    display: block !important;
+}
+
+@media screen and (min-width: 992px) {
+    .only-desktop {
+        display: flex !important;
+    }
+    .only-desktop-block {
+        display: block !important;
+    }
+    .only-mobile, .only-mobile-block {
+        display: none !important;
+    }
+}
+
+/* =========================================
+   SEÇÃO HERO TARGUS
+   ========================================= */
+.targus-hero-section {
+    width: 100%;
+    max-width: 430px; 
+    margin: 0 auto;
+    background-image: url('assets/images/targus-hero-mobile.png'); 
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 750px; 
+    padding: 60px 30px 0px 30px;
+    font-family: "proxima-nova", sans-serif;
+    color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.targus-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.targus-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.targus-logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.targus-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+}
+
+.targus-desc {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.3;
+    margin: 0 0 25px 0;
+}
+
+.targus-sku {
+    display: inline-block;
+    background-color: rgba(50, 50, 50, 0.8);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.warranty-badge {
+    background-color: #4b0082;
+    border-radius: 50px;
+    padding: 12px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 280px;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.warranty-icon {
+    width: 35px;
+    height: auto;
+}
+
+.warranty-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* MEDIA QUERY HERO DESKTOP */
+@media screen and (min-width: 992px) {
+    .targus-hero-section {
+        max-width: none;
+        margin: 0;
+        background-image: url('assets/images/targus-hero-desktop.png'); 
+        background-position: center center;
+        min-height: 1000px;
+        border-radius: 0 0 30px 30px;
+        padding: 80px 0;
+        justify-content: center;
+    }
+
+    .targus-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 80px;
+        align-items: flex-start; 
+        justify-content: center;
+    }
+
+    .targus-content {
+        max-width: 800px;
+        margin-bottom: 120px;
+    }
+
+    .targus-logo {
+        width: 250px;
+        margin-bottom: 150px !important; 
+    }
+
+    .targus-title {
+        font-size: 56px;
+        margin-bottom: 20px;
+    }
+
+    .targus-desc {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .targus-sku {
+        font-size: 30px;
+        padding: 10px 40px;
+    }
+
+    .warranty-badge {
+        align-self: flex-start;
+        width: auto;
+        padding: 15px 40px;
+        margin-bottom: 0;
+        max-width: 400px;
+    }
+    
+    .warranty-icon {
+        width: 45px;
+    }
+    
+    .warranty-text {
+        font-size: 25px;
+    }
+}
+
+/* =========================================
+   SEÇÃO FEATURES (PROTEÇÃO, ORG, ETC)
+   ========================================= */
+.kb-features-section {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 50px 20px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "proxima-nova", sans-serif;
+    box-sizing: border-box;
+}
+
+.features-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px 20px; 
+    justify-items: center;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.feature-icon {
+    width: 90px;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+    max-width: 100%; 
+}
+
+.feature-text {
+    color: #4E008E;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* MEDIA QUERY FEATURES DESKTOP */
+@media screen and (min-width: 992px) {
+    .kb-features-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0px 0px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .features-wrapper {
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        gap: 0;
+    }
+    
+    .feature-item {
+        padding: 20px;
+    }
+
+    .feature-icon {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    .feature-text {
+        font-size: 22px;
+    }
+}
+
+/* =========================================
+   SEÇÃO DISCLAIMER
+   ========================================= */
+.disclaimer-strip {
+    background-color: #F5F5F5;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.warranty-disclaimer {
+    color: #000000;
+    font-size: 12px; /* Mobile */
+    opacity: 0.9;
+    line-height: 1.3;
+    margin: 0;
+    font-weight: 200;
+    margin-top: 20px; /* Margem mobile */
+    margin-bottom: 20px; /* Margem mobile */
+}
+
+@media screen and (min-width: 992px) {
+    .warranty-disclaimer {
+       font-size: 12px;
+       margin-top: 0;
+       margin-bottom: 0;
+    }
+}
+
+/* =========================================
+   SEÇÃO ACOMPANHA O SEU RITMO
+   ========================================= */
+.targus-rhythm-section {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 60px 0px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "proxima-nova", sans-serif;
+    text-align: center;
+}
+
+.rhythm-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rhythm-content {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.rhythm-title {
+    color: #4B0082;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+}
+
+.rhythm-desc {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.rhythm-card {
+    /* Container da imagem no HTML */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.rhythm-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 380px; 
+}
+
+/* MEDIA QUERY RHYTHM DESKTOP */
+@media screen and (min-width: 992px) {
+    .targus-rhythm-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0 100px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .rhythm-wrapper {
+        max-width: 1200px;
+        padding: 0 20px;
+    }
+
+    .rhythm-content {
+        max-width: 700px;
+        margin-bottom: 60px;
+    }
+
+    .rhythm-title {
+        font-size: 42px;
+        margin-bottom: 25px;
+    }
+
+    .rhythm-desc {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .rhythm-img {
+        max-width: 900px; 
+    }
+}
+
+/* =========================================
+   SEÇÃO ORGANIZAÇÃO ESSENCIAL
+   ========================================= */
+.targus-org-section {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 40px 0px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "proxima-nova", sans-serif;
+}
+
+.org-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.org-bg-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.org-text-box {
+    width: 100%;
+    background-color: #4B0082;
+    padding: 40px 50px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.org-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+
+.org-desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* MEDIA QUERY ORG DESKTOP */
+@media screen and (min-width: 992px) {
+    .targus-org-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .org-wrapper {
+        max-width: 1920px;
+        height: 800px;
+        border-radius: 40px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .org-bg-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .org-text-box {
+        width: 40%;
+        padding: 60px 50px;
+        text-align: left; 
+        align-items: flex-start;
+        border-radius: 40px 0 0 40px;
+        margin-right: 0;
+        position: relative;
+    }
+
+    .org-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .org-desc {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .org-wrapper {
+        height: 1000px;
+    }
+}
+
+/* =========================================
+   SEÇÃO CARDS (RESISTENTE E CONFORTO)
+   ========================================= */
+.targus-features-section {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 40px 0px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "elza", sans-serif;
+}
+
+.tf-wrapper {
+    width: 100%;
+    padding: 0 !important;
+}
+
+.tf-card {
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.tf-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.tf-title {
+    color: #4B0082;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+
+.tf-desc {
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    max-width: 320px;
+}
+
+.tf-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* MEDIA QUERY CARDS DESKTOP */
+@media screen and (min-width: 992px) {
+    .targus-features-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tf-wrapper {
+        max-width: 1400px;
+        padding: 0 20px !important;
+    }
+
+    .tf-card {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 60px 40px;
+        border-radius: 50px;
+        gap: 40px;
+    }
+
+    .tf-item {
+        width: 45%;
+        max-width: 450px;
+    }
+
+    .tf-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .tf-desc {
+        font-size: 18px;
+        line-height: 1.5;
+        max-width: 400px;
+    }
+
+    .tf-img {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1450px) {
+    .tf-wrapper {
+        max-width: 1200px;
+    }
+}
+
+/* =========================================
+   SEÇÃO GARANTIA VITALÍCIA
+   ========================================= */
+.targus-warranty-section {
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 40px 0px;
+    max-width: 430px; 
+    margin: 0 auto;
+    font-family: "proxima-nova", sans-serif;
+}
+
+.warranty-wrapper {
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+.warranty-text-box {
+    width: 100%;
+    background-color: #4B0082;
+    padding: 40px 30px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.warranty-icon-large {
+    width: 90px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.warranty-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+.warranty-divider {
+    width: 50px;
+    height: 2px;
+    margin-bottom: 20px;
+}
+
+.warranty-desc {
+    font-size: 16px; /* Mobile */
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+    max-width: 300px;
+    text-align: center; /* Garantindo alinhamento mobile */
+}
+
+.warranty-note {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0;
+    max-width: 280px;
+}
+
+.warranty-bg-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover; 
+    display: block;
+}
+
+/* MEDIA QUERY WARRANTY DESKTOP */
+@media screen and (min-width: 992px) {
+    .targus-warranty-section {
+        max-width: none;
+        margin: 0;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .warranty-wrapper {
+        max-width: 1920px;
+        height: 700px;
+        border-radius: 40px;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: flex-start;
+    }
+
+    .warranty-bg-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; 
+    }
+
+    .warranty-text-box {
+        width: 30%;
+        height: 100%;
+        padding: 60px 20px;
+        text-align: center; 
+        align-items: center;
+        margin-left: 0;
+        position: relative;
+        border-radius: 0;
+    }
+
+    .warranty-icon-large {
+        width: 120px;
+        margin-bottom: 30px;
+    }
+
+    .warranty-title {
+        font-size: 38px;
+        margin-bottom: 25px;
+    }
+
+    .warranty-desc {
+        font-size: 20px;
+        line-height: 1.5;
+        max-width: 350px;
+    }
+    
+    .warranty-note {
+        font-size: 14px;
+        margin-top: 100px;
+        max-width: 400px;
+    }
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer-strip {
+    border-radius: 30px;
+    background-color: #0091FF;
+    padding: 30px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-logo {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 992px) {
+    .footer-logo {
+        width: 80%;
+        max-width: 400px;
+    }
+}
