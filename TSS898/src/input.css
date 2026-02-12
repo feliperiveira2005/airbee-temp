@@ -696,7 +696,7 @@ img {
 }
 
 /* MEDIA QUERY WARRANTY DESKTOP */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 991px) {
     .targus-warranty-section {
         max-width: none;
         margin: 0;
@@ -724,7 +724,8 @@ img {
     }
 
     .warranty-text-box {
-        width: 30%;
+        margin-left: 20%!important;
+        width: 440px;
         height: 100%;
         padding: 60px 20px;
         text-align: center; 
@@ -756,7 +757,12 @@ img {
         max-width: 400px;
     }
 }
-
+@media screen and (min-width: 991px) and (max-width: 1300px) {
+    .warranty-text-box {
+            margin-left: 10%!important;
+            
+    }
+}
 /* =========================================
    FOOTER
    ========================================= */
