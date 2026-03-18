@@ -1,0 +1,1340 @@
+/* Reset básico */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {  background: #ffffff; color: #fff; }
+html, body, * {
+  font-family: 'Montserrat', sans-serif !important;
+}
+/* Seu arquivo de estilos (style.css, ou dentro de uma tag <style>) */
+
+/* 1. Definir o Bloco Seguro (a área bege) como o contêiner de referência */
+/* =========================================
+   SEÇÃO HERO LITET JAZZ
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.only-desktop { display: none !important; }
+.only-mobile { display: block !important; }
+
+@media screen and (min-width: 900px) {
+    .only-desktop { display: block !important; }
+    .only-mobile { display: none !important; }
+}
+.litet-hero-section {
+    width: 100%;
+    /* TRAVA MOBILE */
+    max-width: 430px; 
+    margin: 0 auto;
+    
+    /* Imagem de fundo Mobile (Foto + Onda Rosa sem o texto) */
+    background-image: url('assets/images/litet-hero-mobile.png'); 
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+    /* Altura para caber a foto e a área rosa */
+    min-height: 700px; 
+    
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  
+    box-sizing: border-box;
+    position: relative;
+}
+
+.litet-wrapper {
+    width: 100%;
+    min-height: 760px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* Joga o texto para o fundo onde está a onda rosa no mobile */
+    justify-content: flex-end; 
+    align-items: flex-start;
+    padding: 40px 30px;
+}
+
+.litet-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.litet-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.litet-title {
+    color: #FFEDDA;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+}
+
+/* Cor amarela de destaque */
+.litet-highlight {
+    color: #FAE400; /* Amarelo Litet */
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.litet-desc {
+    color: #FFEDDA;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 25px 0;
+    max-width: 300px;
+}
+
+.litet-sku {
+    color: #FAE400; /* Amarelo Litet */
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    
+    .litet-hero-section {
+        /* RESET TRAVA */
+        max-width: 1920px;
+        margin: auto;
+        
+        /* Imagem Desktop (Foto + Onda Rosa Lateral sem o texto) */
+        background-image: url('assets/images/litet-hero-desktop.png'); 
+        background-size: cover;
+        background-position: center center;
+        
+        min-height: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centraliza o wrapper na tela */
+    }
+
+    .litet-wrapper {
+        width: 100%;
+        max-width: 1400px; /* Limite do conteúdo */
+        padding: 0 80px; 
+        
+        /* No desktop, o texto fica centralizado verticalmente e na esquerda */
+        justify-content: center; 
+        align-items: flex-start; 
+    }
+
+    .litet-text-box {
+        max-width: 600px; /* Limita a largura do texto para não passar da área rosa */
+        margin-bottom: 0;
+    }
+
+    .litet-logo {
+        width: 260px;
+        margin-bottom: 80px;
+    }
+
+    .litet-title {
+        font-size: 60px;
+        margin-bottom: 10px;
+    }
+
+    .litet-highlight {
+        font-size: 60px;
+    }
+
+    .litet-desc {
+        font-size: 34px;
+        font-weight: 500;
+        line-height: 1.3;
+        margin-bottom: 40px;
+        max-width: 400px;
+    }
+
+    .litet-sku {
+        font-size: 36px;
+    }
+}
+/* =========================================
+   SEÇÃO DE BENEFÍCIOS (ICONES)
+   ========================================= */
+
+.litet-features-section {
+  
+    width: 100%;
+    max-width: 430px; 
+    margin: auto;
+    background-color: #FFFFFF;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.litet-features-container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    /* Mobile: 2 colunas */
+    grid-template-columns: 1 white 1fr; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+}
+
+.litet-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.litet-feature-icon {
+    width: 100%;
+    max-width: 90px; /* Ajuste conforme o tamanho original do ícone */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.litet-feature-text {
+    margin-top: 15px;
+    color: #EE5170; /* Rosa correspondente aos ícones */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+    max-width: 200px;
+}
+
+/* Ajustes Desktop */
+@media screen and (min-width: 991px) {
+    .litet-features-section {
+        max-width: 1920px; 
+        margin: auto;
+        padding: 100px 80px;
+    }
+
+    .litet-features-container {
+        /* Desktop: 4 colunas em linha */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .litet-feature-icon {
+        max-width: 169px;
+    }
+
+    .litet-feature-text {
+        font-size: 22px;
+        max-width: 250px;
+    }
+}
+/* =========================================
+   SEÇÃO: CRESCE JUNTO COM SEU BEBÊ
+   ========================================= */
+
+.litet-growth-section {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    background-color: #FFFFFF;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Evita rolagem horizontal caso a imagem vaze */
+}
+
+.litet-growth-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.litet-growth-text {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.litet-growth-title {
+    color: #EE5170; /* Rosa Litet */
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.litet-growth-desc {
+    color: #736DA6; /* Tom de roxo/cinza do texto */
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.litet-growth-desc strong {
+    font-weight: 700;
+}
+
+.litet-growth-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.litet-growth-img {
+    width: 100%;
+    height: auto;
+    max-width: 430px; /* Limite para o mobile não estourar */
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-growth-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 0px;
+    }
+
+    .litet-growth-wrapper {
+        /* No desktop, inverte a ordem: texto vai para a direita e imagem para a esquerda */
+        flex-direction: row-reverse; 
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .litet-growth-text {
+        width: 45%;
+        margin-bottom: 0;
+        padding-left: 20px;
+        /* Posiciona o texto um pouco mais para cima para alinhar como no mockup */
+        margin-top: -250px; 
+    }
+
+    .litet-growth-title {
+        font-size: 32px;
+    }
+
+    .litet-growth-desc {
+        font-size: 22px;
+        max-width: 550px; /* Evita que o texto fique muito largo */
+    }
+
+    .litet-growth-image-container {
+        width: 55%;
+        justify-content: flex-start;
+    }
+
+    .litet-growth-img {
+        min-width: 190%; 
+    }
+}
+/* =========================================
+   SEÇÃO: FECHAMENTO INTELIGENTE
+   ========================================= */
+
+.litet-folding-section {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    background-color: #6C6398; /* Roxo da Litet */
+    position: relative;
+    overflow: hidden;
+    padding-top: 50px; /* Espaço para o texto no mobile */
+}
+
+.litet-folding-wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.litet-folding-content {
+    text-align: left;
+    width: 100%;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    z-index: 2; /* Mantém o texto acima das imagens se houver sobreposição */
+}
+
+.litet-folding-title {
+    color: #FAE400; /* Amarelo Litet */
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.litet-folding-desc {
+    color: #FDEDDD;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.litet-folding-desc strong {
+    font-weight: 700;
+}
+
+.litet-folding-bg-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.litet-folding-car-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.litet-folding-stroller-img {
+    width: 100%;
+    max-width: 420px; /* Tamanho do carrinho fechado no mobile */
+    height: auto;
+    z-index: 3;
+    position: relative;
+    margin-top: -160px; /* Puxa o carrinho para cima, sobrepondo a foto do carro */
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+
+    .litet-folding-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 0;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+    }
+
+    .litet-folding-wrapper {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 80px;
+        min-height: 1000px;
+    }
+
+    .litet-folding-content {
+        width: 45%; /* Texto ocupa quase metade da tela na esquerda */
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: -400px; /* Sobe um pouco o texto para alinhar com o design */
+        margin-left: 10%; /* Dá um espaço entre o texto e a foto do carro */
+    }
+
+    .litet-folding-title {
+        font-size: 36px;
+    }
+
+    .litet-folding-desc {
+        font-size: 22px;
+        max-width: 480px;
+    }
+
+    .litet-folding-bg-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 65%; /* Imagem do carro preenche a direita */
+        height: 100%;
+    }
+
+    .litet-folding-car-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Garante que a imagem preencha a altura sem distorcer */
+        object-position: right bottom;
+    }
+
+    .litet-folding-stroller-img {
+        position: absolute;
+        bottom: 0;
+        left: 45%; /* Posiciona o carrinho no meio, sobrepondo o fundo e a foto */
+        transform: translateX(-50%);
+        max-width: 550px;
+        margin: 0;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1800px) {
+        .litet-folding-content {
+            margin-left: 50px;
+            margin-top: -550px;
+        }
+        .litet-folding-desc {
+            max-width: 450px;
+        }
+        .litet-folding-content {
+            width: 60%;
+        }
+}
+/* =========================================
+   SEÇÃO: MÁXIMO ACONCHEGO E ERGONOMIA
+   ========================================= */
+
+.litet-comfort-section {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    background-color: #FFFFFF;
+    padding: 50px 0px 0px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.litet-comfort-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.litet-comfort-text {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.litet-comfort-title {
+    color: #6C6398; /* Roxo da Litet */
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.litet-comfort-desc {
+    color: #E95273; /* Rosa da Litet */
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    max-width: 350px;
+}
+
+.litet-comfort-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.litet-comfort-img {
+    width: 100%;
+    height: auto;
+    max-width: 450px; /* Controle do tamanho da imagem no mobile */
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-comfort-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 0px;
+    }
+
+    .litet-comfort-wrapper {
+        /* Inverte a ordem: o texto (que vem primeiro no HTML) vai para a direita */
+        flex-direction: row-reverse; 
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .litet-comfort-text {
+        width: 40%;
+        margin-bottom: 0;
+        padding-left: 40px; /* Dá um respiro entre a imagem e o texto */
+    }
+
+    .litet-comfort-title {
+        font-size: 36px;
+    }
+
+    .litet-comfort-desc {
+        font-size: 22px;
+        max-width: 400px;
+    }
+
+    .litet-comfort-image-container {
+        width: 60%;
+        justify-content: flex-start; /* Alinha a imagem do carrinho à esquerda */
+    }
+
+    .litet-comfort-img {
+        min-width: 140%;
+        /* Um pequeno ajuste negativo se quiser que a imagem comece bem no limite da tela esquerda */
+        margin-left: -200px; 
+    }
+}
+/* =========================================
+   SEÇÃO: VÁRIAS FORMAS DE CUIDAR
+   ========================================= */
+
+.litet-versatile-section {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    background-color: #EE5170; /* Fundo de segurança */
+    display: flex;
+    justify-content: center;
+}
+
+.litet-versatile-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* O wrapper fica absoluto por cima da imagem para posicionar o texto */
+.litet-versatile-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo no limite de 1200px */
+}
+
+.litet-versatile-content {
+    width: 100%;
+    max-width: 1200px; /* Mantém o alinhamento com as outras seções */
+    padding: 40px 30px;
+    padding-top: 80px;
+    text-align: left;
+}
+
+.litet-versatile-title {
+    color: #FAE400; /* Amarelo Litet */
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.litet-versatile-desc {
+    color: #FDEDDD;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.litet-versatile-desc strong {
+    font-weight: 700;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-versatile-section {
+        max-width: 1920px;
+        margin: auto;
+    }
+    .litet-versatile-content {
+        padding: 80px 80px;
+        padding-left: 200px;
+        /* Limita a largura do texto para ele não invadir a foto da direita */
+        max-width: 950px; 
+        margin-right: auto; /* Garante que o texto fique alinhado à esquerda dentro do wrapper */
+    }
+
+    .litet-versatile-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+        margin-top: 50px;
+    }
+
+    .litet-versatile-desc {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1800px) {
+    .litet-versatile-content {
+        padding-left: 100px;
+        max-width: 750px;
+        padding-top: 30px;
+    }
+    .litet-versatile-title {
+        margin-top: 20px;
+    }
+    
+}
+@media screen and (min-width: 991px) and (max-width: 1500px) {
+    .litet-versatile-content {
+        padding-left: 80px;
+        max-width: 650px;
+        padding-top: 50px;
+    }
+    .litet-versatile-title {
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1030px) {
+    .litet-versatile-title{
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+        .litet-versatile-desc {
+            font-size: 14px;
+            max-width: 400px;
+        }
+}
+/* =========================================
+   SEÇÃO: COBERTURA COMPLETA
+   ========================================= */
+
+.litet-canopy-section {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    background-color: #FBEBE0; /* Fundo bege clarinho da seção */
+    padding: 50px 0px 0px; /* Sem padding embaixo para a imagem encostar na borda, se necessário */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.litet-canopy-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.litet-canopy-text {
+    text-align: center; /* Centralizado no mobile */
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.litet-canopy-title {
+    color: #E95273; /* Rosa Litet */
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.litet-canopy-desc {
+    color: #6C6398; /* Roxo/cinza do texto */
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.litet-canopy-desc strong {
+    font-weight: 700;
+}
+
+.litet-canopy-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.litet-canopy-img {
+    width: 100%;
+    height: auto;
+    max-width: 450px; /* Ajuste para não ficar gigante no tablet/mobile */
+    display: block;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-canopy-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 0px;
+        padding-top: 30px;
+    }
+
+    .litet-canopy-wrapper {
+        /* Inverte a ordem no desktop: Imagem vai para a esquerda, Texto para a direita */
+        flex-direction: row-reverse; 
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .litet-canopy-text {
+        width: 40%;
+        text-align: left; /* Alinhado à esquerda no desktop */
+        margin-bottom: 0;
+        padding-left: 20px;
+        padding-top: 150px;
+    }
+
+    .litet-canopy-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .litet-canopy-desc {
+        font-size: 22px;
+        max-width: 450px;
+    }
+
+    .litet-canopy-image-container {
+        width: 60%;
+        justify-content: flex-start; /* Alinha a imagem à esquerda da sua coluna */
+    }
+
+    .litet-canopy-img {
+        min-width: 120%;
+        margin-left: -100px; /* Puxa o coração um pouco mais pra beirada, se necessário */
+    }
+}
+/* =========================================
+   SEÇÃO: TRAVEL SYSTEM PRONTO PARA USAR
+   ========================================= */
+
+.litet-travel-section {
+    position: relative;
+    max-width: 430px;
+    margin: auto;
+    width: 100%;
+    background-color: #FFFFFF; /* Garante fundo branco nas bordas */
+    display: flex;
+    justify-content: center;
+}
+
+.litet-travel-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* O wrapper cobre 100% da imagem para posicionarmos o texto em cima */
+.litet-travel-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* No mobile, o texto fica na parte de baixo */
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.litet-travel-content {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 30px 55%; /* O padding inferior em % ajuda o texto a subir e ficar dentro do coração roxo no mobile */
+    text-align: left;
+}
+
+.litet-travel-title {
+    color: #FAE400; /* Amarelo Litet */
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.litet-travel-desc {
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    max-width: 320px; /* Evita que o texto vase para fora da forma roxa no mobile */
+}
+
+.litet-travel-desc strong {
+    font-weight: 700;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-travel-section {
+        max-width: 1920px;
+        margin: auto;
+    }
+    .litet-travel-wrapper {
+        justify-content: center; /* Centraliza verticalmente no desktop */
+    }
+
+    .litet-travel-content {
+        padding: 0 80px; /* Margem lateral padrão do desktop */
+        margin-right: auto; /* Alinha a caixa de texto à esquerda dentro da área limite de 1200px */
+    }
+
+    .litet-travel-title {
+        font-size: 36px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        margin-left: 20%;
+    }
+
+    .litet-travel-desc {
+        margin-left: 20%;
+        font-size: 22px;
+        max-width: 440px; /* Expande o limite do texto no desktop */
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1600px) {
+
+    .litet-travel-title {
+        margin-top: 60px;
+        margin-left: 12%;
+    }
+    .litet-travel-desc {
+        margin-left: 12%;
+        max-width: 380px;
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1350px) {
+        .litet-travel-title {
+        margin-top: 60px;
+        margin-left: 7%;
+    }
+    .litet-travel-desc {
+        margin-left: 7%;
+        max-width: 360px;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .litet-travel-content {
+        padding: 0 30px 45%; /* O padding inferior em % ajuda o texto a subir e ficar dentro do coração roxo no mobile */
+
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1030px) {
+    .litet-travel-title {
+        font-size: 26px;
+        margin-left: 10%;
+        margin-bottom: 5px;
+    }
+    .litet-travel-desc {
+        
+        margin-left: 10%;
+        max-width: 240px;
+        font-size: 13px;
+        }
+}
+/* =========================================
+   SEÇÃO: ESTABILIDADE E ESPAÇO
+   ========================================= */
+
+.litet-details-section {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    
+    /* Substituímos a cor sólida pelas propriedades de imagem de fundo para o Mobile */
+    background-color: #FFFFFF; /* Cor de segurança caso a imagem demore a carregar */
+    background-image: url('assets/images/cora-bg-mobile.png');
+    background-size: contain; /* Faz a imagem cobrir toda a área da seção */
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    padding: 60px 30px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.litet-details-wrapper {
+    width: 100%;
+    max-width: 1450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+@media screen and (min-width: 991px) and (max-width: 1400px) {
+    .litet-details-wrapper {
+    width: 100%;
+    max-width: 950px;
+    }
+}
+.litet-details-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.litet-details-title {
+    color: #6C6398; /* Roxo Litet */
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.litet-details-desc {
+    color: #6C6398; /* Roxo/Cinza Litet */
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+}
+
+.litet-details-img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-details-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 100px 80px;
+        
+        /* Trocamos a imagem de fundo para a versão Desktop */
+        background-image: url('assets/images/cora-bg.png'); /* Ajuste a extensão se necessário */
+        background-size: cover;
+    }
+
+    /* Transformamos o layout em um Grid de 2 colunas */
+    .litet-details-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Áreas nomeadas para posicionar exatamente onde queremos */
+        grid-template-areas: 
+            "texto1 img2"
+            "img1   img2"
+            "img1   texto2";
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* Alinhamentos dos textos no Desktop */
+    .litet-details-title, 
+    .litet-details-desc {
+        text-align: left;
+    }
+
+    /* Distribuindo os itens nas áreas do Grid */
+    .text-estabilidade { 
+        grid-area: texto1; 
+        align-self: end; /* Empurra o texto para baixo, perto da imagem dele */
+        padding-right: 40px;
+    }
+    
+    .img-estabilidade { 
+        grid-area: img1; 
+        align-self: start; 
+    }
+    
+    .img-espaco { 
+        grid-area: img2; 
+        /* Margin negativo pode ser usado para subir a imagem da direita e dar o efeito do design */
+        margin-top: -60px; 
+    }
+    
+    .text-espaco { 
+        grid-area: texto2; 
+        align-self: start; /* Fica no topo da sua célula, logo abaixo da imagem 2 */
+        padding-left: 40px; /* Dá um respiro da imagem da esquerda */
+    }
+
+    .litet-details-title {
+        font-size: 36px;
+    }
+
+    .litet-details-desc {
+        font-size: 22px;
+    }
+    
+    .litet-details-img {
+        min-width: 80%;
+    }
+}
+/* =========================================
+   SECÇÃO: DESIGN QUE ACOLHE
+   ========================================= */
+
+.litet-design-section {
+    width: 100%;
+    background-color: #FFFFFF; /* Cor de segurança */
+    max-width: 430px; 
+    margin: auto;
+    /* Imagem de fundo com a onda rosa para o Mobile */
+    background-image: url('assets/images/design-bg-mobile.png'); 
+    background-size: 100% 100%; /* Estica para preencher toda a área sem cortar */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+    /* Sem padding na parte inferior (0) para o carrinho encostar à base */
+    padding: 50px 30px 0; 
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.litet-design-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.litet-design-text {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.litet-design-title {
+    color: #6C6398; /* Roxo Litet */
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.litet-design-desc {
+    color: #E95273; /* Rosa Litet */
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.litet-design-desc strong {
+    font-weight: 700;
+}
+
+.litet-design-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.litet-design-img {
+    width: 100%;
+    height: auto;
+    max-width: 350px; /* Limita o tamanho do carrinho no ecrã mobile */
+    display: block;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .litet-design-section {
+        max-width: 1920px; 
+        margin: auto;
+        padding: 80px 80px 0;
+        
+        /* Muda o fundo para a onda rosa na versão Desktop */
+        background-image: url('assets/images/design-bg-desktop.png'); 
+        background-size: cover;
+        min-height: 1000px;
+    }
+
+    .litet-design-wrapper {
+        flex-direction: row; /* Coloca o texto à esquerda e a imagem à direita */
+        justify-content: space-between;
+        align-items: start; /* Mantém o carrinho alinhado com a base */
+    }
+
+    .litet-design-text {
+        width: 45%;
+        margin-bottom: 120px; /* Empurra o texto mais para cima para alinhar perfeitamente com o espaço em branco */
+        padding-right: 40px;
+    }
+
+    .litet-design-title {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .litet-design-desc {
+        font-size: 22px;
+        max-width: 480px;
+    }
+
+    .litet-design-image-container {
+        width: 55%;
+        justify-content: center;
+    }
+
+    .litet-design-img {
+        max-width: 900px; /* Carrinho maior no desktop */
+    }
+}
+/* =========================================
+   SEÇÃO FICHA TÉCNICA (LITET JAZZ)
+   ========================================= */
+
+/* --- BASE (MOBILE) --- */
+.litet-specs-section {
+    max-width: 430px;
+    margin: auto;
+    width: 100%;
+    background-color: #EE5170; /* Cor de fundo Rosa Litet */
+    padding: 40px 0px 60px 0px;
+    font-family: "elza", sans-serif;
+    box-sizing: border-box;
+}
+
+.specs-wrapper {
+    width: 100%;
+    max-width: 430px; /* Trava do mobile */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container da Imagem */
+.specs-img-col {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.specs-img {
+    width: 100%;
+    max-width: 430px; /* Limite de tamanho no mobile */
+    height: auto;
+    display: block;
+}
+
+/* Coluna de Texto */
+.specs-text-col {
+    width: 100%;
+    text-align: center; /* Centralizado no mobile */
+    color: #FFFFFF; /* Texto branco padrão */
+}
+
+.specs-title {
+    color: #FFF000; /* Amarelo Litet */
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+
+.specs-details {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Classe para destacar as chaves (ex: Marca:, Peso:) em Amarelo */
+.specs-highlight {
+    color: #FFF000;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    
+    .litet-specs-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 80px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .specs-wrapper {
+        max-width: 1400px; /* Trava do desktop */
+        flex-direction: row; /* Coloca imagem e texto lado a lado */
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 50px;
+    }
+
+    .specs-img-col {
+        width: 55%; /* A imagem ocupa mais espaço */
+        margin-bottom: 0;
+        justify-content: flex-start; /* Alinha a imagem à esquerda */
+    }
+
+    .specs-img {
+        min-width: 1000px; /* Imagem grande no desktop */
+        /* Margem negativa caso a imagem precise encostar na borda da tela 
+           como parece no design de referência */
+        margin-left: -150px; 
+    }
+
+    .specs-text-col {
+        width: 45%;
+        text-align: right; /* Alinhado à direita conforme o design desktop */
+        padding-left: 20px;
+        padding-right: 50px; /* Afasta o texto da borda direita */
+    }
+
+    .specs-title {
+        font-size: 38px;
+        margin-bottom: 25px;
+    }
+
+    .specs-details {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+
+/* Ajuste fino para telas intermediárias (Tablets/Laptops menores) */
+@media screen and (min-width: 991px) and (max-width: 1200px) {
+    .specs-img {
+        min-width: 700px !important;
+        margin-left: 0;
+    }
+    .specs-text-col {
+        padding-right: 0;
+    }
+    .specs-details {
+        font-size: 16px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+        .specs-img {
+        min-width: 900px !important;
+        margin-left: 0;
+    }
+}
