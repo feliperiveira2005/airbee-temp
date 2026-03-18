@@ -71,7 +71,7 @@ html, body, * {
 }
 
 .litet-title {
-    color: #FFFFFF;
+    color: #FFEDDA;
     font-size: 32px;
     font-weight: 600;
     line-height: 1.1;
@@ -205,6 +205,7 @@ html, body, * {
 }
 
 .litet-feature-text {
+    margin-top: 15px;
     color: #EE5170; /* Rosa correspondente aos ícones */
     font-size: 16px;
     font-weight: 400;
@@ -228,7 +229,7 @@ html, body, * {
     }
 
     .litet-feature-icon {
-        max-width: 140px;
+        max-width: 169px;
     }
 
     .litet-feature-text {
@@ -329,8 +330,8 @@ html, body, * {
     }
 
     .litet-growth-desc {
-        font-size: 18px;
-        max-width: 450px; /* Evita que o texto fique muito largo */
+        font-size: 22px;
+        max-width: 550px; /* Evita que o texto fique muito largo */
     }
 
     .litet-growth-image-container {
@@ -640,7 +641,7 @@ html, body, * {
 }
 
 .litet-versatile-desc {
-    color: #FFFFFF;
+    color: #FDEDDD;
     font-size: 16px;
     line-height: 1.4;
     font-weight: 500;
@@ -673,7 +674,7 @@ html, body, * {
     }
 
     .litet-versatile-desc {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 @media screen and (min-width: 991px) and (max-width: 1800px) {
@@ -689,13 +690,23 @@ html, body, * {
 }
 @media screen and (min-width: 991px) and (max-width: 1500px) {
     .litet-versatile-content {
-        padding-left: 20px;
+        padding-left: 80px;
         max-width: 650px;
-        padding-top: 10px;
+        padding-top: 50px;
     }
     .litet-versatile-title {
         margin-top: 0px;
     }
+}
+@media screen and (min-width: 991px) and (max-width: 1030px) {
+    .litet-versatile-title{
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+        .litet-versatile-desc {
+            font-size: 14px;
+            max-width: 400px;
+        }
 }
 /* =========================================
    SEÇÃO: COBERTURA COMPLETA
@@ -901,12 +912,12 @@ html, body, * {
 
     .litet-travel-title {
         margin-top: 60px;
-        margin-left: 10%;
+        margin-left: 12%;
     }
     .litet-travel-desc {
-        margin-left: 10%;
-        max-width: 400px;
-        font-size: 20px;
+        margin-left: 12%;
+        max-width: 380px;
+        font-size: 18px;
     }
 }
 @media screen and (min-width: 991px) and (max-width: 1350px) {
@@ -925,6 +936,19 @@ html, body, * {
         padding: 0 30px 45%; /* O padding inferior em % ajuda o texto a subir e ficar dentro do coração roxo no mobile */
 
     }
+}
+@media screen and (min-width: 991px) and (max-width: 1030px) {
+    .litet-travel-title {
+        font-size: 26px;
+        margin-left: 10%;
+        margin-bottom: 5px;
+    }
+    .litet-travel-desc {
+        
+        margin-left: 10%;
+        max-width: 240px;
+        font-size: 13px;
+        }
 }
 /* =========================================
    SEÇÃO: ESTABILIDADE E ESPAÇO
@@ -956,7 +980,12 @@ html, body, * {
     align-items: center;
     gap: 30px;
 }
-
+@media screen and (min-width: 991px) and (max-width: 1400px) {
+    .litet-details-wrapper {
+    width: 100%;
+    max-width: 950px;
+    }
+}
 .litet-details-item {
     width: 100%;
     display: flex;
@@ -1293,7 +1322,7 @@ html, body, * {
 /* Ajuste fino para telas intermediárias (Tablets/Laptops menores) */
 @media screen and (min-width: 991px) and (max-width: 1200px) {
     .specs-img {
-        min-width: 700px;
+        min-width: 700px !important;
         margin-left: 0;
     }
     .specs-text-col {
@@ -1301,5 +1330,11 @@ html, body, * {
     }
     .specs-details {
         font-size: 16px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+        .specs-img {
+        min-width: 900px !important;
+        margin-left: 0;
     }
 }
