@@ -165,6 +165,14 @@ html, body, * {
         font-size: 36px;
     }
 }
+@media screen and (min-width: 991px) and (max-width: 1500px) {
+        .litet-hero-section {
+            min-height: 900px;
+        }
+        .litet-wrapper {
+            max-width: 1200px;
+        }
+}
 /* =========================================
    SEÇÃO DE BENEFÍCIOS (ICONES)
    ========================================= */
@@ -468,6 +476,7 @@ html, body, * {
         height: 100%;
         object-fit: contain; /* Garante que a imagem preencha a altura sem distorcer */
         object-position: right bottom;
+        
     }
 
     .litet-folding-stroller-img {
@@ -475,8 +484,9 @@ html, body, * {
         bottom: 0;
         left: 45%; /* Posiciona o carrinho no meio, sobrepondo o fundo e a foto */
         transform: translateX(-50%);
-        max-width: 550px;
+     
         margin: 0;
+        max-width: 589px;
     }
 }
 @media screen and (min-width: 991px) and (max-width: 1800px) {
@@ -491,6 +501,25 @@ html, body, * {
             width: 60%;
         }
 }
+@media screen and (min-width: 991px) and (max-width: 1700px) {
+        .litet-folding-content {
+            margin-top: -370px;
+        }
+        .litet-folding-car-img {
+            max-width: 860px;
+            object-position: right bottom;
+            margin-right: -140px;
+        }
+        .litet-folding-wrapper {
+            min-height: 900px;
+        }
+        .litet-folding-desc {
+            max-width: 450px;
+        }
+        .litet-folding-stroller-img {
+            left: 48%;
+        }
+  }
 /* =========================================
    SEÇÃO: MÁXIMO ACONCHEGO E ERGONOMIA
    ========================================= */
