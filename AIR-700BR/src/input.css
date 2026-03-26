@@ -1,0 +1,731 @@
+@font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Extra-Light.otf') format('opentype');
+                font-weight: 200;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Light.otf') format('opentype');
+                font-weight: 300;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Regular.otf') format('opentype');
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Italic.otf') format('opentype');
+                font-weight: 400;
+                font-style: italic;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Medium.otf') format('opentype');
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/Gelica-Semi-Bold.otf') format('opentype');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Bold.otf') format('opentype');
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Gelica';
+                src: url('./fonts/fonnts.com-Gelica-Black.otf') format('opentype');
+                font-weight: 900;
+                font-style: normal;
+            }
+
+            /* --- RESET BÁSICO --- */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Gelica', serif; 
+                line-height: 1.4;
+                color: #233C28;
+                background-color: #ffffff;
+                max-width: 1920px;
+                margin: 0 auto;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            /* --- ESTRUTURA GERAL --- */
+            .container {
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 1.5rem;
+            }
+
+            /* --- CABEÇALHO (HEADER) --- */
+            .header-cuisinart {
+                background-color: #233C28;
+                padding: 1rem 0;
+                text-align: center;
+            }
+
+            .logo-img {
+                margin: 0 auto; 
+                max-width: 150px;
+            }
+
+            /* --- MEDIA QUERIES (DESKTOP/TABLET) --- */
+            @media (min-width: 1000px) {
+                .header-cuisinart {
+                    padding: 1.5rem 0;
+                }
+                .logo-img {
+                    max-width: 350px; 
+                }
+            }
+
+            /* --- ESTILOS DA DOBRA DE CARACTERÍSTICAS (FEATURES) --- */
+            .features-dobra {
+                padding: 2rem 1rem;
+                background-color: #ffffff;
+                text-align: center;
+            }
+
+            .features-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem; 
+            }
+
+            .feature-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 45%; 
+                max-width: 160px;
+            }
+
+            .feature-icon-img {
+                max-width: 100px; 
+                height: auto;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .feature-desc {
+                font-family: 'Gelica', serif;
+                font-size: 0.9rem;
+                color: #233C28;
+                line-height: 1.3;
+            }
+
+            /* --- MEDIA QUERY (DESKTOP) --- */
+            @media (min-width: 991px) {
+                .feature-icon-img {
+                    max-width: 150px; 
+                    height: auto;
+                    margin-bottom: 20px;
+                    display: block;
+                }
+                .feature-desc {
+                    font-size: 24px;
+                }
+                .features-dobra {
+                    padding: 100px 1.5rem;
+                }
+                .features-grid {
+                    flex-wrap: nowrap; 
+                    justify-content: center; 
+                    gap: 1.5rem; 
+                }
+                .feature-item {
+                    width: auto;
+                    flex: 0 1 180px; 
+                    min-width: 300px;
+                }
+            }
+            
+            @media (max-width: 1000px) {
+                .features-dobra {
+                    max-width: 430px;
+                    margin: auto;
+                }
+            }
+
+            /* --- ESTILOS DA DOBRA "CREMOSO E RÁPIDO" --- */
+            .cremoso-dobra {
+                padding: 3rem 1.5rem;
+                background-color: #ffffff;
+                margin-bottom: 0rem;
+            }
+
+            .cremoso-header {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .cremoso-titulo {
+                font-family: 'Gelica', serif;
+                font-size: 2rem;
+                line-height: 1.2;
+                color: #2e4033;
+                font-weight: normal;
+            }
+
+            .cremoso-titulo em {
+                font-style: italic;
+                font-weight: bold;
+            }
+
+            .cremoso-desc {
+                font-family: 'Work Sans', serif;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #4a4a4a;
+            }
+
+            .cremoso-img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 4px;
+            }
+
+            /* --- MEDIA QUERY (DESKTOP) --- */
+            @media (min-width: 1000px) {
+                .cremoso-dobra {
+                    padding: 4rem 1.5rem;
+                    max-width: 1300px;
+                    margin: 0 auto;
+                }
+                .cremoso-header {
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 2rem;
+                }
+                .cremoso-titulo {
+                    font-size: 50px;
+                    flex: 1;
+                    max-width: 45%;
+                    padding-left: 2%;
+                }
+                .cremoso-desc {
+                    font-size: 22px;
+                    flex: 1;
+                    max-width: 45%;
+                    margin-top: 0.5rem;
+                }
+            }
+            @media (max-width: 1000px) {
+                .cremoso-dobra {
+                    padding: 1rem 0rem;
+                }
+                .sorvete {
+                    padding: 0rem;
+                }
+                .cremoso-header {
+                    padding: 2rem;
+                    margin-bottom: 0rem;
+                }
+            }
+
+            /* --- ESTILOS DA DOBRA "CRIE DO SEU JEITO" (DUO FEATURES) --- */
+            .duo-section {
+                padding: 2rem 0rem;
+                background-color: #ffffff;
+            }
+
+            .duo-row {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .duo-row:last-child {
+                margin-bottom: 0;
+            }
+
+            .duo-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .duo-titulo {
+                font-family: 'Gelica', serif;
+                font-size: 2rem;
+                line-height: 1.2;
+                color: #2e4033;
+                margin-bottom: 1rem;
+            }
+
+            .duo-titulo em {
+                font-style: italic;
+                font-weight: bold;
+            }
+
+            .duo-desc {
+                font-family: 'Work Sans', serif;
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #4a4a4a;
+                max-width: 500px;
+            }
+
+            .duo-img-wrapper {
+                width: 100%;
+            }
+
+            .duo-img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 4px;
+            }
+
+            /* --- MEDIA QUERY (DESKTOP) --- */
+            @media (min-width: 1000px) {
+                .duo-section {
+                    padding: 5rem 1.5rem;
+                    max-width: 1300px;
+                    margin: 0 auto;
+                }
+                .duo-row {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0rem;
+                    margin-bottom: 6rem;
+                }
+                .duo-row.reverse {
+                    flex-direction: row-reverse;
+                }
+                .duo-content, 
+                .duo-img-wrapper {
+                    flex: 1;
+                }
+                .duo-titulo {
+                    font-size: 50px;
+                    margin-left: 50px;
+                }
+                .duo-desc {
+                    font-size: 22px;
+                    margin-left: 50px;
+                }
+            }
+            @media (max-width: 1000px) {
+                .duo-content {
+                    padding: 0rem 2rem;
+                }
+            }
+
+            /* --- ESTILOS DA DOBRA "CONTEÚDO DA EMBALAGEM" --- */
+            .embalagem-dobra {
+                padding: 1.5rem 1rem;
+                background-image: url('./assets/images/d51.png'); 
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: #ffffff;
+            }
+
+            .embalagem-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                align-items: center;
+            }
+
+            .embalagem-content {
+                text-align: left;
+                max-width: 400px;
+                width: 100%;
+            }
+
+            .embalagem-titulo {
+                font-family: 'Gelica', serif;
+                font-size: 2rem;
+                font-weight: bold;
+                line-height: 1.2;
+                margin-bottom: 2rem;
+                color: #233C28;
+            }
+
+            .embalagem-titulo em {
+                font-style: italic;
+            }
+
+            .embalagem-lista {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .embalagem-lista li {
+                font-family: 'Work sans', sans-serif;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                line-height: 1.5;
+                color: #233C28;
+            }
+
+            .embalagem-lista li::before {
+                content: "•";
+                color: #ffc107;
+                font-size: 2rem;
+                line-height: 0;
+                margin-right: 0.75rem;
+                padding-bottom: 5px;
+            }
+
+            .embalagem-img-wrapper {
+                width: 100%;
+                max-width: 650px;
+                position: relative;
+            }
+
+            .embalagem-img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            /* --- MEDIA QUERY (DESKTOP) --- */
+            @media (min-width: 1000px) {
+                .embalagem-dobra {
+                    padding: 5rem 1.5rem;
+                }
+                .embalagem-grid {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 6rem;
+                    align-items: center;
+                }
+                .embalagem-titulo {
+                    font-size: 50px;
+                }
+                .embalagem-lista li {
+                    font-size: 20px;
+                }
+            }
+            @media (max-width: 1000px) {
+                .d5 {
+                    max-width: 600px;
+                    margin: auto;
+                }
+            }
+
+            /* =========================================
+               SEÇÃO HERO AIR FRYER
+               ========================================= */
+            .af-hero-section {
+                width: 100%;
+                background-color: #FAF5E9;
+                font-family: "elza", sans-serif;
+                color: #233C28;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            .af-wrapper {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .af-text-col {
+                padding: 30px 20px 20px 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .af-subtitle {
+                font-family: 'Work Sans', sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                margin: 0 0 15px 0;
+                text-transform: uppercase;
+            }
+
+            .af-title {
+                margin: 0 0 25px 0;
+                line-height: 1.1;
+                color: #233C28;
+            }
+
+            .af-title-italic {
+                font-family: 'Gelica', serif;
+                font-size: 40px;
+                font-style: italic;
+                font-weight: 400;
+            }
+
+            .af-title-bold {
+                font-family: 'Gelica', serif;
+                font-size: 42px;
+                font-weight: 900;
+                text-transform: uppercase;
+                display: inline-block;
+                margin: 5px 0;
+            }
+
+            .af-pills-wrapper {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .af-pill {
+                font-family: 'Work Sans', sans-serif;
+                background-color: #FFC31A;
+                color: #233C28;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 8px 20px;
+                border-radius: 20px;
+                text-transform: uppercase;
+            }
+
+            .af-visual-col {
+                width: 100%;
+                position: relative;
+                height: 400px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .af-chicken-bg {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                background-image: url('assets/images/bg-frango-mobile.png');
+                background-size: cover;
+                background-position: center center;
+                z-index: 1;
+            }
+
+            .af-prod-img {
+                position: relative;
+                z-index: 2;
+                width: 85%;
+                max-width: 320px;
+                height: auto;
+                object-fit: contain;
+                align-self: flex-start;
+                margin-top: 0px;
+            }
+
+            /* =========================================
+               MEDIA QUERY DESKTOP (> 991px)
+               ========================================= */
+            @media screen and (min-width: 991px) {
+                .af-hero-section {
+                    display: flex;
+                    justify-content: center;
+                }
+                .af-wrapper {
+                    max-width: 1920px;
+                    min-height: 900px;
+                    flex-direction: row;
+                    align-items: stretch;
+                }
+                .af-text-col {
+                    width: 55%;
+                    padding: 50px 60px 100px 100px;
+                    align-items: flex-start;
+                    text-align: center;
+                    justify-content: center;
+                }
+                .af-subtitle {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 28px;
+                    margin-bottom: 20px;
+                }
+                .af-title-italic {
+                    font-size: 80px;
+                }
+                .af-title-bold {
+                    font-size: 90px;
+                    margin: 10px 0;
+                }
+                .af-pills-wrapper {
+                    margin-left: auto;
+                    margin-right: auto;
+                    justify-content: flex-start;
+                    margin-top: 10px;
+                }
+                .af-pill {
+                    font-size: 16px;
+                    padding: 10px 25px;
+                }
+                .af-visual-col {
+                    width: 35%;
+                    height: auto;
+                    margin-left: 10%;
+                }
+                .af-chicken-bg {
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    background-image: url('assets/images/bg-frango.png');
+                }
+                .af-prod-img {
+                    position: absolute;
+                    top: 50%;
+                    left: -40%;
+                    transform: translateY(-50%);
+                    margin-top: 0;
+                    width: 110%;
+                    max-width: 600px;
+                }
+                .af-title {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            @media screen and (min-width: 991px) and (max-width: 1400px) {
+                .af-title-italic {
+                    font-size: 60px;
+                }
+                .af-title-bold {
+                    font-size: 70px;
+                }
+            }
+
+            /* =========================================
+               SEÇÃO FEATURES AIR FRYER (CARDS CREME)
+               ========================================= */
+            .af-features-section {
+                width: 100%;
+                background-color: #FFFFFF;
+                padding: 100px 20px 60px 20px; 
+                font-family: "elza", sans-serif;
+                box-sizing: border-box;
+            }
+
+            .af-feat-wrapper {
+                width: 100%;
+                max-width: 430px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                gap: 120px;
+            }
+
+            .af-feat-card {
+                background-color: #FFF6EA;
+                border-radius: 0px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: relative;
+                padding: 0 30px 40px 30px;
+            }
+
+            .af-feat-img {
+                width: 80%;
+                max-width: 250px;
+                height: auto;
+                display: block;
+                margin-top: -80px; 
+                margin-bottom: 20px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .af-feat-content {
+                text-align: left;
+                width: 100%;
+            }
+
+            .af-feat-title {
+                color: #1B3C2A;
+                font-family: 'Gelica', serif;
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.1;
+                margin: 0 0 15px 0;
+            }
+
+            .af-feat-desc {
+                font-family: 'Work Sans', sans-serif;
+                color: #4A5D4E;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            /* =========================================
+               MEDIA QUERY DESKTOP (> 991px)
+               ========================================= */
+            @media screen and (min-width: 991px) {
+                .af-features-section {
+                    padding: 140px 0 100px 0;
+                    display: flex;
+                    justify-content: center;
+                }
+                .af-feat-wrapper {
+                    max-width: 1400px;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 40px;
+                    padding: 0 40px;
+                }
+                .af-feat-card {
+                    width: 45%;
+                    max-width: 600px;
+                    padding: 0 50px 60px 50px;
+                }
+                .af-feat-img {
+                    width: 85%;
+                    min-width: 400px;
+                    margin-top: -120px;
+                    margin-bottom: 30px;
+                }
+                .af-feat-title {
+                    font-size: 44px;
+                    margin-bottom: 20px;
+                }
+                .af-feat-desc {
+                    font-size: 22px;
+                }
+            }
