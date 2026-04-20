@@ -67,7 +67,7 @@
     }
 
     .feature-item {
-        flex: 0 1 200px; 
+        flex: 0 1 250px; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -75,7 +75,7 @@
 
     /* Ícones Padronizados */
     .icon-box img {
-        height: 60px; 
+        height: 80px; 
         width: auto;
         display: block;
         margin-bottom: 15px;
@@ -86,7 +86,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 70px; 
+        height: 120px; 
     }
 
     /* Tipografia */
@@ -98,7 +98,7 @@
     }
 
     .feature-desc {
-        font-size: 1.1rem;
+        font-size: 22px;
         color: #333;
         line-height: 1.2;
     }
@@ -109,6 +109,17 @@
 
     /* --- MOBILE (Ajustes) --- */
     @media screen and (max-width: 768px) {
+        .feature-desc {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.2;
+        }
+        .icon-box img {
+        height: 50px; 
+        }
+        .icon-box {
+            height: 70px; 
+        }
         /* Remove padding lateral da imagem banner comum no mobile se desejar full bleed */
         .banner-full {
             padding: 0%;
@@ -144,17 +155,17 @@
     /* ------------------------------------------------ */
     
     .learning-section {
-        padding: 60px 20px;
-        max-width: 1400px;
+        padding: 20px 20px;
+        max-width: 1500px;
         margin: 0 auto;
     }
 
     /* Título Principal (Só Desktop) */
     .main-heading {
         text-align: center;
-        font-size: 3.5rem;
+        font-size: 64px;
         font-weight: 800;
-        margin-bottom: 50px;
+        margin-bottom: 110px;
         color: #000;
         line-height: 1.2;
     }
@@ -184,10 +195,10 @@
     }
 
     .sub-heading {
-        font-size: 2.2rem;
+        font-size: 46px;
         font-weight: 800;
         line-height: 1.2;
-        max-width: 80%; /* Deixa espaço pra fada */
+        max-width: 100%; /* Deixa espaço pra fada */
         color: #000;
     }
 
@@ -197,11 +208,12 @@
     }
 
     .text-desc {
-        font-size: 1.2rem;
+        font-size: 24px;
         line-height: 1.5;
         color: #333;
         max-width: 90%;
         margin-left: 10%;
+        margin-bottom: 120px;
     }
 
     .family-img {
@@ -264,7 +276,7 @@
         }
 
         .sub-heading {
-            font-size: 1.5rem;
+            font-size: 24px;
             max-width: 100%; /* Texto ocupa tudo sem a fada */
             text-align: center;
             padding-top: 20px;
@@ -274,7 +286,8 @@
             text-align: center;
             margin: 0 auto;
             padding-bottom: 20px;
-            font-size: 1rem;
+            font-size: 16px;
+            margin-bottom: 0px;
         }
         
         /* A imagem da família já está dentro de col-content, 
@@ -302,7 +315,7 @@
     }
 
     .section-title {
-        font-size: 3rem;
+        font-size: 46px;
         font-weight: 800;
         margin-bottom: 20px;
         color: #000;
@@ -310,7 +323,7 @@
     }
 
     .section-subtitle {
-        font-size: 1.1rem;
+        font-size: 24px;
         color: #333;
         margin-bottom: 40px;
         line-height: 1.5;
@@ -333,7 +346,7 @@
     .disclaimer-box {
         background-color: #EAEAEA;
         border-radius: 20px;
-        padding: 20px;
+        padding: 60px;
         max-width: 1400px; 
         margin: 0 auto;
     }
@@ -347,12 +360,14 @@
 
     /* Ajuste Mobile */
     @media screen and (max-width: 768px) {
-        .section-title { font-size: 1.6rem; }
+        .section-title { font-size: 24px; }
         
-        .section-subtitle {font-size: 1rem;}
+        .section-subtitle {font-size: 16px;}
         .possibilities-section { padding: 40px 0px; }
         .main-heading {
-            font-size: 1.5rem;
+            font-size: 24px;
+            margin-bottom: 40px;
+            margin-top: 40px;
         }
 
     }
@@ -384,7 +399,7 @@
     margin-top: 50px;
 }
 .android-title {
-    font-size: 3rem;
+    font-size: 46px;
     font-weight: 800;
     color: #000;
     margin-bottom: 20px;
@@ -392,10 +407,11 @@
 }
 
 .android-subtitle {
-    font-size: 1.1rem;
+    font-size: 24px;
     color: #333;
     line-height: 1.5;
     max-width: 800px;
+    margin-bottom: 80px;
 }
 
 /* Grid dos Cards */
@@ -421,16 +437,16 @@
 }
 
 .card-green-title {
-    font-size: 1.8rem;
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .card-green-desc {
-    font-size: 1.1rem;
+    font-size: 24px;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .card-green-desc strong {
@@ -444,12 +460,13 @@
     }
 
     .android-title {
-        font-size: 1.5rem;
+        font-size: 24px;
         padding: 0 10px;
     }
     
     .android-subtitle {
-        font-size: 0.9rem;
+        font-size: 16px;
+        margin-bottom: 30px;
     }
 
     .android-grid {
@@ -464,11 +481,11 @@
     }
     
     .card-green-title {
-        font-size: 1.5rem;
+        font-size: 36px;
     }
 
     .card-green-desc {
-        font-size: 1rem;
+        font-size: 24px;
     }
     
     /* Quebras de linha manuais (<br>) podem atrapalhar no mobile, 
@@ -520,7 +537,7 @@
 }
 
 .chippy-title {
-    font-size: 1.8rem;
+    font-size: 46px;
     font-weight: 800;
     text-align: center; /* No desktop, texto alinha à direita perto do robô */
     line-height: 1.2;
@@ -528,13 +545,23 @@
 }
 
 .chippy-img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-right: -200px;
+}
+@media screen and (max-width: 1100px) and (min-width: 768px) {
+.chippy-img {
     max-width: 120px;
     height: auto;
     display: block;
+    margin-left: -120px;
+    margin-right: -20px;
+    margin-top: -180px;
 }
-
+}
 .chippy-text {
-    font-size: 1.1rem;
+    font-size: 24px;
     line-height: 1.5;
     max-width: 800px;
     margin: 0 auto;
@@ -619,7 +646,7 @@
 
     .chippy-title {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 24px;
         padding-bottom: 20px;
     }
 
@@ -630,7 +657,7 @@
     }
     
     .chippy-text {
-        font-size: 1rem;
+        font-size: 16px;
         width: 80%;
     }
 
@@ -675,7 +702,7 @@
     }
     .chippy-title {
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 24px;
         padding-bottom: 20px;
     }
 }
