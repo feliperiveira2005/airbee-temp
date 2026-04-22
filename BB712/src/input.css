@@ -3,7 +3,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {  background: #ffffff; color: #fff; }
 html, body, * {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Baloo 2', sans-serif !important;
 }
 /* Seu arquivo de estilos (style.css, ou dentro de uma tag <style>) */
 
@@ -16,744 +16,276 @@ html, body, * {
 .only-desktop { display: none !important; }
 .only-mobile { display: block !important; }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 991px) {
     .only-desktop { display: block !important; }
     .only-mobile { display: none !important; }
 }
-.litet-hero-section {
-    width: 100%;
-    /* TRAVA MOBILE */
-    max-width: 430px; 
-    margin: 0 auto;
-    
-    /* Imagem de fundo Mobile (Foto + Onda Rosa sem o texto) */
-    background-image: url('assets/images/litet-hero-mobile.png'); 
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    
-    /* Altura para caber a foto e a área rosa */
-    min-height: 700px; 
-    
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  
-    box-sizing: border-box;
+/* =========================================
+   SEÇÃO: HERO MULTI KIDS OMNI
+   ========================================= */
+
+.multikids-hero-section {
     position: relative;
-}
-
-.litet-wrapper {
     width: 100%;
-    min-height: 760px;
-    flex: 1;
+    background-color: #8E7B97; /* Cor lilás de segurança */
     display: flex;
-    flex-direction: column;
-    /* Joga o texto para o fundo onde está a onda rosa no mobile */
-    justify-content: flex-end; 
-    align-items: flex-start;
-    padding: 40px 30px;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 430px; /* Trava do mobile */
+    margin: auto;
 }
 
-.litet-text-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+.multikids-hero-bg {
     width: 100%;
-    margin-bottom: 20px;
-}
-
-.litet-logo {
-    width: 120px;
     height: auto;
-    margin-bottom: 20px;
+    display: block;
 }
 
-.litet-title {
-    font-family: 'Baloo 2' !important;
-    color: #FFEDDA;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 1.1;
-    margin: 0 0 15px 0;
+/* O wrapper cobre 100% da imagem para posicionar o texto */
+.multikids-hero-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* No mobile, o texto desce para a parte inferior (área lilás) */
+    justify-content: flex-end; 
+    align-items: center;
 }
 
-/* Cor amarela de destaque */
-.litet-highlight {
-    color: #FAE400; /* Amarelo Litet */
-    font-size: 36px;
-    font-weight: 700;
+.multikids-hero-content {
+    width: 100%;
+    max-width: 1200px;
+    /* O 12% no final empurra o texto para cima, desgrudando da borda inferior */
+    padding: 0 30px 20px; 
+    text-align: left;
 }
 
-.litet-desc {
-    color: #FFEDDA;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.4;
-    margin: 0 0 25px 0;
-    max-width: 300px;
+.multikids-hero-subtitle {
+    font-family: 'Baloo 2', sans-serif !important;
+    color: #FFFFFF;
+    font-size: 34px;
+    font-weight: 400;
+    margin-bottom: 0px;
 }
 
-.litet-sku {
-    color: #FAE400; /* Amarelo Litet */
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0;
+.multikids-hero-title {
+    font-family: 'Baloo 2', sans-serif !important;
+    color: #FFFFFF;
+    font-size: 80px; /* Tamanho grande simulando a logo OMNI */
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0px;
     text-transform: uppercase;
 }
 
+.multikids-hero-desc {
+    font-family: 'Baloo 2', sans-serif !important;
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.multikids-hero-tags {
+    display: flex;
+    gap: 15px; /* Espaço entre as pílulas laranjas */
+    flex-wrap: wrap;
+}
+
+.multikids-tag {
+    font-family: 'Baloo 2', sans-serif !important;
+    background-color: #F67E0A; /* Laranja da Multi Kids */
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 6px 18px;
+    border-radius: 60px; /* Borda arredondada (formato pílula) */
+    text-align: center;
+}
 
 /* =========================================
    MEDIA QUERY DESKTOP (> 991px)
    ========================================= */
 @media screen and (min-width: 991px) {
-    
-    .litet-hero-section {
-        /* RESET TRAVA */
-        max-width: 1920px;
+    .multikids-hero-section {
+        max-width: 1920px; /* Trava do mobile */
         margin: auto;
-        
-        /* Imagem Desktop (Foto + Onda Rosa Lateral sem o texto) */
-        background-image: url('assets/images/litet-hero-desktop.png'); 
-        background-size: cover;
-        background-position: center center;
-        
-        min-height: 1200px;
-        display: flex;
-        justify-content: center;
-        align-items: center; /* Centraliza o wrapper na tela */
+    }
+    .multikids-hero-wrapper {
+        justify-content: center; /* Centraliza verticalmente no Desktop */
     }
 
-    .litet-wrapper {
-        width: 100%;
-        max-width: 1400px; /* Limite do conteúdo */
+    .multikids-hero-content {
         padding: 0 80px; 
-        
-        /* No desktop, o texto fica centralizado verticalmente e na esquerda */
-        justify-content: center; 
-        align-items: flex-start; 
+        max-width: 80%;
+        /* Adicionamos uma margem no topo para que o texto não sobreponha a tarja azul */
+        margin-top: 15%; 
     }
 
-    .litet-text-box {
-        max-width: 600px; /* Limita a largura do texto para não passar da área rosa */
-        margin-bottom: 0;
+    .multikids-hero-subtitle {
+        font-size: 45px;
     }
 
-    .litet-logo {
-        width: 260px;
-        margin-bottom: 80px;
-    }
-
-    .litet-title {
-        font-size: 60px;
+    .multikids-hero-title {
+        font-size: 100px;
         margin-bottom: 10px;
     }
 
-    .litet-highlight {
-        font-size: 60px;
+    .multikids-hero-desc {
+        font-size: 40px;
+        
+        margin-bottom: 35px;
     }
 
-    .litet-desc {
-        font-size: 34px;
-        font-weight: 500;
-        line-height: 1.3;
-        margin-bottom: 40px;
-        max-width: 400px;
+    .multikids-tag {
+        font-size: 44px;
+        padding: 8px 24px;
     }
-
-    .litet-sku {
-        font-size: 36px;
+    .multikids-tag {
+        margin-top: 20px;
     }
 }
-@media screen and (min-width: 991px) and (max-width: 1500px) {
-        .litet-hero-section {
-            min-height: 900px;
-        }
-        .litet-wrapper {
-            max-width: 1200px;
-        }
+@media screen and (min-width: 991px) and (max-width: 1500px){
+        .multikids-hero-section {
+        max-width: 1920px; /* Trava do mobile */
+        margin: auto;
+    }
+    .multikids-hero-wrapper {
+        justify-content: center; /* Centraliza verticalmente no Desktop */
+    }
+
+    .multikids-hero-content {
+        padding: 0 80px; 
+        max-width: 80%;
+        /* Adicionamos uma margem no topo para que o texto não sobreponha a tarja azul */
+        margin-top: 20%; 
+    }
+
+    .multikids-hero-subtitle {
+        font-size: 35px;
+    }
+
+    .multikids-hero-title {
+        font-size: 90px;
+        margin-bottom: 10px;
+    }
+
+    .multikids-hero-desc {
+        font-size: 30px;
+        
+        margin-bottom: 15px;
+    }
+
+    .multikids-tag {
+        font-size: 30px;
+        padding: 8px 24px;
+    }
+    .multikids-tag {
+        margin-top: 10px;
+    }
 }
 /* =========================================
-   SEÇÃO DE BENEFÍCIOS (ICONES)
+   SEÇÃO: ÍCONES DE BENEFÍCIOS MULTI KIDS
    ========================================= */
 
-.litet-features-section {
-  
+.multikids-features-section {
     width: 100%;
-    max-width: 430px; 
-    margin: auto;
-    background-color: #FFFFFF;
-    padding: 60px 20px;
+    background-color: #8E7B97; /* Cor lilás correspondente ao fundo */
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
+    max-width: 430px; /* Trava do mobile */
+    margin: auto;
 }
 
-.litet-features-container {
+.multikids-features-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1500px;
     display: grid;
     /* Mobile: 2 colunas */
-    grid-template-columns: 1 white 1fr; 
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 20px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px 15px; /* Espaçamento entre linhas e colunas */
 }
 
-.litet-feature-item {
+.multikids-feature-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.litet-feature-icon {
+.multikids-feature-icon {
     width: 100%;
-    max-width: 90px; /* Ajuste conforme o tamanho original do ícone */
+    max-width: 90px; /* Ajuste este valor dependendo do tamanho que você exportou os ícones redondos */
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.litet-feature-text {
-    margin-top: 15px;
-    color: #EE5170; /* Rosa correspondente aos ícones */
-    font-size: 16px;
-    font-weight: 400;
+.multikids-feature-text {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 700; /* Texto em negrito */
     line-height: 1.3;
-    text-transform: uppercase;
-    max-width: 200px;
+    text-transform: uppercase; /* Força tudo a ficar em maiúsculo */
 }
 
-/* Ajustes Desktop */
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
 @media screen and (min-width: 991px) {
-    .litet-features-section {
+    .multikids-features-section {
+        padding: 80px 40px;
         max-width: 1920px; 
         margin: auto;
-        padding: 100px 80px;
     }
 
-    .litet-features-container {
-        /* Desktop: 4 colunas em linha */
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
+    .multikids-features-container {
+        /* Desktop: 5 colunas distribuídas igualmente */
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px; /* Reduz o gap pois as colunas já dividem o espaço bem */
     }
 
-    .litet-feature-icon {
-        max-width: 169px;
-    }
-
-    .litet-feature-text {
-        font-size: 22px;
-        max-width: 250px;
-    }
-}
-/* =========================================
-   SEÇÃO: CRESCE JUNTO COM SEU BEBÊ
-   ========================================= */
-
-.litet-growth-section {
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    background-color: #FFFFFF;
-    padding: 40px 0px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Evita rolagem horizontal caso a imagem vaze */
-}
-
-.litet-growth-wrapper {
-    width: 100%;
-    max-width: 1920px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.litet-growth-text {
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.litet-growth-title {
-    color: #EE5170; /* Rosa Litet */
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.litet-growth-desc {
-    color: #736DA6; /* Tom de roxo/cinza do texto */
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-.litet-growth-desc strong {
-    font-weight: 700;
-}
-
-.litet-growth-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.litet-growth-img {
-    width: 100%;
-    height: auto;
-    max-width: 430px; /* Limite para o mobile não estourar */
-}
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 991px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    .litet-growth-section {
-        max-width: 1920px;
-        margin: auto;
-        padding: 0px;
-    }
-
-    .litet-growth-wrapper {
-        /* No desktop, inverte a ordem: texto vai para a direita e imagem para a esquerda */
-        flex-direction: row-reverse; 
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .litet-growth-text {
-        width: 45%;
-        margin-bottom: 0;
-        padding-left: 20px;
-        /* Posiciona o texto um pouco mais para cima para alinhar como no mockup */
-        margin-top: -250px; 
-    }
-
-    .litet-growth-title {
-        font-size: 32px;
-    }
-
-    .litet-growth-desc {
-        font-size: 22px;
-        max-width: 550px; /* Evita que o texto fique muito largo */
-    }
-
-    .litet-growth-image-container {
-        width: 55%;
-        justify-content: flex-start;
-    }
-
-    .litet-growth-img {
-        min-width: 190%; 
-    }
-}
-/* =========================================
-   SEÇÃO: FECHAMENTO INTELIGENTE
-   ========================================= */
-
-.litet-folding-section {
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    background-color: #6C6398; /* Roxo da Litet */
-    position: relative;
-    overflow: hidden;
-    padding-top: 50px; /* Espaço para o texto no mobile */
-}
-
-.litet-folding-wrapper {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.litet-folding-content {
-    text-align: left;
-    width: 100%;
-    padding: 0 30px;
-    margin-bottom: 20px;
-    z-index: 2; /* Mantém o texto acima das imagens se houver sobreposição */
-}
-
-.litet-folding-title {
-    color: #FAE400; /* Amarelo Litet */
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
-
-.litet-folding-desc {
-    color: #FDEDDD;
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-.litet-folding-desc strong {
-    font-weight: 700;
-}
-
-.litet-folding-bg-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-}
-
-.litet-folding-car-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.litet-folding-stroller-img {
-    width: 100%;
-    max-width: 420px; /* Tamanho do carrinho fechado no mobile */
-    height: auto;
-    z-index: 3;
-    position: relative;
-    margin-top: -160px; /* Puxa o carrinho para cima, sobrepondo a foto do carro */
-    margin-bottom: 20px;
-}
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 991px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-
-    .litet-folding-section {
-        max-width: 1920px;
-        margin: auto;
-        padding: 0;
-        min-height: 600px;
-        display: flex;
-        align-items: center;
-    }
-
-    .litet-folding-wrapper {
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 80px;
-        min-height: 1000px;
-    }
-
-    .litet-folding-content {
-        width: 45%; /* Texto ocupa quase metade da tela na esquerda */
-        padding: 0;
-        margin-bottom: 0;
-        margin-top: -400px; /* Sobe um pouco o texto para alinhar com o design */
-        margin-left: 10%; /* Dá um espaço entre o texto e a foto do carro */
-    }
-
-    .litet-folding-title {
-        font-size: 36px;
-    }
-
-    .litet-folding-desc {
-        font-size: 22px;
-        max-width: 480px;
-    }
-
-    .litet-folding-bg-container {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 65%; /* Imagem do carro preenche a direita */
-        height: 100%;
-    }
-
-    .litet-folding-car-img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* Garante que a imagem preencha a altura sem distorcer */
-        object-position: right bottom;
-        
-    }
-
-    .litet-folding-stroller-img {
-        position: absolute;
-        bottom: 0;
-        left: 45%; /* Posiciona o carrinho no meio, sobrepondo o fundo e a foto */
-        transform: translateX(-50%);
-     
-        margin: 0;
-        max-width: 589px;
-    }
-}
-@media screen and (min-width: 991px) and (max-width: 1800px) {
-        .litet-folding-content {
-            margin-left: 50px;
-            margin-top: -550px;
-        }
-        .litet-folding-desc {
-            max-width: 450px;
-        }
-        .litet-folding-content {
-            width: 60%;
-        }
-}
-@media screen and (min-width: 991px) and (max-width: 1700px) {
-        .litet-folding-content {
-            margin-top: -370px;
-        }
-        .litet-folding-car-img {
-            max-width: 860px;
-            object-position: right bottom;
-            margin-right: -140px;
-        }
-        .litet-folding-wrapper {
-            min-height: 900px;
-        }
-        .litet-folding-desc {
-            max-width: 450px;
-        }
-        .litet-folding-stroller-img {
-            left: 48%;
-        }
-  }
-/* =========================================
-   SEÇÃO: MÁXIMO ACONCHEGO E ERGONOMIA
-   ========================================= */
-
-.litet-comfort-section {
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    background-color: #FFFFFF;
-    padding: 50px 0px 0px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.litet-comfort-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.litet-comfort-text {
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.litet-comfort-title {
-    color: #6C6398; /* Roxo da Litet */
-    font-size: 26px;
-    font-weight: 800;
-    margin-bottom: 15px;
-    line-height: 1.2;
-}
-
-.litet-comfort-desc {
-    color: #E95273; /* Rosa da Litet */
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 500;
-    max-width: 350px;
-}
-
-.litet-comfort-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.litet-comfort-img {
-    width: 100%;
-    height: auto;
-    max-width: 450px; /* Controle do tamanho da imagem no mobile */
-}
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 991px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    .litet-comfort-section {
-        max-width: 1920px;
-        margin: auto;
-        padding: 0px;
-    }
-
-    .litet-comfort-wrapper {
-        /* Inverte a ordem: o texto (que vem primeiro no HTML) vai para a direita */
-        flex-direction: row-reverse; 
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .litet-comfort-text {
-        width: 40%;
-        margin-bottom: 0;
-        padding-left: 40px; /* Dá um respiro entre a imagem e o texto */
-    }
-
-    .litet-comfort-title {
-        font-size: 36px;
-    }
-
-    .litet-comfort-desc {
-        font-size: 22px;
-        max-width: 400px;
-    }
-
-    .litet-comfort-image-container {
-        width: 60%;
-        justify-content: flex-start; /* Alinha a imagem do carrinho à esquerda */
-    }
-
-    .litet-comfort-img {
-        min-width: 140%;
-        /* Um pequeno ajuste negativo se quiser que a imagem comece bem no limite da tela esquerda */
-        margin-left: -200px; 
-    }
-}
-/* =========================================
-   SEÇÃO: VÁRIAS FORMAS DE CUIDAR
-   ========================================= */
-
-.litet-versatile-section {
-    position: relative;
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    background-color: #EE5170; /* Fundo de segurança */
-    display: flex;
-    justify-content: center;
-}
-
-.litet-versatile-bg {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* O wrapper fica absoluto por cima da imagem para posicionar o texto */
-.litet-versatile-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo no limite de 1200px */
-}
-
-.litet-versatile-content {
-    width: 100%;
-    max-width: 1200px; /* Mantém o alinhamento com as outras seções */
-    padding: 40px 30px;
-    padding-top: 80px;
-    text-align: left;
-}
-
-.litet-versatile-title {
-    color: #FAE400; /* Amarelo Litet */
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.litet-versatile-desc {
-    color: #FDEDDD;
-    font-size: 16px;
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-.litet-versatile-desc strong {
-    font-weight: 700;
-}
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 991px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    .litet-versatile-section {
-        max-width: 1920px;
-        margin: auto;
-    }
-    .litet-versatile-content {
-        padding: 80px 80px;
-        padding-left: 200px;
-        /* Limita a largura do texto para ele não invadir a foto da direita */
-        max-width: 950px; 
-        margin-right: auto; /* Garante que o texto fique alinhado à esquerda dentro do wrapper */
-    }
-
-    .litet-versatile-title {
-        font-size: 36px;
+    .multikids-feature-icon {
+        max-width: 160px; /* Ícones um pouco maiores no desktop */
         margin-bottom: 20px;
-        margin-top: 50px;
     }
 
-    .litet-versatile-desc {
-        font-size: 20px;
+    .multikids-feature-text {
+        font-size: 30px;
     }
 }
-@media screen and (min-width: 991px) and (max-width: 1800px) {
-    .litet-versatile-content {
-        padding-left: 100px;
-        max-width: 750px;
-        padding-top: 30px;
+@media screen and (min-width: 991px) and (max-width: 1300px){
+    .multikids-features-container {
+        /* Desktop: 5 colunas distribuídas igualmente */
+        grid-template-columns: repeat(3, 2fr);
     }
-    .litet-versatile-title {
-        margin-top: 20px;
-    }
+}
+/* =========================================
+   SECÇÃO: PROTEÇÃO I-SIZE
+   ========================================= */
+
+.multikids-protection-section {
+    width: 100%;
+    background-color: #FFFFFF; /* Fundo branco de segurança */
+    max-width: 430px; /* Trava do mobile */
+    margin: auto;
+    /* Imagem de fundo contendo a onda roxa - Mobile */
+    background-image: url('assets/images/isize-bg-mobile.png'); 
+    background-size: 100% 100%; /* Estica para preencher o bloco */
+    background-position: top center;
+    background-repeat: no-repeat;
     
-}
-@media screen and (min-width: 991px) and (max-width: 1500px) {
-    .litet-versatile-content {
-        padding-left: 80px;
-        max-width: 650px;
-        padding-top: 50px;
-    }
-    .litet-versatile-title {
-        margin-top: 0px;
-    }
-}
-@media screen and (min-width: 991px) and (max-width: 1030px) {
-    .litet-versatile-title{
-        font-size: 26px;
-        margin-bottom: 10px;
-    }
-        .litet-versatile-desc {
-            font-size: 14px;
-            max-width: 400px;
-        }
-}
-/* =========================================
-   SEÇÃO: COBERTURA COMPLETA
-   ========================================= */
-
-.litet-canopy-section {
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    background-color: #FBEBE0; /* Fundo bege clarinho da seção */
-    padding: 50px 0px 0px; /* Sem padding embaixo para a imagem encostar na borda, se necessário */
+    padding: 60px 30px 20px;
     display: flex;
     justify-content: center;
     overflow: hidden;
 }
 
-.litet-canopy-wrapper {
+.multikids-protection-wrapper {
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -761,43 +293,53 @@ html, body, * {
     align-items: center;
 }
 
-.litet-canopy-text {
-    text-align: center; /* Centralizado no mobile */
-    margin-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
+.multikids-protection-text {
     width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    margin-top: 40px; /* Dá um respiro em relação à onda roxa do topo no mobile */
 }
 
-.litet-canopy-title {
-    color: #E95273; /* Rosa Litet */
-    font-size: 28px;
-    font-weight: 700;
+.multikids-protection-title-box {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a estrela e o texto */
     margin-bottom: 15px;
-    line-height: 1.1;
+    margin-top: 30px;
 }
 
-.litet-canopy-desc {
-    color: #6C6398; /* Roxo/cinza do texto */
+.multikids-star-icon {
+    width: 35px; /* Tamanho da estrela */
+    height: auto;
+}
+
+.multikids-protection-title {
+    color: #9664A0; /* Roxo/Lilás Multi Kids */
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.multikids-protection-desc {
+    color: #9664A0; 
     font-size: 16px;
     line-height: 1.4;
     font-weight: 500;
 }
 
-.litet-canopy-desc strong {
-    font-weight: 700;
+.multikids-protection-desc strong {
+    font-weight: 800;
 }
 
-.litet-canopy-image-container {
+.multikids-protection-image-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.litet-canopy-img {
+.multikids-protection-img {
     width: 100%;
     height: auto;
-    max-width: 450px; /* Ajuste para não ficar gigante no tablet/mobile */
+    max-width: 400px; /* Limite do tamanho da cadeira no mobile */
     display: block;
 }
 
@@ -805,340 +347,532 @@ html, body, * {
    MEDIA QUERY DESKTOP (> 991px)
    ========================================= */
 @media screen and (min-width: 991px) {
-    .litet-canopy-section {
+    .multikids-protection-section {
+        padding: 80px;
         max-width: 1920px;
         margin: auto;
-        padding: 0px;
-        padding-top: 30px;
+        /* Imagem de fundo contendo a onda roxa - Desktop */
+        background-image: url('assets/images/isize-bg-desktop.png'); 
     }
 
-    .litet-canopy-wrapper {
-        /* Inverte a ordem no desktop: Imagem vai para a esquerda, Texto para a direita */
-        flex-direction: row-reverse; 
-        align-items: center;
+    .multikids-protection-wrapper {
+        /* No Desktop, os elementos ficam lado a lado */
+        flex-direction: row; 
         justify-content: space-between;
+        align-items: center;
     }
 
-    .litet-canopy-text {
-        width: 40%;
-        text-align: left; /* Alinhado à esquerda no desktop */
+    .multikids-protection-image-container {
+        width: 50%; /* A cadeira ocupa a metade esquerda */
+        justify-content: flex-start;
+    }
+
+    .multikids-protection-img {
+        min-width: 1040px; /* Cadeira maior no desktop */
+        margin-left: -40%; /* Ajuste fino caso precise encostar mais na borda */
+    }
+
+    .multikids-protection-text {
+        width: 45%; /* O texto ocupa a metade direita */
+        margin-top: 0;
         margin-bottom: 0;
-        padding-left: 20px;
-        padding-top: 150px;
+        padding-left: 30px;
     }
 
-    .litet-canopy-title {
-        font-size: 36px;
-        margin-bottom: 20px;
+    .multikids-star-icon {
+        width: 45px; /* Estrela maior no desktop */
     }
 
-    .litet-canopy-desc {
-        font-size: 22px;
-        max-width: 450px;
+    .multikids-protection-title {
+        font-size: 48px;
     }
 
-    .litet-canopy-image-container {
-        width: 60%;
-        justify-content: flex-start; /* Alinha a imagem à esquerda da sua coluna */
+    .multikids-protection-desc {
+        font-size: 26px;
+        max-width: 550px;
     }
-
-    .litet-canopy-img {
-        min-width: 120%;
-        margin-left: -100px; /* Puxa o coração um pouco mais pra beirada, se necessário */
+}
+@media screen and (min-width: 991px) and (max-width: 1200px){
+    .multikids-protection-img {
+        min-width: 840px; /* Cadeira maior no desktop */
+        margin-left: -40%; /* Ajuste fino caso precise encostar mais na borda */
     }
 }
 /* =========================================
-   SEÇÃO: TRAVEL SYSTEM PRONTO PARA USAR
+   SEÇÃO: SEGURANÇA EM PRIMEIRO LUGAR
    ========================================= */
 
-.litet-travel-section {
-    position: relative;
-    max-width: 430px;
+.multikids-safety-section {
+    max-width: 430px; /* Trava do mobile */
     margin: auto;
     width: 100%;
-    background-color: #FFFFFF; /* Garante fundo branco nas bordas */
+    background-color: #FFFFFF;
+    padding: 60px 20px 40px;
     display: flex;
     justify-content: center;
+    overflow: hidden; /* Evita que as ondas amarelas criem barra de rolagem horizontal */
 }
 
-.litet-travel-bg {
+.multikids-safety-wrapper {
+    width: 100%;
+    max-width: 1400px;
+}
+
+/* O fundo roxo em formato de pílula (vertical no mobile) */
+.multikids-safety-box {
+    background-color: #877795; /* Roxo/Lilás Multi Kids */
+    border-radius: 150px; /* Deixa as bordas totalmente arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px 80px; /* Padding inferior para dar respiro ao texto */
+    margin-top: 50px; /* Empurra a caixa para baixo para a cadeira vazar no topo */
+}
+
+.multikids-safety-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Margem negativa puxa a cadeira para fora da caixa roxa no topo */
+    margin-top: -60px; 
+    margin-bottom: 20px;
+}
+
+.multikids-safety-img {
+    width: 120%; /* Permite que as ondas amarelas vazem para as laterais */
+    max-width: 450px;
+    height: auto;
+    display: block;
+}
+
+.multikids-safety-text {
+    width: 100%;
+    max-width: 320px;
+    text-align: left;
+}
+
+.multikids-safety-title-box {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre o ícone e o título */
+    margin-bottom: 15px;
+}
+
+.multikids-safety-icon {
+    width: 50px;
+    height: auto;
+}
+
+.multikids-safety-title {
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.multikids-safety-desc {
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.multikids-safety-desc strong {
+    font-weight: 800;
+}
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px) - ATUALIZADO
+   ========================================= */
+@media screen and (min-width: 991px) {
+
+    .multikids-safety-section {
+        max-width: 1920px;
+        margin: auto;
+        padding: 250px 80px;
+    }
+
+    .multikids-safety-box {
+        flex-direction: row-reverse; 
+        border-radius: 200px;
+        padding: 0 80px 0 60px;
+        margin-top: 0;
+        min-height: 400px; /* Altura mínima da caixa roxa */
+        align-items: center;
+    }
+
+    .multikids-safety-image-container {
+        width: 50%; /* Deixa metade do espaço para o texto */
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        /* Puxa a imagem para cima e para baixo proporcionalmente ao novo tamanho */
+        margin-top: -220px; 
+        margin-bottom: -180px; 
+        z-index: 5;
+    }
+
+    .multikids-safety-img {
+        width: 900px; /* Força o tamanho desejado */
+        max-width: none; /* Remove qualquer trava de segurança anterior */
+        height: auto;
+        /* Puxa a imagem para a direita para ela vazar da pílula sem cobrir o texto */
+        margin-right: -150px; 
+    }
+
+    .multikids-safety-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        width: 45%;
+        max-width: 550px;
+        position: relative;
+        z-index: 10; /* Garante que o texto fique legível */
+    }
+
+    .multikids-safety-title {
+        font-size: 48px;
+    }
+
+    .multikids-safety-desc {
+        font-size: 26px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1400px){
+    .multikids-safety-img {
+        width: 700px;
+        max-width: none;
+        height: auto;
+        margin-right: -150px;
+    }
+}
+/* =========================================
+   SEÇÃO: INSTALAÇÃO UNIVERSAL
+   ========================================= */
+
+.multikids-install-section {
+    max-width: 430px; /* Trava do mobile */
+    margin: auto;
+    position: relative;
+    width: 100%;
+    background-color: #4A4A4A; /* Fundo escuro de segurança */
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.multikids-install-bg {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* O wrapper cobre 100% da imagem para posicionarmos o texto em cima */
-.litet-travel-wrapper {
+/* Wrapper em position absolute para cobrir toda a foto de fundo */
+.multikids-install-wrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     display: flex;
-    /* No mobile, o texto fica na parte de baixo */
+    justify-content: center; /* Centraliza o limite do conteúdo */
+}
+
+/* Container que respeita o limite máximo de 1200px do seu layout */
+.multikids-install-content {
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
     flex-direction: column;
+    /* No mobile, joga o bloco para baixo e centraliza */
     justify-content: flex-end; 
     align-items: center;
+    padding-bottom: 10%; /* Dá um respiro da borda inferior da foto no celular */
 }
 
-.litet-travel-content {
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 30px 55%; /* O padding inferior em % ajuda o texto a subir e ficar dentro do coração roxo no mobile */
-    text-align: left;
+/* A Caixa que recebe a imagem do fundo roxo */
+.multikids-install-box {
+    /* MUDAR AQUI: Caminho para a sua imagem PNG do fundo roxo */
+    background-image: url('assets/images/fundo-roxo-texto.png'); 
+    background-size: 100% 100%; /* Estica a mancha roxa para caber exatamente no tamanho do texto */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 90%;
+    max-width: 400px; /* Largura máxima da caixa no mobile */
+    /* Padding interno: ajuste esses valores caso o texto fique muito colado na borda do PNG roxo que você exportar */
+    padding: 40px 40px; 
+    display: flex;
+    flex-direction: column;
 }
 
-.litet-travel-title {
-    color: #FAE400; /* Amarelo Litet */
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.2;
+.multikids-install-title-row {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a estrela e o título */
     margin-bottom: 15px;
 }
 
-.litet-travel-desc {
+.multikids-install-icon {
+    width: 40px; /* Ajuste o tamanho da sua estrela */
+    height: auto;
+}
+
+.multikids-install-title {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.multikids-install-desc {
     color: #FFFFFF;
     font-size: 16px;
     line-height: 1.4;
     font-weight: 500;
-    max-width: 320px; /* Evita que o texto vase para fora da forma roxa no mobile */
-}
-
-.litet-travel-desc strong {
-    font-weight: 700;
 }
 
 /* =========================================
    MEDIA QUERY DESKTOP (> 991px)
    ========================================= */
 @media screen and (min-width: 991px) {
-    .litet-travel-section {
+    .multikids-install-section {
         max-width: 1920px;
         margin: auto;
     }
-    .litet-travel-wrapper {
-        justify-content: center; /* Centraliza verticalmente no desktop */
+    .multikids-install-content {
+        /* No desktop, centraliza verticalmente e alinha a caixa à esquerda */
+        justify-content: center; 
+        align-items: flex-start;
+        padding-bottom: 0;
+        padding-left: 80px; /* Margem esquerda padrão das outras seções */
     }
 
-    .litet-travel-content {
-        padding: 0 80px; /* Margem lateral padrão do desktop */
-        margin-right: auto; /* Alinha a caixa de texto à esquerda dentro da área limite de 1200px */
+    .multikids-install-box {
+        max-width: 540px; /* Aumenta a caixa roxa no computador */
+        min-height: 340px;
+        padding: 60px 60px; /* Dá mais respiro interno */
     }
 
-    .litet-travel-title {
-        font-size: 36px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        margin-left: 20%;
+    .multikids-install-icon {
+        width: 45px;
     }
 
-    .litet-travel-desc {
-        margin-left: 20%;
-        font-size: 22px;
-        max-width: 440px; /* Expande o limite do texto no desktop */
+    .multikids-install-title {
+        font-size: 48px;
     }
-}
-@media screen and (min-width: 991px) and (max-width: 1600px) {
 
-    .litet-travel-title {
-        margin-top: 60px;
-        margin-left: 12%;
-    }
-    .litet-travel-desc {
-        margin-left: 12%;
-        max-width: 380px;
-        font-size: 18px;
-    }
-}
-@media screen and (min-width: 991px) and (max-width: 1350px) {
-        .litet-travel-title {
-        margin-top: 60px;
-        margin-left: 7%;
-    }
-    .litet-travel-desc {
-        margin-left: 7%;
-        max-width: 360px;
-        font-size: 18px;
-    }
-}
-@media screen and (max-width: 350px) {
-    .litet-travel-content {
-        padding: 0 30px 45%; /* O padding inferior em % ajuda o texto a subir e ficar dentro do coração roxo no mobile */
-
-    }
-}
-@media screen and (min-width: 991px) and (max-width: 1030px) {
-    .litet-travel-title {
+    .multikids-install-desc {
         font-size: 26px;
-        margin-left: 10%;
-        margin-bottom: 5px;
     }
-    .litet-travel-desc {
-        
-        margin-left: 10%;
-        max-width: 240px;
-        font-size: 13px;
-        }
 }
 /* =========================================
-   SEÇÃO: ESTABILIDADE E ESPAÇO
+   SEÇÃO: DETALHES (CUIDADO E PRATICIDADE)
    ========================================= */
 
-.litet-details-section {
-    width: 100%;
-    max-width: 430px;
+.multikids-details-section {
+    max-width: 430px; /* Trava do mobile */
     margin: auto;
-    
-    /* Substituímos a cor sólida pelas propriedades de imagem de fundo para o Mobile */
-    background-color: #FFFFFF; /* Cor de segurança caso a imagem demore a carregar */
-    background-image: url('assets/images/cora-bg-mobile.png');
-    background-size: contain; /* Faz a imagem cobrir toda a área da seção */
-    background-position: center center;
-    background-repeat: no-repeat;
-    
-    padding: 60px 30px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     overflow: hidden;
 }
 
-.litet-details-wrapper {
+.multikids-details-wrapper {
     width: 100%;
-    max-width: 1450px;
+    max-width: 1920px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
 }
-@media screen and (min-width: 991px) and (max-width: 1400px) {
-    .litet-details-wrapper {
-    width: 100%;
-    max-width: 950px;
-    }
-}
-.litet-details-item {
-    width: 100%;
+
+.multikids-detail-item {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-.litet-details-title {
-    color: #6C6398; /* Roxo Litet */
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1.2;
+.multikids-detail-title-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 15px;
-    text-align: center;
 }
 
-.litet-details-desc {
-    color: #6C6398; /* Roxo/Cinza Litet */
-    font-size: 16px;
+.multikids-detail-icon {
+    width: 50px; /* Tamanho dos ícones laranjas */
+    height: auto;
+}
+
+.multikids-detail-title {
+    color: #9664A0; /* Roxo/Lilás Multi Kids */
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.multikids-detail-desc {
+    color: #9664A0;
+    font-size: 15px;
     line-height: 1.4;
     font-weight: 500;
+}
+
+.multikids-detail-desc strong {
+    font-weight: 800;
+}
+
+/* --- ORDEM E ALINHAMENTO NO MOBILE --- */
+
+.multikids-wave-icon {
+    width: 300px;
+    margin: -40px -140px 20px 0px; /* Ajuste fino para posicionar a onda no mobile */
+    display: block;
+}
+
+.text-cuidado {
+    order: 1;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.img-almofada {
+    order: 2;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.img-almofada img { max-width: 380px; }
+
+.img-fivela {
+    order: 3;
+    align-items: center;
+    position: relative;
+    z-index: 5; /* Garante que fique por cima da cadeira */
+    margin-bottom: -60px; /* Sobrepõe a cadeira de baixo */
+}
+
+.img-fivela img { max-width: 300px; margin-left: -150px;margin-bottom: -20px;}
+
+.img-cadeira {
+    order: 4;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+}
+
+.img-cadeira img { max-width: 350px; }
+
+.text-praticidade {
+    order: 5;
+    align-items: center;
     text-align: center;
 }
 
-.litet-details-img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    margin: 0 auto;
-    display: block;
-}
 
 /* =========================================
    MEDIA QUERY DESKTOP (> 991px)
    ========================================= */
 @media screen and (min-width: 991px) {
-    .litet-details-section {
+    .multikids-details-section {
+        padding: 100px 0px;
         max-width: 1920px;
         margin: auto;
-        padding: 100px 80px;
-        
-        /* Trocamos a imagem de fundo para a versão Desktop */
-        background-image: url('assets/images/cora-bg.png'); /* Ajuste a extensão se necessário */
-        background-size: cover;
     }
 
-    /* Transformamos o layout em um Grid de 2 colunas */
-    .litet-details-wrapper {
+    /* Mágica do Grid: Mapeia onde cada item vai ficar */
+    .multikids-details-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        /* Áreas nomeadas para posicionar exatamente onde queremos */
-        grid-template-areas: 
-            "texto1 img2"
-            "img1   img2"
-            "img1   texto2";
-        gap: 20px;
+        grid-template-areas:
+            "almofada cuidado"
+            "fivela   cadeira"
+            "praticidade cadeira";
+        gap: 20px 40px;
         align-items: center;
     }
 
-    /* Alinhamentos dos textos no Desktop */
-    .litet-details-title, 
-    .litet-details-desc {
-        text-align: left;
+    .multikids-detail-item {
+        order: unset; /* Remove a ordem do mobile */
+        margin-bottom: 0;
     }
 
-    /* Distribuindo os itens nas áreas do Grid */
-    .text-estabilidade { 
-        grid-area: texto1; 
-        align-self: end; /* Empurra o texto para baixo, perto da imagem dele */
+    /* Posicionando cada item no seu lugar do Grid */
+    .text-cuidado { 
+        grid-area: cuidado; 
+        align-items: flex-start;
+        padding-left: 20px;
+        position: relative; /* Necessário para a onda absoluta */
+    }
+
+    .multikids-wave-icon {
+        position: absolute;
+        top: -260px;
+        right: -20px;
+        margin: 0;
+        width: 550px;
+    }
+
+    .img-almofada { 
+        grid-area: almofada; 
+        align-items: self-end; 
+    }
+    .img-almofada img { max-width: 600px; }
+
+    .img-fivela { 
+        grid-area: fivela; 
+        align-items: flex-end; /* Joga a fivela para o canto direito da sua coluna */
+        margin-right: -120px; /* Faz a fivela vazar para a coluna da direita */
+        margin-bottom: -150px; /* Joga um pouco para baixo */
+    }
+    .img-fivela img { 
+        max-width: 500px; 
+        margin-right: -150px;
+    }
+
+    .img-cadeira { 
+        grid-area: cadeira; 
+        align-items: flex-start; 
+        margin-top: -100px; /* Puxa a cadeira mais para cima, perto do texto 1 */
+    }
+    .img-cadeira img { max-width: 500px; margin-left: 30px; }
+
+    .text-praticidade { 
+        grid-area: praticidade; 
+        align-items: flex-end; /* Alinha o texto à direita da sua coluna */
+        text-align: right; 
         padding-right: 40px;
     }
     
-    .img-estabilidade { 
-        grid-area: img1; 
-        align-self: start; 
-    }
-    
-    .img-espaco { 
-        grid-area: img2; 
-        /* Margin negativo pode ser usado para subir a imagem da direita e dar o efeito do design */
-        margin-top: -60px; 
-    }
-    
-    .text-espaco { 
-        grid-area: texto2; 
-        align-self: start; /* Fica no topo da sua célula, logo abaixo da imagem 2 */
-        padding-left: 40px; /* Dá um respiro da imagem da esquerda */
+    .text-praticidade .multikids-detail-title-box {
+        justify-content: flex-end; /* Joga o ícone e título para a direita */
     }
 
-    .litet-details-title {
-        font-size: 36px;
-    }
-
-    .litet-details-desc {
-        font-size: 22px;
-    }
-    
-    .litet-details-img {
-        min-width: 80%;
-    }
+    /* Aumentando as fontes no Desktop */
+    .multikids-detail-title { font-size: 48px; }
+    .multikids-detail-desc { font-size: 26px; }
 }
 /* =========================================
-   SECÇÃO: DESIGN QUE ACOLHE
+   SEÇÃO: VIAGENS MAIS TRANQUILAS
    ========================================= */
 
-.litet-design-section {
+.multikids-travel-section {
     width: 100%;
-    background-color: #FFFFFF; /* Cor de segurança */
-    max-width: 430px; 
-    margin: auto;
-    /* Imagem de fundo com a onda rosa para o Mobile */
-    background-image: url('assets/images/design-bg-mobile.png'); 
-    background-size: 100% 100%; /* Estica para preencher toda a área sem cortar */
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    
-    /* Sem padding na parte inferior (0) para o carrinho encostar à base */
-    padding: 50px 30px 0; 
+    background-color: #FFFFFF;
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     overflow: hidden;
 }
 
-.litet-design-wrapper {
+.multikids-travel-wrapper {
     width: 100%;
     max-width: 1200px;
     display: flex;
@@ -1146,225 +880,298 @@ html, body, * {
     align-items: center;
 }
 
-.litet-design-text {
+.multikids-travel-img-main-container {
     width: 100%;
-    text-align: left;
+    display: flex;
+    justify-content: center;
+    /* Margem negativa puxa a foto do bebê para cima dessa imagem no Mobile */
+    margin-bottom: -50px; 
+}
+
+.multikids-travel-img-main {
+    width: 100%;
+    max-width: 450px; /* Tamanho controlado para o mobile */
+    height: auto;
+    display: block;
+}
+
+.multikids-travel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 5; /* Garante que o bloco fique por cima da imagem principal */
+}
+
+.multikids-travel-img-circle-container {
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
-.litet-design-title {
-    color: #6C6398; /* Roxo Litet */
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.2;
+.multikids-travel-img-circle {
+    width: 100%;
+    max-width: 280px; /* Tamanho da foto redonda no mobile */
+    height: auto;
+    margin-left: -40%;
+}
+
+.multikids-travel-text {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; /* Centraliza a caixa principal */
+    text-align: left;
+}
+.multikids-travel-title-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinha o conteúdo interno ao centro */
+    gap: 15px;
+    
+    /* O SEGREDO ESTÁ AQUI 👇 */
+    width: fit-content; /* A caixa vai abraçar apenas o tamanho do ícone + texto */
+    margin: 0 auto 20px auto; /* Centraliza a própria caixa de forma absoluta no meio da tela */
+}
+
+.multikids-travel-icon {
+    width: 40px; /* Tamanho do ícone de carrinho */
+    height: auto;
+}
+
+.multikids-travel-title {
+    color: #9664A0; /* Roxo/Lilás Multi Kids */
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.multikids-travel-desc {
+    color: #9664A0;
+    font-size: 15px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   MEDIA QUERY DESKTOP (> 991px)
+   ========================================= */
+@media screen and (min-width: 991px) {
+    .multikids-travel-title-box {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        width: fit-content; /* A caixa vai abraçar apenas o tamanho do ícone + texto */
+        margin: 0;
+    }
+    .multikids-travel-section {
+        padding: 100px 80px;
+    }
+
+    .multikids-travel-wrapper {
+        flex-direction: row; /* Coloca os elementos lado a lado */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .multikids-travel-img-main-container {
+        width: 55%; /* Ocupa a metade esquerda */
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+
+    .multikids-travel-img-main {
+        min-width: 120%; 
+        /* Pode usar margem negativa aqui se precisar encostar a imagem mais na borda esquerda */
+        margin-left: -25%; 
+    }
+
+    .multikids-travel-content {
+        width: 45%; /* Ocupa a metade direita */
+        align-items: flex-start; /* Alinha o conteúdo à esquerda da sua coluna */
+        padding-left: 20px;
+    }
+
+    .multikids-travel-img-circle-container {
+        /* Margem negativa puxa a foto redonda para a esquerda, sobrepondo o fundo amarelo da cadeira */
+        margin-left: -120px; 
+        margin-bottom: 40px;
+    }
+
+    .multikids-travel-img-circle {
+        max-width: 500px; /* Foto do bebê maior no desktop */
+        margin-left: 0%;
+    }
+
+    .multikids-travel-text {
+        max-width: 600px;
+    }
+
+    .multikids-travel-icon {
+        width: 51px;
+    }
+
+    .multikids-travel-title {
+        font-size: 48px;
+    }
+
+    .multikids-travel-desc {
+        margin-top: 15px;
+        font-size: 26px;
+    }
+}
+/* =========================================
+   SEÇÃO: LIMPEZA PRÁTICA
+   ========================================= */
+
+.multikids-cleaning-section {
+    max-width: 430px; /* Trava do mobile */
+    margin: auto;
+    width: 100%;
+    /* Fundo Roxo de Background - Mobile */
+    background-image: url('assets/images/bg-limpeza-mobile.png');
+    background-size: 100% 100%; /* Estica para preencher a seção */
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    
+    background-color: #FFFFFF; /* Cor de segurança onde não há imagem */
+    padding: 40px 30px 60px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.multikids-cleaning-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necessário para posicionar elementos flutuantes depois */
+}
+
+/* Onda Amarela */
+.multikids-cleaning-wave {
+    width: 250px;
+    align-self: flex-start; /* Joga a onda para o canto esquerdo */
+    margin-bottom: 20px;
+    margin-left: -30px;
+}
+
+/* Imagem da Cadeira */
+.multikids-cleaning-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    z-index: 2; /* Fica acima do fundo roxo */
+}
+
+.multikids-cleaning-img {
+    width: 100%;
+    max-width: 380px; /* Limite do tamanho da cadeira no celular */
+    height: auto;
+    display: block;
+}
+
+/* Bloco de Texto */
+.multikids-cleaning-text {
+    width: fit-content;
+    margin: 0 auto; /* Centraliza a caixa inteira na área roxa */
+    text-align: left;
+}
+
+.multikids-cleaning-title-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 15px;
 }
 
-.litet-design-desc {
-    color: #E95273; /* Rosa Litet */
+.multikids-cleaning-icon {
+    width: 40px;
+    height: auto;
+}
+
+.multikids-cleaning-title {
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.multikids-cleaning-desc {
+    color: #FFFFFF;
     font-size: 16px;
     line-height: 1.4;
     font-weight: 500;
 }
 
-.litet-design-desc strong {
-    font-weight: 700;
-}
-
-.litet-design-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.litet-design-img {
-    width: 100%;
-    height: auto;
-    max-width: 350px; /* Limita o tamanho do carrinho no ecrã mobile */
-    display: block;
+.multikids-cleaning-desc strong {
+    font-weight: 800;
 }
 
 /* =========================================
    MEDIA QUERY DESKTOP (> 991px)
    ========================================= */
 @media screen and (min-width: 991px) {
-    .litet-design-section {
-        max-width: 1920px; 
-        margin: auto;
-        padding: 80px 80px 0;
-        
-        /* Muda o fundo para a onda rosa na versão Desktop */
-        background-image: url('assets/images/design-bg-desktop.png'); 
-        background-size: cover;
-        min-height: 1000px;
-    }
-
-    .litet-design-wrapper {
-        flex-direction: row; /* Coloca o texto à esquerda e a imagem à direita */
-        justify-content: space-between;
-        align-items: start; /* Mantém o carrinho alinhado com a base */
-    }
-
-    .litet-design-text {
-        width: 45%;
-        margin-bottom: 120px; /* Empurra o texto mais para cima para alinhar perfeitamente com o espaço em branco */
-        padding-right: 40px;
-    }
-
-    .litet-design-title {
-        font-size: 36px;
-        margin-bottom: 20px;
-    }
-
-    .litet-design-desc {
-        font-size: 22px;
-        max-width: 480px;
-    }
-
-    .litet-design-image-container {
-        width: 55%;
-        justify-content: center;
-    }
-
-    .litet-design-img {
-        max-width: 900px; /* Carrinho maior no desktop */
-    }
-}
-/* =========================================
-   SEÇÃO FICHA TÉCNICA (LITET JAZZ)
-   ========================================= */
-
-/* --- BASE (MOBILE) --- */
-.litet-specs-section {
-    max-width: 430px;
-    margin: auto;
-    width: 100%;
-    background-color: #EE5170; /* Cor de fundo Rosa Litet */
-    padding: 40px 0px 60px 0px;
-    font-family: "elza", sans-serif;
-    box-sizing: border-box;
-}
-
-.specs-wrapper {
-    width: 100%;
-    max-width: 430px; /* Trava do mobile */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Container da Imagem */
-.specs-img-col {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.specs-img {
-    width: 100%;
-    max-width: 430px; /* Limite de tamanho no mobile */
-    height: auto;
-    display: block;
-}
-
-/* Coluna de Texto */
-.specs-text-col {
-    width: 100%;
-    text-align: center; /* Centralizado no mobile */
-    color: #FFFFFF; /* Texto branco padrão */
-}
-
-.specs-title {
-    color: #FFF000; /* Amarelo Litet */
-    font-size: 28px;
-    font-weight: 700;
-    margin: 0 0 20px 0;
-}
-
-.specs-details {
-    font-size: 15px;
-    line-height: 1.5;
-    font-weight: 400;
-    margin: 0;
-}
-
-/* Classe para destacar as chaves (ex: Marca:, Peso:) em Amarelo */
-.specs-highlight {
-    color: #FFF000;
-    font-weight: 700;
-}
-
-
-/* =========================================
-   MEDIA QUERY DESKTOP (> 991px)
-   ========================================= */
-@media screen and (min-width: 991px) {
-    
-    .litet-specs-section {
+    .multikids-cleaning-section {
         max-width: 1920px;
-        margin: auto;
-        padding: 80px 0;
-        display: flex;
-        justify-content: center;
+        min-height: 940px;
+        padding: 80px;
+        /* Troca para o Fundo Roxo versão Desktop */
+        background-image: url('assets/images/bg-limpeza-desktop.png');
     }
 
-    .specs-wrapper {
-        max-width: 1400px; /* Trava do desktop */
-        flex-direction: row; /* Coloca imagem e texto lado a lado */
-        align-items: center;
+    .multikids-cleaning-wrapper {
+        flex-direction: row; /* Coloca Imagem e Texto lado a lado */
         justify-content: space-between;
-        padding: 0 50px;
+        align-items: center; /* Alinha pelo centro vertical */
     }
 
-    .specs-img-col {
-        width: 55%; /* A imagem ocupa mais espaço */
+    /* A onda flutua pelo topo esquerdo sem atrapalhar o Grid */
+    .multikids-cleaning-wave {
+        position: absolute;
+        top: -20px;
+        left: -42%;
+        width: 550px;
         margin-bottom: 0;
-        justify-content: flex-start; /* Alinha a imagem à esquerda */
     }
 
-    .specs-img {
-        min-width: 1000px; /* Imagem grande no desktop */
-        /* Margem negativa caso a imagem precise encostar na borda da tela 
-           como parece no design de referência */
-        margin-left: -150px; 
+    /* Texto vai para a Esquerda */
+    .multikids-cleaning-text {
+        width: 50%;
+        order: 1; /* Força o texto a ser o 1º elemento da linha */
+        margin: 0;
+        padding-left: 180px; /* Afasta da borda esquerda para alinhar com o design */
+        padding-top: 120px; /* Desce um pouco para ficar centralizado na mancha roxa */
     }
 
-    .specs-text-col {
-        width: 45%;
-        text-align: right; /* Alinhado à direita conforme o design desktop */
-        padding-left: 20px;
-        padding-right: 50px; /* Afasta o texto da borda direita */
+    /* Cadeira vai para a Direita */
+    .multikids-cleaning-image-container {
+        width: 50%;
+        order: 2; /* Força a imagem a ser o 2º elemento */
+        justify-content: flex-end;
+        margin-bottom: -110px; /* Faz a base da cadeira "vazar" da mancha roxa por baixo */
     }
 
-    .specs-title {
-        font-size: 38px;
-        margin-bottom: 25px;
+    .multikids-cleaning-img {
+        min-width: 900px;
+        margin-right: -200px;
+        margin-top: -100px;
     }
 
-    .specs-details {
-        font-size: 18px;
-        line-height: 1.6;
+    /* Fontes Maiores */
+    .multikids-cleaning-icon {
+        width: 45px;
     }
-}
 
-/* Ajuste fino para telas intermediárias (Tablets/Laptops menores) */
-@media screen and (min-width: 991px) and (max-width: 1200px) {
-    .specs-img {
-        min-width: 700px !important;
-        margin-left: 0;
+    .multikids-cleaning-title {
+        font-size: 48px;
     }
-    .specs-text-col {
-        padding-right: 0;
-    }
-    .specs-details {
-        font-size: 16px;
-    }
-}
-@media screen and (min-width: 1200px) and (max-width: 1400px) {
-        .specs-img {
-        min-width: 900px !important;
-        margin-left: 0;
+
+    .multikids-cleaning-desc {
+        font-size: 26px;
     }
 }
