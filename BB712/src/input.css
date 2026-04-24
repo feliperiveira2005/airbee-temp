@@ -188,6 +188,7 @@ html, body, * {
         margin-top: 10px;
     }
 }
+
 /* =========================================
    SEÇÃO: ÍCONES DE BENEFÍCIOS MULTI KIDS
    ========================================= */
@@ -1173,5 +1174,111 @@ html, body, * {
 
     .multikids-cleaning-desc {
         font-size: 26px;
+    }
+}
+@media screen and (min-width: 991px) and (max-width: 1050px){
+    .multikids-hero-subtitle {
+        font-size: 25px;
+    }
+    .multikids-hero-title {
+        font-size: 70px;
+        margin-bottom: 5px;
+    }
+    .multikids-hero-desc {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .multikids-tag {
+        font-size: 20px;
+        padding: 8px 20px;
+    }
+    .multikids-feature-icon {
+        max-width: 120px;
+    }
+    .multikids-feature-text {
+         font-size: 20px;
+    }   
+    .multikids-protection-img {
+        min-width: 740px;
+    }
+    .multikids-protection-title {
+        font-size: 38px;
+    }
+    .multikids-protection-desc {
+        font-size: 20px;
+    }
+    .multikids-safety-section {
+        padding: 150px 40px;
+    }
+    .multikids-safety-img {
+        width: 600px;
+    }
+    .multikids-safety-title {
+        font-size: 38px;
+    }
+    .multikids-safety-desc {
+        font-size: 20px;
+    }
+    .multikids-install-title {
+        font-size: 38px;
+    }
+    .multikids-install-desc {
+        font-size: 20px;
+    }
+    .multikids-install-box {
+        max-width: 440px;
+        min-height: 300px;
+        padding: 60px 60px;
+    }
+    .img-almofada img {
+        max-width: 450px;
+    }
+    .multikids-wave-icon {
+        width: 340px;
+    }
+    .multikids-detail-title {
+        font-size: 38px;
+    }
+    .multikids-detail-desc {
+        font-size: 20px;
+    }
+    .img-cadeira img {
+        max-width: 450px;
+    }
+    .img-fivela img {
+        max-width: 400px;
+    }
+    .multikids-travel-img-circle {
+        max-width: 350px;
+    }
+    .multikids-travel-img-main {
+        min-width: 110%;
+        margin-left: -15%;
+    }
+    .multikids-travel-title {
+        font-size: 38px;
+    }
+    .multikids-travel-desc {
+        margin-top: 5px;
+        font-size: 20px;
+    }
+    .multikids-cleaning-wave {
+        width: 350px; 
+        left: -18%;
+    }
+    .multikids-cleaning-img {
+        min-width: 600px;
+        margin-right: -100px;
+        margin-top: 00px;
+        margin-bottom: -100px;
+    }
+    .multikids-cleaning-title {
+        font-size: 38px;
+    }
+    .multikids-cleaning-desc {
+        font-size: 20px;
+    }
+    .multikids-cleaning-section {
+        min-height: 800px;
     }
 }
