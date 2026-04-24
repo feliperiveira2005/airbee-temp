@@ -240,6 +240,11 @@
 
     /* --- MOBILE --- */
     @media screen and (max-width: 768px) {
+        .fairy-img {
+            width: 70px; /* Ajuste o tamanho da fada */
+            height: auto;
+            margin-right: -70px;
+        }
         .kidpad-wrapper { padding: 0px;padding-top: 20px;padding-bottom: 20px; }
         .kidpad-box { min-height: 180px; border-radius: 0px; }
         .title-fairy-wrapper { justify-content: center;margin-left: 0%; }
