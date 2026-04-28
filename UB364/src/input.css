@@ -22,6 +22,7 @@
     /* --- DOBRA MULTI ULTRA --- */
 
 .ultra-banner-wrapper {
+    padding: 30px;
     position: relative;
     width: 100%;
     max-width: 1920px;
@@ -38,6 +39,8 @@
     display: block;
     object-fit: cover;
     min-height: 400px; /* Garante altura mínima no desktop */
+    border-radius: 30px;
+    
 }
 
 /* Container do Texto (Posicionamento Absoluto sobre a imagem) */
@@ -105,11 +108,14 @@
         max-height: 250px;
         max-width: 600px;
         margin: auto;
+        padding: 0;
     }
     /* Ajuste da Imagem de Fundo */
     .ultra-bg-img {
-        min-height: 250px; 
+        padding: 0;
+        min-height: 167px; 
         object-position: 65% center; 
+        border-radius: 0px;
     }
 
     /* Ajuste de Posicionamento do Texto */
