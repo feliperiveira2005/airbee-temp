@@ -67,7 +67,7 @@
     }
 
     .feature-item {
-        flex: 0 1 250px; 
+        flex: 0 1 200px; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -475,6 +475,7 @@
     .android-subtitle {
         font-size: 16px;
         margin-bottom: 30px;
+        
     }
 
     .android-grid {
